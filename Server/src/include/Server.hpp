@@ -1,0 +1,10 @@
+#ifndef GAMESERVER_SERVER_HPP
+#define GAMESERVER_SERVER_HPP
+
+
+class Server {
+
+};
+
+
+#endif //GAMESERVER_SERVER_HPP

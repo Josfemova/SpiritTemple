@@ -1,0 +1,10 @@
+#ifndef GAMESERVER_GAMEOBJECT_HPP
+#define GAMESERVER_GAMEOBJECT_HPP
+
+
+class GameObject {
+
+};
+
+
+#endif //GAMESERVER_GAMEOBJECT_HPP

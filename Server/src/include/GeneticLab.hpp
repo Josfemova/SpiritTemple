@@ -1,0 +1,10 @@
+#ifndef GAMESERVER_GENETICLAB_HPP
+#define GAMESERVER_GENETICLAB_HPP
+
+
+class GeneticLab {
+
+};
+
+
+#endif //GAMESERVER_GENETICLAB_HPP
