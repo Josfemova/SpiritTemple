@@ -1,0 +1,22 @@
+[
+{
+    "reqType":"movePlayer",
+    "x":true,
+    "y":false
+},
+{
+    "reqType":"hitEnemy",
+    "ID":123
+},
+{
+    "reqType":"wakeEnemy",
+    "ID":123
+},
+{
+    "reqType":"hitPlayer",
+    "ID":123,
+    "EnemyID":123
+}
+]
+
+

@@ -1,0 +1,30 @@
+{
+  "_comment": "este dato es el que se envia cuando el cliente inicia, el server construye el juego a partir de esto",
+  "lenghty":"espacios verticales de grid",
+  "lenthtx":"espacios horizontales de grid",
+  "player": {
+    "ID": 123,
+    "gridx": 123,
+    "gridy": 123
+  },
+  "enemies": [
+    {
+      "ID": 123,
+      "type": "",
+      "gridx": 123,
+      "gridy": 123
+    },
+    {
+      "ID": 123,
+      "type": "",
+      "gridx": 123,
+      "gridy": 123
+    }
+  ],
+  "_comment2": "esta lista lo que contiene son las 4 esquinas de cada obstáculo para tener ancho y largo al igual que zonas seguras",
+  "otherObj": [
+    { "ID": 123, "xmin": 123, "xmax": 123, "ymin": 123, "ymax": 123 },
+    { "ID": 123, "xmin": 123, "xmax": 123, "ymin": 123, "ymax": 123 },
+    { "ID": 123, "xmin": 123, "xmax": 123, "ymin": 123, "ymax": 123 }
+  ]
+}
