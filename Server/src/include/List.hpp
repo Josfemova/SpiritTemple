@@ -1,5 +1,5 @@
-#ifndef CELIST_H
-#define CELIST_H
+#ifndef SPIRITTEMPLE_LIST_HPP
+#define SPIRITTEMPLE_LIST_HPP
 
 #include <string>
 #include <iostream>
@@ -133,12 +133,12 @@ namespace ce
     template <class T>
     T &list<T>::front()
     {
-        return *first;
+        return first->data;
     }
     template <class T>
     T &list<T>::back()
     {
-        return *last;
+        return last->data;
     }
     template <class T>
     bool list<T>::empty()
@@ -249,10 +249,10 @@ namespace ce
     template <class T>
     /**
      * @brief DEPRECATED. DO NOT USE
-     * 
-     * @param indexA 
-     * @param indexB 
-     * @return int 
+     *
+     * @param indexA
+     * @param indexB
+     * @return int
      */
     int list<T>::erase(int indexA, int indexB)
     {
@@ -300,7 +300,7 @@ namespace ce
         if (last->prev == nullptr)
         {
             delete last;
-            first == last == nullptr;
+            first = last = nullptr;
         }
         else
         {
@@ -318,7 +318,7 @@ namespace ce
         if (first->next == nullptr)
         {
             delete first;
-            first == last == nullptr;
+            first = last = nullptr;
         }
         else
         {
@@ -381,4 +381,5 @@ namespace ce
 
 }; // namespace ce
 
-#endif
+
+#endif //SPIRITTEMPLE_LIST_HPP
