@@ -7,16 +7,13 @@
 
 class MoveGenerator{
 public:
-    MoveGenerator(int (*newMatrix)[COL]);
-    ce::list<Direction> getRoute(Pair enemyPos, Pair playerPos, RouteType type);
+    static listDirections getRoute(int (*newMatrix)[COL], Pair enemyPos, Pair playerPos, RouteType type);
 private:
-    int matrix[ROW][COL] = {0};
-    Pathfinding *pathfinding;
-    ce::list<Direction> Astar(Pair enemyPos, Pair playerPos);
-    ce::list<Direction> BreadCrumbing(Pair enemyPos, Pair playerPos);
-    ce::list<Direction> Backtracking(Pair enemyPos, Pair playerPos);
-    ce::list<Direction> LineSight(Pair enemyPos, Pair playerPos);
-
+    static Pathfinding *pathfinding;
+    static listDirections Astar(Pair enemyPos, Pair playerPos);
+    static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
+    static listDirections Backtracking(Pair enemyPos, Pair playerPos);
+    static listDirections LineSight(Pair enemyPos, Pair playerPos);
 };
 
 #endif //GAMESERVER_MOVEGENERATOR_HPP

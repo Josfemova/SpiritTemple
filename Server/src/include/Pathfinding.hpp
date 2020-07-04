@@ -8,12 +8,16 @@
 #include "Direction.hpp"
 #include "RouteType.hpp"
 #include "list.hpp"
+#include <stdlib.h>
+#include <time.h>
 
-typedef std::pair<int, int> Pair ;
+typedef std::pair<int, int> Pair;
 typedef std::pair<double, std::pair<int, int>> pPair;
+typedef ce::list<Direction> listDirections;
+typedef ce::list<Pair> adjacentNodes;
 
 /**
- * @brief Hold the parameter of each node
+ * @brief hold the parameters of each node
  */
 class Node {
 private:
@@ -22,7 +26,7 @@ private:
 public:
     Node(){}
     /**
-     * @brief Update all data of the node
+     * @brief update all data of the node
      * @param FNew
      * @param GNew
      * @param HNew
@@ -38,38 +42,38 @@ public:
     }
 
     /**
-     * @brief Set the parent coordinate of the node
+     * @brief set the parent coordinate of the node
      * @param i
      * @param j
      */
     void setPxy(int i, int j) { parent_i = i; parent_j = j;}
 
     /**
-     * @brief Set the parent x coordinate of the node
+     * @brief set the parent x coordinate of the node
      * @param i
      */
     void setPx(int i) { parent_j = i; }
 
     /**
-     * @brief Set the parent y coordinate of the node
+     * @brief set the parent y coordinate of the node
      * @param j
      */
     void setPy(int j) { parent_j = j; }
 
     /**
-     * @brief Set the F parameter of the node
+     * @brief set the F parameter of the node
      * @param FNew
      */
     void setF(double FNew){ F = FNew; }
 
     /**
-     * @brief Set the G parameter of the node
+     * @brief set the G parameter of the node
      * @param GNew
      */
     void setG(double GNew){ G = GNew; }
 
     /**
-     * @brief Set the H parameter of the node
+     * @brief set the H parameter of the node
      * @param HNew
      */
     void setH(double HNew){ H = HNew; }
@@ -115,7 +119,7 @@ private:
 
 public:
     /**
-     * @brief Update the matrix
+     * @brief update the matrix
      * @param newMatrix
      */
     explicit Pathfinding(int (*newMatrix)[COL]){
@@ -127,7 +131,7 @@ public:
     }
 
     /**
-     * @brief Check whether given node (row, col) is a valid node or not
+     * @brief check whether given node (row, col) is a valid node or not
      * @param row
      * @param col
      * @return true
@@ -138,7 +142,7 @@ public:
     }
 
     /**
-     * @brief Returns true if the node isn't blocked, else false
+     * @brief returns true if the node isn't blocked, else false
      * @param row
      * @param col
      * @return true
@@ -149,7 +153,7 @@ public:
     }
 
     /**
-     * @brief Check whether destination node has been reached or not
+     * @brief check whether destination node has been reached or not
      * @param row
      * @param col
      * @param dest
@@ -161,7 +165,7 @@ public:
     }
 
     /**
-     * @brief Calculate the "H" Heuristic
+     * @brief calculate the "H" Heuristic
      * @param row
      * @param col
      * @param dest
@@ -171,6 +175,14 @@ public:
         return ((double) sqrt((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
     }
 
+    /**
+     * @brief it set and return the specific movement from a node and its adjacent nodes
+     * @param srcX
+     * @param srcY
+     * @param destX
+     * @param destY
+     * @return Direction
+     */
     static Direction setMovement(int srcX, int srcY, int destX, int destY){
         if(srcX-1 == destX && srcY == destY){
             return Direction::NORTH;
@@ -199,12 +211,234 @@ public:
     }
 
     /**
-     * @brief Print the path from the source to destination
+     *
+     * @param direction
+     * @return next node movement
+     */
+    static std::string getNextMovement(Direction direction){
+        switch (direction){
+            case Direction::NORTH:
+                return "NORTH";
+            case Direction::SOUTH:
+                return "SOUTH";
+            case Direction::EAST:
+                return "EAST";
+            case Direction::WEST:
+                return "WEST";
+            case Direction::NORTHEAST:
+                return "NORTHEAST";
+            case Direction::NORTHWEST:
+                return "NORTHWEST";
+            case Direction::SOUTHEAST:
+                return "SOUTHEAST";
+            case Direction::SOUTHWEST:
+                return "SOUTHWEST";
+            default:
+                return "";
+        }
+    }
+
+    /**
+     *
+     * @param direction
+     * @return previous node movement
+     */
+    static std::string getPreviousMovement(Direction direction){
+        switch (direction){
+            case Direction::NORTH:
+                return "SOUTH";
+            case Direction::SOUTH:
+                return "NORTH";
+            case Direction::EAST:
+                return "WEST";
+            case Direction::WEST:
+                return "EAST";
+            case Direction::NORTHEAST:
+                return "SOUTHWEST";
+            case Direction::NORTHWEST:
+                return "SOUTHEAST";
+            case Direction::SOUTHEAST:
+                return "NORTHWEST";
+            case Direction::SOUTHWEST:
+                return "NORTHEAST";
+            default:
+                return "";
+        }
+    }
+
+    /**
+     * @brief update enemy position
+     * @param direction
+     * @param px
+     * @param py
+     */
+    static void setNewEnemyPos(Direction direction, int &px, int &py){
+        switch (direction){
+            case Direction::NORTH:
+                px--;
+                break;
+            case Direction::SOUTH:
+                px++;
+                break;
+            case Direction::EAST:
+                py++;
+                break;
+            case Direction::WEST:
+                py--;
+            case Direction::NORTHEAST:
+                px--; py++;
+                break;
+            case Direction::NORTHWEST:
+                px--; py--;
+                break;
+            case Direction::SOUTHEAST:
+                px++; py++;
+                break;
+            case Direction::SOUTHWEST:
+                px++; py--;
+                break;
+        }
+    }
+
+    static void teleportEnemy(int (*newMatrix)[COL], int &enemyX, int &enemyY, int &playerX, int &playerY){
+        Pathfinding pathfinding(newMatrix);
+        int tempPlayerX = playerX;
+        int tempPlayerY = playerY;
+        Pair dest = std::make_pair(playerX, playerY);
+
+        adjacentNodes nodes;
+        checkAdjacentNodes(pathfinding, nodes, tempPlayerX, tempPlayerY, dest);
+
+        adjacentNodes closestNodes;
+        for(int i=0; i<nodes.size(); i++){
+            Pair currentNode = nodes[i];
+            tempPlayerX = currentNode.first;
+            tempPlayerY = currentNode.second;
+            checkAdjacentNodes(pathfinding, closestNodes, tempPlayerX, tempPlayerY, dest);
+        }
+
+        // Initialize random seed
+        srand(time(NULL));
+
+        // Generate random number between 0 and closestNodes.size()
+        int random;
+        random = rand() % (closestNodes.size()-1) + 0;
+
+        // Teleport enemy
+        Pair teleport = closestNodes[random];
+        enemyX = teleport.first;
+        enemyY = teleport.second;
+    }
+
+    static void checkAdjacentNodes(Pathfinding &pathfinding, adjacentNodes &nodes, int px, int py, Pair dest){
+        // NORTH NODE
+        if(pathfinding.isValid(px-1, py)){
+            if(pathfinding.isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px-1, py);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // SOUTH NODE
+        if(pathfinding.isValid(px+1, py)){
+            if(pathfinding.isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px+1, py);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // EAST NODE
+        if(pathfinding.isValid(px, py+1)){
+            if(pathfinding.isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px, py+1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // WEST NODE
+        if(pathfinding.isValid(px, py-1)){
+            if(pathfinding.isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px, py-1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // NORTHEAST NODE
+        if(pathfinding.isValid(px-1, py+1)){
+            if(pathfinding.isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px-1, py+1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // NORTHWEST NODE
+        if(pathfinding.isValid(px-1, py-1)){
+            if(pathfinding.isUnBlocked(px-1, py-1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px-1, py-1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // SOUTHEAST NODE
+        if(pathfinding.isValid(px+1, py+1)){
+            if(pathfinding.isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px+1, py+1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+
+        // SOUTHWEST NODE
+        if(pathfinding.isValid(px+1, py-1)){
+            if(pathfinding.isUnBlocked(px+1, py-1) && !isDestination(px-1, py, dest)){
+                Pair pair = std::make_pair(px+1, py-1);
+                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            }
+        }
+    }
+
+    /**
+     * @brief update enemy position
+     * @param direction
+     * @param px
+     * @param py
+     */
+    static void setPreviousEnemyPos(Direction direction, int &px, int &py){
+        switch (direction){
+            case Direction::NORTH:
+                px++;
+                break;
+            case Direction::SOUTH:
+                px--;
+                break;
+            case Direction::EAST:
+                py--;
+                break;
+            case Direction::WEST:
+                py++;
+                break;
+            case Direction::NORTHEAST:
+                px++; py--;
+                break;
+            case Direction::NORTHWEST:
+                px++; py++;
+                break;
+            case Direction::SOUTHEAST:
+                px--; py--;
+                break;
+            case Direction::SOUTHWEST:
+                px--; py++;
+                break;
+        }
+    }
+
+    /**
+     * @brief print the path from the source to destination
      * @param nodeDetails
      * @param dest
      */
-    static void printPath(Node nodeDetails[][COL], Pair dest, ce::list<Direction> &shortestPath){
-        std::cout<<"\nThe path is ";
+    static void printPath(Node nodeDetails[][COL], Pair dest, listDirections &shortestPath){
+        std::cout<<"\nTHE DESTINATION CELL IS FOUND"<<std::endl;
+        std::cout<<"THE PATH IS ";
         int row = dest.first;
         int col = dest.second;
 
@@ -230,7 +464,7 @@ public:
         }
 
         std::cout<<"\n";
-        std::string result = "Tha path is: ";
+        std::string result = "ROUTE TO PLAYER (A*): ";
         for(int i=0; i<shortestPath.size(); i++){
             if(shortestPath[i] == Direction::NORTH){
                 result += "NORTH -> ";
@@ -262,37 +496,80 @@ public:
     }
 
     /**
+     * @brief print breadcrumbs left by the enemy when chasing the player
+     * @param breadcrumbs
+     */
+    static void printBreadcrumbs(listDirections &breadcrumbs){
+        std::string result = "BREADCRUMBS: ";
+        if(!breadcrumbs.empty()){
+            for(int i=0; i<breadcrumbs.size(); i++){
+                if(breadcrumbs[i] == Direction::NORTH){
+                    result += "NORTH <- ";
+                }
+                else if(breadcrumbs[i] == Direction::SOUTH){
+                    result += "SOUTH <- ";
+                }
+                else if(breadcrumbs[i] == Direction::EAST){
+                    result += "EAST <- ";
+                }
+                else if(breadcrumbs[i] == Direction::WEST){
+                    result += "WEST <- ";
+                }
+                else if(breadcrumbs[i] == Direction::NORTHEAST){
+                    result += "NORTHEAST <- ";
+                }
+                else if(breadcrumbs[i] == Direction::NORTHWEST){
+                    result += "NORTHWEST <- ";
+                }
+                else if(breadcrumbs[i] == Direction::SOUTHEAST){
+                    result += "SOUTHEAST <- ";
+                }
+                else if(breadcrumbs[i] == Direction::SOUTHWEST){
+                    result += "SOUTHWEST <- ";
+                }
+            }
+            std::string stringForm = result.substr(0,result.size()-3);
+            std::cout<<stringForm<<std::endl;
+            std::cout<<"\n";
+        }
+        else{
+            result += "[]";
+            std::cout<<result<<std::endl;
+        }
+    }
+
+    /**
      * @brief Find the shortest path between a given source node to a destination
      * node according to A* Search Algorithm
      * @param src
      * @param dest
      */
-    ce::list<Direction> AstarSearch(Pair src, Pair dest){
+     listDirections AstarSearch(Pair src, Pair dest){
         // List of directions to follow between the enemy's position and the
         // player's position
-        ce::list<Direction> shortestPath;
+        listDirections shortestPath;
 
         // If the source is out of range
         if(!isValid(src.first, src.second)){
-            std::cout<<"Source is invalid\n";
+            std::cout<<"\nSOURCE IS INVALID"<<std::endl;
             return shortestPath;
         }
 
         //Id the destination is out of range
         if(!isValid(dest.first, dest.second)){
-            std::cout<<"Destination is invalid\n";
+            std::cout<<"\nDESTINATION IS INVALID"<<std::endl;
             return shortestPath;
         }
 
         // Either the source or the destination is blocked
         if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
-            std::cout<<"Source or the destination is blocked\n";
+            std::cout<<"\nSOURCE OR THE DESTINATION IS BLOCKED"<<std::endl;
             return shortestPath;
         }
 
         // If the destination node is the same as source node
         if(isDestination(src.first, src.second, dest)){
-            std::cout<<"We are already at the destination\n";
+            std::cout<<"WE ARE ALREADY AT THE DESTINATION"<<std::endl;
             return shortestPath;
         }
 
@@ -351,14 +628,12 @@ public:
                 if (isDestination(i-1, j, dest)){
                     // Set the Parent of the destination node
                     nodeDetails[i-1][j].setPxy(i, j);
-                    //shortestPath.push_back(Direction::NORTH);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
-                    // If the successor is already on the closed list or if it is blocked
-                    // then ignore it. Else do the following
+                // If the successor is already on the closed list or if it is blocked
+                // then ignore it. Else do the following
                 else if (!closedList[i-1][j] && isUnBlocked(i-1, j)){
                     GNew = nodeDetails[i][j].getG() + 1.0;
                     HNew = getHeuristicCost(i-1, j, dest);
@@ -382,7 +657,6 @@ public:
             if (isValid(i+1, j)){
                 if (isDestination(i+1, j, dest)){
                     nodeDetails[i+1][j].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -405,7 +679,6 @@ public:
             if (isValid(i, j + 1)){
                 if (isDestination(i, j+1, dest)){
                     nodeDetails[i][j+1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -428,7 +701,6 @@ public:
             if (isValid(i, j - 1)){
                 if (isDestination(i, j-1, dest)){
                     nodeDetails[i][j-1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -452,7 +724,6 @@ public:
             if (isValid(i - 1, j + 1)){
                 if (isDestination(i-1, j+1, dest)){
                     nodeDetails[i-1][j+1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -474,7 +745,6 @@ public:
             if (isValid (i-1, j-1)){
                 if (isDestination (i-1, j-1, dest)){
                     nodeDetails[i-1][j-1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -497,7 +767,6 @@ public:
             if (isValid(i+1, j+1)){
                 if (isDestination(i+1, j+1, dest)){
                     nodeDetails[i+1][j+1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -521,7 +790,6 @@ public:
             if (isValid (i+1, j-1)){
                 if (isDestination(i+1, j-1, dest)){
                     nodeDetails[i+1][j-1].setPxy(i, j);
-                    std::cout<<"The destination cell is found\n";
                     printPath(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
@@ -545,7 +813,7 @@ public:
         // reach the destination node. This may happen when the
         // there is no way to destination node (due to blockages)
         if (!foundDest){
-            std::cout<<"Failed to find the Destination Node\n";
+            std::cout<<"Failed to find the Destination Node"<<std::endl;
         }
 
         return shortestPath;

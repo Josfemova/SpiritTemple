@@ -1,7 +1,7 @@
 #ifndef GAMESERVER_ENEMYTYPE_HPP
 #define GAMESERVER_ENEMYTYPE_HPP
 
-enum class EnemyTyepe {
+enum class EnemyType {
     SpGray,
     SpRed,
     SpBlue,
