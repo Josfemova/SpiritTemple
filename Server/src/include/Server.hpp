@@ -6,11 +6,14 @@ class Server
 {
 private:
     Game *game = nullptr;
-    int connection;
+    int port = 3000; //default port;
+    int serverSocket;
 
 public:
+    Server();
+    Server(int port);
     void startAndWait();
-    void listen();
+    void listenClient();
     void loadLevel();
 };
 
