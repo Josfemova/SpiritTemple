@@ -34,7 +34,7 @@ cd ..
 build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory cmake --build build/ --config Release
 
 # Run sonar scanner (here, arguments are passed through the command line but most of them can be written in the sonar-project.properties file)
-sonar-scanner \
+sonar-scanner -X\
   -Dsonar.organization=josfemova \
   -Dsonar.projectKey=Josfemova_SpiritTemple \
   -Dsonar.sources=. \
