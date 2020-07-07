@@ -11,7 +11,7 @@ Authors:
 ---
 
 How to build?
-        
+
         cd Server 
         rm -rf build
         mkdir build
