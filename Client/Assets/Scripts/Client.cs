@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Client
 {
+    Client instance=null;
     
 }
