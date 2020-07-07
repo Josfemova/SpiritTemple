@@ -2,3 +2,4 @@ Server/.idea
 Server/cmake-build*
 Server/.vscode
 Client/.vscode
+Client/Temp
