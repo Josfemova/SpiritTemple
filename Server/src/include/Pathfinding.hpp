@@ -115,7 +115,7 @@ public:
  */
 class Pathfinding {
 private:
-    int matrix[ROW][COL] = {0};
+    int matrix[ROW][COL] = {};
 
 public:
     /**
