@@ -11,6 +11,11 @@ namespace ce
 {
     template <class T>
     class list;
+    /**
+     * @brief Node class used to store data in a doubly linked list
+     * 
+     * @tparam T 
+     */
     template <class T>
     class Node
     {
@@ -22,6 +27,11 @@ namespace ce
         std::shared_ptr<Node<T>> prev = nullptr;
         std::shared_ptr<Node<T>> next = nullptr;
         T data;
+        /**
+         * @brief 
+         * 
+         * @return std::string 
+         */
         std::string toString()
         {
             std::stringstream ss;
@@ -29,10 +39,22 @@ namespace ce
             return ss.str();
         }
         template <class E>
+        /**
+         * @brief 
+         * 
+         * @param x 
+         * @param y 
+         * @return true 
+         * @return false 
+         */
         friend bool operator==(const list<E> &x, const list<E> &y);
     };
 
     template <class T>
+    /**
+     * @brief 
+     * 
+     */
     class list
     {
     private:
@@ -43,6 +65,7 @@ namespace ce
         list();
         explicit list(std::initializer_list<int> list);
         //access
+
         T &at(int position);
         T &operator[](int position);
         T &front();
@@ -52,6 +75,7 @@ namespace ce
         bool contains(T data) const;
         int size() const;
         //modifiers
+        int clear();
         int insert(T data, int index);
         int erase(int index);
         int push_back(T data);
@@ -66,6 +90,12 @@ namespace ce
 
     template <class T>
     list<T>::list(){};
+    /**
+     * @brief Construct a new list<T>::list object
+     * 
+     * @tparam T 
+     * @param list 
+     */
     template <class T>
     list<T>::list(std::initializer_list<int> list)
     {
@@ -74,7 +104,13 @@ namespace ce
             push_back(element);
         }
     }
-    //access
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param index 
+     * @return T& 
+     */
     template <class T>
     T &list<T>::at(int index)
     {
@@ -91,26 +127,60 @@ namespace ce
         }
         return it->data;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param index 
+     * @return T& 
+     */
     template <class T>
     T &list<T>::operator[](int index)
     {
         return at(index);
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return T& 
+     */
     template <class T>
     T &list<T>::front()
     {
         return first->data;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return T& 
+     */
     template <class T>
     T &list<T>::back()
     {
         return last->data;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return true 
+     * @return false 
+     */
     template <class T>
     bool list<T>::empty()
     {
         return (first == nullptr);
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param data 
+     * @return true 
+     * @return false 
+     */
     template <class T>
     bool list<T>::contains(T data) const
     {
@@ -125,6 +195,12 @@ namespace ce
         }
         return false;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return int 
+     */
     template <class T>
     int list<T>::size() const
     {
@@ -137,8 +213,21 @@ namespace ce
         }
         return x;
     }
-
     //modifiers
+    template <class T>
+    int list<T>::clear(){
+        first = nullptr;
+        last = nullptr;
+        return 0;
+    }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param data 
+     * @param index 
+     * @return int 
+     */
     template <class T>
     int list<T>::insert(T data, int index)
     {
@@ -169,6 +258,13 @@ namespace ce
         }
         return 0;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param index 
+     * @return int 
+     */
     template <class T>
     int list<T>::erase(int index)
     {
@@ -196,6 +292,13 @@ namespace ce
         }
         return 0;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param data 
+     * @return int 
+     */
     template <class T>
     int list<T>::push_back(T data)
     {
@@ -213,10 +316,17 @@ namespace ce
         }
         return 0;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param data 
+     * @return int 
+     */
     template <class T>
     int list<T>::push_front(T data)
     {
-        std::shared_ptr<Node<T>> x = new Node<T>(data);
+        std::shared_ptr<Node<T>> x(new Node<T>(data));
 
         if (empty())
         { //empty
@@ -230,6 +340,12 @@ namespace ce
         }
         return 0;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return T 
+     */
     template <class T>
     T list<T>::pop_back()
     {
@@ -247,6 +363,12 @@ namespace ce
         }
         return value;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return T 
+     */
     template <class T>
     T list<T>::pop_front()
     {
@@ -263,6 +385,14 @@ namespace ce
         }
         return value;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @param indexA 
+     * @param indexB 
+     * @return int 
+     */
     template <class T>
     int list<T>::swap(int indexA, int indexB)
     {
@@ -273,6 +403,12 @@ namespace ce
         b = temp;
         return 0;
     }
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return std::string 
+     */
     template <class T>
     std::string list<T>::toString()
     {

@@ -13,7 +13,8 @@ set(HEADERS ${INCL}/list.hpp ${INCL}/nlohmannJson.hpp
         ${INCL}/Server.hpp ${INCL}/Game.hpp ${INCL}/GeneticLab.hpp
         ${INCL}/Level.hpp ${INCL}/GOType.hpp ${INCL}/Direction.hpp
         ${INCL}/EnemyType.hpp ${INCL}/MoveGenerator.hpp ${INCL}/Enemy.hpp
-        ${INCL}/GameObject.hpp ${INCL}/Pathfinding.hpp ${INCL}/RouteType)
+        ${INCL}/GameObject.hpp ${INCL}/Pathfinding.hpp ${INCL}/RouteType.hpp
+        ${INCL}/utilities.hpp)
 
 set(SOURCE_FILES
         src/main.cpp

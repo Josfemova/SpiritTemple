@@ -19,3 +19,4 @@ How to build?
         cmake ..
         cd ..
         cmake --build build/ --config Release
+        cd ..
