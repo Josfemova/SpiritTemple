@@ -15,11 +15,7 @@ namespace ce
     {
     private:
         friend class list<T>;
-        Node(T data)
-        {
-            this->data = data;
-        }
-
+        explicit Node(T newdata):data(newdata){}
     public:
         Node<T> *prev = nullptr;
         Node<T> *next = nullptr;
@@ -44,7 +40,7 @@ namespace ce
     public:
         list();
         list(const list &obj);
-        list(std::initializer_list<int> list);
+        explicit list(std::initializer_list<int> list);
         ~list();
         list &operator=(const list &obj);
         //access
@@ -60,7 +56,6 @@ namespace ce
         int clear();
         int insert(T data, int index);
         int erase(int index);
-        int erase(int indexA, int indexB);
         int push_back(T data);
         int push_front(T data);
         T pop_back();
@@ -148,7 +143,6 @@ namespace ce
     template <class T>
     bool list<T>::contains(T data)
     {
-        bool result = false;
         Node<T>* it = first;
         while (it != nullptr)
         {
@@ -244,18 +238,6 @@ namespace ce
             toDel->next->prev = toDel->prev;
             delete toDel;
         }
-        return 0;
-    }
-    template <class T>
-    /**
-     * @brief DEPRECATED. DO NOT USE
-     *
-     * @param indexA
-     * @param indexB
-     * @return int
-     */
-    int list<T>::erase(int indexA, int indexB)
-    {
         return 0;
     }
     template <class T>
