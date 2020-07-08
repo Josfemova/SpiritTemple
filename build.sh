@@ -42,5 +42,3 @@ sonar-scanner \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.cfamily.build-wrapper-output=./Server/bw-output \
   -Dsonar.login=$SONARLOGIN
-  
-#57e6e87f8d4dbca35b42234cd9e2f99fb301fa9e
