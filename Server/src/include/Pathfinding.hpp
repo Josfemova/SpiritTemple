@@ -7,6 +7,7 @@
 #include "list.hpp"
 #include <stdlib.h>
 #include <time.h>
+#include <random>
 
 typedef std::pair<int, int> Pair;
 typedef std::pair<double, std::pair<int, int>> pPair;
@@ -152,7 +153,7 @@ public:
      * @return true
      * @return false
      */
-    bool isUnBlocked(int row, int col){
+    bool isUnBlocked(int row, int col) const {
         return matrix[row][col] == 1;
     }
 
@@ -176,7 +177,7 @@ public:
      * @return the diagonal cost of the movement
      */
     static double getHeuristicCost(int row, int col, Pair dest){
-        return ((double) sqrt((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
+        return (sqrt((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
     }
 
     /**
@@ -301,6 +302,8 @@ public:
             case Direction::SOUTHWEST:
                 px++; py--;
                 break;
+            default:
+                break;
         }
     }
 
@@ -312,29 +315,27 @@ public:
      * @param playerX
      * @param playerY
      */
-    static void teleportEnemy(int (*newMatrix)[COLS], int &enemyX, int &enemyY, int &playerX, int &playerY){
-        Pathfinding pathfinding(newMatrix);
+    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY){
         int tempPlayerX = playerX;
         int tempPlayerY = playerY;
         Pair dest = std::make_pair(playerX, playerY);
 
         adjacentNodes nodes;
-        checkAdjacentNodes(pathfinding, nodes, tempPlayerX, tempPlayerY, dest);
+        checkAdjacentNodes(nodes, tempPlayerX, tempPlayerY, dest);
 
         adjacentNodes closestNodes;
         for(int i=0; i<nodes.size(); i++){
             Pair currentNode = nodes[i];
             tempPlayerX = currentNode.first;
             tempPlayerY = currentNode.second;
-            checkAdjacentNodes(pathfinding, closestNodes, tempPlayerX, tempPlayerY, dest);
+            checkAdjacentNodes(closestNodes, tempPlayerX, tempPlayerY, dest);
         }
-
-        // Initialize random seed
-        srand(time(NULL));
-
-        // Generate random number between 0 and closestNodes.size()
-        int random;
-        random = rand() % (closestNodes.size()-1) + 0;
+        std::cout<<"checkAdjacentNodes size: "<<closestNodes.size()<<std::endl;
+        // Initialize random generator
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist(0, closestNodes.size()-1);
+        int random = dist(rng);
 
         // Teleport enemy
         Pair teleport = closestNodes[random];
@@ -350,69 +351,77 @@ public:
      * @param py
      * @param dest
      */
-    static void checkAdjacentNodes(Pathfinding &pathfinding, adjacentNodes &nodes, int px, int py, Pair dest){
+    void checkAdjacentNodes(adjacentNodes &nodes, int px, int py, Pair dest) const{
         // NORTH NODE
-        if(pathfinding.isValid(px-1, py)){
-            if(pathfinding.isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px-1, py);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px-1, py) && isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px-1, py);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // SOUTH NODE
-        if(pathfinding.isValid(px+1, py)){
-            if(pathfinding.isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px+1, py);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px+1, py) && isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px+1, py);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // EAST NODE
-        if(pathfinding.isValid(px, py+1)){
-            if(pathfinding.isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px, py+1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px, py+1) && isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px, py+1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // WEST NODE
-        if(pathfinding.isValid(px, py-1)){
-            if(pathfinding.isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px, py-1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px, py-1) && isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px, py-1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // NORTHEAST NODE
-        if(pathfinding.isValid(px-1, py+1)){
-            if(pathfinding.isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px-1, py+1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px-1, py+1) && isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px-1, py+1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // NORTHWEST NODE
-        if(pathfinding.isValid(px-1, py-1)){
-            if(pathfinding.isUnBlocked(px-1, py-1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px-1, py-1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px-1, py-1) && isUnBlocked(px-1, py-1)  && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px-1, py-1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px-1, py-1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // SOUTHEAST NODE
-        if(pathfinding.isValid(px+1, py+1)){
-            if(pathfinding.isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px+1, py+1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px+1, py+1) && isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px+1, py+1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
 
         // SOUTHWEST NODE
-        if(pathfinding.isValid(px+1, py-1)){
-            if(pathfinding.isUnBlocked(px+1, py-1) && !isDestination(px-1, py, dest)){
-                Pair pair = std::make_pair(px+1, py-1);
-                if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            }
+        if(isValid(px+1, py-1) && isUnBlocked(px+1, py-1)  && !isDestination(px-1, py, dest)){
+            //if(isUnBlocked(px+1, py-1) && !isDestination(px-1, py, dest)){
+            Pair pair = std::make_pair(px+1, py-1);
+            //nodes.push_back(pair);
+            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
+            //}
         }
     }
 

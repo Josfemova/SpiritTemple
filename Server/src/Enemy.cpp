@@ -156,7 +156,9 @@ std::string Enemy::update() {
         std::string result = "ENEMY" + std::to_string(enemyID) + " TELEPORTED FROM (";
         result += std::to_string(enemyX) + "," + std::to_string(enemyY) + ") TO (";
         try{
-            Pathfinding::teleportEnemy(matrix, enemyX, enemyY, playerX, playerY);
+            //Pathfinding::teleportEnemy(matrix, enemyX, enemyY, playerX, playerY);
+            Pathfinding pathfinding(matrix);
+            pathfinding.teleportEnemy(enemyX, enemyY, playerX, playerY);
         }
         catch (error_t){}
         result += std::to_string(enemyX) + "," + std::to_string(enemyY) + ")";
