@@ -5,8 +5,6 @@
 #include "Direction.hpp"
 #include "RouteType.hpp"
 #include "list.hpp"
-#include <stdlib.h>
-#include <time.h>
 #include <random>
 
 typedef std::pair<int, int> Pair;
@@ -315,7 +313,7 @@ public:
      * @param playerX
      * @param playerY
      */
-    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY){
+    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const{
         int tempPlayerX = playerX;
         int tempPlayerY = playerY;
         Pair dest = std::make_pair(playerX, playerY);
@@ -330,15 +328,14 @@ public:
             tempPlayerY = currentNode.second;
             checkAdjacentNodes(closestNodes, tempPlayerX, tempPlayerY, dest);
         }
-        std::cout<<"checkAdjacentNodes size: "<<closestNodes.size()<<std::endl;
+
         // Initialize random generator
         std::random_device dev;
         std::mt19937 rng(dev());
         std::uniform_int_distribution<std::mt19937::result_type> dist(0, closestNodes.size()-1);
-        int random = dist(rng);
 
         // Teleport enemy
-        Pair teleport = closestNodes[random];
+        Pair teleport = closestNodes[dist(rng)];
         enemyX = teleport.first;
         enemyY = teleport.second;
     }
@@ -354,74 +351,50 @@ public:
     void checkAdjacentNodes(adjacentNodes &nodes, int px, int py, Pair dest) const{
         // NORTH NODE
         if(isValid(px-1, py) && isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px-1, py);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // SOUTH NODE
         if(isValid(px+1, py) && isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px+1, py);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // EAST NODE
         if(isValid(px, py+1) && isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px, py+1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // WEST NODE
         if(isValid(px, py-1) && isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px, py-1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // NORTHEAST NODE
         if(isValid(px-1, py+1) && isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px-1, py+1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // NORTHWEST NODE
         if(isValid(px-1, py-1) && isUnBlocked(px-1, py-1)  && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px-1, py-1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px-1, py-1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // SOUTHEAST NODE
         if(isValid(px+1, py+1) && isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px+1, py+1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
 
         // SOUTHWEST NODE
         if(isValid(px+1, py-1) && isUnBlocked(px+1, py-1)  && !isDestination(px-1, py, dest)){
-            //if(isUnBlocked(px+1, py-1) && !isDestination(px-1, py, dest)){
             Pair pair = std::make_pair(px+1, py-1);
-            //nodes.push_back(pair);
             if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-            //}
         }
     }
 
@@ -456,6 +429,8 @@ public:
                 break;
             case Direction::SOUTHWEST:
                 px--; py++;
+                break;
+            default:
                 break;
         }
     }
