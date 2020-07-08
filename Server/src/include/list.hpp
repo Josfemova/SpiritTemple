@@ -49,8 +49,8 @@ namespace ce
         T &back();
         //information
         bool empty();
-        const bool contains(T data);
-        const int size();
+        bool contains(T data) const;
+        int size() const;
         //modifiers
         int insert(T data, int index);
         int erase(int index);
@@ -112,7 +112,7 @@ namespace ce
         return (first == nullptr);
     }
     template <class T>
-    const bool list<T>::contains(T data)
+    bool list<T>::contains(T data) const
     {
         std::shared_ptr<Node<T>> it = first;
         while (it != nullptr)
@@ -126,7 +126,7 @@ namespace ce
         return false;
     }
     template <class T>
-    const int list<T>::size()
+    int list<T>::size() const
     {
         int x = 0;
         std::shared_ptr<Node<T>> it = first;
