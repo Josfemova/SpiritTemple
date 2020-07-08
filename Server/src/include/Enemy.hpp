@@ -13,7 +13,7 @@
 
 class Enemy {
 private:
-    int ID;
+    int enemyID;
     int enemyX;
     int enemyY;
     EnemyType enemyType;
@@ -32,7 +32,7 @@ private:
 
 public:
     Enemy(int id, int px, int py, std::string type);
-    void updataData(int px, int py, int damage, bool range);
+    void updateData(int px, int py, int damage, bool range);
     void setEnemy(int px, int py);
     void setEnemyX(int px);
     void setEnemyY(int py);
@@ -53,6 +53,7 @@ public:
     bool isInRange() const;
 
     EnemyType getType();
+    std::string getTypeS();
     std::string update();
 
     // TEMPORAL METHODS TO TEST BREAD CRUMBING AND BACKTRACKING ALGORITHM

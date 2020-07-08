@@ -8,8 +8,8 @@ class GameObject {
 private:
     GOType type;
 public:
-    GOType getType() const;
-    std::string update() const;
+    GOType getType();
+    std::string update();
 };
 
 

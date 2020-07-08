@@ -10,40 +10,33 @@
 typedef ce::list<ce::list<GameObject>> lvlMatrix;
 typedef ce::list<std::string> lvlInstructions;
 typedef std::pair<int, int> Pair;
-typedef int(&array)[ROW][COL];
+typedef int(&matrix)[ROW][COL];
 
 using json = nlohmann::json;
 
 class Level {
 private:
-    int playerLives;
+    int lives;
     int playerID;
     int playerX;
     int playerY;
-    bool started;
-    int simpleMatrix[ROW][COL];
-    lvlMatrix matrix;
-    lvlInstructions instructions;
+    lvlMatrix Matrix;
+    json instructions;
 
 public:
-    //Level(lvlMatrix);
-    Level();
-    Level(int (*newMatrix)[COL]);
-    Level(int (*newMatrix)[COL], int id, int lives, int px, int py);
-    void start();
+    Level(lvlMatrix matrix);
     void finish();
-    void updatePlayerPos(int px, int py);
-    void setPlayerX(int px);
-    void setPlayerY(int py);
+    void start();
 
-    array getSimpleMatrix();
-    Pair playerPos() const;
-    int getPlayerX() const;
-    int getPlayerY() const;
-    bool isStarted() const;
+    // Returns a level matrix with "0" representing obstacles and safe areas
+    // (where the enemy can't walk) and "1" which is where the enemy can walk
+    matrix getSimpleMatrix();
 
-    //void manageEvents(json);
-    //lvlInstructions getInstructions();
+    // Manage the events, for each event add an instruction
+    void manageEvents(json events);
+
+    // Return all instructions added by manageEvent
+    json getInstructions();
 };
 
 

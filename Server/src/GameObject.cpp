@@ -1,10 +1,10 @@
 #include "include/GameObject.hpp"
 
-GOType GameObject::getType() const {
+GOType GameObject::getType(){
     return type;
 }
 
-std::string GameObject::update() const {
+std::string GameObject::update(){
     // Do something
     return "";
 }

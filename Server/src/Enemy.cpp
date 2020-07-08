@@ -1,7 +1,7 @@
 #include "include/Enemy.hpp"
 
 Enemy::Enemy(int id, int px, int py, std::string type) {
-    ID = id;
+    enemyID = id;
     enemyX = px;
     enemyY = py;
     setEnemyType(type);
@@ -34,7 +34,7 @@ void Enemy::setEnemyType(std::string type) {
     }
 }
 
-void Enemy::updataData(int px, int py, int damage, bool range) {
+void Enemy::updateData(int px, int py, int damage, bool range) {
     enemyX = px;
     enemyY = py;
     damageDone = damage;
@@ -75,7 +75,7 @@ void Enemy::setInRange(bool range) {
 }
 
 void Enemy::toString() {
-    std::cout<<"ENEMY"<<ID<<" POSITION: ("<<getEnemyX()<<","<<getEnemyY()<<")\n";
+    std::cout<<"Position: ("<<enemyX<<","<<enemyY<<")\n";
 }
 
 int Enemy::getEnemyX() const {
@@ -114,6 +114,25 @@ EnemyType Enemy::getType() {
     return enemyType;
 }
 
+std::string Enemy::getTypeS() {
+    switch (enemyType){
+        case EnemyType::SpGray:
+            return "SpGray";
+        case EnemyType::SpRed:
+            return "SpRed";
+        case EnemyType::SpBlue:
+            return "SpBlue";
+        case EnemyType::SpEye:
+            return "SpEye";
+        case EnemyType::Mouse:
+            return "Mouse";
+        case EnemyType::Chuchu:
+            return "Chuchu";
+        default:
+            return "";
+    }
+}
+
 std::string Enemy::update() {
     if(inRange && (enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed)){
         listDirections path = MoveGenerator::getRoute(matrix, enemyPos(), playerPos(), RouteType::Astar);
@@ -134,7 +153,7 @@ std::string Enemy::update() {
     if(inRange && enemyType == EnemyType::SpBlue){
         // Teleportation
         // To print it on the server console
-        std::string result = "ENEMY" + std::to_string(ID) + " TELEPORTED FROM (";
+        std::string result = "ENEMY" + std::to_string(enemyID) + " TELEPORTED FROM (";
         result += std::to_string(enemyX) + "," + std::to_string(enemyY) + ") TO (";
         try{
             Pathfinding::teleportEnemy(matrix, enemyX, enemyY, playerX, playerY);
@@ -145,6 +164,21 @@ std::string Enemy::update() {
 
         // To list instructions
         return std::to_string(enemyX) + "," + std::to_string(enemyY);
+    }
+
+    if(inRange && enemyType == EnemyType::Chuchu){
+        listDirections path = MoveGenerator::getRoute(matrix, enemyPos(), playerPos(), RouteType::LineSight);
+        if(!path.empty()){
+            // To print it on the server console
+            std::cout<<"\nEnemy / ID:"<<std::to_string(enemyID) <<" / Type: "<<getTypeS()<<std::endl;
+            Pathfinding::printLineSight(path);
+            std::cout<<"Instruction: Move to "<<Pathfinding::getNextMovement(path[0])<<std::endl;
+            Pathfinding::setNewEnemyPos(path[0], enemyX, enemyY);
+            toString();
+
+            // To list instructions
+            return Pathfinding::getNextMovement(path[0]);
+        }
     }
 
     if(!inRange && !breadcrumbs.empty()){

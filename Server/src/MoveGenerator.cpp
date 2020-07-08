@@ -34,9 +34,9 @@ listDirections MoveGenerator::Backtracking(Pair enemyPos, Pair playerPos) {
 }
 
 listDirections MoveGenerator::LineSight(Pair enemyPos, Pair playerPos) {
-    ce::list<Direction> a;
-    return a;
-    //Do something
+    return MoveGenerator::pathfinding->LineSight(enemyPos, playerPos);
 }
 
 Pathfinding* MoveGenerator::pathfinding;
+
+
