@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <initializer_list>
+#include <memory>
 
 namespace ce
 {
@@ -15,10 +16,11 @@ namespace ce
     {
     private:
         friend class list<T>;
-        explicit Node(T newdata):data(newdata){}
+        explicit Node(T newdata) : data(newdata) {}
+
     public:
-        Node<T> *prev = nullptr;
-        Node<T> *next = nullptr;
+        std::shared_ptr<Node<T>> prev = nullptr;
+        std::shared_ptr<Node<T>> next = nullptr;
         T data;
         std::string toString()
         {
@@ -34,15 +36,12 @@ namespace ce
     class list
     {
     private:
-        Node<T> *first = nullptr;
-        Node<T> *last = nullptr;
+        std::shared_ptr<Node<T>> first = nullptr;
+        std::shared_ptr<Node<T>> last = nullptr;
 
     public:
         list();
-        list(const list &obj);
         explicit list(std::initializer_list<int> list);
-        ~list();
-        list &operator=(const list &obj);
         //access
         T &at(int position);
         T &operator[](int position);
@@ -53,7 +52,6 @@ namespace ce
         bool contains(T data);
         int size();
         //modifiers
-        int clear();
         int insert(T data, int index);
         int erase(int index);
         int push_back(T data);
@@ -69,16 +67,6 @@ namespace ce
     template <class T>
     list<T>::list(){};
     template <class T>
-    list<T>::list(const list<T> &obj)
-    {
-        Node<T> *it = obj.first;
-        while (it != nullptr)
-        {
-            push_back(it->data);
-            it = it->next;
-        }
-    }
-    template <class T>
     list<T>::list(std::initializer_list<int> list)
     {
         for (T element : list)
@@ -86,29 +74,12 @@ namespace ce
             push_back(element);
         }
     }
-    template <class T>
-    list<T>::~list()
-    {
-        clear();
-    }
-    template <class T>
-    list<T> &list<T>::operator=(const list<T> &obj)
-    {
-        clear();
-        Node<T> *it = obj.first;
-        while (it != nullptr)
-        {
-            push_back(it->data);
-            it = it->next;
-        }
-        return *this;
-    };
     //access
     template <class T>
     T &list<T>::at(int index)
     {
         int i = 0;
-        Node<T>* it = first;
+        std::shared_ptr<Node<T>> it = first;
         while (i != index)
         {
             ++i;
@@ -143,7 +114,7 @@ namespace ce
     template <class T>
     bool list<T>::contains(T data)
     {
-        Node<T>* it = first;
+        Node<T> *it = first;
         while (it != nullptr)
         {
             if (it->data == data)
@@ -158,7 +129,7 @@ namespace ce
     int list<T>::size()
     {
         int x = 0;
-        Node<T> *it = first;
+        std::shared_ptr<Node<T>> it = first;
         while (it != nullptr)
         {
             ++x;
@@ -168,20 +139,6 @@ namespace ce
     }
 
     //modifiers
-    template <class T>
-    int list<T>::clear()
-    {
-        Node<T> *it = first;
-        Node<T> *temp;
-        while (it != nullptr)
-        {
-            temp = it;
-            it = it->next;
-            delete temp;
-        }
-        first = last = nullptr;
-        return 0;
-    }
     template <class T>
     int list<T>::insert(T data, int index)
     {
@@ -195,8 +152,8 @@ namespace ce
         }
         else
         { //index in bounds
-            Node<T> *x = new Node<T>(data);
-            Node<T> *front = first;
+            std::shared_ptr<Node<T>> x = new Node<T>(data);
+            std::shared_ptr<Node<T>> front = first;
 
             int i = 0;
             while (i != index)
@@ -204,7 +161,7 @@ namespace ce
                 front = front->next;
             }
 
-            Node<T> *rear = front->prev;
+            std::shared_ptr<Node<T>> rear = front->prev;
             x->prev = rear;
             x->next = front;
             rear->next = x;
@@ -229,21 +186,20 @@ namespace ce
         }
         else
         {
-            Node<T> *toDel = first;
+            std::shared_ptr<Node<T>> toDel = first;
             for (int i = 0; i < index; i++)
             {
                 toDel = toDel->next;
             }
             toDel->prev->next = toDel->next;
             toDel->next->prev = toDel->prev;
-            delete toDel;
         }
         return 0;
     }
     template <class T>
     int list<T>::push_back(T data)
     {
-        Node<T> *x = new Node<T>(data);
+        std::shared_ptr<Node<T>> x(new Node<T>(data));
 
         if (empty())
         { //empty
@@ -260,7 +216,7 @@ namespace ce
     template <class T>
     int list<T>::push_front(T data)
     {
-        Node<T> *x = new Node<T>(data);
+        std::shared_ptr<Node<T>> x = new Node<T>(data);
 
         if (empty())
         { //empty
@@ -281,15 +237,13 @@ namespace ce
         T value = last->data;
         if (last->prev == nullptr)
         {
-            delete last;
             first = last = nullptr;
         }
         else
         {
-            Node<T> *temp = last;
+            std::shared_ptr<Node<T>> temp = last;
             last = temp->prev;
             last->next = nullptr;
-            delete temp;
         }
         return value;
     }
@@ -299,15 +253,13 @@ namespace ce
         T value = first->data;
         if (first->next == nullptr)
         {
-            delete first;
             first = last = nullptr;
         }
         else
         {
-            Node<T> *temp = first;
+            std::shared_ptr<Node<T>> temp = first;
             first = temp->next;
             first->prev = nullptr;
-            delete temp;
         }
         return value;
     }
@@ -326,7 +278,7 @@ namespace ce
     {
 
         int n = size() - 1;
-        Node<T> *it = first;
+        std::shared_ptr<Node<T>> it = first;
         std::string stringForm = "[";
         for (int i = 0; i <= n; i++)
         {
@@ -343,8 +295,8 @@ namespace ce
     template <class T>
     bool operator==(list<T> &x, list<T> &y)
     {
-        Node<T> *itx = x.first;
-        Node<T> *ity = y.first;
+        std::shared_ptr<Node<T>> itx = x.first;
+        std::shared_ptr<Node<T>> ity = y.first;
         if (x.size() != y.size())
         {
             return false;
@@ -362,6 +314,5 @@ namespace ce
     }
 
 }; // namespace ce
-
 
 #endif //SPIRITTEMPLE_LIST_HPP
