@@ -1,7 +1,7 @@
 {
   "_comment": "este dato es el que se envia cuando el cliente inicia, el server construye el juego a partir de esto",
   "lenghty":"espacios verticales de grid",
-  "lenthtx":"espacios horizontales de grid",
+  "lenghtx":"espacios horizontales de grid",
   "player": {
     "ID": 123,
     "gridx": 123,
