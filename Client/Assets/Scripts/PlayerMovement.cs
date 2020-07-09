@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {	animator = GetComponent<Animator>();
+    {	
+		animator = GetComponent<Animator>();
     	myRigidbody = GetComponent<Rigidbody2D> ();
     }
 
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 //nuevo método
     private void FixedUpdate(){
         myRigidbody.velocity = new Vector2(change.x, myRigidbody.velocity.y);
+		
     }
    
 }

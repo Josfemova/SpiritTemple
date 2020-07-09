@@ -20,5 +20,3 @@ How to build?
         cd ..
         cmake --build build/ --config Release
         cd ..
-        ./Server/build/server
-        clear
