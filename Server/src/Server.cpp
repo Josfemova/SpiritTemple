@@ -46,22 +46,24 @@ void Server::startAndWait(int port)
     if (listen(server_fd, 3) < 0)
         ce::errorlog("listen");
     //wait for connection to arrive
+    ce::log("waiting for client connection");
     serverSocket = accept(server_fd, (struct sockaddr *)&address, (socklen_t *)&addrlen);
     if (serverSocket < 0)
-    {
         ce::errorlog("accept");
-    }
+    
 }
 void Server::listenClient()
 {
+    ce::log("connection started");
     while (on)
     {
         //first step
         std::string message(readMsg());
         if(message=="demo"){
             std::string message(readMsg());
+            ce::debuglog(message);
         }else{
-            
+            ce::debuglog("error: " + message);
         }
     }
     

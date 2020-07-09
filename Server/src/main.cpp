@@ -3,10 +3,19 @@
 #include "include/Level.hpp"
 #include "include/Enemy.hpp"
 #include <unistd.h>
+#include "include/Server.hpp"
+#include <memory>
+
+int serverStart(){
+    std::unique_ptr<Server> gameServer(new Server(3000));
+    return 0;
+}
+
+
 
 int main()
 {
-
+    serverStart();
     // Simple level matrix
     int matrix[9][10] =
             {
