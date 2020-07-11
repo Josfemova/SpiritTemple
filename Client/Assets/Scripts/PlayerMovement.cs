@@ -15,8 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {	
-		animator = GetComponent<Animator>();
+    {	animator = GetComponent<Animator>();
     	myRigidbody = GetComponent<Rigidbody2D> ();
     }
 
@@ -24,28 +23,31 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
     	change = Vector3.zero;
-    	//access to contros with buttons
+    	//access control, with buttons
     	change.x = Input.GetAxisRaw("Horizontal");
     	change.y = Input.GetAxisRaw("Vertical");
     	if(change != Vector3.zero){
     		MoveCharacter();
     		animator.SetFloat("MoveX", change.x);
     		animator.SetFloat("MoveY", change.y);
+            //Debug.Log("MoveX" + change.x + "MoveY" + change);
+
     	}
 
     	//Debug.Log(change); 
     }
     //move object to other places
+	// if tal cosa se presiona, se manda al server,y l
     void MoveCharacter(){
+		Debug.Log(transform.position);
     	myRigidbody.MovePosition(
-    		transform.position + change * speed * Time.deltaTime
+    		transform.position + change
     		);
 
     }
-//nuevo método
+
     private void FixedUpdate(){
         myRigidbody.velocity = new Vector2(change.x, myRigidbody.velocity.y);
-		
     }
    
 }
