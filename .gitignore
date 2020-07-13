@@ -6,7 +6,7 @@ Client/.vscode
 Client/Temp/
 Client/Logs/
 Client/Library/
-
+.idea
 .vscode/
 Documentation
 tasks

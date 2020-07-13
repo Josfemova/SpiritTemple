@@ -6,53 +6,52 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
 
-	//how fast
-	public float speed;
-	private Rigidbody2D myRigidbody;
-	private Vector3 change;
-	//reference to Animator
-	private Animator animator;
-	public Tilemap molo;
+    private Vector3 change;
+    private Animator animator;
+    public Tilemap groundMap;
+    public Tilemap obstacleMap;
+    public GameObject playerSprite;
+    private int orientationX = 0; //1 right, -1, left
+    private int orientationY = -1; //1 up, -1 down
 
 
     // Start is called before the first frame update
     void Start()
-    {	animator = GetComponent<Animator>();
-    	myRigidbody = GetComponent<Rigidbody2D> ();
+    {
+        animator = playerSprite.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-    	change = Vector3.zero;
-    	//access control, with buttons
-    	change.x = Input.GetAxisRaw("Horizontal");
-    	change.y = Input.GetAxisRaw("Vertical");
-    	if(change != Vector3.zero){
-    		MoveCharacter();
-    		animator.SetFloat("MoveX", change.x);
-    		animator.SetFloat("MoveY", change.y);
-            //Debug.Log("MoveX" + change.x + "MoveY" + change);
 
-    	}
+        change = Vector3.zero;
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
+        if (change != Vector3.zero)
+        {
+            MoveCharacter();
+        }
+        if (Input.GetKeyDown(KeyCode.Space)){
+            //attack routine
+        }
 
-    	//Debug.Log(change); 
+
     }
-        void MoveCharacter(){
-		//Vector3Int originP = new Vector3Int(0,0,0);
-		Vector3Int pos = Vector3Int.FloorToInt(transform.position);
-		Vector3Int posExample = new Vector3Int(2, 2, 0);
-		Debug.Log("---get empty vector (2,2):  "+ molo.GetSprite(posExample));
-        Debug.Log("---actual Origin: " + molo.origin + "----¿sprite on Tilemap? :  " + molo.HasTile(pos) + "---name: " + molo.GetSprite(pos));
+    void MoveCharacter()
+    {
+        //keeps track of orientation for attacks
+        orientationX = (int)change.x;
+        orientationY = (int)change.y;
+		animator.SetFloat("MoveX", change.x);
+        animator.SetFloat("MoveY", change.y);
+        Vector3 newPosition = transform.position + change;
+        if (!obstacleMap.HasTile(Vector3Int.FloorToInt(newPosition))){
+            transform.position = newPosition;
+            Vector3Int pos = Vector3Int.FloorToInt(transform.position);
+            Debug.Log("-Origin: " + groundMap.origin + "\n-HasTile :  " + groundMap.HasTile(pos));
+            Debug.Log("-name: " + groundMap.GetSprite(pos) + " \nlocation: " + pos);
+        }
 
-        //Debug.Log(transform.position);
-        myRigidbody.MovePosition(
-            transform.position + change
-            );
     }
-
-    private void FixedUpdate(){
-        myRigidbody.velocity = new Vector2(change.x, myRigidbody.velocity.y);
-    }
-   
 }

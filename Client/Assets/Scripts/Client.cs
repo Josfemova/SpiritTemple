@@ -8,10 +8,12 @@ using System.Text;
 
 public sealed class Client
 {
+    private readonly object updateLock = new object();
     private static readonly Client instance = new Client();
     private Socket serverConnection;
     static Client() { }
-    private Client() {
+    private Client()
+    {
         tcpConnectionStart();
     }
     ~Client()
@@ -26,8 +28,8 @@ public sealed class Client
     }
 
     private void tcpConnectionStart()
-    {  
-        
+    {
+
         //Retrieves local IP adress
         IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
         IPAddress ipAddress = ipHostInfo.AddressList[0];
@@ -38,16 +40,19 @@ public sealed class Client
         serverConnection = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         serverConnection.Connect(remoteEP);
 
-        
+
     }
 
-    public void reportEvent(string message)
+    public void resolveEvent(string message)
     {
-        byte[] bytes = new byte[1024];
-        byte[] msg = Encoding.ASCII.GetBytes(message);
-        int request = serverConnection.Send(msg);
-        int response = serverConnection.Receive(bytes);
-        Debug.Log("Echoed test = " + Encoding.ASCII.GetString(bytes, 0, response));
+        lock (updateLock)
+        {
+            byte[] bytes = new byte[1024];
+            byte[] msg = Encoding.ASCII.GetBytes(message);
+            int request = serverConnection.Send(msg);
+            int response = serverConnection.Receive(bytes);
+            Debug.Log("Server response = " + Encoding.ASCII.GetString(bytes, 0, response));
+        }
     }
 
 }
