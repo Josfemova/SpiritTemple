@@ -59,30 +59,44 @@ public class EventAdmin : MonoBehaviour
     }
     private void executeServerCmd(string cmds)
     {
-        
+
     }
     private void loadInServer()
     {
         int lenghtx = groundMap.size.x;
         int lenghty = groundMap.size.y;
         CEList<Enemy> enemylist = new CEList<Enemy>();
-        CEList<EspecialTile> objlist = new CEList<EspecialTile>();
         CEList<Item> itemlist = new CEList<Item>();
+        CEList<EspecialTile> objlist = new CEList<EspecialTile>();
 
-        foreach(GameObject x in enemies){
+        foreach (GameObject x in enemies)
+        {
             Vector3Int coord = groundMap.WorldToCell(x.transform.position);
             EnemyContainer enemyScript = x.GetComponent(typeof(EnemyContainer)) as EnemyContainer;
-            Enemy newEnemy  = new Enemy(x.GetInstanceID(), enemyScript.enemyType,coord.x,coord.y);
+            Enemy newEnemy = new Enemy(x.GetInstanceID(), enemyScript.enemyType, coord.x, coord.y);
             enemylist.push(newEnemy);
         }
-        foreach(GameObject x in items){
+        foreach (GameObject x in items)
+        {
             Vector3Int coord = groundMap.WorldToCell(x.transform.position);
-
+            ItemContainer itemScript = x.GetComponent(typeof(ItemContainer)) as ItemContainer;
+            Enemy newEnemy = new Enemy(x.GetInstanceID(), itemScript.itemType, coord.x, coord.y);
         }
+        for (int i = 0; i < lenghtx;i++)
+        {
+            for (int j = 0; j < lenghty; j++)
+            {
+                Vector3Int testLocation = new Vector3Int(i, j, 0);
+                if (obstacleMap.HasTile(testLocation))
+                    Debug.Log(testLocation);
+            }
+        }
+
     }
 }
 [Serializable]
-struct test{
+struct test
+{
     public Enemy[] items;
 }
 

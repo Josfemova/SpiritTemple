@@ -22,6 +22,20 @@ struct JsonReq
         this.valy = valy;
     }
 }
+
+[Serializable]
+struct PlayerInfo
+{
+    public int ID;
+    public int gridx;
+    public int gridy;
+    public PlayerInfo(int id,int gridx, int gridy)
+    {
+        this.ID = id;
+        this.gridx = gridx;
+        this.gridy = gridy;
+    }
+}
 [Serializable]
 struct Item
 {

@@ -684,9 +684,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 631753613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181e0121ca67099aead2c83d6f1afab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f7e90ba6d9c98bbd99c9f0dce82fb1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: jar
 --- !u!1 &800684153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,9 +5558,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108997509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181e0121ca67099aead2c83d6f1afab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f7e90ba6d9c98bbd99c9f0dce82fb1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: jar
 --- !u!1 &1157262132
 GameObject:
   m_ObjectHideFlags: 0
