@@ -11,6 +11,7 @@ public sealed class Client
     private readonly object updateLock = new object();
     private static readonly Client instance = new Client();
     private Socket serverConnection;
+    private int health = 3; //registers lives across levels
     static Client() { }
     private Client()
     {

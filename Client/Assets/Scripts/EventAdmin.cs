@@ -80,23 +80,29 @@ public class EventAdmin : MonoBehaviour
         {
             Vector3Int coord = groundMap.WorldToCell(x.transform.position);
             ItemContainer itemScript = x.GetComponent(typeof(ItemContainer)) as ItemContainer;
-            Enemy newEnemy = new Enemy(x.GetInstanceID(), itemScript.itemType, coord.x, coord.y);
+            Item newItem = new Item(x.GetInstanceID(), itemScript.itemType, coord.x, coord.y);
+            itemlist.push(newItem);
         }
-        for (int i = 0; i < lenghtx;i++)
+        for (int i = 0; i < lenghtx; i++)
         {
             for (int j = 0; j < lenghty; j++)
             {
                 Vector3Int testLocation = new Vector3Int(i, j, 0);
                 if (obstacleMap.HasTile(testLocation))
-                    Debug.Log(testLocation);
+                {
+                    objlist.push(new EspecialTile("obstacle", i, j));
+                }
+                else if (safeSpaceMap.HasTile(testLocation))
+                {
+                    objlist.push(new EspecialTile("safeSpace", i, j));
+                }
             }
         }
+        InitialData gameState = new InitialData(
+            lenghtx, lenghty, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
+        );
+        Debug.Log(JsonUtility.ToJson(gameState, true));
 
     }
-}
-[Serializable]
-struct test
-{
-    public Enemy[] items;
 }
 

@@ -1,10 +1,12 @@
 using System;
 
 [Serializable]
-struct ServerCmd{
+struct ServerCmd
+{
     public int ID;
     public string instruction;
-    public ServerCmd(int id, string cmd){
+    public ServerCmd(int id, string cmd)
+    {
         ID = id;
         instruction = cmd;
     }
@@ -29,7 +31,7 @@ struct PlayerInfo
     public int ID;
     public int gridx;
     public int gridy;
-    public PlayerInfo(int id,int gridx, int gridy)
+    public PlayerInfo(int id, int gridx, int gridy)
     {
         this.ID = id;
         this.gridx = gridx;
@@ -88,11 +90,14 @@ struct InitialData
     public int lenghtx;
     public int lenghty;
     public Enemy[] enemies;
+    public Item[] items;
     public EspecialTile[] otherObj;
-    public InitialData(int lenghtx, int lenghty, Enemy[] enemies, EspecialTile[] otherObj){
+    public InitialData(int lenghtx, int lenghty, Enemy[] enemies, Item[] items, EspecialTile[] otherObj)
+    {
         this.lenghtx = lenghtx;
         this.lenghty = lenghty;
-        this. enemies = enemies;
+        this.enemies = enemies;
+        this.items = items;
         this.otherObj = otherObj;
     }
 }
