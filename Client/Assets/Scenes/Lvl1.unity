@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: egris
+  animator: {fileID: 0}
 --- !u!1 &333135470
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: egris
+  animator: {fileID: 0}
 --- !u!1 &960447122
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,7 +5834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e474700cc4ca3ba9c35e8049f06309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: egris
+  enemyType: 
+  animator: {fileID: 0}
 --- !u!1 &1287006081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,6 +6365,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2136276721}
   - component: {fileID: 2136276722}
+  - component: {fileID: 2136276724}
+  - component: {fileID: 2136276723}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -6435,3 +6440,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2136276723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136276720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e474700cc4ca3ba9c35e8049f06309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 
+  animator: {fileID: 0}
+--- !u!95 &2136276724
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136276720}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fd603cccb5312231af401d02308f46a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
