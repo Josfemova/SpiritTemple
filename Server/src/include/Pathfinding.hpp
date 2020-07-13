@@ -23,7 +23,7 @@ private:
     double G{};
     double H{};
 public:
-    Node(){}
+    Node()= default;
     /**
      * @brief update all data of the node
      * @param FNew
@@ -48,36 +48,6 @@ public:
     void setPxy(int i, int j) { parent_i = i; parent_j = j;}
 
     /**
-     * @brief set the parent x coordinate of the node
-     * @param i
-     */
-    void setPx(int i) { parent_j = i; }
-
-    /**
-     * @brief set the parent y coordinate of the node
-     * @param j
-     */
-    void setPy(int j) { parent_j = j; }
-
-    /**
-     * @brief set the F parameter of the node
-     * @param FNew
-     */
-    void setF(double FNew){ F = FNew; }
-
-    /**
-     * @brief set the G parameter of the node
-     * @param GNew
-     */
-    void setG(double GNew){ G = GNew; }
-
-    /**
-     * @brief set the H parameter of the node
-     * @param HNew
-     */
-    void setH(double HNew){ H = HNew; }
-
-    /**
      *
      * @return parent_i
      */
@@ -100,12 +70,6 @@ public:
      * @return G
      */
     double getG() const{ return G; }
-
-    /**
-     *
-     * @return H
-     */
-    double getH() const{ return H; }
 };
 
 /**
@@ -151,7 +115,7 @@ public:
      * @return true
      * @return false
      */
-    bool isUnBlocked(int row, int col) const {
+    bool isUnBlocked(int row, int col) const{
         return matrix[row][col] == 1;
     }
 
@@ -165,6 +129,18 @@ public:
      */
     static bool isDestination(int row, int col, Pair dest){
         return (row == dest.first && col == dest.second);
+    }
+
+    /**
+     * @brief checks everything related to a node in the matrix
+     * @param row
+     * @param col
+     * @param dest
+     * @return true
+     * @return false
+     */
+    bool nodeValidations(int row, int col, Pair dest) const{
+        return isValid(row, col) && isUnBlocked(row, col) && !isDestination(row, col, dest);
     }
 
     /**
@@ -306,99 +282,6 @@ public:
     }
 
     /**
-     * @brief move the enemy to a position close to the player
-     * @param newMatrix
-     * @param enemyX
-     * @param enemyY
-     * @param playerX
-     * @param playerY
-     */
-    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const{
-        int tempPlayerX = playerX;
-        int tempPlayerY = playerY;
-        Pair dest = std::make_pair(playerX, playerY);
-
-        adjacentNodes nodes;
-        checkAdjacentNodes(nodes, tempPlayerX, tempPlayerY, dest);
-
-        adjacentNodes closestNodes;
-        for(int i=0; i<nodes.size(); i++){
-            Pair currentNode = nodes[i];
-            tempPlayerX = currentNode.first;
-            tempPlayerY = currentNode.second;
-            checkAdjacentNodes(closestNodes, tempPlayerX, tempPlayerY, dest);
-        }
-
-        // Initialize random generator
-        std::random_device dev;
-        std::mt19937 rng(dev());
-        std::uniform_int_distribution<std::mt19937::result_type> dist(0, closestNodes.size()-1);
-
-        // Teleport enemy
-        Pair teleport = closestNodes[dist(rng)];
-        enemyX = teleport.first;
-        enemyY = teleport.second;
-    }
-
-    /**
-     * @brief get all the adjacent nodes to a particular node
-     * @param pathfinding
-     * @param nodes
-     * @param px
-     * @param py
-     * @param dest
-     */
-    void checkAdjacentNodes(adjacentNodes &nodes, int px, int py, Pair dest) const{
-        // NORTH NODE
-        if(isValid(px-1, py) && isUnBlocked(px-1, py) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px-1, py);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // SOUTH NODE
-        if(isValid(px+1, py) && isUnBlocked(px+1, py) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px+1, py);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // EAST NODE
-        if(isValid(px, py+1) && isUnBlocked(px, py+1) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px, py+1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // WEST NODE
-        if(isValid(px, py-1) && isUnBlocked(px, py-1) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px, py-1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // NORTHEAST NODE
-        if(isValid(px-1, py+1) && isUnBlocked(px-1, py+1) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px-1, py+1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // NORTHWEST NODE
-        if(isValid(px-1, py-1) && isUnBlocked(px-1, py-1)  && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px-1, py-1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // SOUTHEAST NODE
-        if(isValid(px+1, py+1) && isUnBlocked(px+1, py+1) && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px+1, py+1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-
-        // SOUTHWEST NODE
-        if(isValid(px+1, py-1) && isUnBlocked(px+1, py-1)  && !isDestination(px-1, py, dest)){
-            Pair pair = std::make_pair(px+1, py-1);
-            if(!nodes.contains(pair) && !(pair==dest)) { nodes.push_back(pair); }
-        }
-    }
-
-    /**
      * @brief update enemy position
      * @param direction
      * @param px
@@ -436,20 +319,123 @@ public:
     }
 
     /**
-     * @brief print the path from the source to destination
+     * @brief move the enemy to a position close to the player
+     * @param newMatrix
+     * @param enemyX
+     * @param enemyY
+     * @param playerX
+     * @param playerY
+     */
+    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const{
+        int tempPlayerX = playerX;
+        int tempPlayerY = playerY;
+        Pair dest = std::make_pair(playerX, playerY);
+
+        // Calculate all valid adjacent nodes near the player
+        adjacentNodes nearNodes;
+        checkAdjacentNodes(nearNodes, tempPlayerX, tempPlayerY, dest);
+
+        adjacentNodes closestNodes;
+        for(int i=0; i<nearNodes.size(); i++){
+            Pair currentNode = nearNodes[i];
+            tempPlayerX = currentNode.first;
+            tempPlayerY = currentNode.second;
+            checkAdjacentNodes(closestNodes, tempPlayerX, tempPlayerY, dest);
+        }
+
+        // Initialize random generator
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist(0, closestNodes.size()-1);
+
+        // Teleport enemy
+        Pair teleport = closestNodes[dist(rng)];
+        enemyX = teleport.first;
+        enemyY = teleport.second;
+    }
+
+    /**
+     * @brief get all the adjacent nodes to a particular node
+     * @param pathfinding
+     * @param nodes
+     * @param px
+     * @param py
+     * @param dest
+     */
+    void checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest) const{
+        // NORTH NODE
+        if(nodeValidations(px-1, py, dest)){
+            Pair pair = std::make_pair(px-1, py);
+            addNode(cells, pair, dest);
+        }
+
+        // SOUTH NODE
+        if(nodeValidations(px+1, py, dest)){
+            Pair pair = std::make_pair(px+1, py);
+            addNode(cells, pair, dest);
+        }
+
+        // EAST NODE
+        if(nodeValidations(px, py+1, dest)){
+            Pair pair = std::make_pair(px, py+1);
+            addNode(cells, pair, dest);
+        }
+
+        // WEST NODE
+        if(nodeValidations(px, py-1, dest)){
+            Pair pair = std::make_pair(px, py-1);
+            addNode(cells, pair, dest);
+        }
+
+        // NORTHEAST NODE
+        if(nodeValidations(px-1, py+1, dest)){
+            Pair pair = std::make_pair(px-1, py+1);
+            addNode(cells, pair, dest);
+        }
+
+        // NORTHWEST NODE
+        if(nodeValidations(px-1, py-1, dest)){
+            Pair pair = std::make_pair(px-1, py-1);
+            addNode(cells, pair, dest);
+        }
+
+        // SOUTHEAST NODE
+        if(nodeValidations(px+1, py+1, dest)){
+            Pair pair = std::make_pair(px+1, py+1);
+            addNode(cells, pair, dest);
+        }
+
+        // SOUTHWEST NODE
+        if(nodeValidations(px+1, py-1, dest)){
+            Pair pair = std::make_pair(px+1, py-1);
+            addNode(cells, pair, dest);
+        }
+    }
+
+    /**
+     * @brief add a node to the list of nodes near the player
+     * @param cells
+     * @param pair
+     * @param dest
+     */
+    static void addNode(adjacentNodes &cells, Pair &pair, Pair &dest) {
+        if(!cells.contains(pair) && !(pair==dest)) { cells.push_back(pair); }
+    }
+
+    /**
+     * @brief print the astar from the source to destination
      * @param nodeDetails
      * @param dest
      */
-    static void printPath(Node nodeDetails[][COLS], Pair dest, listDirections &shortestPath){
-        std::cout<<"\nTHE DESTINATION CELL IS FOUND"<<std::endl;
-        std::cout<<"THE PATH IS ";
+    static void printAstar(Node nodeDetails[][COLS], Pair &dest, listDirections &shortestPath){
+        std::cout<<"\nThe destination cell is found"<<std::endl;
+        std::cout<<"The path is ";
         int row = dest.first;
         int col = dest.second;
 
         std::stack<Pair> Path;
 
-        while(!(nodeDetails[row][col].getPx() == row
-                && nodeDetails[row][col].getPy() == col))
+        while(!(nodeDetails[row][col].getPx() == row && nodeDetails[row][col].getPy() == col))
         {
             Path.push(std::make_pair(row, col));
             int temp_row = nodeDetails[row][col].getPx();
@@ -468,7 +454,7 @@ public:
         }
 
         std::cout<<"\n";
-        std::string result = "ROUTE TO PLAYER (A*): ";
+        std::string result = "Route to the player (A*): ";
         for(int i=0; i<shortestPath.size(); i++){
             if(shortestPath[i] == Direction::NORTH){
                 result += "NORTH -> ";
@@ -504,7 +490,7 @@ public:
      * @param breadcrumbs
      */
     static void printBreadcrumbs(listDirections &breadcrumbs){
-        std::string result = "BREADCRUMBS: ";
+        std::string result = "Breadcrumbs: ";
         if(!breadcrumbs.empty()){
             for(int i=0; i<breadcrumbs.size(); i++){
                 if(breadcrumbs[i] == Direction::NORTH){
@@ -542,19 +528,12 @@ public:
         }
     }
 
-    static void setLineSight(adjacentNodes &nodes, listDirections &line){
-        line.clear();
-        for(int i=0; i<nodes.size(); i++){
-            if(i+1 != nodes.size()){
-                Pair src = nodes[i];
-                Pair dest = nodes[i+1];
-                line.push_back(setMovement(src.first, src.second, dest.first, dest.second));
-            }
-        }
-    }
-
+    /**
+     * @brief print bresenham line
+     * @param line
+     */
     static void printLineSight(listDirections &line){
-        std::string result = "Line_Sight: ";
+        std::string result = "Line Sight: ";
         if(!line.empty()){
             for(int i=0; i<line.size(); i++){
                 if(line[i] == Direction::NORTH){
@@ -592,37 +571,53 @@ public:
     }
 
     /**
-     * @brief Find the shortest path between a given source node to a destination
+     * @brief add a node to the list of node for bresenham line
+     * @param nodes
+     * @param line
+     */
+    static void setLineSight(adjacentNodes &nodes, listDirections &line){
+        line.clear();
+        for(int i=0; i<nodes.size(); i++){
+            if(i+1 != nodes.size()){
+                Pair src = nodes[i];
+                Pair dest = nodes[i+1];
+                line.push_back(setMovement(src.first, src.second, dest.first, dest.second));
+            }
+        }
+    }
+
+    /**
+     * @brief find the shortest path between a given source node to a destination
      * node according to A* Search Algorithm
      * @param src
      * @param dest
      */
-     listDirections AstarSearch(Pair src, Pair dest){
+     listDirections AstarSearch(Pair src, Pair dest) const{
         // List of directions to follow between the enemy's position and the
         // player's position
         listDirections shortestPath;
 
         // If the source is out of range
         if(!isValid(src.first, src.second)){
-            std::cout<<"\nSOURCE IS INVALID"<<std::endl;
+            std::cout<<"\nSource is invalid"<<std::endl;
             return shortestPath;
         }
 
         //Id the destination is out of range
         if(!isValid(dest.first, dest.second)){
-            std::cout<<"\nDESTINATION IS INVALID"<<std::endl;
+            std::cout<<"\nDestination is invalid"<<std::endl;
             return shortestPath;
         }
 
         // Either the source or the destination is blocked
         if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
-            std::cout<<"\nSOURCE OR THE DESTINATION IS BLOCKED"<<std::endl;
+            std::cout<<"\nSource or the destination is blocked"<<std::endl;
             return shortestPath;
         }
 
         // If the destination node is the same as source node
         if(isDestination(src.first, src.second, dest)){
-            std::cout<<"WE ARE ALREADY AT THE DESTINATION"<<std::endl;
+            std::cout<<"\nWe already at the destination"<<std::endl;
             return shortestPath;
         }
 
@@ -681,7 +676,7 @@ public:
                 if (isDestination(i-1, j, dest)){
                     // Set the Parent of the destination node
                     nodeDetails[i-1][j].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -710,7 +705,7 @@ public:
             if (isValid(i+1, j)){
                 if (isDestination(i+1, j, dest)){
                     nodeDetails[i+1][j].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -732,7 +727,7 @@ public:
             if (isValid(i, j + 1)){
                 if (isDestination(i, j+1, dest)){
                     nodeDetails[i][j+1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -754,7 +749,7 @@ public:
             if (isValid(i, j - 1)){
                 if (isDestination(i, j-1, dest)){
                     nodeDetails[i][j-1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -777,7 +772,7 @@ public:
             if (isValid(i - 1, j + 1)){
                 if (isDestination(i-1, j+1, dest)){
                     nodeDetails[i-1][j+1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -798,7 +793,7 @@ public:
             if (isValid (i-1, j-1)){
                 if (isDestination (i-1, j-1, dest)){
                     nodeDetails[i-1][j-1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -820,7 +815,7 @@ public:
             if (isValid(i+1, j+1)){
                 if (isDestination(i+1, j+1, dest)){
                     nodeDetails[i+1][j+1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -843,7 +838,7 @@ public:
             if (isValid (i+1, j-1)){
                 if (isDestination(i+1, j-1, dest)){
                     nodeDetails[i+1][j-1].setPxy(i, j);
-                    printPath(nodeDetails, dest, shortestPath);
+                    printAstar(nodeDetails, dest, shortestPath);
                     foundDest = true;
                     break;
                 }
@@ -872,28 +867,34 @@ public:
         return shortestPath;
      }
 
+     /**
+      * @brief find the line between a given source node to a destination
+      * @param src
+      * @param dest
+      * @return
+      */
      listDirections LineSight(Pair src, Pair dest){
          // If the source is out of range
          if(!isValid(src.first, src.second)){
-             std::cout<<"\nSOURCE IS INVALID"<<std::endl;
+             std::cout<<"\nSource is invalid"<<std::endl;
              return line;
          }
 
          //Id the destination is out of range
          if(!isValid(dest.first, dest.second)){
-             std::cout<<"\nDESTINATION IS INVALID"<<std::endl;
+             std::cout<<"\nDestination is invalid"<<std::endl;
              return line;
          }
 
          // Either the source or the destination is blocked
          if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
-             std::cout<<"\nSOURCE OR THE DESTINATION IS BLOCKED"<<std::endl;
+             std::cout<<"\nSource or the destination is blocked"<<std::endl;
              return line;
          }
 
          // If the destination node is the same as source node
          if(isDestination(src.first, src.second, dest)){
-             std::cout<<"WE ARE ALREADY AT THE DESTINATION"<<std::endl;
+             std::cout<<"\nWe already at the destination"<<std::endl;
              return line;
          }
 
@@ -946,88 +947,86 @@ public:
          return line;
      }
 
-     Pair bestAdjacentNode(int &px, int &py, Pair &dest){
-         std::set<pPair> nodes;
+     /**
+      * @brief find the best adjacent node
+      * @param px
+      * @param py
+      * @param dest
+      * @return the best adjacent node
+      */
+     Pair bestAdjacentNode(int &px, int &py, Pair &dest) const{
+         std::set<pPair> adjNodes;
 
          // NORTH NODE
-         if(isValid(px-1, py)){
-             if(isUnBlocked(px-1, py)){
-                 int H = ManhattanDistance(px-1, py, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px-1, py)));
-             }
+         if(isValid(px-1, py) && isUnBlocked(px-1, py)){
+             int H = ManhattanDistance(px-1, py, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py)));
          }
 
          // SOUTH NODE
-         if(isValid(px+1, py)){
-             if(isUnBlocked(px+1, py)){
-                 int H = ManhattanDistance(px+1, py, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px+1, py)));
-             }
+         if(isValid(px+1, py) && isUnBlocked(px+1, py)){
+             int H = ManhattanDistance(px+1, py, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py)));
          }
 
          // EAST NODE
-         if(isValid(px, py+1)){
-             if(isUnBlocked(px, py+1)){
-                 int H = ManhattanDistance(px, py+1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px, py+1)));
-             }
+         if(isValid(px, py+1) && isUnBlocked(px, py+1)){
+             int H = ManhattanDistance(px, py+1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px, py + 1)));
          }
 
          // WEST NODE
-         if(isValid(px, py-1)){
-             if(isUnBlocked(px, py-1)){
-                 int H = ManhattanDistance(px, py-1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px, py-1)));
-             }
+         if(isValid(px, py-1) && isUnBlocked(px, py-1)){
+             int H = ManhattanDistance(px, py-1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px, py - 1)));
          }
 
          // NORTHEAST NODE
-         if(isValid(px-1, py+1)){
-             if(isUnBlocked(px-1, py+1)){
-                 int H = ManhattanDistance(px-1, py+1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px-1, py+1)));
-             }
+         if(isValid(px-1, py+1) && isUnBlocked(px-1, py+1)){
+             int H = ManhattanDistance(px-1, py+1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py + 1)));
          }
 
          // NORTHWEST NODE
-         if(isValid(px-1, py-1)){
-             if(isUnBlocked(px-1, py-1)){
-                 int H = ManhattanDistance(px-1, py-1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px-1, py-1)));
-             }
+         if(isValid(px-1, py-1) && isUnBlocked(px-1, py-1)){
+             int H = ManhattanDistance(px-1, py-1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py - 1)));
          }
 
          // SOUTHEAST NODE
-         if(isValid(px+1, py+1)){
-             if(isUnBlocked(px+1, py+1)){
-                 int H = ManhattanDistance(px+1, py+1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px+1, py+1)));
-             }
+         if(isValid(px+1, py+1) && isUnBlocked(px+1, py+1)){
+             int H = ManhattanDistance(px+1, py+1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py + 1)));
          }
 
          // SOUTHWEST NODE
-         if(isValid(px+1, py-1)){
-             if(isUnBlocked(px+1, py-1)){
-                 int H = ManhattanDistance(px+1, py-1, dest);
-                 nodes.insert(std::make_pair(H, std::make_pair(px+1, py-1)));
-             }
+         if(isValid(px+1, py-1) && isUnBlocked(px+1, py-1)){
+             int H = ManhattanDistance(px+1, py-1, dest);
+             adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py - 1)));
          }
 
          pPair temp = std::make_pair(INT_MAX, std::make_pair(0,0));
-         for(int i=0; i<nodes.size(); i++){
-             pPair p = *nodes.begin();
+         for(int i=0; i < adjNodes.size(); i++){
+             pPair p = *adjNodes.begin();
 
              if(p.first < temp.first){
                  temp = p;
              }
              // Remove this vertex from the open list
-             nodes.erase(nodes.begin());
+             adjNodes.erase(adjNodes.begin());
          }
          Pair src = temp.second;
          return src;
      }
 
-     int ManhattanDistance(int px, int py, Pair dest){
+     /**
+      *
+      * @param px
+      * @param py
+      * @param dest
+      * @return the manhattan heuristic cost
+      */
+     static int ManhattanDistance(int px, int py, Pair dest){
          return abs(px - dest.first) + abs(py - dest.second);
      }
 };
