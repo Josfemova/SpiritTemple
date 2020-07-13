@@ -1,6 +1,15 @@
 using System;
 
 [Serializable]
+struct ServerCmd{
+    public int ID;
+    public string instruction;
+    public ServerCmd(int id, string cmd){
+        ID = id;
+        instruction = cmd;
+    }
+}
+[Serializable]
 struct JsonReq
 {
     public string reqType;
@@ -11,6 +20,22 @@ struct JsonReq
         this.reqType = reqType;
         this.valx = valx;
         this.valy = valy;
+    }
+}
+[Serializable]
+struct Item
+{
+    public int ID;
+    public string type;
+    public int gridx;
+    public int gridy;
+    public Item(int id, string type, int gridx, int gridy)
+    {
+        this.ID = id;
+        this.type = type;
+        this.gridx = gridx;
+        this.gridy = gridy;
+
     }
 }
 [Serializable]

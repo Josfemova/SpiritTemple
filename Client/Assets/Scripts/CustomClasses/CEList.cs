@@ -3,20 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-class CEList<T>
+public class CEList<T>
 {
-    CENode<T> first = null;
-    CENode<T> last = null;
+    private class CENode
+    {
+        public CENode prev;
+        public CENode next;
+        public T data;
+        public CENode(T value)
+        {
+            data = value;
+            prev = null;
+            next = null;
+        }
+    }
+
+    CENode first = null;
+    CENode last = null;
+    public CEList()
+    {
+
+    }
     public void push(T data)
     {
         if (first == null)
         {
-            first = last = new CENode<T>(data);
+            first = last = new CENode(data);
         }
         else
         {
-            CENode<T> x = new CENode<T>(data);
+            CENode x = new CENode(data);
             x.prev = last;
             last.next = x;
             last = x;
@@ -40,18 +56,27 @@ class CEList<T>
     {
         first = last = null;
     }
-
-}
-[Serializable]
-public class CENode<T>
-{
-    public CENode<T> prev;
-    public CENode<T> next;
-    public T data;
-    public CENode(T value)
+    public int size()
     {
-        data = value;
-        prev = null;
-        next = null;
+        CENode x = first;
+        int cnt = 0;
+        while (x != null)
+        {
+            cnt++;
+            x = x.next;
+        }
+        return cnt;
+    }
+    public T[] asArray()
+    {
+        int lenght = size();
+        T[] array = new T[lenght];
+        for (int i = 0; i < lenght; i++)
+        {
+            T x = pop();
+            Debug.Log(x);
+            array[i] = x;
+        }
+        return array;
     }
 }

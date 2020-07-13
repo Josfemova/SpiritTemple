@@ -10,7 +10,8 @@ public class EventAdmin : MonoBehaviour
     private Tilemap groundMap;
     private Tilemap obstacleMap;
     private Tilemap safeSpaceMap;
-    private GameObject[] Enemies;
+    private GameObject[] enemies;
+    private GameObject[] items;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -18,7 +19,9 @@ public class EventAdmin : MonoBehaviour
         groundMap = GameObject.FindGameObjectWithTag("GroundTile").GetComponent(typeof(Tilemap)) as Tilemap;
         obstacleMap = GameObject.FindGameObjectWithTag("ObstacleTile").GetComponent(typeof(Tilemap)) as Tilemap;
         safeSpaceMap = GameObject.FindGameObjectWithTag("SafeSpaces").GetComponent(typeof(Tilemap)) as Tilemap;
-        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        items = GameObject.FindGameObjectsWithTag("Item");
+        loadInServer();
     }
     // Update is called once per frame
     void Update()
@@ -33,7 +36,8 @@ public class EventAdmin : MonoBehaviour
         else if (change != Vector3.zero)
         {
             Vector3Int newPosition = Vector3Int.FloorToInt(player.transform.position + change);
-            if (!obstacleMap.HasTile(newPosition) && !(enemyCollision(newPosition)))
+            if (!obstacleMap.HasTile(newPosition) && !(overlapsOne(newPosition, enemies))
+            && !(overlapsOne(newPosition, items)))
             {
                 player.transform.position = newPosition;
             }
@@ -42,29 +46,43 @@ public class EventAdmin : MonoBehaviour
             Debug.Log(JsonUtility.ToJson(req));
         }
     }
-    private bool enemyCollision(Vector3Int comparePosition)
+    private bool overlapsOne(Vector3Int comparePosition, GameObject[] collection)
     {
-        Vector3Int enemyPos;
-        foreach (GameObject x in Enemies)
+        Vector3Int objPos;
+        foreach (GameObject x in collection)
         {
-            enemyPos = Vector3Int.FloorToInt(x.transform.position);
-            if (enemyPos == comparePosition)
-            {
+            objPos = Vector3Int.FloorToInt(x.transform.position);
+            if (objPos == comparePosition)
                 return true;
-            }
         }
         return false;
     }
-    private void executeServerCmd(string cmds){
+    private void executeServerCmd(string cmds)
+    {
+        
+    }
+    private void loadInServer()
+    {
+        int lenghtx = groundMap.size.x;
+        int lenghty = groundMap.size.y;
+        CEList<Enemy> enemylist = new CEList<Enemy>();
+        CEList<EspecialTile> objlist = new CEList<EspecialTile>();
+        CEList<Item> itemlist = new CEList<Item>();
 
+        foreach(GameObject x in enemies){
+            Vector3Int coord = groundMap.WorldToCell(x.transform.position);
+            EnemyContainer enemyScript = x.GetComponent(typeof(EnemyContainer)) as EnemyContainer;
+            Enemy newEnemy  = new Enemy(x.GetInstanceID(), enemyScript.enemyType,coord.x,coord.y);
+            enemylist.push(newEnemy);
+        }
+        foreach(GameObject x in items){
+            Vector3Int coord = groundMap.WorldToCell(x.transform.position);
+
+        }
     }
 }
 [Serializable]
-struct ServerCmd{
-    public int ID;
-    public string instruction;
-    public ServerCmd(int id, string cmd){
-        ID = id;
-        instruction = cmd;
-    }
+struct test{
+    public Enemy[] items;
 }
+
