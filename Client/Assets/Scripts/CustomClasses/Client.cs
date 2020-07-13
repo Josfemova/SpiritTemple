@@ -43,16 +43,25 @@ public sealed class Client
 
     }
 
-    public void resolveEvent(string message)
+    public void updateServer(string type,string message)
     {
         lock (updateLock)
         {
-            byte[] bytes = new byte[1024];
+            if(type == "loadLevel"){
+                serverConnection.Send((byte[])Encoding.ASCII.GetBytes("loadLevel"));
+            }else if(type == "event"){
+                serverConnection.Send((byte[])Encoding.ASCII.GetBytes("event"));
+            }
+            byte[] bytes = new byte[2048];
             byte[] msg = Encoding.ASCII.GetBytes(message);
             int request = serverConnection.Send(msg);
             int response = serverConnection.Receive(bytes);
-            Debug.Log("Server response = " + Encoding.ASCII.GetString(bytes, 0, response));
+            string srvcmd = Encoding.ASCII.GetString(bytes, 0, response);
+            serverInstructions(srvcmd);
         }
+    }
+    private void serverInstructions(string cmd){
+
     }
 
 }

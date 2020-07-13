@@ -17,7 +17,10 @@ std::string Server::readMsg(){
     read(serverSocket, buffer, 4096);
     std::string msg(buffer);
     return msg;
-
+}
+void Server::sendMsg(std::string m){
+    const char* msg = m.c_str();
+    send(serverSocket , msg , strlen(msg) , 0 ); 
 }
 void Server::startAndWait(int port)
 {
@@ -50,6 +53,7 @@ void Server::startAndWait(int port)
     serverSocket = accept(server_fd, (struct sockaddr *)&address, (socklen_t *)&addrlen);
     if (serverSocket < 0)
         ce::errorlog("accept");
+    game = new Game();
     
 }
 void Server::listenClient()
@@ -57,13 +61,16 @@ void Server::listenClient()
     ce::log("connection started");
     while (on)
     {
-        //first step
         std::string message(readMsg());
-        if(message=="demo"){
-            std::string message(readMsg());
-            ce::debuglog(message);
-        }else{
-            ce::debuglog("error: " + message);
+        if(message=="loadLevel"){
+
+            levelJson = std::string message(readMsg());
+            sendMsg("loading level");
+
+        }else if(message = "event"){
+
+            game->getResponse(message);
+            sendMsg("uwu no demo");
         }
     }
     
