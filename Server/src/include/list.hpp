@@ -38,6 +38,7 @@ namespace ce
             ss << data;
             return ss.str();
         }
+
         template <class E>
         /**
          * @brief 
@@ -215,7 +216,8 @@ namespace ce
     }
     //modifiers
     template <class T>
-    int list<T>::clear(){
+    int list<T>::clear()
+    {
         first = nullptr;
         last = nullptr;
         return 0;
@@ -241,7 +243,7 @@ namespace ce
         }
         else
         { //index in bounds
-            std::shared_ptr<Node<T>> x = new Node<T>(data);
+            std::shared_ptr<Node<T>> x(new Node<T>(data));
             std::shared_ptr<Node<T>> front = first;
 
             int i = 0;

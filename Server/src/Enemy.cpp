@@ -1,5 +1,6 @@
 #include "include/Enemy.hpp"
 #include "include/utilities.hpp"
+#include "include/nlohmannJson.hpp"
 
 Enemy::Enemy(int id, int px, int py, std::string type) : GameObject{GOType::enemy}
 {
@@ -228,6 +229,7 @@ std::string Enemy::update()
     }
     return "Hi";
     */
+   return "";
 }
 
 //************TEMPORAL METHODS*************/

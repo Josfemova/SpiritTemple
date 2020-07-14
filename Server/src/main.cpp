@@ -17,7 +17,7 @@ int main()
 {
     //serverStart();
     Game a;
-    a.generateMatrix();
+    a.startLevel();
 
 
     // Simple level matrix

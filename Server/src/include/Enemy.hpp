@@ -9,9 +9,8 @@
 #include "EnemyType.hpp"
 #include "Direction.hpp"
 #include "Level.hpp"
-#include "list.hpp"
 
-class Enemy : GameObject{
+class Enemy : public GameObject{
 private:
     int enemyID;
 

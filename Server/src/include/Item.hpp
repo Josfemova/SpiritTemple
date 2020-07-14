@@ -1,15 +1,19 @@
 #ifndef GAMESERVER_ITEM_HPP
 #define GAMESERVER_ITEM_HPP
-#include "include/GameObject.hpp"
-#include "include/GOType.hpp"
 
-class Item : GameObject
+#include "GameObject.hpp"
+#include "ItemType.hpp"
+#include "GOType.hpp"
+
+class Item : public GameObject
 {
 private:
     int itemID;
+    ItemType type;
 
 public:
-    Item() : GameObject{GOType::item}{}
+    static ItemType getItemType(std::string value);
+    Item(ItemType type) : GameObject{GOType::item}{}
 };
 
 #endif

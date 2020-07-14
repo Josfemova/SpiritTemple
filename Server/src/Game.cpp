@@ -1,15 +1,16 @@
 #include "include/Game.hpp"
 #include "include/utilities.hpp"
 #include "include/GameObject.hpp"
+#include <memory>
 
 using json = nlohmann::json;
-void Game::generateMatrix()
+void Game::startLevel()
 {
     std::ifstream ifs("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
     json initialData;
     ifs >> initialData;
-    int lenghtx = initialData["lenghtx"];
-    int lenghty = initialData["lenghty"];
+    int lengthx = initialData["lengthx"];
+    int lengthy = initialData["lengthy"];
     //_________________/ PLAYER DATA /_________________
     json player = initialData["player"];
     //_________________/ ENEMIES DATA /_________________
@@ -26,7 +27,9 @@ void Game::generateMatrix()
     for(auto x : otherObj){
         ce::debuglog(x);
     }
-
+    std::shared_ptr<Level> newLevel(new Level(player,otherObj, items,enemies));
+    currentLevel = newLevel;
+    //currentLevel->getMatrix();
 }
 
 std::string Game::getResponse(std::string action)
@@ -36,5 +39,6 @@ std::string Game::getResponse(std::string action)
     ifs >> clientAction;
     std::string reqType = clientAction["reqType"];
     ce::debuglog(reqType);
+    return reqType;
 }
 

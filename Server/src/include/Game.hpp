@@ -4,12 +4,16 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "./nlohmannJson.hpp"
+#include "nlohmannJson.hpp"
+#include "Level.hpp"
+#include <memory>
 
 class Game
 {
+    std::shared_ptr<Level> currentLevel=nullptr;
+    int playerLives;
 public:
-    void generateMatrix();
+    void startLevel();
     std::string getResponse(std::string);
 };
 

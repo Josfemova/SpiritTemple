@@ -1,7 +1,6 @@
 #ifndef SPIRITTEMPLE_UTILITIES_HPP
 #define SPIRITTEMPLE_UTILITIES_HPP
 #include <iostream>
-
 namespace ce{
     template <class T>
     void log(T message){
