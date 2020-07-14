@@ -5,15 +5,22 @@ using UnityEngine;
 public class ItemContainer : MonoBehaviour
 {
     public string itemType;
-    // Start is called before the first frame update
+    public Animator animator;
+    public GameObject chestSprite;
     void Start()
     {
-        
+        animator = chestSprite.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Update()
+    {   //testing open chest with Keyboard
+        openChest();
+    }
+
+    void openChest(){
+        //open the chest
+        //parameters, setting variable as boolean on animator (name,value)  
+        animator.SetBool("Open", true);
+        //Debug.Log("Entró");
     }
 }

@@ -98,8 +98,10 @@ public class EventAdmin : MonoBehaviour
                 }
             }
         }
+        Vector3Int coordp = groundMap.WorldToCell(player.transform.position);
+        PlayerInfo playerinfo = new PlayerInfo(player.GetInstanceID(), coordp.x, coordp.y);
         InitialData gameState = new InitialData(
-            lenghtx, lenghty, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
+            lenghtx, lenghty,playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
         );
         Debug.Log(JsonUtility.ToJson(gameState, true));
 

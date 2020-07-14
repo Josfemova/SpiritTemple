@@ -20,10 +20,10 @@ public class EnemyContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Move(Vector3.zero);
+        move(Vector3.zero);
     }
 
-    void Move (Vector3 change){
+    void move(Vector3 change){
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 

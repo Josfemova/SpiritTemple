@@ -28,9 +28,16 @@ public class Player : MonoBehaviour
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
         }
+
+        if(Input.GetButtonDown("attack")){
+            attackAnimation();
+        }
     }
     void attackAnimation()
     {
+        animator.SetBool("attacking",true);
+        Debug.Log("entro");
+        //animator.SetBool("attack", false);
 
     }
 }
