@@ -8,23 +8,22 @@ public class EnemyContainer : MonoBehaviour
     public Animator animator;
     private int orientationX = 0; //1 right, -1, left
     private int orientationY = -1; //1 up, -1 down
+
+    public GameObject enemySprite;
    
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = enemySprite.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {   
-        Vector3 change = Vector3.zero;
-        /*
-        myRigidbody.MovePosition(
-            transform.position
-        );
-        */
+        Move(Vector3.zero);
+    }
 
+    void Move (Vector3 change){
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 
@@ -34,10 +33,7 @@ public class EnemyContainer : MonoBehaviour
             orientationY = (int)change.y;
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
-        }
+        }       
 
-        
-       //anim.SetInt("MoveX", true);
-        
     }
 }

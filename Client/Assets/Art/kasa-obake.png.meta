@@ -1,0 +1,1476 @@
+fileFormatVersion: 2
+guid: 37ede460277f283d4a9fdcf828eeed98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5393230010030382137
+    second: kasa-obake_0
+  - first:
+      213: -8918755586411017585
+    second: kasa-obake_1
+  - first:
+      213: 1440044411638420324
+    second: kasa-obake_2
+  - first:
+      213: 7801371780741975998
+    second: kasa-obake_3
+  - first:
+      213: -1012958569913619472
+    second: kasa-obake_4
+  - first:
+      213: -9102806775198015942
+    second: kasa-obake_5
+  - first:
+      213: 389911462589995961
+    second: kasa-obake_6
+  - first:
+      213: -4477279380852096254
+    second: kasa-obake_7
+  - first:
+      213: -4279591973575508507
+    second: kasa-obake_8
+  - first:
+      213: -2923940487332981043
+    second: kasa-obake_9
+  - first:
+      213: -1592165487696594740
+    second: kasa-obake_10
+  - first:
+      213: -3633504687076040796
+    second: kasa-obake_11
+  - first:
+      213: -768495373629654741
+    second: kasa-obake_12
+  - first:
+      213: 4620276280179008983
+    second: kasa-obake_13
+  - first:
+      213: -7549451751606120191
+    second: kasa-obake_14
+  - first:
+      213: -6223113022583636444
+    second: kasa-obake_15
+  - first:
+      213: -1756273416642387306
+    second: kasa-obake_16
+  - first:
+      213: -8657684251475674095
+    second: kasa-obake_17
+  - first:
+      213: 1260939116464936070
+    second: kasa-obake_18
+  - first:
+      213: -4057648407838987640
+    second: kasa-obake_19
+  - first:
+      213: 8308553407812314408
+    second: kasa-obake_20
+  - first:
+      213: 7406891347797389033
+    second: kasa-obake_21
+  - first:
+      213: -9002110188101184530
+    second: kasa-obake_22
+  - first:
+      213: 6388934977744234951
+    second: kasa-obake_23
+  - first:
+      213: -3462975012576986563
+    second: kasa-obake_24
+  - first:
+      213: -6865386723680435785
+    second: kasa-obake_25
+  - first:
+      213: 1668188776911177378
+    second: kasa-obake_26
+  - first:
+      213: -6552986634740551547
+    second: kasa-obake_27
+  - first:
+      213: -1715938599993515709
+    second: kasa-obake_28
+  - first:
+      213: -3096452919239581035
+    second: kasa-obake_29
+  - first:
+      213: -6331865716122669605
+    second: kasa-obake_30
+  - first:
+      213: -339313609569555219
+    second: kasa-obake_31
+  - first:
+      213: -6639740705317305585
+    second: kasa-obake_32
+  - first:
+      213: 1093834999998908895
+    second: kasa-obake_33
+  - first:
+      213: -6297647126041337309
+    second: kasa-obake_34
+  - first:
+      213: 5111013138072040685
+    second: kasa-obake_35
+  - first:
+      213: 3004244500599529089
+    second: kasa-obake_36
+  - first:
+      213: 4536079360487759301
+    second: kasa-obake_37
+  - first:
+      213: -7871750961374336327
+    second: kasa-obake_38
+  - first:
+      213: -1565405602971181948
+    second: kasa-obake_39
+  - first:
+      213: -3281878229687482213
+    second: kasa-obake_40
+  - first:
+      213: -4030332359939140349
+    second: kasa-obake_41
+  - first:
+      213: -3242096110043324872
+    second: kasa-obake_42
+  - first:
+      213: -858799508756725545
+    second: kasa-obake_43
+  - first:
+      213: 5604368420262140371
+    second: kasa-obake_44
+  - first:
+      213: -6259956203420261114
+    second: kasa-obake_45
+  - first:
+      213: -6988608058696000033
+    second: kasa-obake_46
+  - first:
+      213: -4209711103359798664
+    second: kasa-obake_47
+  - first:
+      213: -5937303981101091595
+    second: kasa-obake_48
+  - first:
+      213: -897980446053538501
+    second: kasa-obake_49
+  - first:
+      213: -4289180636659303545
+    second: kasa-obake_50
+  - first:
+      213: 3175648572863408071
+    second: kasa-obake_51
+  - first:
+      213: 7526761182411096386
+    second: kasa-obake_52
+  - first:
+      213: -6347634428020475494
+    second: kasa-obake_53
+  - first:
+      213: 1592121676990842396
+    second: kasa-obake_54
+  - first:
+      213: 1794323036227968510
+    second: kasa-obake_55
+  - first:
+      213: -2068454440032077994
+    second: kasa-obake_56
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kasa-obake_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c56db9e1a98da40800000000000000
+      internalID: 5393230010030382137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 336
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ac0793c073a3480800000000000000
+      internalID: -8918755586411017585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4639e7043c01cf310800000000000000
+      internalID: 1440044411638420324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfc1e71d4a044c60800000000000000
+      internalID: 7801371780741975998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_4
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 336
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb6c1c2c8f31f1f0800000000000000
+      internalID: -1012958569913619472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_5
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e9d4977755ca180800000000000000
+      internalID: -9102806775198015942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_6
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb978dc86e396500800000000000000
+      internalID: 389911462589995961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_7
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 336
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2034120ff128dd1c0800000000000000
+      internalID: -4477279380852096254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_8
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed3b6736c5db94c0800000000000000
+      internalID: -4279591973575508507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_9
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc692245e931c67d0800000000000000
+      internalID: -2923940487332981043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_10
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 336
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc83532bced77e9e0800000000000000
+      internalID: -1592165487696594740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_11
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 338
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af9d1dfcb2339dc0800000000000000
+      internalID: -3633504687076040796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_12
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29f5438781c555f0800000000000000
+      internalID: -768495373629654741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_13
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 288
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5ab3c2cc48e1040800000000000000
+      internalID: 4620276280179008983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_14
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101119071a5fa3790800000000000000
+      internalID: -7549451751606120191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_15
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e7bcb6daf03a9a0800000000000000
+      internalID: -6223113022583636444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 288
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692a198f1a670a7e0800000000000000
+      internalID: -1756273416642387306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_17
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c7c4d2b0ab9d780800000000000000
+      internalID: -8657684251475674095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_18
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68499481271cf7110800000000000000
+      internalID: 1260939116464936070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_19
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 288
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ae35b754650b7c0800000000000000
+      internalID: -4057648407838987640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_20
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825a306cd49ed4370800000000000000
+      internalID: 8308553407812314408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_21
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eea06bff609ac660800000000000000
+      internalID: 7406891347797389033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_22
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 288
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3dd49aa74121380800000000000000
+      internalID: -9002110188101184530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_23
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 290
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c96381238e0aa850800000000000000
+      internalID: 6388934977744234951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_24
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a7b4dd29a01ffc0800000000000000
+      internalID: -3462975012576986563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b14851362f39b0a0800000000000000
+      internalID: -6865386723680435785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_26
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6851aaad8962710800000000000000
+      internalID: 1668188776911177378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_27
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580386aff5d1f05a0800000000000000
+      internalID: -6552986634740551547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_28
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 240
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341610b4fe2cf28e0800000000000000
+      internalID: -1715938599993515709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_29
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592e005c9703705d0800000000000000
+      internalID: -3096452919239581035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_30
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdda809cda1b028a0800000000000000
+      internalID: -6331865716122669605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_31
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 240
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca622e1148a4bf0800000000000000
+      internalID: -339313609569555219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_32
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f034cd2e107ead3a0800000000000000
+      internalID: -6639740705317305585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_33
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd903d913251e2f00800000000000000
+      internalID: 1093834999998908895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_34
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 240
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322eb832e434a98a0800000000000000
+      internalID: -6297647126041337309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_35
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 242
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de47329ae57fde640800000000000000
+      internalID: 5111013138072040685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_36
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ed7a4c47831b920800000000000000
+      internalID: 3004244500599529089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_37
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 192
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd9ada252463fe30800000000000000
+      internalID: 4536079360487759301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_38
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba61faf43ce1c290800000000000000
+      internalID: -7871750961374336327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_39
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c1f71e5ef864ae0800000000000000
+      internalID: -1565405602971181948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_40
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 192
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98c363632d6472d0800000000000000
+      internalID: -3281878229687482213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_41
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305d01f72126118c0800000000000000
+      internalID: -4030332359939140349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_42
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e1139e3c2c103d0800000000000000
+      internalID: -3242096110043324872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_43
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 192
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0864b956ee414f0800000000000000
+      internalID: -858799508756725545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_44
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d954209267b6cd40800000000000000
+      internalID: 5604368420262140371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_45
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605e1a9effa2029a0800000000000000
+      internalID: -6259956203420261114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_46
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 192
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd1ef27ff9730f90800000000000000
+      internalID: -6988608058696000033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_47
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 194
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872b8353e0a1495c0800000000000000
+      internalID: -4209711103359798664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_48
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 144
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4f4f28c757a9da0800000000000000
+      internalID: -5937303981101091595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_49
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 144
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b356bb1ca8bb983f0800000000000000
+      internalID: -897980446053538501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_50
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 144
+        width: 17
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b307e9fe4c974c0800000000000000
+      internalID: -4289180636659303545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_51
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 96
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7effc3d8b221c20800000000000000
+      internalID: 3175648572863408071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_52
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 96
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24100daba6d647860800000000000000
+      internalID: 7526761182411096386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_53
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 96
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99bcc17e1ca8e7a0800000000000000
+      internalID: -6347634428020475494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_54
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 48
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c160d34da3a581610800000000000000
+      internalID: 1592121676990842396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_55
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 48
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd1ba27b47b6e810800000000000000
+      internalID: 1794323036227968510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kasa-obake_56
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 48
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657fecb55af5b43e0800000000000000
+      internalID: -2068454440032077994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
