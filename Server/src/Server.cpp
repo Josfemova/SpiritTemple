@@ -65,6 +65,7 @@ void Server::listenClient()
         if(message=="loadLevel"){
 
             std::string levelJson(readMsg());
+            
             sendMsg("loading level");
 
         }else if(message == "event"){

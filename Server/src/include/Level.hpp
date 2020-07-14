@@ -1,28 +1,23 @@
 #ifndef GAMESERVER_LEVEL_HPP
 #define GAMESERVER_LEVEL_HPP
-#define ROW 9
-#define COL 10
 
-#include "Item.hpp"
-#include "Enemy.hpp"
 #include "list.hpp"
 #include "nlohmannJson.hpp"
+#include "Item.hpp"
+#include "Enemy.hpp"
 
 typedef ce::list<std::string> lvlInstructions;
 typedef std::pair<int, int> Pair;
-typedef int(&matrix)[ROW][COL];
-
 using json = nlohmann::json;
 
 
-//remove after corrections
 class Enemy;
 class Item;
 class Level {
 private:
     int lengthx;
     int lengthy;
-    json playerInfo;
+    json playerInfo; //ID, gridx, gridy
     json obstacles;
     json instructions;
     ce::list<Item> items;
@@ -36,12 +31,21 @@ public:
 
     // Returns a level matrix with "0" representing obstacles and safe areas
     // (where the enemy can't walk) and "1" which is where the enemy can walk
-    matrix getSimpleMatrix();
-    //temporal. replicates upper functionality but based on json info
-    void getMatrix();
+    void getSimpleMatrix();
     // Manage the events, for each event add an instruction
-    void manageEvents(json events);
+    void manageEvent(json event){
+        //muevo jugador
+        if(event["reqType"] == "movePlayer"){
+            //muevo al jugador   
+        }
 
+        //le digo a cada enemigo que haga refresh
+                //for violento
+
+
+        //enemigo.update()
+    }
+    void triggerGroupCall(int id);
     // Return all instructions added by manageEvent
     json getInstructions();
 };

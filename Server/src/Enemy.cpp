@@ -1,4 +1,5 @@
 #include "include/Enemy.hpp"
+#include "include/Direction.hpp"
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
@@ -145,138 +146,86 @@ std::string Enemy::getTypeS()
         return "";
     }
 }
+void Enemy::refreshState(){
+    bool playerIsSafe = false;
+    //check rango vision
+    bool inRange = false;
 
+    if(playerIsSafe){
+        chasePath.clear();
+
+    }
+    else if(inRange){
+        parent->triggerGroupCall(enemyID);
+        //consigue su lista de migas
+    }
+    //movedSafeSpace
+
+
+    //calcula los nuevos paths
+}
+void Enemy::groupCall(){
+    //reemplaza lista actual por lista de Astar
+}
 std::string Enemy::update()
 {
-    /*
-    NECESITA CORRECION. UNA CLASE EXTERNA NO TIENE POR QU[E ESTAR MOVIENDO AL ENEMIGO
-
-
-    if (inRange && (enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed))
-    {
-        listDirections path = MoveGenerator::getRoute(matrix, enemyPos(), playerPos(), RouteType::Astar);
-        if (!path.empty())
-        {
-
-            // To print it on the server console
-            std::string movement = "MOVE TO " + Pathfinding::getNextMovement(path[0]);
-            ce::debuglog(movement);
-            Pathfinding::setNewEnemyPos(path[0], getX(), getY());
-            breadcrumbs.push_back(path[0]);
-            ce::debuglog(toString());
-            Pathfinding::printBreadcrumbs(breadcrumbs);
-
-            // To list instructions
-            return Pathfinding::getNextMovement(path[0]);
-        }
-    }
-
-    if (inRange && enemyType == EnemyType::SpBlue)
-    {
-        // Teleportation
-        // To print it on the server console
-        std::string result = "ENEMY" + std::to_string(enemyID) + " TELEPORTED FROM (";
-        result += std::to_string(getX()) + "," + std::to_string(getY()) + ") TO (";
-        try
-        {
-            //Pathfinding::teleportEnemy(matrix, getX(), getY(), playerX, playerY);
-            Pathfinding pathfinding(matrix);
-            pathfinding.teleportEnemy(getX(), getY(), playerX, playerY);
-        }
-        catch (error_t)
-        {
-        }
-        result += std::to_string(getX()) + "," + std::to_string(getY()) + ")";
-        std::cout << result << std::endl;
-
-        // To list instructions
-        return std::to_string(getX()) + "," + std::to_string(getY());
-    }
-
-    if (inRange && enemyType == EnemyType::Chuchu)
-    {
-        listDirections path = MoveGenerator::getRoute(matrix, enemyPos(), playerPos(), RouteType::LineSight);
-        if (!path.empty())
-        {
-            // To print it on the server console
-            std::cout << "\nEnemy / ID:" << std::to_string(enemyID) << " / Type: " << getTypeS() << std::endl;
-            Pathfinding::printLineSight(path);
-            ce::debuglog("Instruction: Move to ", Pathfinding::getNextMovement(path[0]));
-            Pathfinding::setNewEnemyPos(path[0], getX(), getY());
-            ce::debuglog(toString());
-
-            // To list instructions
-            return Pathfinding::getNextMovement(path[0]);
-        }
-    }
-
-    if (!inRange && !breadcrumbs.empty())
-    {
-        int n = breadcrumbs.size() - 1;
-        if (n >= 0)
-        {
-            // To print it on the server console
-            std::string movement = "MOVE TO " + Pathfinding::getPreviousMovement(breadcrumbs[n]);
-            std::string result = Pathfinding::getPreviousMovement(breadcrumbs[n]);
-            ce::debuglog(movement);
-            Pathfinding::setPreviousEnemyPos(breadcrumbs[n], getX(), getY());
-            breadcrumbs.pop_back();
-            ce::debuglog(toString());
-
-            // To list instructions
-            return result;
-        }
-    }
-    return "Hi";
-    */
-   return "";
-}
-
-//************TEMPORAL METHODS*************/
-
-void Enemy::setMatrix(int (*newMatrix)[10])
-{
-    for (int i = 0; i < ROW; i++)
-    {
-        for (int j = 0; j < COL; j++)
-        {
-            matrix[i][j] = newMatrix[i][j];
-        }
+    if(isChasing){
+        return getNextMovement(chasePath.pop_front());
+    }else if(isBacktracking){
+        return getNextMovement(breadcrumbs.pop_back());
+    }else{
+        //OBVIAMENTE SE CAMBIA
+        //movimiento normal 
+        return getNextMovement(normalPath[0]);
     }
 }
 
-void Enemy::setPlayer(int px, int py)
+std::string Enemy::getNextMovement(Direction direction)
 {
-    playerX = px;
-    playerY = py;
+    switch (direction)
+    {
+        case Direction::NORTH:
+            return "NORTH";
+        case Direction::SOUTH:
+            return "SOUTH";
+        case Direction::EAST:
+            return "EAST";
+        case Direction::WEST:
+            return "WEST";
+        case Direction::NORTHEAST:
+            return "NORTHEAST";
+        case Direction::NORTHWEST:
+            return "NORTHWEST";
+        case Direction::SOUTHEAST:
+            return "SOUTHEAST";
+        case Direction::SOUTHWEST:
+            return "SOUTHWEST";
+        default:
+            return "";
+    }
 }
 
-void Enemy::setPlayerX(int px)
+std::string Enemy::getPreviousMovement(Direction direction)
 {
-    playerX = px;
-}
-
-void Enemy::setPlayerY(int py)
-{
-    playerY = py;
-}
-
-Pair Enemy::playerPos() const
-{
-    return std::make_pair(playerX, playerY);
-}
-
-int Enemy::getPlayerX() const
-{
-    return playerX;
-}
-
-int Enemy::getPlayerY() const
-{
-    return playerY;
-}
-
-listDirections Enemy::getBreadCrumbs() const
-{
-    return breadcrumbs;
+    switch (direction)
+    {
+        case Direction::NORTH:
+            return "SOUTH";
+        case Direction::SOUTH:
+            return "NORTH";
+        case Direction::EAST:
+            return "WEST";
+        case Direction::WEST:
+            return "EAST";
+        case Direction::NORTHEAST:
+            return "SOUTHWEST";
+        case Direction::NORTHWEST:
+            return "SOUTHEAST";
+        case Direction::SOUTHEAST:
+            return "NORTHWEST";
+        case Direction::SOUTHWEST:
+            return "NORTHEAST";
+        default:
+            return "";
+    }
 }

@@ -18,7 +18,7 @@ Level::Level(json playerInfo, json obstacles, json items, json enemies)
 }
 
 /* TODO */
-void Level::getMatrix(){
+void Level::getSimpleMatrix(){
     /*Needs refining
     ce::list<ce::list<int>> A;
     for(int i=0; i<lengthx; i++){
@@ -49,5 +49,11 @@ void Level::getMatrix(){
     }*/
     
 }
-
+void Level::triggerGroupCall(int id){
+    {
+        //for(){
+            enemies[0].groupCall();
+        //}
+    }
+}
 

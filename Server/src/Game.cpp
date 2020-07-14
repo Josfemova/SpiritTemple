@@ -27,9 +27,8 @@ void Game::startLevel()
     for(auto x : otherObj){
         ce::debuglog(x);
     }
-    std::shared_ptr<Level> newLevel(new Level(player,otherObj, items,enemies));
+    std::shared_ptr<Level> newLevel(new Level(player,otherObj,items,enemies));
     currentLevel = newLevel;
-    //currentLevel->getMatrix();
 }
 
 std::string Game::getResponse(std::string action)

@@ -144,36 +144,6 @@ public:
     static Direction setMovement(int srcX, int srcY, int destX, int destY);
 
     /**
-     *
-     * @param direction
-     * @return next node movement
-     */
-    static std::string getNextMovement(Direction direction);
-
-    /**
-     *
-     * @param direction
-     * @return previous node movement
-     */
-    static std::string getPreviousMovement(Direction direction);
-
-    /**
-     * @brief update enemy position
-     * @param direction
-     * @param px
-     * @param py
-     */
-    static void setNewEnemyPos(Direction direction, int &px, int &py);
-
-    /**
-     * @brief update enemy position
-     * @param direction
-     * @param px
-     * @param py
-     */
-    static void setPreviousEnemyPos(Direction direction, int &px, int &py);
-
-    /**
      * @brief move the enemy to a position close to the player
      * @param newMatrix
      * @param enemyX
@@ -200,26 +170,6 @@ public:
      * @param dest
      */
     static void addNode(adjacentNodes &cells, Pair &pair, Pair &dest);
-
-    /**
-     * @brief print the astar from the source to destination
-     * @param nodeDetails
-     * @param dest
-     */
-    static void printAstar(Node nodeDetails[][COLS], Pair &dest, listDirections &shortestPath);
-
-    /**
-     * @brief print breadcrumbs left by the enemy when chasing the player
-     * @param breadcrumbs
-     */
-    static void printBreadcrumbs(listDirections &breadcrumbs);
-
-    /**
-     * @brief print bresenham line
-     * @param line
-     */
-    static void printLineSight(listDirections &line);
-
     /**
      * @brief add a node to the list of node for bresenham line
      * @param nodes

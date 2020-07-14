@@ -97,120 +97,6 @@ Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
     }
 }
 
-std::string Pathfinding::getNextMovement(Direction direction)
-{
-    switch (direction)
-    {
-        case Direction::NORTH:
-            return "NORTH";
-        case Direction::SOUTH:
-            return "SOUTH";
-        case Direction::EAST:
-            return "EAST";
-        case Direction::WEST:
-            return "WEST";
-        case Direction::NORTHEAST:
-            return "NORTHEAST";
-        case Direction::NORTHWEST:
-            return "NORTHWEST";
-        case Direction::SOUTHEAST:
-            return "SOUTHEAST";
-        case Direction::SOUTHWEST:
-            return "SOUTHWEST";
-        default:
-            return "";
-    }
-}
-
-std::string Pathfinding::getPreviousMovement(Direction direction)
-{
-    switch (direction)
-    {
-        case Direction::NORTH:
-            return "SOUTH";
-        case Direction::SOUTH:
-            return "NORTH";
-        case Direction::EAST:
-            return "WEST";
-        case Direction::WEST:
-            return "EAST";
-        case Direction::NORTHEAST:
-            return "SOUTHWEST";
-        case Direction::NORTHWEST:
-            return "SOUTHEAST";
-        case Direction::SOUTHEAST:
-            return "NORTHWEST";
-        case Direction::SOUTHWEST:
-            return "NORTHEAST";
-        default:
-            return "";
-    }
-}
-
-void Pathfinding::setNewEnemyPos(Direction direction, int &px, int &py)
-{
-    switch (direction)
-    {
-        case Direction::NORTH:
-            px--;
-            break;
-        case Direction::SOUTH:
-            px++;
-            break;
-        case Direction::EAST:
-            py++;
-            break;
-        case Direction::WEST:
-            py--;
-        case Direction::NORTHEAST:
-            px--; py++;
-            break;
-        case Direction::NORTHWEST:
-            px--; py--;
-            break;
-        case Direction::SOUTHEAST:
-            px++; py++;
-            break;
-        case Direction::SOUTHWEST:
-            px++; py--;
-            break;
-        default:
-            break;
-    }
-}
-
-void Pathfinding::setPreviousEnemyPos(Direction direction, int &px, int &py) {
-    switch (direction)
-    {
-        case Direction::NORTH:
-            px++;
-            break;
-        case Direction::SOUTH:
-            px--;
-            break;
-        case Direction::EAST:
-            py--;
-            break;
-        case Direction::WEST:
-            py++;
-            break;
-        case Direction::NORTHEAST:
-            px++; py--;
-            break;
-        case Direction::NORTHWEST:
-            px++; py++;
-            break;
-        case Direction::SOUTHEAST:
-            px--; py--;
-            break;
-        case Direction::SOUTHWEST:
-            px--; py++;
-            break;
-        default:
-            break;
-    }
-}
-
 void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const
 {
     int tempPlayerX = playerX;
@@ -296,148 +182,6 @@ void Pathfinding::addNode(adjacentNodes &cells, Pair &pair, Pair &dest)
 {
     if(!cells.contains(pair) && pair!=dest){
         cells.push_back(pair);
-    }
-}
-
-void Pathfinding::printAstar(Node (*nodeDetails)[10], Pair &dest, listDirections &shortestPath)
-{
-    ce::log("The destination cell is found");
-    ce::log("The path is");
-
-    int row = dest.first;
-    int col = dest.second;
-
-    std::stack<Pair> Path;
-
-    while(!(nodeDetails[row][col].getPx() == row && nodeDetails[row][col].getPy() == col))
-    {
-        Path.push(std::make_pair(row, col));
-        int temp_row = nodeDetails[row][col].getPx();
-        int temp_col = nodeDetails[row][col].getPy();
-        shortestPath.push_front(setMovement(temp_row, temp_col, row, col));
-        row = temp_row;
-        col = temp_col;
-    }
-
-    Path.push(std::make_pair(row, col));
-    while (!Path.empty())
-    {
-        std::pair<int, int> p = Path.top();
-        Path.pop();
-        printf("-> (%d,%d) ", p.first, p.second);
-    }
-
-    std::string result = "Route to the player (A*): ";
-    for(int i=0; i<shortestPath.size(); i++)
-    {
-        if(shortestPath[i] == Direction::NORTH){
-            result += "NORTH -> ";
-        }
-        else if(shortestPath[i] == Direction::SOUTH){
-            result += "SOUTH -> ";
-        }
-        else if(shortestPath[i] == Direction::EAST){
-            result += "EAST -> ";
-        }
-        else if(shortestPath[i] == Direction::WEST){
-            result += "WEST -> ";
-        }
-        else if(shortestPath[i] == Direction::NORTHEAST){
-            result += "NORTHEAST -> ";
-        }
-        else if(shortestPath[i] == Direction::NORTHWEST){
-            result += "NORTHWEST -> ";
-        }
-        else if(shortestPath[i] == Direction::SOUTHEAST){
-            result += "SOUTHEAST -> ";
-        }
-        else if(shortestPath[i] == Direction::SOUTHWEST){
-            result += "SOUTHWEST -> ";
-        }
-    }
-
-    std::string stringForm = result.substr(0,result.size()-3);
-    ce::log(stringForm);
-}
-
-void Pathfinding::printBreadcrumbs(listDirections &breadcrumbs)
-{
-    std::string result = "Breadcrumbs: ";
-    if(!breadcrumbs.empty()){
-        for(int i=0; i<breadcrumbs.size(); i++)
-        {
-            if(breadcrumbs[i] == Direction::NORTH){
-                result += "NORTH <- ";
-            }
-            else if(breadcrumbs[i] == Direction::SOUTH){
-                result += "SOUTH <- ";
-            }
-            else if(breadcrumbs[i] == Direction::EAST){
-                result += "EAST <- ";
-            }
-            else if(breadcrumbs[i] == Direction::WEST){
-                result += "WEST <- ";
-            }
-            else if(breadcrumbs[i] == Direction::NORTHEAST){
-                result += "NORTHEAST <- ";
-            }
-            else if(breadcrumbs[i] == Direction::NORTHWEST){
-                result += "NORTHWEST <- ";
-            }
-            else if(breadcrumbs[i] == Direction::SOUTHEAST){
-                result += "SOUTHEAST <- ";
-            }
-            else if(breadcrumbs[i] == Direction::SOUTHWEST){
-                result += "SOUTHWEST <- ";
-            }
-        }
-        std::string stringForm = result.substr(0,result.size()-3);
-        ce::log(stringForm);
-        ce::log("\n");
-    }
-    else{
-        result += "[]";
-        ce::log(result);
-    }
-}
-
-void Pathfinding::printLineSight(listDirections &line)
-{
-    std::string result = "Line Sight: ";
-    if(!line.empty()){
-        for(int i=0; i<line.size(); i++)
-        {
-            if(line[i] == Direction::NORTH){
-                result += "NORTH -> ";
-            }
-            else if(line[i] == Direction::SOUTH){
-                result += "SOUTH -> ";
-            }
-            else if(line[i] == Direction::EAST){
-                result += "EAST -> ";
-            }
-            else if(line[i] == Direction::WEST){
-                result += "WEST -> ";
-            }
-            else if(line[i] == Direction::NORTHEAST){
-                result += "NORTHEAST -> ";
-            }
-            else if(line[i] == Direction::NORTHWEST){
-                result += "NORTHWEST -> ";
-            }
-            else if(line[i] == Direction::SOUTHEAST){
-                result += "SOUTHEAST -> ";
-            }
-            else if(line[i] == Direction::SOUTHWEST){
-                result += "SOUTHWEST -> ";
-            }
-        }
-        std::string stringForm = result.substr(0,result.size()-3);
-        ce::log(stringForm);
-    }
-    else{
-        result += "[]";
-        ce::log(result);
     }
 }
 
@@ -539,7 +283,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
             if (isDestination(i-1, j, dest)){
                 // Set the Parent of the destination node
                 nodeDetails[i-1][j].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -568,7 +311,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid(i+1, j)){
             if (isDestination(i+1, j, dest)){
                 nodeDetails[i+1][j].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -590,7 +332,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid(i, j + 1)){
             if (isDestination(i, j+1, dest)){
                 nodeDetails[i][j+1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -612,7 +353,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid(i, j - 1)){
             if (isDestination(i, j-1, dest)){
                 nodeDetails[i][j-1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -635,7 +375,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid(i - 1, j + 1)){
             if (isDestination(i-1, j+1, dest)){
                 nodeDetails[i-1][j+1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -656,7 +395,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid (i-1, j-1)){
             if (isDestination (i-1, j-1, dest)){
                 nodeDetails[i-1][j-1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -678,7 +416,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid(i+1, j+1)){
             if (isDestination(i+1, j+1, dest)){
                 nodeDetails[i+1][j+1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }
@@ -701,7 +438,6 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
         if (isValid (i+1, j-1)){
             if (isDestination(i+1, j-1, dest)){
                 nodeDetails[i+1][j-1].setPxy(i, j);
-                printAstar(nodeDetails, dest, shortestPath);
                 foundDest = true;
                 break;
             }

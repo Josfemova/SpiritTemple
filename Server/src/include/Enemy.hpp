@@ -1,32 +1,29 @@
 #ifndef GAMESERVER_ENEMY_HPP
 #define GAMESERVER_ENEMY_HPP
 
-// Temp define
-#define ROW 9
-#define COL 10
-
 #include "MoveGenerator.hpp"
 #include "EnemyType.hpp"
 #include "Direction.hpp"
 #include "Level.hpp"
-
+#include <memory>
+class Level;
 class Enemy : public GameObject{
 private:
     int enemyID;
-
+    std::shared_ptr<Level> parent;
     EnemyType enemyType;
     float route_velocity;
     float chase_velocity;
     float visibility_radius;
     int damageDone;
     bool inRange;
+    bool isChasing=false;
+    bool isBacktracking = false;
+    int notChasingIndex;
+    listDirections normalPath;
     listDirections breadcrumbs;
+    listDirections chasePath;
     void setEnemyType(std::string type);
-
-    // TEMPORAL ATTRIBUTES TO TEST PATH FINDING ALGORITHMS
-    int matrix[ROW][COL];
-    int playerX;
-    int playerY;
 
 public:
     Enemy(int id, int px, int py, std::string type);
@@ -52,18 +49,20 @@ public:
 
     EnemyType getEnemyType();
     std::string getTypeS();
+
     std::string update();
+    void refreshState(); //el mae calcula los paths
+    void groupCall();
+    // Initial methods
+    void generatRandomPath(){
+        //guardar index
 
-    // TEMPORAL METHODS TO TEST BREAD CRUMBING AND BACKTRACKING ALGORITHM
-    void setMatrix(int (*newMatrix)[COL]);
-    void setPlayer(int px, int py);
-    void setPlayerX(int px);
-    void setPlayerY(int py);
+    } // se llama al princio
 
-    Pair playerPos() const;
-    int getPlayerX() const;
-    int getPlayerY() const;
-    listDirections getBreadCrumbs() const;
+    //utilities
+    std::string getPreviousMovement(Direction direction);
+    std::string getNextMovement(Direction direction);
+
 };
 
 #endif //GAMESERVER_ENEMY_HPP
