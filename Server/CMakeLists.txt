@@ -20,6 +20,6 @@ set(SOURCE_FILES
         src/main.cpp
         src/Server.cpp src/Game.cpp src/GeneticLab.cpp
         src/Level.cpp src/MoveGenerator.cpp src/Enemy.cpp
-        src/GameObject.cpp src/Item.cpp)
+        src/GameObject.cpp src/Item.cpp src/Pathfinding.cpp)
 
 add_executable(server ${SOURCE_FILES} ${HEADERS})
