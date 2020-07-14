@@ -87,15 +87,18 @@ struct EspecialTile
 [Serializable]
 struct InitialData
 {
+
     public int lenghtx;
     public int lenghty;
+    public PlayerInfo player;
     public Enemy[] enemies;
     public Item[] items;
     public EspecialTile[] otherObj;
-    public InitialData(int lenghtx, int lenghty, Enemy[] enemies, Item[] items, EspecialTile[] otherObj)
+    public InitialData(int lenghtx, int lenghty, PlayerInfo player, Enemy[] enemies, Item[] items, EspecialTile[] otherObj)
     {
         this.lenghtx = lenghtx;
         this.lenghty = lenghty;
+        this.player = player;
         this.enemies = enemies;
         this.items = items;
         this.otherObj = otherObj;
