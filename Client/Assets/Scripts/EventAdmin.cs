@@ -103,7 +103,9 @@ public class EventAdmin : MonoBehaviour
         InitialData gameState = new InitialData(
             lenghtx, lenghty,playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
         );
-        Debug.Log(JsonUtility.ToJson(gameState, true));
+        string message =  JsonUtility.ToJson(gameState,true);
+        Debug.Log(message);
+        Client.Instance.updateServer("loadLevel", message);
 
     }
 }

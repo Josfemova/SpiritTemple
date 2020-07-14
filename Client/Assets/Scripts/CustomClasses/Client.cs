@@ -48,14 +48,18 @@ public sealed class Client
     {
         lock (updateLock)
         {
+            int arraySize = 128;
             if(type == "loadLevel"){
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("loadLevel"));
+                arraySize = 100000;
             }else if(type == "event"){
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("event"));
             }
-            byte[] bytes = new byte[2048];
+            
             byte[] msg = Encoding.ASCII.GetBytes(message);
             int request = serverConnection.Send(msg);
+
+            byte[] bytes = new byte[arraySize];
             int response = serverConnection.Receive(bytes);
             string srvcmd = Encoding.ASCII.GetString(bytes, 0, response);
             serverInstructions(srvcmd);

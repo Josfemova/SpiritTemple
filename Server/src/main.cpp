@@ -6,33 +6,35 @@
 #include "include/Server.hpp"
 #include <memory>
 
-int serverStart(){
+int serverStart()
+{
     std::unique_ptr<Server> gameServer(new Server(3000));
     return 0;
 }
-
-
 
 int main()
 {
     //serverStart();
     Game a;
-    a.startLevel();
-
+    std::ifstream t("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
+    std::stringstream buffer;
+    buffer << t.rdbuf();
+    //
+    std::string response(a.startLevel(buffer.str()));
+    ce::debuglog(response);
 
     // Simple level matrix
     int matrix[9][10] =
-            {
-                    { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
-                    { 1, 1, 1, 0, 1, 1, 1, 0, 1, 1 },
-                    { 1, 1, 1, 0, 1, 1, 0, 1, 0, 1 },
-                    { 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
-                    { 1, 1, 1, 0, 1, 1, 1, 0, 1, 0 },
-                    { 1, 0, 1, 1, 1, 1, 0, 1, 0, 0 },
-                    { 1, 0, 0, 0, 0, 1, 0, 0, 0, 1 },
-                    { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
-                    { 1, 1, 1, 0, 0, 0, 1, 0, 0, 1 }
-            };
+        {
+            {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
+            {1, 1, 1, 0, 1, 1, 1, 0, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 0, 1},
+            {0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
+            {1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
+            {1, 0, 1, 1, 1, 1, 0, 1, 0, 0},
+            {1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+            {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
+            {1, 1, 1, 0, 0, 0, 1, 0, 0, 1}};
     /*
     // ADAPTING ENEMY CLASS FOR TESTING (THE PLAYER'S METHODS
     // DON'T BELONG TO HIM) BUT IT'S JUST FOR TESTING NOW

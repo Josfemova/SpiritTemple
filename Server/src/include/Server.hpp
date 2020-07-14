@@ -11,7 +11,7 @@ private:
     int serverSocket;
     bool on = false;
     void sendMsg(std::string);
-    std::string readMsg();
+    std::string readMsg(bool isLarge = false);
     void startAndWait(int port = 3000);
     void listenClient();
     void loadLevel();

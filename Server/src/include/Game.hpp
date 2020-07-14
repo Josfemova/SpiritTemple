@@ -10,10 +10,12 @@
 
 class Game
 {
-    std::shared_ptr<Level> currentLevel=nullptr;
-    int playerLives;
+private:
+    std::shared_ptr<Level> currentLevel = nullptr;
+    int playerLives=3;
+
 public:
-    void startLevel();
+    std::string startLevel(std::string);
     std::string getResponse(std::string);
 };
 
