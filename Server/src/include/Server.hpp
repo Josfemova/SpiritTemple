@@ -10,13 +10,14 @@ private:
     int port = 3000; //default port
     int serverSocket;
     bool on = false;
+    void sendMsg(std::string);
     std::string readMsg();
     void startAndWait(int port = 3000);
     void listenClient();
     void loadLevel();
 public:
     Server();
-    Server(int port);
+    explicit Server(int port);
     void sleep();
     void wake();
 };

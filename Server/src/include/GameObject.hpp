@@ -7,9 +7,16 @@
 class GameObject {
 private:
     GOType type;
+    int gridx;
+    int gridy;
 public:
     GOType getType();
-    std::string update();
+    GameObject(){};
+    explicit GameObject(GOType type): type{type} {}
+    int getX() const { return gridx;}
+    void setX(int value) { gridx = value; }
+    int getY() const { return gridy;}
+    void setY(int value) { gridy = value; }
 };
 
 
