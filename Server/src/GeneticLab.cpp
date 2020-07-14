@@ -39,8 +39,11 @@ void GeneticLab::initSpectrums()
 int GeneticLab::geneticAlgorithm()
 {
     initSpectrums();
+    printMatrix(spectrums);
     selection(generateFitnessArray());
+    printMatrix(spectrums);
     crossover();
+    printMatrix(spectrums);
 }
 
 int GeneticLab::fitness(int harm, int deathOrder, int chasesAmount)
@@ -94,21 +97,20 @@ int GeneticLab::selectMax(int arr[], int arrSize)
 int *GeneticLab::selection(int fitnessArr[])
 {
 
-    spectrumCount = (spectrumCount/2)+1;
+    spectrumCount = (spectrumCount / 2) + 1;
     int newSpectrums[spectrumCount][5];
-    for(int i = 0; i < spectrumCount; i++)
+    for (int i = 0; i < spectrumCount; i++)
     {
         int spectrum_key = selectMax(fitnessArr, spectrumCount);
         fitnessArr[spectrum_key] = 0;
-        
+
         for (int j = 0; j < 5; j++)
         {
             newSpectrums[i][j] = spectrums[spectrum_key][j];
             spectrums[i][j] = newSpectrums[i][j];
         }
-
     }
-    
+
     for (int i = 2; i < spectrumCount; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -121,29 +123,31 @@ int *GeneticLab::selection(int fitnessArr[])
 void GeneticLab::crossover()
 {
     int crossoverCount = spectrumCount;
-    while(crossoverCount >= 2)
+    while (crossoverCount >= 2)
     {
         srand((unsigned int)time(NULL));
-        int spectrum1 = (((rand() % spectrumCount) + 1)-1);       //Random spectrum
-        int spectrum2 = (((rand() % spectrumCount) + 1)-1);
-        int trait = ((rand() % 2) + 1)-1;                       // Random trait
+        int spectrum1 = (((rand() % spectrumCount) + 1) - 1);
+        int spectrum2 = (((rand() % spectrumCount) + 1) - 1);
+        int trait = ((rand() % 2) + 1) - 1; 
 
-        while(spectrum1 == spectrum2)
+        while (spectrum1 == spectrum2)
         {
-            spectrum2 = (rand() % spectrumCount) + 1;
+            spectrum2 = (((rand() % spectrumCount) + 1) - 1);
         }
 
-        cout << "SPECTRUM 1: " << spectrums[spectrum1][trait] << "\nSPECTRUM 2: " << spectrums[spectrum2][trait] << endl;
-        int children[5] = {spectrums[spectrum1][trait], spectrums[spectrum2][trait]};
         spectrums[spectrumCount][0] = spectrums[spectrum1][trait];
         spectrums[spectrumCount][1] = spectrums[spectrum2][trait];
         spectrumCount++;
-
         crossoverCount = crossoverCount - 2;
+        mutation(spectrumCount - 1);
     }
 }
 
-void GeneticLab::mutation()
+void GeneticLab::mutation(int offspringKey)
 {
+    cout << "in" << endl;
+    int trait = (((rand() % 2) + 1) - 1);
+    int improvement = (rand() % 10) + 1;
 
+    spectrums[offspringKey][trait] = spectrums[offspringKey][trait] + improvement;
 }

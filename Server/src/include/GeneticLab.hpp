@@ -15,7 +15,7 @@ public:
     int selectMax(int arr[], int arrSize);
     int *selection(int fitnessArr[]);
     void crossover();
-    void mutation();
+    void mutation(int offspringKey);
 };
 
 #endif //GAMESERVER_GENETICLAB_HPP
