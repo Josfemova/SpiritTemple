@@ -13,7 +13,7 @@ private:
 
 public:
     static ItemType getItemType(std::string value);
-    Item(ItemType type) : GameObject{GOType::item}{}
+    explicit Item(ItemType type) : GameObject{GOType::item}{}
 };
 
 #endif
