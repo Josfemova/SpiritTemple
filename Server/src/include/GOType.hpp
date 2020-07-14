@@ -4,6 +4,7 @@
 enum class GOType {
     player,
     enemy,
+    item,
     safeArea,
     obstacle
 };

@@ -3,11 +3,11 @@
 #define ROW 9
 #define COL 10
 
-#include "list.hpp"
-#include "GameObject.hpp"
-#include "nlohmannJson.hpp"
+#include "include/list.hpp"
+#include "include/Item.hpp"
+#include "include/Enemy.hpp"
+#include "include/nlohmannJson.hpp"
 
-typedef ce::list<ce::list<GameObject>> lvlMatrix;
 typedef ce::list<std::string> lvlInstructions;
 typedef std::pair<int, int> Pair;
 typedef int(&matrix)[ROW][COL];
@@ -20,11 +20,15 @@ private:
     int playerID;
     int playerX;
     int playerY;
-    lvlMatrix Matrix;
+
+    json obstacles;
+    ce::list<Item> items;
+    ce::list<Enemy> enemies;
+    
     json instructions;
 
 public:
-    Level(lvlMatrix matrix);
+    Level();
     void finish();
     void start();
 
