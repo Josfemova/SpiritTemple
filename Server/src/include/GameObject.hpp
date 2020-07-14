@@ -12,9 +12,7 @@ private:
 public:
     GOType getType();
     GameObject(){};
-    GameObject(GOType type){
-        this->type = type;
-    }
+    explicit GameObject(GOType type): type{type} {}
     int getX() const { return gridx;}
     void setX(int value) { gridx = value; }
     int getY() const { return gridy;}

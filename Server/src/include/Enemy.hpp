@@ -50,7 +50,7 @@ public:
     int getDamage() const;
     bool isInRange() const;
 
-    EnemyType getType();
+    EnemyType getEnemyType();
     std::string getTypeS();
     std::string update();
 

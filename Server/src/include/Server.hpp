@@ -17,7 +17,7 @@ private:
     void loadLevel();
 public:
     Server();
-    Server(int port);
+    explicit Server(int port);
     void sleep();
     void wake();
 };

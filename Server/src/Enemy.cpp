@@ -120,7 +120,7 @@ bool Enemy::isInRange() const
     return inRange;
 }
 
-EnemyType Enemy::getType()
+EnemyType Enemy::getEnemyType()
 {
     return enemyType;
 }
