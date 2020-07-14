@@ -11,11 +11,10 @@
 #include "Level.hpp"
 #include "list.hpp"
 
-class Enemy {
+class Enemy : GameObject{
 private:
     int enemyID;
-    int enemyX;
-    int enemyY;
+
     EnemyType enemyType;
     float route_velocity;
     float chase_velocity;
