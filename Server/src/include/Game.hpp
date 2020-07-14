@@ -6,16 +6,11 @@
 #include <string>
 #include "./nlohmannJson.hpp"
 
-using json = nlohmann::json;
-
-using namespace std;
-
 class Game
 {
 public:
     void generateMatrix();
-    void getResponse();
-    
+    std::string getResponse(std::string);
 };
 
 #endif //GAMESERVER_GAME_HPP

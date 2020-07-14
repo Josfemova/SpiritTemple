@@ -41,7 +41,7 @@ public:
     void setVisibilityRadius(float radius);
     void setDamage(int damage);
     void setInRange(bool range);
-    void toString();
+    std::string toString();
 
     int getEnemyX() const;
     int getEnemyY() const;

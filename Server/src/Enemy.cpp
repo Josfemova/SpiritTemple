@@ -1,5 +1,5 @@
 #include "include/Enemy.hpp"
-
+#include "include/utilities.hpp"
 Enemy::Enemy(int id, int px, int py, std::string type) {
     enemyID = id;
     enemyX = px;
@@ -74,8 +74,8 @@ void Enemy::setInRange(bool range) {
     inRange = range;
 }
 
-void Enemy::toString() {
-    std::cout<<"Position: ("<<enemyX<<","<<enemyY<<")\n";
+std::string Enemy::toString() {
+    return "";
 }
 
 int Enemy::getEnemyX() const {
@@ -139,10 +139,10 @@ std::string Enemy::update() {
         if(!path.empty()){
             // To print it on the server console
             std::string movement = "MOVE TO " + Pathfinding::getNextMovement(path[0]);
-            std::cout<<movement<<std::endl;
+            ce::debuglog(movement);
             Pathfinding::setNewEnemyPos(path[0], enemyX, enemyY);
             breadcrumbs.push_back(path[0]);
-            toString();
+            ce::debuglog(toString());
             Pathfinding::printBreadcrumbs(breadcrumbs);
 
             // To list instructions
@@ -174,9 +174,9 @@ std::string Enemy::update() {
             // To print it on the server console
             std::cout<<"\nEnemy / ID:"<<std::to_string(enemyID) <<" / Type: "<<getTypeS()<<std::endl;
             Pathfinding::printLineSight(path);
-            std::cout<<"Instruction: Move to "<<Pathfinding::getNextMovement(path[0])<<std::endl;
+            ce::debuglog("Instruction: Move to ",Pathfinding::getNextMovement(path[0]));
             Pathfinding::setNewEnemyPos(path[0], enemyX, enemyY);
-            toString();
+            ce::debuglog(toString());
 
             // To list instructions
             return Pathfinding::getNextMovement(path[0]);
@@ -189,10 +189,10 @@ std::string Enemy::update() {
             // To print it on the server console
             std::string movement = "MOVE TO " + Pathfinding::getPreviousMovement(breadcrumbs[n]);
             std::string result = Pathfinding::getPreviousMovement(breadcrumbs[n]);
-            std::cout<<movement<<std::endl;
+            ce::debuglog(movement);
             Pathfinding::setPreviousEnemyPos(breadcrumbs[n], enemyX, enemyY);
             breadcrumbs.pop_back();
-            toString();
+            ce::debuglog(toString());
             std::cout<<"\n";
 
             // To list instructions

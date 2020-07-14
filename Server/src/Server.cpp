@@ -64,10 +64,10 @@ void Server::listenClient()
         std::string message(readMsg());
         if(message=="loadLevel"){
 
-            levelJson = std::string message(readMsg());
+            std::string levelJson(readMsg());
             sendMsg("loading level");
 
-        }else if(message = "event"){
+        }else if(message == "event"){
 
             game->getResponse(message);
             sendMsg("uwu no demo");
@@ -82,8 +82,6 @@ void Server::loadLevel()
 //
 // Public methods
 //
-
-
 
 Server::Server()
 {

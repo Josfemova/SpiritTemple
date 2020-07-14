@@ -1,24 +1,23 @@
 #include "include/Game.hpp"
+#include "include/utilities.hpp"
 
+using json = nlohmann::json;
 void Game::generateMatrix()
 {
 
-    ifstream ifs("/home/valeria/Documents/SpiritTemple/Extra/initialData.json");
+    std::ifstream ifs("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
     json initialData;
     ifs >> initialData;
-
-    string _comment = initialData["_comment"];
-    string _comment2 = initialData["_comment2"];
-    string lenghty = initialData["lenghty"];
-    string lenghtx = initialData["lenghtx"];
+    std::string lenghty = initialData["lenghty"];
+    std::string lenghtx = initialData["lenghtx"];
 
     //_________________/ PLAYER DATA /_________________
 
     int player[3] = {initialData["player"]["ID"], initialData["player"]["gridx"], initialData["player"]["gridy"]};
-    cout << "\nplayer: ";
+    ce::debuglog("\nplayer: ");
     for (int i = 0; i < 3; i++)
     {
-        cout << player[i] << ", ";
+        ce::debuglog(player[i],", ");
     }
 
     //_________________/ ENEMIES DATA /_________________
@@ -34,22 +33,22 @@ void Game::generateMatrix()
         enemies[i][3] = initialData["enemies"][i]["gridy"];
     }
 
-    cout << "\nenemies: ";
+    ce::debuglog("\nenemies: ");
     for (int i = 0; i < num_enemies; i++)
     {
-        cout << "[ ";
+        ce::debuglog("[ ");
         for (int j = 0; j < 4; j++)
         {
             if (j == 3)
             {
-                cout << enemies[i][j];
+                ce::debuglog(enemies[i][j]);
             }
             else
             {
-                cout << enemies[i][j] << ", ";
+                ce::debuglog(enemies[i][j],",");
             }
         }
-        cout << " ], ";
+        ce::debuglog(" ], ");
     }
 
     //_________________/ OTHER OBJECTS DATA /_________________
@@ -66,34 +65,32 @@ void Game::generateMatrix()
         otherObj[i][4] = initialData["otherObj"][i]["ymax"];
     }
 
-    cout << "\notherObj: ";
+    ce::debuglog("\notherObj: ");
     for (int i = 0; i < num_otherObj; i++)
     {
-        cout << "[ ";
+        ce::debuglog("[ ");
         for (int j = 0; j < 4; j++)
         {
             if (j == 3)
             {
-                cout << otherObj[i][j];
+                ce::debuglog(otherObj[i][j]);
             }
             else
             {
-                cout << otherObj[i][j] << ", ";
+                ce::debuglog(otherObj[i][j],", ");
             }
         }
-        cout << " ], ";
+        ce::debuglog(" ], ");
     }
 
 }
 
-void Game::getResponse()
+std::string Game::getResponse(std::string action)
 {
-    ifstream ifs("/home/valeria/Documents/SpiritTemple/Extra/clientAction.json");
+    std::ifstream ifs("/home/jose/Desktop/githubU/SpiritTemple/Extra/clientAction.json");
     json clientAction;
     ifs >> clientAction;
-
-    string reqType = clientAction["reqType"];
-
-
+    std::string reqType = clientAction["reqType"];
+    ce::debuglog(reqType);
 }
 

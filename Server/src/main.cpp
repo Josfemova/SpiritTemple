@@ -15,7 +15,11 @@ int serverStart(){
 
 int main()
 {
-    serverStart();
+    //serverStart();
+    Game a;
+    a.generateMatrix();
+
+
     // Simple level matrix
     int matrix[9][10] =
             {
@@ -29,7 +33,7 @@ int main()
                     { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
                     { 1, 1, 1, 0, 0, 0, 1, 0, 0, 1 }
             };
-
+    /*
     // ADAPTING ENEMY CLASS FOR TESTING (THE PLAYER'S METHODS
     // DON'T BELONG TO HIM) BUT IT'S JUST FOR TESTING NOW
     Enemy enemy1(1, 8, 0, "SpGray");
@@ -69,6 +73,6 @@ int main()
         enemy3.update();
         sleep(1);
     }
-
+    */
     return 0;
 }
