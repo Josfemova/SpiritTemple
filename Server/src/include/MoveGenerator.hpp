@@ -6,7 +6,8 @@
 class MoveGenerator{
 public:
     static const int COLS = 10;
-    static listDirections getRoute(int (*newMatrix)[COLS], Pair enemyPos, Pair playerPos, RouteType type);
+    static listDirections getRoute(int (*matrix)[COLS], Pair enemyPos, Pair playerPos, RouteType type);
+    static listDirections randomPath(int (*matrix)[COLS], Pair enemyPos, Pair playerPos, int size);
 private:
     static Pathfinding *pathfinding;
     static listDirections Astar(Pair enemyPos, Pair playerPos);

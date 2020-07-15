@@ -124,6 +124,8 @@ public:
      */
     bool nodeValidations(int row, int col, Pair dest) const;
 
+    bool initialValidations(Pair src, Pair dest) const;
+
     /**
      * @brief calculate the "H" Heuristic
      * @param row
@@ -177,13 +179,18 @@ public:
      */
     static void setLineSight(adjacentNodes &nodes, listDirections &line);
 
+    listDirections RandomPath(Pair src, Pair dest, int size);
+    adjacentNodes adjNodes(Pair src, Pair tempSrc, Pair dest);
+    static void addingNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest);
+    static Pair randomNode(adjacentNodes &adjNodes);
+
     /**
      * @brief find the shortest path between a given source node to a destination
      * node according to A* Search Algorithm
      * @param src
      * @param dest
      */
-     listDirections AstarSearch(Pair src, Pair dest) const;
+     listDirections AstarSearch(Pair src, Pair dest);
 
      /**
       * @brief find the line between a given source node to a destination

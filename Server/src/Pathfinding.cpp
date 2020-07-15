@@ -56,12 +56,36 @@ bool Pathfinding::isUnBlocked(int row, int col) const
 
 bool Pathfinding::isDestination(int row, int col, Pair dest)
 {
-    return (row == dest.first && col == dest.second);
+    return (row == dest.second && col == dest.first);
 }
 
 bool Pathfinding::nodeValidations(int row, int col, Pair dest) const
 {
     return isValid(row, col) && isUnBlocked(row, col) && !isDestination(row, col, dest);
+}
+
+bool Pathfinding::initialValidations(Pair src, Pair dest) const
+{
+    bool result = true;
+
+    // If the source is out of range
+    if(!isValid(src.second, src.first)){
+        ce::log("\nSource is invalid");
+        result = false;
+    }
+
+    //If the destination is out of range
+    if(!isValid(dest.second, dest.first)){
+        ce::log("\nDestination is invalid");
+        result = false;
+    }
+
+    // Either the source or the destination is blocked
+    if(!isUnBlocked(src.second, src.first) || !isUnBlocked(dest.second, dest.first)){
+        ce::log("\nSource or the destination is blocked");
+        result = false;
+    }
+    return result;
 }
 
 double Pathfinding::getHeuristicCost(int row, int col, Pair dest)
@@ -71,28 +95,28 @@ double Pathfinding::getHeuristicCost(int row, int col, Pair dest)
 
 Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
 {
-    if(srcX-1 == destX && srcY == destY){
+    if(srcX == destX && srcY+1 == destY){
         return Direction::NORTH;
     }
-    else if(srcX+1 == destX && srcY == destY){
+    else if(srcX == destX && srcY-1 == destY){
         return Direction::SOUTH;
     }
-    else if(srcX == destX && srcY+1 == destY){
+    else if(srcX+1 == destX && srcY == destY){
         return Direction::EAST;
     }
-    else if(srcX == destX && srcY-1 == destY){
+    else if(srcX-1 == destX && srcY == destY){
         return Direction::WEST;
     }
-    else if(srcX-1 == destX && srcY+1 == destY){
+    else if(srcX+1 == destX && srcY+1 == destY){
         return Direction::NORTHEAST;
     }
-    else if(srcX-1 == destX && srcY-1 == destY){
+    else if(srcX-1 == destX && srcY+1 == destY){
         return Direction::NORTHWEST;
     }
-    else if(srcX+1 == destX && srcY+1 == destY){
+    else if(srcX+1 == destX && srcY-1 == destY){
         return Direction::SOUTHEAST;
     }
-    else if(srcX+1 == destX && srcY-1 == destY){
+    else if(srcX-1 == destX && srcY-1 == destY){
         return Direction::SOUTHWEST;
     }
 }
@@ -185,40 +209,108 @@ void Pathfinding::addNode(adjacentNodes &cells, Pair &pair, Pair &dest)
     }
 }
 
-void Pathfinding::setLineSight(adjacentNodes &nodes, listDirections &line)
+listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
 {
-    line.clear();
-    for(int i=0; i<nodes.size(); i++)
-    {
-        if(i+1 != nodes.size()){
-            Pair src = nodes[i];
-            Pair dest = nodes[i+1];
-            line.push_back(setMovement(src.first, src.second, dest.first, dest.second));
+    listDirections path;
+    adjacentNodes pathNodes;
+    if(initialValidations(src, dest)){
+        pathNodes.push_back(src);
+        while(path.size() != size)
+        {
+            adjacentNodes closestNodes = adjNodes(src, pathNodes.front(), dest);
+            pathNodes.push_back(randomNode(closestNodes));
+            Pair tempSrc = pathNodes.front();
+            Pair tempDest = pathNodes.back();
+            path.push_back(setMovement(tempSrc.second, tempSrc.first, tempDest.second, tempDest.first));
+            pathNodes.pop_front();
         }
+    }
+    return path;
+}
+
+adjacentNodes Pathfinding::adjNodes(Pair src, Pair tempSrc, Pair dest) {
+    adjacentNodes adjNodes;
+
+    // NORTH
+    if(nodeValidations(tempSrc.first+1, tempSrc.second, dest)){
+        Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // SOUTH
+    if(nodeValidations(tempSrc.first-1, tempSrc.second, dest)){
+        Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // EAST
+    if(nodeValidations(tempSrc.first, tempSrc.second+1, dest)){
+        Pair pair = std::make_pair(tempSrc.first, tempSrc.second+1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // WEST
+    if(nodeValidations(tempSrc.first, tempSrc.second-1, dest)){
+        Pair pair = std::make_pair(src.first, src.second-1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // NORTHEAST
+    if(nodeValidations(tempSrc.first+1, tempSrc.second+1, dest)){
+        Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second+1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // NORTHWEST
+    if(nodeValidations(tempSrc.first+1, tempSrc.second-1, dest)){
+        Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second-1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // SOUTHEAST
+    if(nodeValidations(tempSrc.first-1, tempSrc.second+1, dest)){
+        Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second+1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    // SOUTHWEST
+    if(nodeValidations(tempSrc.first-1, tempSrc.second-1, dest)){
+        Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second-1);
+        addingNode(adjNodes, src, pair, dest);
+    }
+
+    return adjNodes;
+}
+
+void Pathfinding::addingNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest)
+{
+    if(!adjNodes.contains(pair) && pair!=src && pair!=dest){
+        adjNodes.push_back(pair);
     }
 }
 
-listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
+Pair Pathfinding::randomNode(adjacentNodes &adjNodes)
+{
+    // Initialize random generator
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(0, adjNodes.size()-1);
+
+    // Teleport enemy
+    Pair node = adjNodes[dist(rng)];
+    return node;
+}
+
+
+
+listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
 {
     // List of directions to follow between the enemy's position and the
     // player's position
     listDirections shortestPath;
 
-    // If the source is out of range
-    if(!isValid(src.first, src.second)){
-        ce::log("\nSource is invalid");
-        return shortestPath;
-    }
-
-    //If the destination is out of range
-    if(!isValid(dest.first, dest.second)){
-        ce::log("\nDestination is invalid");
-        return shortestPath;
-    }
-
-    // Either the source or the destination is blocked
-    if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
-        ce::log("\nSource or the destination is blocked");
+    // Initial validations
+    if(!initialValidations(src, dest)){
         return shortestPath;
     }
 
@@ -469,21 +561,8 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest) const
 
 listDirections Pathfinding::LineSight(Pair src, Pair dest)
 {
-    // If the source is out of range
-    if(!isValid(src.first, src.second)){
-        ce::log("\nSource is invalid");
-        return line;
-    }
-
-    //If the destination is out of range
-    if(!isValid(dest.first, dest.second)){
-        ce::log("\nDestination is invalid");
-        return line;
-    }
-
-    // Either the source or the destination is blocked
-    if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
-        ce::log("\nSource or the destination is blocked");
+    // Initial validations
+    if(!initialValidations(src, dest)){
         return line;
     }
 
@@ -540,6 +619,19 @@ listDirections Pathfinding::LineSight(Pair src, Pair dest)
     }
 
     return line;
+}
+
+void Pathfinding::setLineSight(adjacentNodes &nodes, listDirections &line)
+{
+    line.clear();
+    for(int i=0; i<nodes.size(); i++)
+    {
+        if(i+1 != nodes.size()){
+            Pair src = nodes[i];
+            Pair dest = nodes[i+1];
+            line.push_back(setMovement(src.first, src.second, dest.first, dest.second));
+        }
+    }
 }
 
 Pair Pathfinding::bestAdjacentNode(int &px, int &py, Pair &dest) const
@@ -612,6 +704,9 @@ int Pathfinding::ManhattanDistance(int px, int py, Pair dest)
 {
     return abs(px - dest.first) + abs(py - dest.second);
 }
+
+
+
 
 
 

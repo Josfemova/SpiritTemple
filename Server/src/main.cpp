@@ -15,13 +15,13 @@ int serverStart()
 int main()
 {
     //serverStart();
-    Game a;
+    /*Game a;
     std::ifstream t("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
     std::stringstream buffer;
     buffer << t.rdbuf();
     //
     std::string response(a.startLevel(buffer.str()));
-    ce::debuglog(response);
+    ce::debuglog(response);*/
 
     // Simple level matrix
     int matrix[9][10] =
@@ -35,6 +35,47 @@ int main()
             {1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
             {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
             {1, 1, 1, 0, 0, 0, 1, 0, 0, 1}};
+
+    Pathfinding pathfinding(matrix);
+    Pair enemyPos = std::make_pair(0,0);
+    Pair playePos = std::make_pair(7,0);
+    listDirections path = pathfinding.RandomPath(enemyPos, playePos, 3);
+
+    std::cout<<"Size: "<<path.size()<<std::endl;
+
+    for(int i=0; i<path.size(); i++){
+        Direction direction = path[i];
+        switch (direction) {
+            case Direction::NORTH:
+                std::cout<<"NORTH -> ";
+                break;
+            case Direction::SOUTH:
+                std::cout<<"SOUTH -> ";
+                break;
+            case Direction::EAST:
+                std::cout<<"EAST -> ";
+                break;
+            case Direction::WEST:
+                std::cout<<"WEST -> ";
+                break;
+            case Direction::NORTHEAST:
+                std::cout<<"NORTHEAST -> ";
+                break;
+            case Direction::NORTHWEST:
+                std::cout<<"NORTHWEST -> ";
+                break;
+            case Direction::SOUTHEAST:
+                std::cout<<"SOUTHEAST -> ";
+                break;
+            case Direction::SOUTHWEST:
+                std::cout<<"SOUTHWEST -> ";
+                break;
+            default:
+                break;
+        }
+    }
+
+
 
     /*
     // ADAPTING ENEMY CLASS FOR TESTING (THE PLAYER'S METHODS
