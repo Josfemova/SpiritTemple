@@ -1,295 +1,295 @@
 fileFormatVersion: 2
-guid: 4bbb0c5384b1e4c18a094412829ecdd2
+guid: f9b6a96c3e69102d49e4a3608b4f3359
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1355546126894871122
-    second: golems_0
+      213: -7720582133435872636
+    second: catbearmonster_0
   - first:
-      213: -9147236784717291641
-    second: golems_1
+      213: -7963921999152402977
+    second: catbearmonster_1
   - first:
-      213: -6226401437603441874
-    second: golems_2
+      213: 1605488879691867648
+    second: catbearmonster_2
   - first:
-      213: -3440356313238392565
-    second: golems_3
+      213: -3503757385688121987
+    second: catbearmonster_3
   - first:
-      213: 1930460070678790130
-    second: golems_4
+      213: -6488770006699368216
+    second: catbearmonster_4
   - first:
-      213: 8363578308902316024
-    second: golems_5
+      213: 5807245504355350332
+    second: catbearmonster_5
   - first:
-      213: -3855811373042665502
-    second: golems_6
+      213: -1162135843381113636
+    second: catbearmonster_6
   - first:
-      213: -6319152130220158646
-    second: golems_7
+      213: -3449926047622365823
+    second: catbearmonster_7
   - first:
-      213: 7229889336457951723
-    second: golems_8
+      213: -9191747810942218798
+    second: catbearmonster_8
   - first:
-      213: -4848380461217345743
-    second: golems_9
+      213: -2121039745553817065
+    second: catbearmonster_9
   - first:
-      213: -1508554907478323551
-    second: golems_10
+      213: 2878055009332540391
+    second: catbearmonster_10
   - first:
-      213: 1056872343801175787
-    second: golems_11
+      213: -1329228325120864806
+    second: catbearmonster_11
   - first:
-      213: -3401712951284617791
-    second: golems_12
+      213: 1428057919091415882
+    second: catbearmonster_12
   - first:
-      213: -467956578594515361
-    second: golems_13
+      213: 7310153190974229135
+    second: catbearmonster_13
   - first:
-      213: 6065676574894221428
-    second: golems_14
+      213: -6224176252628104875
+    second: catbearmonster_14
   - first:
-      213: -7907511846496340159
-    second: golems_15
+      213: -5357765991733941591
+    second: catbearmonster_15
   - first:
-      213: -8304456685316723746
-    second: golems_16
+      213: 6469790492853060301
+    second: catbearmonster_16
   - first:
-      213: -3573785890703677014
-    second: golems_17
+      213: -5467101841527532540
+    second: catbearmonster_17
   - first:
-      213: -7892945226008280671
-    second: golems_18
+      213: 6606276843644971074
+    second: catbearmonster_18
   - first:
-      213: -2187721521049001418
-    second: golems_19
+      213: -123480453966787330
+    second: catbearmonster_19
   - first:
-      213: 523884536447085848
-    second: golems_20
+      213: -8277657754540846117
+    second: catbearmonster_20
   - first:
-      213: -5107269679848881190
-    second: golems_21
+      213: 1706243888524605928
+    second: catbearmonster_21
   - first:
-      213: 7456063104195034200
-    second: golems_22
+      213: 5425543249231094436
+    second: catbearmonster_22
   - first:
-      213: 1855212098338902328
-    second: golems_23
+      213: -3651732500404469640
+    second: catbearmonster_23
   - first:
-      213: -2218366069738787557
-    second: golems_24
+      213: 5509683208551231429
+    second: catbearmonster_24
   - first:
-      213: 1507720918926746020
-    second: golems_25
+      213: 2089077351189107252
+    second: catbearmonster_25
   - first:
-      213: -5140672929497798997
-    second: golems_26
+      213: -3442194333377342415
+    second: catbearmonster_26
   - first:
-      213: -2850960925432978305
-    second: golems_27
+      213: -7997270156626738499
+    second: catbearmonster_27
   - first:
-      213: 2750377883281422380
-    second: golems_28
+      213: -7845036716490649960
+    second: catbearmonster_28
   - first:
-      213: 6581503791939078227
-    second: golems_29
+      213: -5336712927111147719
+    second: catbearmonster_29
   - first:
-      213: 452901962888633147
-    second: golems_30
+      213: 2952526714719636025
+    second: catbearmonster_30
   - first:
-      213: -6710789626026118700
-    second: golems_31
+      213: 2162008893110851586
+    second: catbearmonster_31
   - first:
-      213: 274798267004574674
-    second: golems_32
+      213: -7480432143669639322
+    second: catbearmonster_32
   - first:
-      213: -999727649898253467
-    second: golems_33
+      213: -7231326337809908962
+    second: catbearmonster_33
   - first:
-      213: -7484049331308258117
-    second: golems_34
+      213: -6646724352840110768
+    second: catbearmonster_34
   - first:
-      213: -4894253279739826678
-    second: golems_35
+      213: 8124570809560513435
+    second: catbearmonster_35
   - first:
-      213: -1184628938543557273
-    second: golems_36
+      213: 4544664042736860817
+    second: catbearmonster_36
   - first:
-      213: 6227120676175190461
-    second: golems_37
+      213: -9176407629217264164
+    second: catbearmonster_37
   - first:
-      213: -6918614075800720782
-    second: golems_38
+      213: -2054225553754435094
+    second: catbearmonster_38
   - first:
-      213: 65177303496127698
-    second: golems_39
+      213: 1588556005626946903
+    second: catbearmonster_39
   - first:
-      213: 3399963114624253615
-    second: golems_40
+      213: -8140087678387525597
+    second: catbearmonster_40
   - first:
-      213: -7171661384043037473
-    second: golems_41
+      213: 8389566866114110389
+    second: catbearmonster_41
   - first:
-      213: -4974340486559893133
-    second: golems_42
+      213: -4187960871429127286
+    second: catbearmonster_42
   - first:
-      213: 4314224235994837300
-    second: golems_43
+      213: 3860328698038252223
+    second: catbearmonster_43
   - first:
-      213: 5015722100011521804
-    second: golems_44
+      213: -1838617598087097551
+    second: catbearmonster_44
   - first:
-      213: 2289988688715431932
-    second: golems_45
+      213: -2851117092991813909
+    second: catbearmonster_45
   - first:
-      213: 6070090299718757885
-    second: golems_46
+      213: -431245824910659224
+    second: catbearmonster_46
   - first:
-      213: -9112436680157571344
-    second: golems_47
+      213: -5666326160532125910
+    second: catbearmonster_47
   - first:
-      213: 1870367967054779948
-    second: golems_48
+      213: 6127128860226503274
+    second: catbearmonster_48
   - first:
-      213: -8091088047131702916
-    second: golems_49
+      213: -1146629108954471416
+    second: catbearmonster_49
   - first:
-      213: -3512588954477608292
-    second: golems_50
+      213: 4533747720305340044
+    second: catbearmonster_50
   - first:
-      213: -7683581866528808418
-    second: golems_51
+      213: -192169447610285813
+    second: catbearmonster_51
   - first:
-      213: 4022892973533267609
-    second: golems_52
+      213: 777284476620498926
+    second: catbearmonster_52
   - first:
-      213: -246814994318883677
-    second: golems_53
+      213: -6831876213588950242
+    second: catbearmonster_53
   - first:
-      213: -4698829531118349429
-    second: golems_54
+      213: -50470661695419247
+    second: catbearmonster_54
   - first:
-      213: 5074212995692833219
-    second: golems_55
+      213: -231668069412556017
+    second: catbearmonster_55
   - first:
-      213: 8966651480379204958
-    second: golems_56
+      213: -4744483884067406463
+    second: catbearmonster_56
   - first:
-      213: 7740806427701137284
-    second: golems_57
+      213: -208824808441958522
+    second: catbearmonster_57
   - first:
-      213: 4551315413159843940
-    second: golems_58
+      213: -10356251547583577
+    second: catbearmonster_58
   - first:
-      213: -9072323820493020884
-    second: golems_59
+      213: -3498259005968415766
+    second: catbearmonster_59
   - first:
-      213: 3769264284980086142
-    second: golems_60
+      213: -6069930846154952238
+    second: catbearmonster_60
   - first:
-      213: -7441255380621778023
-    second: golems_61
+      213: -5318765853785215387
+    second: catbearmonster_61
   - first:
-      213: 373827146934779488
-    second: golems_62
+      213: -1284324072636035488
+    second: catbearmonster_62
   - first:
-      213: 1058136031745444800
-    second: golems_63
+      213: -166060765896675846
+    second: catbearmonster_63
   - first:
-      213: 4340724911301753603
-    second: golems_64
+      213: -6307093791924402182
+    second: catbearmonster_64
   - first:
-      213: 867837734549663083
-    second: golems_65
+      213: 7698737918484682623
+    second: catbearmonster_65
   - first:
-      213: 1131993226930333644
-    second: golems_66
+      213: -8437488708206370841
+    second: catbearmonster_66
   - first:
-      213: 1273593765922473804
-    second: golems_67
+      213: 3122837924754855440
+    second: catbearmonster_67
   - first:
-      213: -3270549547850966156
-    second: golems_68
+      213: 5340165186838241092
+    second: catbearmonster_68
   - first:
-      213: 1414467130954103628
-    second: golems_69
+      213: 3432800083519606640
+    second: catbearmonster_69
   - first:
-      213: 8002227635818365428
-    second: golems_70
+      213: -31704633363447582
+    second: catbearmonster_70
   - first:
-      213: 200943683557584123
-    second: golems_71
+      213: -5867815130973469767
+    second: catbearmonster_71
   - first:
-      213: 1274482574121517856
-    second: golems_72
+      213: 4477039867856296071
+    second: catbearmonster_72
   - first:
-      213: -1575080586734035947
-    second: golems_73
+      213: -724319215392401383
+    second: catbearmonster_73
   - first:
-      213: 5641267865391874113
-    second: golems_74
+      213: -6934733580928176841
+    second: catbearmonster_74
   - first:
-      213: -5451720162247998634
-    second: golems_75
+      213: -7690960193252248098
+    second: catbearmonster_75
   - first:
-      213: 1978501942678750695
-    second: golems_76
+      213: -1915993475613634829
+    second: catbearmonster_76
   - first:
-      213: -6641020821233645284
-    second: golems_77
+      213: -7898101253127358926
+    second: catbearmonster_77
   - first:
-      213: 192786732275605817
-    second: golems_78
+      213: 636775742031748456
+    second: catbearmonster_78
   - first:
-      213: 1584763488639804351
-    second: golems_79
+      213: 1353620177531567869
+    second: catbearmonster_79
   - first:
-      213: -4978968388869838182
-    second: golems_80
+      213: 6536215551214634768
+    second: catbearmonster_80
   - first:
-      213: 1148409094585948181
-    second: golems_81
+      213: -8053445920999885901
+    second: catbearmonster_81
   - first:
-      213: -4317563702138289828
-    second: golems_82
+      213: 8250467427249399092
+    second: catbearmonster_82
   - first:
-      213: -4280014321812248722
-    second: golems_83
+      213: -7595529957052454497
+    second: catbearmonster_83
   - first:
-      213: -3112750022627206697
-    second: golems_84
+      213: 4760808861032074664
+    second: catbearmonster_84
   - first:
-      213: -6339340588395882463
-    second: golems_85
+      213: -2270165624099941818
+    second: catbearmonster_85
   - first:
-      213: 4141207475323218879
-    second: golems_86
+      213: 3044460605955723861
+    second: catbearmonster_86
   - first:
-      213: 7550710662690794633
-    second: golems_87
+      213: 7653913844709803961
+    second: catbearmonster_87
   - first:
-      213: -4978687941460381006
-    second: golems_88
+      213: 5968970408561813031
+    second: catbearmonster_88
   - first:
-      213: 8170726252846618119
-    second: golems_89
+      213: 748409727866688969
+    second: catbearmonster_89
   - first:
-      213: 2426520277384667771
-    second: golems_90
+      213: 5785241121246791356
+    second: catbearmonster_90
   - first:
-      213: -285212944466994865
-    second: golems_91
+      213: 4790098859946598601
+    second: catbearmonster_91
   - first:
-      213: 8565095989570333839
-    second: golems_92
+      213: -3479357256623800392
+    second: catbearmonster_92
   - first:
-      213: -7210381872820472930
-    second: golems_93
+      213: -1097681036133577236
+    second: catbearmonster_93
   - first:
-      213: -780508838282898719
-    second: golems_94
+      213: 8561502470919339940
+    second: catbearmonster_94
   - first:
-      213: -4794296061469009806
-    second: golems_95
+      213: -2838498709352270531
+    second: catbearmonster_95
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -379,13 +379,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: golems_0
+      name: catbearmonster_0
       rect:
         serializedVersion: 2
         x: 3
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,20 +393,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ead46c5caf1203de0800000000000000
-      internalID: -1355546126894871122
+      spriteID: 48ac35d747bfad490800000000000000
+      internalID: -7720582133435872636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_1
+      name: catbearmonster_1
       rect:
         serializedVersion: 2
-        x: 51
+        x: 55
         y: 336
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,20 +414,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78f1a82cb9c7e0180800000000000000
-      internalID: -9147236784717291641
+      spriteID: fdd2a9de2277a7190800000000000000
+      internalID: -7963921999152402977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_2
+      name: catbearmonster_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 102
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,20 +435,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e235aa2a1e06799a0800000000000000
-      internalID: -6226401437603441874
+      spriteID: 006afdc31a7d74610800000000000000
+      internalID: 1605488879691867648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_3
+      name: catbearmonster_3
       rect:
         serializedVersion: 2
         x: 147
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,20 +456,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0137a039266140d0800000000000000
-      internalID: -3440356313238392565
+      spriteID: d7d78eea837206fc0800000000000000
+      internalID: -3503757385688121987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_4
+      name: catbearmonster_4
       rect:
         serializedVersion: 2
-        x: 195
+        x: 199
         y: 336
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,20 +477,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ff72edc43f5aca10800000000000000
-      internalID: 1930460070678790130
+      spriteID: 8e0a971de0243f5a0800000000000000
+      internalID: -6488770006699368216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_5
+      name: catbearmonster_5
       rect:
         serializedVersion: 2
-        x: 244
+        x: 246
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,20 +498,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f7e849e826611470800000000000000
-      internalID: 8363578308902316024
+      spriteID: c37b592a40b779050800000000000000
+      internalID: 5807245504355350332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_6
+      name: catbearmonster_6
       rect:
         serializedVersion: 2
         x: 291
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,20 +519,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e771e43cf76d7ac0800000000000000
-      internalID: -3855811373042665502
+      spriteID: cdc05829b934fdfe0800000000000000
+      internalID: -1162135843381113636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_7
+      name: catbearmonster_7
       rect:
         serializedVersion: 2
-        x: 339
+        x: 343
         y: 336
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,20 +540,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a41139c2e9cdd48a0800000000000000
-      internalID: -6319152130220158646
+      spriteID: 18df916c9866f10d0800000000000000
+      internalID: -3449926047622365823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_8
+      name: catbearmonster_8
       rect:
         serializedVersion: 2
-        x: 388
+        x: 390
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -561,20 +561,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be9f5f0cb0ab55460800000000000000
-      internalID: 7229889336457951723
+      spriteID: 2dd80dfd01a507080800000000000000
+      internalID: -9191747810942218798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_9
+      name: catbearmonster_9
       rect:
         serializedVersion: 2
         x: 435
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,20 +582,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13f023988a717bcb0800000000000000
-      internalID: -4848380461217345743
+      spriteID: 712a7c3d69d8092e0800000000000000
+      internalID: -2121039745553817065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_10
+      name: catbearmonster_10
       rect:
         serializedVersion: 2
-        x: 483
+        x: 487
         y: 336
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,20 +603,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ae0597ed49801be0800000000000000
-      internalID: -1508554907478323551
+      spriteID: 7e3bc4b48c7e0f720800000000000000
+      internalID: 2878055009332540391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_11
+      name: catbearmonster_11
       rect:
         serializedVersion: 2
-        x: 532
+        x: 534
         y: 336
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,524 +624,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bee14311cc3caae00800000000000000
-      internalID: 1056872343801175787
+      spriteID: add88cf71e1ad8de0800000000000000
+      internalID: -1329228325120864806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_12
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 288
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cda5d60810bac0d0800000000000000
-      internalID: -3401712951284617791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_13
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 288
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f56119a98fb7189f0800000000000000
-      internalID: -467956578594515361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_14
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 288
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4786af025bc9d2450800000000000000
-      internalID: 6065676574894221428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_15
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 288
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14774641fdfd24290800000000000000
-      internalID: -7907511846496340159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_16
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 288
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edb2413c4a4a0cc80800000000000000
-      internalID: -8304456685316723746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_17
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 288
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa9ed49caac576ec0800000000000000
-      internalID: -3573785890703677014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_18
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 288
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a14924b220a67290800000000000000
-      internalID: -7892945226008280671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_19
-      rect:
-        serializedVersion: 2
-        x: 351
-        y: 288
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 632a56e1ed6a3a1e0800000000000000
-      internalID: -2187721521049001418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_20
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 288
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81daf32d536354700800000000000000
-      internalID: 523884536447085848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_21
-      rect:
-        serializedVersion: 2
-        x: 445
-        y: 288
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad30c7029455f19b0800000000000000
-      internalID: -5107269679848881190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_22
-      rect:
-        serializedVersion: 2
-        x: 495
-        y: 288
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85cf07ca3e1497760800000000000000
-      internalID: 7456063104195034200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_23
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 288
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8315f78f2990fb910800000000000000
-      internalID: 1855212098338902328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_24
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 240
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1da07f10d7c631e0800000000000000
-      internalID: -2218366069738787557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_25
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 240
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1ed0100308ce410800000000000000
-      internalID: 1507720918926746020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_26
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 240
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba621d20539a8a8b0800000000000000
-      internalID: -5140672929497798997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_27
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 240
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f746c03b42a5f68d0800000000000000
-      internalID: -2850960925432978305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_28
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 240
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c28741bdc1e4b2620800000000000000
-      internalID: 2750377883281422380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_29
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 240
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3584a6614d2365b50800000000000000
-      internalID: 6581503791939078227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_30
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 240
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3bdd088fe7094600800000000000000
-      internalID: 452901962888633147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_31
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 240
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d13652f36c7ed2a0800000000000000
-      internalID: -6710789626026118700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_32
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 240
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2db53b1619740d300800000000000000
-      internalID: 274798267004574674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_33
-      rect:
-        serializedVersion: 2
-        x: 442
-        y: 240
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 563bdabcff04022f0800000000000000
-      internalID: -999727649898253467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_34
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 240
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbc1fdd09c0532890800000000000000
-      internalID: -7484049331308258117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_35
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 240
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0e215ca29e141cb0800000000000000
-      internalID: -4894253279739826678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_36
+      name: catbearmonster_12
       rect:
         serializedVersion: 2
         x: 3
-        y: 192
-        width: 40
-        height: 46
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1149,20 +645,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 765967fb14a5f8fe0800000000000000
-      internalID: -1184628938543557273
+      spriteID: a4b902a7c1b71d310800000000000000
+      internalID: 1428057919091415882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_37
+      name: catbearmonster_13
       rect:
         serializedVersion: 2
         x: 51
-        y: 192
+        y: 288
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1170,20 +666,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db999e4234d2b6650800000000000000
-      internalID: 6227120676175190461
+      spriteID: f8a05b9a891e27560800000000000000
+      internalID: 7310153190974229135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_38
+      name: catbearmonster_14
       rect:
         serializedVersion: 2
-        x: 100
-        y: 192
-        width: 40
-        height: 46
+        x: 99
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1191,20 +687,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27a61e987252cff90800000000000000
-      internalID: -6918614075800720782
+      spriteID: 5590ea2eca84f99a0800000000000000
+      internalID: -6224176252628104875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_39
+      name: catbearmonster_15
       rect:
         serializedVersion: 2
         x: 147
-        y: 192
-        width: 40
-        height: 46
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,20 +708,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d4fd46896e87e000800000000000000
-      internalID: 65177303496127698
+      spriteID: 9aaa709973465a5b0800000000000000
+      internalID: -5357765991733941591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_40
+      name: catbearmonster_16
       rect:
         serializedVersion: 2
         x: 195
-        y: 192
+        y: 288
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1233,20 +729,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faefb9060781f2f20800000000000000
-      internalID: 3399963114624253615
+      spriteID: dc2c4b1cc2059c950800000000000000
+      internalID: 6469790492853060301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_41
+      name: catbearmonster_17
       rect:
         serializedVersion: 2
-        x: 244
-        y: 192
-        width: 40
-        height: 46
+        x: 243
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1254,20 +750,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdc7ab2e7f3297c90800000000000000
-      internalID: -7171661384043037473
+      spriteID: 4041ed057d3f024b0800000000000000
+      internalID: -5467101841527532540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_42
+      name: catbearmonster_18
       rect:
         serializedVersion: 2
         x: 291
-        y: 192
-        width: 40
-        height: 46
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1275,20 +771,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 379f0c2cea797fab0800000000000000
-      internalID: -4974340486559893133
+      spriteID: 248e859a9c53eab50800000000000000
+      internalID: 6606276843644971074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_43
+      name: catbearmonster_19
       rect:
         serializedVersion: 2
         x: 339
-        y: 192
+        y: 288
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1296,20 +792,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4317adbb5143fdb30800000000000000
-      internalID: 4314224235994837300
+      spriteID: efc0b9c6e2f494ef0800000000000000
+      internalID: -123480453966787330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_44
+      name: catbearmonster_20
       rect:
         serializedVersion: 2
-        x: 388
-        y: 192
-        width: 40
-        height: 46
+        x: 387
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1317,20 +813,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07534fecac6b9540800000000000000
-      internalID: 5015722100011521804
+      spriteID: bd3d550112adf1d80800000000000000
+      internalID: -8277657754540846117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_45
+      name: catbearmonster_21
       rect:
         serializedVersion: 2
         x: 435
-        y: 192
-        width: 40
-        height: 46
+        y: 288
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1338,20 +834,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cffbb8a549ca7cf10800000000000000
-      internalID: 2289988688715431932
+      spriteID: 8e9b0bbc6cbcda710800000000000000
+      internalID: 1706243888524605928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_46
+      name: catbearmonster_22
       rect:
         serializedVersion: 2
         x: 483
-        y: 192
+        y: 288
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1359,20 +855,272 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfde74587fa4d3450800000000000000
-      internalID: 6070090299718757885
+      spriteID: 4a220f3e6d66b4b40800000000000000
+      internalID: 5425543249231094436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_47
+      name: catbearmonster_23
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 288
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87084aa73a0725dc0800000000000000
+      internalID: -3651732500404469640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf61a6cfa3567c40800000000000000
+      internalID: 5509683208551231429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_25
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 240
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432d0f158c4edfc10800000000000000
+      internalID: 2089077351189107252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_26
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1345e27cd7eda30d0800000000000000
+      internalID: -3442194333377342415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_27
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db24e65f92df30190800000000000000
+      internalID: -7997270156626738499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_28
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 240
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e8dafcba4d02390800000000000000
+      internalID: -7845036716490649960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_29
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f0e4f2edf20f5b0800000000000000
+      internalID: -5336712927111147719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_30
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a07b4676b79f820800000000000000
+      internalID: 2952526714719636025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_31
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 240
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2089b1b22aff00e10800000000000000
+      internalID: 2162008893110851586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_32
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667482e299a203890800000000000000
+      internalID: -7480432143669639322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_33
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bf9eb420b25ab90800000000000000
+      internalID: -7231326337809908962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_34
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 240
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05de60dba6712c3a0800000000000000
+      internalID: -6646724352840110768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_35
       rect:
         serializedVersion: 2
         x: 532
-        y: 192
-        width: 40
-        height: 46
+        y: 240
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1380,20 +1128,272 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f6d7f08e1f1a8180800000000000000
-      internalID: -9112436680157571344
+      spriteID: b9bbc500b1640c070800000000000000
+      internalID: 8124570809560513435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_48
+      name: catbearmonster_36
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e32d24ed3e11f30800000000000000
+      internalID: 4544664042736860817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_37
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 192
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd025241e9d6a080800000000000000
+      internalID: -9176407629217264164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_38
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1dfeb1ebced73e0800000000000000
+      internalID: -2054225553754435094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_39
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7552535454fab0610800000000000000
+      internalID: 1588556005626946903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_40
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 192
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3286d217269980f80800000000000000
+      internalID: -8140087678387525597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_41
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b36e1a6d9abd6470800000000000000
+      internalID: 8389566866114110389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_42
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a834b35b6cf51e5c0800000000000000
+      internalID: -4187960871429127286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_43
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 192
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2f0da7f74a29530800000000000000
+      internalID: 3860328698038252223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_44
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1339c34390beb76e0800000000000000
+      internalID: -1838617598087097551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_45
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6bd2b1c1cce68d0800000000000000
+      internalID: -2851117092991813909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_46
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 192
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86174530538e30af0800000000000000
+      internalID: -431245824910659224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_47
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 192
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27caf3e06a2d51b0800000000000000
+      internalID: -5666326160532125910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_48
       rect:
         serializedVersion: 2
         x: 3
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1401,20 +1401,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c26d193a1c1e4f910800000000000000
-      internalID: 1870367967054779948
+      spriteID: a6248d64c3fe70550800000000000000
+      internalID: 6127128860226503274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_49
+      name: catbearmonster_49
       rect:
         serializedVersion: 2
-        x: 51
+        x: 55
         y: 144
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1422,20 +1422,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c794e402a4ea6bf80800000000000000
-      internalID: -8091088047131702916
+      spriteID: 80465a786ea5610f0800000000000000
+      internalID: -1146629108954471416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_50
+      name: catbearmonster_50
       rect:
         serializedVersion: 2
-        x: 100
+        x: 102
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1443,20 +1443,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92c666d4f6c04fc0800000000000000
-      internalID: -3512588954477608292
+      spriteID: c8e6902e78b1bee30800000000000000
+      internalID: 4533747720305340044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_51
+      name: catbearmonster_51
       rect:
         serializedVersion: 2
         x: 147
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1464,20 +1464,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e12eae2700f6e5590800000000000000
-      internalID: -7683581866528808418
+      spriteID: b018182d7e6455df0800000000000000
+      internalID: -192169447610285813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_52
+      name: catbearmonster_52
       rect:
         serializedVersion: 2
-        x: 195
+        x: 199
         y: 144
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1485,20 +1485,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9968dd068df24d730800000000000000
-      internalID: 4022892973533267609
+      spriteID: ee7e36efc1879ca00800000000000000
+      internalID: 777284476620498926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_53
+      name: catbearmonster_53
       rect:
         serializedVersion: 2
-        x: 244
+        x: 246
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1506,20 +1506,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a402620213239cf0800000000000000
-      internalID: -246814994318883677
+      spriteID: e130793d7cc4031a0800000000000000
+      internalID: -6831876213588950242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_54
+      name: catbearmonster_54
       rect:
         serializedVersion: 2
         x: 291
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1527,20 +1527,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b835399df676aceb0800000000000000
-      internalID: -4698829531118349429
+      spriteID: 19cc01a5331bc4ff0800000000000000
+      internalID: -50470661695419247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_55
+      name: catbearmonster_55
       rect:
         serializedVersion: 2
-        x: 339
+        x: 343
         y: 144
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1548,20 +1548,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c921f2d5d93b6640800000000000000
-      internalID: 5074212995692833219
+      spriteID: f033dd84e13f8ccf0800000000000000
+      internalID: -231668069412556017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_56
+      name: catbearmonster_56
       rect:
         serializedVersion: 2
-        x: 388
+        x: 390
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1569,20 +1569,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e55abb89302ff6c70800000000000000
-      internalID: 8966651480379204958
+      spriteID: 18db8977b05382eb0800000000000000
+      internalID: -4744483884067406463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_57
+      name: catbearmonster_57
       rect:
         serializedVersion: 2
         x: 435
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1590,20 +1590,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fcf26fe6edc6b60800000000000000
-      internalID: 7740806427701137284
+      spriteID: 68f278071fa1a1df0800000000000000
+      internalID: -208824808441958522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_58
+      name: catbearmonster_58
       rect:
         serializedVersion: 2
-        x: 483
+        x: 487
         y: 144
-        width: 41
-        height: 47
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1611,20 +1611,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 468172e1145892f30800000000000000
-      internalID: 4551315413159843940
+      spriteID: 7ab3d494b053bdff0800000000000000
+      internalID: -10356251547583577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_59
+      name: catbearmonster_59
       rect:
         serializedVersion: 2
-        x: 532
+        x: 534
         y: 144
-        width: 40
-        height: 46
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1632,524 +1632,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c21e2307d81a81280800000000000000
-      internalID: -9072323820493020884
+      spriteID: ae301f8f7ffa37fc0800000000000000
+      internalID: -3498259005968415766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_60
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 96
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e750ec295ed1f4430800000000000000
-      internalID: 3769264284980086142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_61
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 96
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 993231328a95bb890800000000000000
-      internalID: -7441255380621778023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_62
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 96
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06ef17c3fc9103500800000000000000
-      internalID: 373827146934779488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_63
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 96
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cb8a385d114fae00800000000000000
-      internalID: 1058136031745444800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_64
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 96
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30b74d50f4a5d3c30800000000000000
-      internalID: 4340724911301753603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_65
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 96
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6d238252dd2b0c00800000000000000
-      internalID: 867837734549663083
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_66
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 96
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc7a453a7d5a5bf00800000000000000
-      internalID: 1131993226930333644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_67
-      rect:
-        serializedVersion: 2
-        x: 351
-        y: 96
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4706f548c6bca110800000000000000
-      internalID: 1273593765922473804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_68
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 96
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47b570ca38cac92d0800000000000000
-      internalID: -3270549547850966156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_69
-      rect:
-        serializedVersion: 2
-        x: 445
-        y: 96
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4b3cf68c5231a310800000000000000
-      internalID: 1414467130954103628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_70
-      rect:
-        serializedVersion: 2
-        x: 495
-        y: 96
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f184cc13af9d0f60800000000000000
-      internalID: 8002227635818365428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_71
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 96
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfcee4e2735e9c200800000000000000
-      internalID: 200943683557584123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_72
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 48
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02340fe062fdfa110800000000000000
-      internalID: 1274482574121517856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_73
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 48
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51c9a1f2d80342ae0800000000000000
-      internalID: -1575080586734035947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_74
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 48
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 140428f1c3fc94e40800000000000000
-      internalID: 5641267865391874113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_75
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 48
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6538f5a95699754b0800000000000000
-      internalID: -5451720162247998634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_76
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 48
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e589c8c80d057b10800000000000000
-      internalID: 1978501942678750695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_77
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 48
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c19456cafba56d3a0800000000000000
-      internalID: -6641020821233645284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_78
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 48
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93122b6f28aeca200800000000000000
-      internalID: 192786732275605817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_79
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 48
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb362691ff53ef510800000000000000
-      internalID: 1584763488639804351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_80
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 48
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9aa38941a627eab0800000000000000
-      internalID: -4978968388869838182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_81
-      rect:
-        serializedVersion: 2
-        x: 442
-        y: 48
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5189f9bacf7ffef00800000000000000
-      internalID: 1148409094585948181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_82
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 48
-        width: 21
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c514de630bee414c0800000000000000
-      internalID: -4317563702138289828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_83
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 48
-        width: 27
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e67ebca96a55a94c0800000000000000
-      internalID: -4280014321812248722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golems_84
+      name: catbearmonster_60
       rect:
         serializedVersion: 2
         x: 3
-        y: 0
-        width: 40
-        height: 46
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2157,20 +1653,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d957b2b85a4dc4d0800000000000000
-      internalID: -3112750022627206697
+      spriteID: 2d17fb72e0643cba0800000000000000
+      internalID: -6069930846154952238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_85
+      name: catbearmonster_61
       rect:
         serializedVersion: 2
         x: 51
-        y: 0
+        y: 96
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2178,20 +1674,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 128927672532608a0800000000000000
-      internalID: -6339340588395882463
+      spriteID: 56ea7a1d2a2ff26b0800000000000000
+      internalID: -5318765853785215387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_86
+      name: catbearmonster_62
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 40
-        height: 46
+        x: 99
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2199,20 +1695,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb25dbf146887930800000000000000
-      internalID: 4141207475323218879
+      spriteID: 06ecb028f0a2d2ee0800000000000000
+      internalID: -1284324072636035488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_87
+      name: catbearmonster_63
       rect:
         serializedVersion: 2
         x: 147
-        y: 0
-        width: 40
-        height: 46
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2220,20 +1716,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c6073a75389c860800000000000000
-      internalID: 7550710662690794633
+      spriteID: afd699dfc9802bdf0800000000000000
+      internalID: -166060765896675846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_88
+      name: catbearmonster_64
       rect:
         serializedVersion: 2
         x: 195
-        y: 0
+        y: 96
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2241,20 +1737,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b2bbb902b528eab0800000000000000
-      internalID: -4978687941460381006
+      spriteID: af74647dc93b878a0800000000000000
+      internalID: -6307093791924402182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_89
+      name: catbearmonster_65
       rect:
         serializedVersion: 2
-        x: 244
-        y: 0
-        width: 40
-        height: 46
+        x: 243
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2262,20 +1758,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70691e19c30446170800000000000000
-      internalID: 8170726252846618119
+      spriteID: f771c12e85967da60800000000000000
+      internalID: 7698737918484682623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_90
+      name: catbearmonster_66
       rect:
         serializedVersion: 2
         x: 291
-        y: 0
-        width: 40
-        height: 46
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2283,20 +1779,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b72abc5065bbca120800000000000000
-      internalID: 2426520277384667771
+      spriteID: 7ef5dfe39b408ea80800000000000000
+      internalID: -8437488708206370841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_91
+      name: catbearmonster_67
       rect:
         serializedVersion: 2
         x: 339
-        y: 0
+        y: 96
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2304,20 +1800,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4993bf8658ba0cf0800000000000000
-      internalID: -285212944466994865
+      spriteID: 016912c0c8c865b20800000000000000
+      internalID: 3122837924754855440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_92
+      name: catbearmonster_68
       rect:
         serializedVersion: 2
-        x: 388
-        y: 0
-        width: 40
-        height: 46
+        x: 387
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2325,20 +1821,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c66753c655dd670800000000000000
-      internalID: 8565095989570333839
+      spriteID: 44f966ba1f31c1a40800000000000000
+      internalID: 5340165186838241092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_93
+      name: catbearmonster_69
       rect:
         serializedVersion: 2
         x: 435
-        y: 0
-        width: 40
-        height: 46
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2346,20 +1842,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e93be9f83e39feb90800000000000000
-      internalID: -7210381872820472930
+      spriteID: 07f0e1bfc71c3af20800000000000000
+      internalID: 3432800083519606640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_94
+      name: catbearmonster_70
       rect:
         serializedVersion: 2
         x: 483
-        y: 0
+        y: 96
         width: 41
-        height: 47
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2367,20 +1863,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e2581ec8531b25f0800000000000000
-      internalID: -780508838282898719
+      spriteID: 2e043aecdcc5f8ff0800000000000000
+      internalID: -31704633363447582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golems_95
+      name: catbearmonster_71
       rect:
         serializedVersion: 2
-        x: 532
-        y: 0
-        width: 40
-        height: 46
+        x: 531
+        y: 96
+        width: 41
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2388,8 +1884,512 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 278d514222d377db0800000000000000
-      internalID: -4794296061469009806
+      spriteID: 9b30aa63a35519ea0800000000000000
+      internalID: -5867815130973469767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_72
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78816d81a04a12e30800000000000000
+      internalID: 4477039867856296071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_73
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 48
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918db8ed283b2f5f0800000000000000
+      internalID: -724319215392401383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_74
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73dadc8cc80e2cf90800000000000000
+      internalID: -6934733580928176841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_75
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5b783e378344590800000000000000
+      internalID: -7690960193252248098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_76
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 48
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe4516d5160965e0800000000000000
+      internalID: -1915993475613634829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_77
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236b64791ce446290800000000000000
+      internalID: -7898101253127358926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_78
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d5361e92846d800800000000000000
+      internalID: 636775742031748456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_79
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 48
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfef192316609c210800000000000000
+      internalID: 1353620177531567869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_80
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0174889d96d45ba50800000000000000
+      internalID: 6536215551214634768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_81
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3bbf49a996c3090800000000000000
+      internalID: -8053445920999885901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_82
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 48
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435a128896c8f7270800000000000000
+      internalID: 8250467427249399092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_83
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 48
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99ec053fb1479690800000000000000
+      internalID: -7595529957052454497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_84
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad495d6f6ac11240800000000000000
+      internalID: 4760808861032074664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_85
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642583a8460ce70e0800000000000000
+      internalID: -2270165624099941818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_86
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55259a67ac8104a20800000000000000
+      internalID: 3044460605955723861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_87
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b74f5fe61a283a60800000000000000
+      internalID: 7653913844709803961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_88
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726252d26fa06d250800000000000000
+      internalID: 5968970408561813031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_89
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5d0f7aea2e26a00800000000000000
+      internalID: 748409727866688969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_90
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6c5e3f52e494050800000000000000
+      internalID: 5785241121246791356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_91
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0ee1ab889d97240800000000000000
+      internalID: 4790098859946598601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_92
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfb2407207d6bfc0800000000000000
+      internalID: -3479357256623800392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_93
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced4394d9e044c0f0800000000000000
+      internalID: -1097681036133577236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_94
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afb6c2f22190d670800000000000000
+      internalID: 8561502470919339940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catbearmonster_95
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3537ad7670ab98d0800000000000000
+      internalID: -2838498709352270531
       vertices: []
       indices: 
       edges: []
