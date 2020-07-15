@@ -82,7 +82,7 @@ namespace ce
 
     public:
         list();
-        explicit list(std::initializer_list<int> list);
+        explicit list(std::initializer_list<T> list);
         explicit list(int *list, int size);
         explicit list(T defaultValue, int size);
         //access
@@ -135,7 +135,7 @@ namespace ce
      * @param list 
      */
     template <class T>
-    list<T>::list(std::initializer_list<int> list)
+    list<T>::list(std::initializer_list<T> list)
     {
         for (T element : list)
         {
