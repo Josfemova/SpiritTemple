@@ -11,6 +11,7 @@ typedef std::pair<int, int> Pair;
 using json = nlohmann::json;
 
 
+
 class Enemy;
 class Item;
 class Level {
@@ -25,7 +26,7 @@ private:
     
     
 public:
-    Level(json playerInfo, json obstacles, json items, json enemies);
+    Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy);
     void finish();
     void start();
 

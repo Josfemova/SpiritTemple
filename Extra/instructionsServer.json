@@ -4,4 +4,5 @@
     {"ID":123,"instruction":"movexy"},
     {"ID":123,"instruction":"die"},
     {"ID":123,"instruction":"heart-"}
+    {"instruction":"teleport","ID":1231,"gridx":0, "gridy":0}
 ]

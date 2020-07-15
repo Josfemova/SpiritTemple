@@ -8,12 +8,11 @@
 class Item : public GameObject
 {
 private:
-    int itemID;
-    ItemType type;
+    ItemType itemType;
 
 public:
     static ItemType getItemType(std::string value);
-    explicit Item(ItemType type) : GameObject{GOType::item}{}
+    explicit Item(ItemType type, int id, int px, int py) : GameObject{GOType::item, id, px, py}, itemType{type}{}
 };
 
 #endif

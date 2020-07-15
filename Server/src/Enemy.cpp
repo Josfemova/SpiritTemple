@@ -3,11 +3,8 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
-Enemy::Enemy(int id, int px, int py, std::string type) : GameObject{GOType::enemy}
+Enemy::Enemy(int id, int px, int py, std::string type) : GameObject{GOType::enemy, id, px, py}
 {
-    enemyID = id;
-    setX(px);
-    setY(py);
     setEnemyType(type);
 }
 
@@ -33,22 +30,6 @@ void Enemy::updateData(int px, int py, int damage, bool range)
     setY(py);
     damageDone = damage;
     inRange = range;
-}
-
-void Enemy::setEnemy(int px, int py)
-{
-    setX(px);
-    setY(py);
-}
-
-void Enemy::setEnemyX(int px)
-{
-    setX(px);
-}
-
-void Enemy::setEnemyY(int py)
-{
-    setY(py);
 }
 
 void Enemy::setRouteVelocity(float routeVel)
@@ -80,17 +61,6 @@ std::string Enemy::toString()
 {
     return "";
 }
-
-int Enemy::getEnemyX() const
-{
-    return getX();
-}
-
-int Enemy::getEnemyY() const
-{
-    return getY();
-}
-
 Pair Enemy::enemyPos() const
 {
     return std::make_pair(getX(), getY());
@@ -156,7 +126,7 @@ void Enemy::refreshState(){
 
     }
     else if(inRange){
-        parent->triggerGroupCall(enemyID);
+        parent->triggerGroupCall(getID());
         //consigue su lista de migas
     }
     //movedSafeSpace

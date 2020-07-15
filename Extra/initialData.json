@@ -2,18 +2,18 @@
   "_comment": "este dato es el que se envia cuando el cliente inicia, el server construye el juego a partir de esto",
   "lengthx": 20,
   "lengthy": 10,
-  "player": { "ID": 123, "gridx": 123, "gridy": 123 },
+  "player": { "ID": 123, "gridx": 1, "gridy": 1 },
   "enemies": [
-    { "ID": 123, "type": "", "gridx": 123, "gridy": 123 },
-    { "ID": 123, "type": "", "gridx": 123, "gridy": 123 }
+    { "ID": 1, "type": "", "gridx": 10, "gridy": 1 },
+    { "ID": 1, "type": "", "gridx": 10, "gridy": 2 }
   ],
   "items": [
-    { "ID": 123, "type": "", "gridx": 123, "gridy": 123 },
-    { "ID": 123, "type": "", "gridx": 123, "gridy": 123 }
+    { "ID": 123, "type": "", "gridx": 3, "gridy": 2 },
+    { "ID": 123, "type": "", "gridx": 4, "gridy": 3 }
   ],
   "otherObj": [
-    { "type": "", "gridx": 555, "gridy": 444 },
-    { "type": "", "gridx": 555, "gridy": 444 },
-    { "type": "", "gridx": 555, "gridy": 444 }
+    { "type": "", "gridx": 4, "gridy": 4 },
+    { "type": "", "gridx": 5, "gridy": 5 },
+    { "type": "", "gridx": 6, "gridy": 6 }
   ]
 }

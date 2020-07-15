@@ -16,9 +16,9 @@ std::string Game::startLevel(std::string levelData)
     json items = initialData["items"];
     json otherObj = initialData["otherObj"];
 
-    std::shared_ptr<Level> newLevel(new Level(player,otherObj,items,enemies));
+    std::shared_ptr<Level> newLevel(new Level(player,otherObj,items,enemies,lengthx, lengthy));
     currentLevel = newLevel;
-
+    currentLevel->getSimpleMatrix();
     json loadLevelResponse = {
         {"playerLives",playerLives}
     };

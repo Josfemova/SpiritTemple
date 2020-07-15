@@ -9,7 +9,6 @@
 class Level;
 class Enemy : public GameObject{
 private:
-    int enemyID;
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
     float route_velocity;
@@ -28,18 +27,12 @@ private:
 public:
     Enemy(int id, int px, int py, std::string type);
     void updateData(int px, int py, int damage, bool range);
-    void setEnemy(int px, int py);
-    void setEnemyX(int px);
-    void setEnemyY(int py);
     void setRouteVelocity(float routeVel);
     void setChaseVelocity(float chaseVel);
     void setVisibilityRadius(float radius);
     void setDamage(int damage);
     void setInRange(bool range);
     std::string toString();
-
-    int getEnemyX() const;
-    int getEnemyY() const;
     Pair enemyPos() const;
     float getRouteVelocity() const;
     float getChaseVelocity() const;
