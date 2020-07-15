@@ -6,21 +6,24 @@ public class ItemContainer : MonoBehaviour
 {
     public string itemType;
     public Animator animator;
-    public GameObject chestSprite;
+    public GameObject itemSprite;
     void Start()
     {
-        animator = chestSprite.GetComponent<Animator>();
+        animator = itemSprite.GetComponent<Animator>();
     }
 
         void Update()
-    {   //testing open chest with Keyboard
+    {  
+        //constains teasure
         openChest();
+        //constains hearts
+        openJar();
     }
 
     void openChest(){
-        //open the chest
-        //parameters, setting variable as boolean on animator (name,value)  
         animator.SetBool("Open", true);
-        //Debug.Log("Entró");
+    }
+    void openJar(){
+        animator.SetBool("Open", true);
     }
 }

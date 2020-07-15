@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OpenChest
+  m_Name: OpenJar
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 6210789413000989635, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
+      value: {fileID: 4455232240493665095, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
         type: 3}
-    - time: 0.033333335
-      value: {fileID: -6580861909127892675, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
+    - time: 0.11666667
+      value: {fileID: 1702683679510850378, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
         type: 3}
-    - time: 0.06666667
-      value: {fileID: 318953615281452700, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
+    - time: 0.21666667
+      value: {fileID: 1702683679510850378, guid: a8f0e5a39d4b0849fb6a6e5908c5d226,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,15 +47,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 6210789413000989635, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
-    - {fileID: -6580861909127892675, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
-    - {fileID: 318953615281452700, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
+    - {fileID: 4455232240493665095, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
+    - {fileID: 1702683679510850378, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
+    - {fileID: 1702683679510850378, guid: a8f0e5a39d4b0849fb6a6e5908c5d226, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.083333336
+    m_StopTime: 0.23333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
