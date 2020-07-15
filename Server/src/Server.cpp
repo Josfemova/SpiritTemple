@@ -72,8 +72,8 @@ void Server::listenClient()
             std::ifstream t("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
             std::stringstream buffer;
             buffer << t.rdbuf();
-            //
-            std::string response(game->startLevel(buffer.str()));
+            std::string data = buffer.str();
+            std::string response(game->startLevel(data));
             sendMsg("loading level");
         }
         else if (message == "event")

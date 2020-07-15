@@ -5,7 +5,7 @@
 #include <sstream>
 
 using json = nlohmann::json;
-std::string Game::startLevel(std::string levelData)
+std::string Game::startLevel(std::string& levelData)
 {
     json initialData = json::parse(levelData);
 
@@ -26,7 +26,7 @@ std::string Game::startLevel(std::string levelData)
     return loadLevelResponse.dump();//returns the amount of initial health
 }
 
-std::string Game::getResponse(std::string action)
+std::string Game::getResponse(std::string& action)
 {
     std::ifstream ifs("/home/jose/Desktop/githubU/SpiritTemple/Extra/clientAction.json");
     json clientAction;

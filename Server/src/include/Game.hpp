@@ -15,8 +15,8 @@ private:
     int playerLives=3;
 
 public:
-    std::string startLevel(std::string);
-    std::string getResponse(std::string);
+    std::string startLevel(std::string&);
+    std::string getResponse(std::string&);
 };
 
 #endif //GAMESERVER_GAME_HPP

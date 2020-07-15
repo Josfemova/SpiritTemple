@@ -3,12 +3,12 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
-Enemy::Enemy(int id, int px, int py, std::string type) : GameObject{GOType::enemy, id, px, py}
+Enemy::Enemy(int id, int px, int py, std::string& type) : GameObject{GOType::enemy, id, px, py}
 {
     setEnemyType(type);
 }
 
-void Enemy::setEnemyType(std::string type)
+void Enemy::setEnemyType(std::string& type)
 {
     if (type == "SpGray")
         enemyType = EnemyType::SpGray;
