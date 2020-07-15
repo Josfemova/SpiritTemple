@@ -12,6 +12,7 @@ typedef std::pair<int, int> Pair;
 typedef std::pair<double, std::pair<int, int>> pPair;
 typedef ce::list<Direction> listDirections;
 typedef ce::list<Pair> adjacentNodes;
+typedef ce::list<ce::list<int>> gmatrix;
 
 /**
  * @brief hold the parameters of each node
@@ -73,9 +74,7 @@ public:
  */
 class Pathfinding {
 private:
-    static const int ROWS = 10;
-    static const int COLS = 10;
-    int matrix[ROWS][COLS] = {0};
+    gmatrix matrix;
     listDirections line;
     adjacentNodes nodes;
 
@@ -84,7 +83,7 @@ public:
      * @brief update the matrix
      * @param newMatrix
      */
-    explicit Pathfinding(int (*newMatrix)[COLS]);
+    explicit Pathfinding(gmatrix matrix);
 
     /**
      * @brief check whether given node (row, col) is a valid node or not
@@ -93,7 +92,7 @@ public:
      * @return true
      * @return false
      */
-    static bool isValid(int row, int col);
+    bool isValid(int row, int col);
 
     /**
      * @brief returns true if the node isn't blocked, else false
@@ -102,7 +101,7 @@ public:
      * @return true
      * @return false
      */
-    bool isUnBlocked(int row, int col) const;
+    bool isUnBlocked(int row, int col);
 
     /**
      * @brief check whether destination node has been reached or not
@@ -122,9 +121,9 @@ public:
      * @return true
      * @return false
      */
-    bool nodeValidations(int row, int col, Pair dest) const;
+    bool nodeValidations(int row, int col, Pair dest);
 
-    bool initialValidations(Pair src, Pair dest) const;
+    bool initialValidations(Pair src, Pair dest);
 
     /**
      * @brief calculate the "H" Heuristic
@@ -144,7 +143,6 @@ public:
      * @return Direction
      */
     static Direction setMovement(int srcX, int srcY, int destX, int destY);
-
     /**
      * @brief move the enemy to a position close to the player
      * @param newMatrix
@@ -153,7 +151,7 @@ public:
      * @param playerX
      * @param playerY
      */
-    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const;
+    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY);
 
     /**
      * @brief get all the adjacent nodes to a particular node
@@ -163,7 +161,7 @@ public:
      * @param py
      * @param dest
      */
-    void checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest) const;
+    void checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest);
 
     /**
      * @brief add a node to the list of nodes near the player
@@ -207,7 +205,7 @@ public:
       * @param dest
       * @return the best adjacent node
       */
-     Pair bestAdjacentNode(int &px, int &py, Pair &dest) const;
+     Pair bestAdjacentNode(int &px, int &py, Pair &dest);
 
      /**
       *

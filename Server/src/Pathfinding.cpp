@@ -35,21 +35,19 @@ double Node::getG() const
     return G;
 }
 
-Pathfinding::Pathfinding(int (*newMatrix)[10])
+Pathfinding::Pathfinding(gmatrix matrix)
 {
-    for(int i=0; i<ROWS; i++){
-        for(int j=0; j<COLS; j++){
-            matrix[i][j] = newMatrix[i][j];
-        }
-    }
+    this->matrix = matrix;
 }
 
 bool Pathfinding::isValid(int row, int col)
 {
+    int ROWS = matrix.size();
+    int COLS = matrix[0].size();
     return (row >= 0) && (row < ROWS) && (col >= 0) && (col < COLS);
 }
 
-bool Pathfinding::isUnBlocked(int row, int col) const
+bool Pathfinding::isUnBlocked(int row, int col)
 {
     return matrix[row][col] == 1;
 }
@@ -59,12 +57,12 @@ bool Pathfinding::isDestination(int row, int col, Pair dest)
     return (row == dest.second && col == dest.first);
 }
 
-bool Pathfinding::nodeValidations(int row, int col, Pair dest) const
+bool Pathfinding::nodeValidations(int row, int col, Pair dest)
 {
     return isValid(row, col) && isUnBlocked(row, col) && !isDestination(row, col, dest);
 }
 
-bool Pathfinding::initialValidations(Pair src, Pair dest) const
+bool Pathfinding::initialValidations(Pair src, Pair dest)
 {
     bool result = true;
 
@@ -121,7 +119,7 @@ Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
     }
 }
 
-void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY) const
+void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY)
 {
     int tempPlayerX = playerX;
     int tempPlayerY = playerY;
@@ -151,7 +149,7 @@ void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &pla
     enemyY = teleport.second;
 }
 
-void Pathfinding::checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest) const
+void Pathfinding::checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest)
 {
     // NORTH NODE
     if(nodeValidations(px-1, py, dest)){
@@ -322,6 +320,8 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
 
     // Closed list and initialized false cause the node has not been included yet
     // The closed list is implemented as a boolean 2D array
+    int ROWS = matrix.size();
+    int COLS = matrix[0].size();
     bool closedList[ROWS][COLS];
     memset(closedList, false, sizeof(closedList));
 
@@ -634,7 +634,7 @@ void Pathfinding::setLineSight(adjacentNodes &nodes, listDirections &line)
     }
 }
 
-Pair Pathfinding::bestAdjacentNode(int &px, int &py, Pair &dest) const
+Pair Pathfinding::bestAdjacentNode(int &px, int &py, Pair &dest)
 {
     std::set<pPair> adjNodes;
 

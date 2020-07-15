@@ -1,6 +1,6 @@
 #include "include/MoveGenerator.hpp"
 
-listDirections MoveGenerator::getRoute(int (*matrix)[10], Pair enemyPos, Pair playerPos, RouteType type) {
+listDirections MoveGenerator::getRoute(gmatrix matrix, Pair enemyPos, Pair playerPos, RouteType type) {
     MoveGenerator::pathfinding = new Pathfinding(matrix);
     switch (type) {
         case RouteType::Astar:
@@ -18,7 +18,7 @@ listDirections MoveGenerator::getRoute(int (*matrix)[10], Pair enemyPos, Pair pl
 }
 
 
-listDirections MoveGenerator::randomPath(int (*matrix)[10], Pair enemyPos, Pair playerPos, int size) {
+listDirections MoveGenerator::randomPath(gmatrix matrix, Pair enemyPos, Pair playerPos, int size) {
     MoveGenerator::pathfinding = new Pathfinding(matrix);
     return MoveGenerator::pathfinding->RandomPath(enemyPos, playerPos, size);
 }
