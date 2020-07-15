@@ -35,6 +35,15 @@ int main()
             {1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
             {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
             {1, 1, 1, 0, 0, 0, 1, 0, 0, 1}};
+    int te[10]{1,2,3,4,5,6,7,8,9,10};
+    ce::list<ce::list<int>> mat;
+    for(int i= 0; i<9;i++){
+        ce::list<int> x{matrix[i], 10};
+        mat.push_back(x);
+    }
+    for(auto x: mat){
+        ce::debuglog(x.toString());
+    }
     /*
     // ADAPTING ENEMY CLASS FOR TESTING (THE PLAYER'S METHODS
     // DON'T BELONG TO HIM) BUT IT'S JUST FOR TESTING NOW

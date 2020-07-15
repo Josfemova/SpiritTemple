@@ -50,7 +50,25 @@ namespace ce
          */
         friend bool operator==(const list<E> &x, const list<E> &y);
     };
-
+    /**
+     * @brief allows for each iteration trough list elements
+     * 
+     * @tparam T data type of list to be iterated over
+     */
+    template <class T>
+    struct listIterator
+    {
+        std::shared_ptr<Node<T>> n;
+        listIterator<T>(std::shared_ptr<Node<T>> node) : n(node) {} //constructor
+        bool operator!=(listIterator<T> rhs) { return n != rhs.n; }
+        //Node<T> &operator*() { return *n; }
+        T &operator*()
+        {
+            return n->data;
+        }
+        void operator++() { n = n->next; }
+        void operator--() { n = n->prev; }
+    };
     template <class T>
     /**
      * @brief 
@@ -65,8 +83,27 @@ namespace ce
     public:
         list();
         explicit list(std::initializer_list<int> list);
+        explicit list(int *list, int size);
+        explicit list(T defaultValue, int size);
         //access
-
+        /**
+         * @brief gives an iterator pointing to the first element
+         * 
+         * @return listIterator<T> 
+         */
+        listIterator<T> begin()
+        {
+            return first;
+        };
+        /**
+         * @brief gives an iterator pointing to the final element of the list
+         * 
+         * @return listIterator<T> 
+         */
+        listIterator<T> end()
+        {
+            return last->next;
+        };
         T &at(int position);
         T &operator[](int position);
         T &front();
@@ -103,6 +140,22 @@ namespace ce
         for (T element : list)
         {
             push_back(element);
+        }
+    }
+    template <class T>
+    list<T>::list(int *list, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            push_back(list[i]);
+        }
+    }
+    template <class T>
+    list<T>::list(T defaultVal, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            push_back(defaultVal);
         }
     }
     /**

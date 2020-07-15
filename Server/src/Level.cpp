@@ -18,26 +18,23 @@ Level::Level(json playerInfo, json obstacles, json items, json enemies)
 }
 
 /* TODO */
-void Level::getSimpleMatrix(){
-    /*Needs refining
-    ce::list<ce::list<int>> A;
-    for(int i=0; i<lengthx; i++){
-        for(int j=0; j<lengthy; j++){
-            A[i][j] =  1;
-        }
+ce::list<ce::list<int>> Level::getSimpleMatrix(){
+    ce::list<ce::list<int>> simpleMatrix;
+    //initialize list
+    for (int i = 0; i < lengthy; i++){
+        ce::list<int> x(1, lengthx);
+        simpleMatrix.push_back(x);
     }
+    int x;
+    int y;
     for(auto x: obstacles){
         int i = x["gridx"];
         int j = x["gridy"];
-        A[i][j] = 0;
+        simpleMatrix[i][j] = 0;
     }
-    ce::list<Item> tempItems = items;
-    while (!tempItems.empty())
-    {
-        Item x = tempItems.pop_back();
-        const int i = x.getX();
-        const int j = x.getX();
-        A[i][j] = 0;
+    /*
+    for(auto x: enemies){
+
     }
     ce::list<Enemy> tempEnemies = enemies;
     while (!tempEnemies.empty())
@@ -47,6 +44,7 @@ void Level::getSimpleMatrix(){
         const int j = x.getX();
         A[i][j] = 0;
     }*/
+    return simpleMatrix;
     
 }
 void Level::triggerGroupCall(int id){

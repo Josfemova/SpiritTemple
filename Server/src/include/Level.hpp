@@ -31,7 +31,7 @@ public:
 
     // Returns a level matrix with "0" representing obstacles and safe areas
     // (where the enemy can't walk) and "1" which is where the enemy can walk
-    void getSimpleMatrix();
+    ce::list<ce::list<int>> getSimpleMatrix();
     // Manage the events, for each event add an instruction
     void manageEvent(json event){
         //muevo jugador
