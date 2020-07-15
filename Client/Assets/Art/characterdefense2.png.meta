@@ -1,0 +1,1959 @@
+fileFormatVersion: 2
+guid: 7261800e3d451de2e807400f4c77c0a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9180713914629189818
+    second: characterdefense2_0
+  - first:
+      213: -5932917757908103644
+    second: characterdefense2_1
+  - first:
+      213: 2002002810497766870
+    second: characterdefense2_2
+  - first:
+      213: -622402181474809046
+    second: characterdefense2_3
+  - first:
+      213: -9073553329779312849
+    second: characterdefense2_4
+  - first:
+      213: -7828258083646045402
+    second: characterdefense2_5
+  - first:
+      213: -8555023039310969491
+    second: characterdefense2_6
+  - first:
+      213: -5752510347242810677
+    second: characterdefense2_7
+  - first:
+      213: -8033380924542548994
+    second: characterdefense2_8
+  - first:
+      213: 7813408052415814922
+    second: characterdefense2_9
+  - first:
+      213: 3159622825928444642
+    second: characterdefense2_10
+  - first:
+      213: 1400097253766064254
+    second: characterdefense2_11
+  - first:
+      213: -596216958016455037
+    second: characterdefense2_12
+  - first:
+      213: 104606122455241490
+    second: characterdefense2_13
+  - first:
+      213: 9064821588579591469
+    second: characterdefense2_14
+  - first:
+      213: 3418662151459890640
+    second: characterdefense2_15
+  - first:
+      213: -7117555014114627795
+    second: characterdefense2_16
+  - first:
+      213: -5945306714232931793
+    second: characterdefense2_17
+  - first:
+      213: 4258184924745252644
+    second: characterdefense2_18
+  - first:
+      213: 2029643213356288700
+    second: characterdefense2_19
+  - first:
+      213: 9027384645500783718
+    second: characterdefense2_20
+  - first:
+      213: -2013502138197406827
+    second: characterdefense2_21
+  - first:
+      213: -1179493493728444921
+    second: characterdefense2_22
+  - first:
+      213: 6492103172247442770
+    second: characterdefense2_23
+  - first:
+      213: -2780229985068103218
+    second: characterdefense2_24
+  - first:
+      213: 4304109738829893992
+    second: characterdefense2_25
+  - first:
+      213: 9173480693768216207
+    second: characterdefense2_26
+  - first:
+      213: 7473818295842596591
+    second: characterdefense2_27
+  - first:
+      213: -6617672874446956979
+    second: characterdefense2_28
+  - first:
+      213: 1638235066346519638
+    second: characterdefense2_29
+  - first:
+      213: 5563909417351972226
+    second: characterdefense2_30
+  - first:
+      213: 15249518180164516
+    second: characterdefense2_31
+  - first:
+      213: -5853902346984195528
+    second: characterdefense2_32
+  - first:
+      213: 951623128573059296
+    second: characterdefense2_33
+  - first:
+      213: -6363295087307257840
+    second: characterdefense2_34
+  - first:
+      213: -5784967905176325325
+    second: characterdefense2_35
+  - first:
+      213: -3319426897706146295
+    second: characterdefense2_36
+  - first:
+      213: -1038017908501620194
+    second: characterdefense2_37
+  - first:
+      213: 4844005838504570180
+    second: characterdefense2_38
+  - first:
+      213: 9060743079327017351
+    second: characterdefense2_39
+  - first:
+      213: -1813473724426251548
+    second: characterdefense2_40
+  - first:
+      213: -5762151973012956851
+    second: characterdefense2_41
+  - first:
+      213: -3715861559527201290
+    second: characterdefense2_42
+  - first:
+      213: -7346193182206806997
+    second: characterdefense2_43
+  - first:
+      213: 3163640453264597964
+    second: characterdefense2_44
+  - first:
+      213: -4847625321161356665
+    second: characterdefense2_45
+  - first:
+      213: -1824270825284066863
+    second: characterdefense2_46
+  - first:
+      213: -5945018904229997119
+    second: characterdefense2_47
+  - first:
+      213: -5594217749565395139
+    second: characterdefense2_48
+  - first:
+      213: -2099814074186070439
+    second: characterdefense2_49
+  - first:
+      213: -4947666521350494639
+    second: characterdefense2_50
+  - first:
+      213: 4180439686054933429
+    second: characterdefense2_51
+  - first:
+      213: -7600599733918165531
+    second: characterdefense2_52
+  - first:
+      213: -6222189040326383051
+    second: characterdefense2_53
+  - first:
+      213: -3298173136325900167
+    second: characterdefense2_0
+  - first:
+      213: 1767801858822782613
+    second: characterdefense2_1
+  - first:
+      213: -3354595240947166398
+    second: characterdefense2_2
+  - first:
+      213: -6220301938322538618
+    second: characterdefense2_3
+  - first:
+      213: 8676434822118061428
+    second: characterdefense2_4
+  - first:
+      213: -4884714034301047752
+    second: characterdefense2_5
+  - first:
+      213: 4693220681658109345
+    second: characterdefense2_6
+  - first:
+      213: -1672465096473993872
+    second: characterdefense2_7
+  - first:
+      213: -2987440859022225089
+    second: characterdefense2_8
+  - first:
+      213: -1138225816214673390
+    second: characterdefense2_9
+  - first:
+      213: -8501306624916690739
+    second: characterdefense2_10
+  - first:
+      213: 7096125752532818693
+    second: characterdefense2_11
+  - first:
+      213: 6188109268736149497
+    second: characterdefense2_12
+  - first:
+      213: -555522037647297015
+    second: characterdefense2_13
+  - first:
+      213: -9139122697423175340
+    second: characterdefense2_14
+  - first:
+      213: 8870272324950368000
+    second: characterdefense2_15
+  - first:
+      213: 7989300618969861172
+    second: characterdefense2_16
+  - first:
+      213: -4022455921884982541
+    second: characterdefense2_17
+  - first:
+      213: 202437265777017424
+    second: characterdefense2_18
+  - first:
+      213: -8026596759108312596
+    second: characterdefense2_19
+  - first:
+      213: -3496219362970311913
+    second: characterdefense2_20
+  - first:
+      213: -3591246745816968477
+    second: characterdefense2_21
+  - first:
+      213: -2685601361741532037
+    second: characterdefense2_22
+  - first:
+      213: -7916385937461593261
+    second: characterdefense2_23
+  - first:
+      213: 3263119307031352672
+    second: characterdefense2_24
+  - first:
+      213: -7765141536060880879
+    second: characterdefense2_25
+  - first:
+      213: 2398421803329029112
+    second: characterdefense2_26
+  - first:
+      213: -3423293678615419766
+    second: characterdefense2_27
+  - first:
+      213: 6082937578695685330
+    second: characterdefense2_28
+  - first:
+      213: 5756769626196546704
+    second: characterdefense2_29
+  - first:
+      213: -5915528171011622635
+    second: characterdefense2_30
+  - first:
+      213: -807439826774892627
+    second: characterdefense2_31
+  - first:
+      213: -8085778373735445088
+    second: characterdefense2_32
+  - first:
+      213: 8186091933687497247
+    second: characterdefense2_33
+  - first:
+      213: -2560304392412504609
+    second: characterdefense2_34
+  - first:
+      213: -8332021270491425518
+    second: characterdefense2_35
+  - first:
+      213: -2091124639967858985
+    second: characterdefense2_36
+  - first:
+      213: 2661037075434811054
+    second: characterdefense2_37
+  - first:
+      213: -1203850810779013762
+    second: characterdefense2_38
+  - first:
+      213: 7688423904961264257
+    second: characterdefense2_39
+  - first:
+      213: -250477677295571420
+    second: characterdefense2_40
+  - first:
+      213: -3321064020197344396
+    second: characterdefense2_41
+  - first:
+      213: 2892688555821240840
+    second: characterdefense2_42
+  - first:
+      213: -4220951929989366835
+    second: characterdefense2_43
+  - first:
+      213: -5094330418329535679
+    second: characterdefense2_44
+  - first:
+      213: -5845304051686589530
+    second: characterdefense2_45
+  - first:
+      213: -8798348693393249171
+    second: characterdefense2_46
+  - first:
+      213: 6912778137537353592
+    second: characterdefense2_47
+  - first:
+      213: -5789812104473422589
+    second: characterdefense2_48
+  - first:
+      213: 4813883977395515791
+    second: characterdefense2_49
+  - first:
+      213: 7851275433489235445
+    second: characterdefense2_50
+  - first:
+      213: 6218815839902433637
+    second: characterdefense2_51
+  - first:
+      213: -3477872301786607380
+    second: characterdefense2_52
+  - first:
+      213: 4985521568521524447
+    second: characterdefense2_53
+  - first:
+      213: -7715654841327963905
+    second: characterdefense2_54
+  - first:
+      213: -7878498527536387484
+    second: characterdefense2_55
+  - first:
+      213: 2356662291167258097
+    second: characterdefense2_56
+  - first:
+      213: 6795314604816974083
+    second: characterdefense2_57
+  - first:
+      213: 981996525082254898
+    second: characterdefense2_58
+  - first:
+      213: 3027200378741947934
+    second: characterdefense2_59
+  - first:
+      213: -9096018441910765771
+    second: characterdefense2_60
+  - first:
+      213: -3930844052016137368
+    second: characterdefense2_61
+  - first:
+      213: -1520954411267177139
+    second: characterdefense2_62
+  - first:
+      213: -5619723933198142280
+    second: characterdefense2_63
+  - first:
+      213: 412932828100519188
+    second: characterdefense2_64
+  - first:
+      213: 6840660603037471923
+    second: characterdefense2_65
+  - first:
+      213: 5429685857770142674
+    second: characterdefense2_66
+  - first:
+      213: 7890080780712320533
+    second: characterdefense2_67
+  - first:
+      213: 4460732835855388924
+    second: characterdefense2_68
+  - first:
+      213: 230026149442853300
+    second: characterdefense2_69
+  - first:
+      213: -8960773015460085117
+    second: characterdefense2_70
+  - first:
+      213: -2846349931776108000
+    second: characterdefense2_71
+  - first:
+      213: -3320276329423737204
+    second: characterdefense2_72
+  - first:
+      213: -509755461388786557
+    second: characterdefense2_73
+  - first:
+      213: -5435833437534928102
+    second: characterdefense2_74
+  - first:
+      213: 5741463202326541078
+    second: characterdefense2_75
+  - first:
+      213: -7285744738535432502
+    second: characterdefense2_76
+  - first:
+      213: 3803895730316969467
+    second: characterdefense2_77
+  - first:
+      213: -7735633170891308039
+    second: characterdefense2_78
+  - first:
+      213: 6437320039639109794
+    second: characterdefense2_79
+  - first:
+      213: -8523734462634001691
+    second: characterdefense2_80
+  - first:
+      213: 5491867155988033839
+    second: characterdefense2_81
+  - first:
+      213: 6159101925242948960
+    second: characterdefense2_82
+  - first:
+      213: -7797241465524001151
+    second: characterdefense2_83
+  - first:
+      213: 4998128300388996504
+    second: characterdefense2_84
+  - first:
+      213: 438434706834142932
+    second: characterdefense2_85
+  - first:
+      213: -7923862350108250343
+    second: characterdefense2_86
+  - first:
+      213: -5772404095122942829
+    second: characterdefense2_87
+  - first:
+      213: 3515132136985524675
+    second: characterdefense2_88
+  - first:
+      213: -6161590573062560616
+    second: characterdefense2_89
+  - first:
+      213: 658618100231233179
+    second: characterdefense2_90
+  - first:
+      213: -420294750025635362
+    second: characterdefense2_91
+  - first:
+      213: -3965176481604047161
+    second: characterdefense2_92
+  - first:
+      213: 1621553136525090507
+    second: characterdefense2_93
+  - first:
+      213: -1238384649089480108
+    second: characterdefense2_94
+  - first:
+      213: 3669335020638329783
+    second: characterdefense2_95
+  - first:
+      213: -7447207522908227089
+    second: characterdefense2_96
+  - first:
+      213: -4248942425808078582
+    second: characterdefense2_97
+  - first:
+      213: -1514899844729978104
+    second: characterdefense2_98
+  - first:
+      213: 7810509430386224857
+    second: characterdefense2_99
+  - first:
+      213: -1204630260974669584
+    second: characterdefense2_100
+  - first:
+      213: 8831903415156903257
+    second: characterdefense2_101
+  - first:
+      213: -8303051568262987361
+    second: characterdefense2_102
+  - first:
+      213: 3427273384384615819
+    second: characterdefense2_103
+  - first:
+      213: -1468062201800679937
+    second: characterdefense2_104
+  - first:
+      213: 5263661036060545617
+    second: characterdefense2_105
+  - first:
+      213: -2276627284276716871
+    second: characterdefense2_106
+  - first:
+      213: -7890942528402513655
+    second: characterdefense2_107
+  - first:
+      213: 5204477478670498279
+    second: characterdefense2_108
+  - first:
+      213: 874751019660240851
+    second: characterdefense2_109
+  - first:
+      213: -6933056660245480839
+    second: characterdefense2_110
+  - first:
+      213: -1831168942065699425
+    second: characterdefense2_111
+  - first:
+      213: -6843701836888679014
+    second: characterdefense2_112
+  - first:
+      213: 251447428932281146
+    second: characterdefense2_113
+  - first:
+      213: 1930911224071789407
+    second: characterdefense2_114
+  - first:
+      213: -8769168274513739383
+    second: characterdefense2_115
+  - first:
+      213: -788700470143018844
+    second: characterdefense2_116
+  - first:
+      213: 8594434251121686153
+    second: characterdefense2_117
+  - first:
+      213: 4038707494689407564
+    second: characterdefense2_118
+  - first:
+      213: 111506389733072832
+    second: characterdefense2_119
+  - first:
+      213: -3208400113352157151
+    second: characterdefense2_120
+  - first:
+      213: -8912955984047305030
+    second: characterdefense2_121
+  - first:
+      213: 4476199335953620577
+    second: characterdefense2_122
+  - first:
+      213: 442901136548904504
+    second: characterdefense2_123
+  - first:
+      213: -2287900480306222105
+    second: characterdefense2_124
+  - first:
+      213: 6901227842883479268
+    second: characterdefense2_125
+  - first:
+      213: -438561819395021591
+    second: characterdefense2_126
+  - first:
+      213: 2213076140518943671
+    second: characterdefense2_127
+  - first:
+      213: -7556141126755260445
+    second: characterdefense2_128
+  - first:
+      213: -8856578292090642628
+    second: characterdefense2_129
+  - first:
+      213: 2263650766080831698
+    second: characterdefense2_130
+  - first:
+      213: 8133523844368836307
+    second: characterdefense2_131
+  - first:
+      213: 5822642121433565911
+    second: characterdefense2_132
+  - first:
+      213: 6777349650014982663
+    second: characterdefense2_133
+  - first:
+      213: -5851517290592415830
+    second: characterdefense2_134
+  - first:
+      213: -941353979373310256
+    second: characterdefense2_135
+  - first:
+      213: -1617976207226547952
+    second: characterdefense2_136
+  - first:
+      213: 5128949625976700462
+    second: characterdefense2_137
+  - first:
+      213: 5314070048656985115
+    second: characterdefense2_138
+  - first:
+      213: -2313067083505038467
+    second: characterdefense2_139
+  - first:
+      213: -2856791016836615597
+    second: characterdefense2_140
+  - first:
+      213: -6345803405018669050
+    second: characterdefense2_141
+  - first:
+      213: 5151366486987113231
+    second: characterdefense2_142
+  - first:
+      213: -526169301115635174
+    second: characterdefense2_143
+  - first:
+      213: 7249159998071066390
+    second: characterdefense2_144
+  - first:
+      213: -3814396016433806217
+    second: characterdefense2_145
+  - first:
+      213: -8915561240993468340
+    second: characterdefense2_146
+  - first:
+      213: 8089731367849733413
+    second: characterdefense2_147
+  - first:
+      213: 7761750978914962055
+    second: characterdefense2_148
+  - first:
+      213: 1244406804016855186
+    second: characterdefense2_149
+  - first:
+      213: 3389080228896370938
+    second: characterdefense2_150
+  - first:
+      213: -8714569694538034737
+    second: characterdefense2_151
+  - first:
+      213: -3716468751495814138
+    second: characterdefense2_152
+  - first:
+      213: -6703900953058536824
+    second: characterdefense2_153
+  - first:
+      213: 8792530853205046914
+    second: characterdefense2_154
+  - first:
+      213: 2005373676890270771
+    second: characterdefense2_155
+  - first:
+      213: -1358021970908613895
+    second: characterdefense2_156
+  - first:
+      213: -3962165837104296003
+    second: characterdefense2_157
+  - first:
+      213: -961294733384019887
+    second: characterdefense2_158
+  - first:
+      213: 6192792614651373469
+    second: characterdefense2_159
+  - first:
+      213: 9174318795442929376
+    second: characterdefense2_160
+  - first:
+      213: -2390175255822703450
+    second: characterdefense2_161
+  - first:
+      213: -6887523070440195862
+    second: characterdefense2_162
+  - first:
+      213: -3469571241121834738
+    second: characterdefense2_163
+  - first:
+      213: -7311876346940404933
+    second: characterdefense2_164
+  - first:
+      213: 5107246505818710469
+    second: characterdefense2_165
+  - first:
+      213: 7213626994597484147
+    second: characterdefense2_166
+  - first:
+      213: 2979841862382499318
+    second: characterdefense2_167
+  - first:
+      213: 6485003430924851681
+    second: characterdefense2_168
+  - first:
+      213: -8474676963635811087
+    second: characterdefense2_169
+  - first:
+      213: 8011861156144344381
+    second: characterdefense2_170
+  - first:
+      213: 8876488921681217658
+    second: characterdefense2_171
+  - first:
+      213: -2032533814899055870
+    second: characterdefense2_172
+  - first:
+      213: -4329552330059753673
+    second: characterdefense2_173
+  - first:
+      213: -7308943118469286996
+    second: characterdefense2_174
+  - first:
+      213: -6248726509355818123
+    second: characterdefense2_175
+  - first:
+      213: -6921030727794637818
+    second: characterdefense2_176
+  - first:
+      213: 8513121995098220333
+    second: characterdefense2_177
+  - first:
+      213: 1448250894202845186
+    second: characterdefense2_178
+  - first:
+      213: -5721867093171358062
+    second: characterdefense2_179
+  - first:
+      213: 3945978107319693980
+    second: characterdefense2_180
+  - first:
+      213: -307222541271596823
+    second: characterdefense2_181
+  - first:
+      213: 5702237262002794279
+    second: characterdefense2_182
+  - first:
+      213: -4218352783466775816
+    second: characterdefense2_183
+  - first:
+      213: 192535304927862387
+    second: characterdefense2_184
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: characterdefense2_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 221
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9780f89c1098a32d0800000000000000
+      internalID: -3298173136325900167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 221
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e3864ac6e788810800000000000000
+      internalID: 1767801858822782613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 221
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243d02ad6651271d0800000000000000
+      internalID: -3354595240947166398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 221
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f7c9af75c0da9a0800000000000000
+      internalID: -6220301938322538618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 221
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4753d214083e86870800000000000000
+      internalID: 8676434822118061428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 221
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cee145772063cb0800000000000000
+      internalID: -4884714034301047752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 221
+        width: 64
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad8fbe185ba12140800000000000000
+      internalID: 4693220681658109345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_7
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 221
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d9d691bd53ac8e0800000000000000
+      internalID: -1672465096473993872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 189
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f311e7aed5a7a86d0800000000000000
+      internalID: -2987440859022225089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 189
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218685696a53430f0800000000000000
+      internalID: -1138225816214673390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 189
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc86a2f9aaa450a80800000000000000
+      internalID: -8501306624916690739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_11
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 189
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b583966c08a7260800000000000000
+      internalID: 7096125752532818693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_12
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 189
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7025a089490e550800000000000000
+      internalID: 6188109268736149497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_13
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 189
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906b12966a36a48f0800000000000000
+      internalID: -555522037647297015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_14
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 189
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451c16de3505b2180800000000000000
+      internalID: -9139122697423175340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 189
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f15adcea9891b70800000000000000
+      internalID: 8870272324950368000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_16
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 189
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cc1857592bfde60800000000000000
+      internalID: 7989300618969861172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_17
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 189
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f21163a6ad5d28c0800000000000000
+      internalID: -4022455921884982541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_18
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 189
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052c0f3ee933fc200800000000000000
+      internalID: 202437265777017424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_19
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 157
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce12c0a36cccb9090800000000000000
+      internalID: -8026596759108312596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 157
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713ef4d530fea7fc0800000000000000
+      internalID: -3496219362970311913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_21
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 157
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e25dc6ac14592ec0800000000000000
+      internalID: -3591246745816968477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_22
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 157
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7437195ac3dabad0800000000000000
+      internalID: -2685601361741532037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_23
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 157
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b34b4cee8532290800000000000000
+      internalID: -7916385937461593261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_24
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 157
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065925398bde84d20800000000000000
+      internalID: 3263119307031352672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_25
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 157
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118c5781aecac3490800000000000000
+      internalID: -7765141536060880879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_26
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 157
+        width: 64
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f38af83ce7e84120800000000000000
+      internalID: 2398421803329029112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_27
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 125
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84a94469840e70d0800000000000000
+      internalID: -3423293678615419766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_28
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 125
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4f701cf7fea6450800000000000000
+      internalID: 6082937578695685330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_29
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 125
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094143f697724ef40800000000000000
+      internalID: 5756769626196546704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_30
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 125
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51939046872d7eda0800000000000000
+      internalID: -5915528171011622635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_31
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 125
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf549b61c56bc4f0800000000000000
+      internalID: -807439826774892627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_32
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 125
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad86fcc86b89cf80800000000000000
+      internalID: -8085778373735445088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_33
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 125
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12422eed37da9170800000000000000
+      internalID: 8186091933687497247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_34
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 125
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd516d58b8f77cd0800000000000000
+      internalID: -2560304392412504609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_35
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 125
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2151c57acc6be5c80800000000000000
+      internalID: -8332021270491425518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_36
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 125
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de26ad1835daf2e0800000000000000
+      internalID: -2091124639967858985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_37
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 125
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaeaf6f0f17ede420800000000000000
+      internalID: 2661037075434811054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_38
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 94
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d63fcd0101b4fe0800000000000000
+      internalID: -1203850810779013762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_39
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 92
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a76d97ec4c2ba60800000000000000
+      internalID: 7688423904961264257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_40
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 90
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ee1ac21ef168cf0800000000000000
+      internalID: -250477677295571420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_41
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 90
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b7ecf8ed539e1d0800000000000000
+      internalID: -3321064020197344396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_42
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 62
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80210975ae4e42820800000000000000
+      internalID: 2892688555821240840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_43
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 62
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbfbfe459a2c65c0800000000000000
+      internalID: -4220951929989366835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_44
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 61
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b3007b97d4d49b0800000000000000
+      internalID: -5094330418329535679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_45
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 61
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abb11b4fee41eea0800000000000000
+      internalID: -5845304051686589530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_46
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 29
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ce540aa7cf5e580800000000000000
+      internalID: -8798348693393249171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_47
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 29
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8771003371f1fef50800000000000000
+      internalID: 6912778137537353592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_48
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 29
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305da94119476afa0800000000000000
+      internalID: -5789812104473422589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_49
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 29
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81ba9ee8f95ec240800000000000000
+      internalID: 4813883977395515791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_50
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd70eea86555fc60800000000000000
+      internalID: 7851275433489235445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_51
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56105f4ce0cad4650800000000000000
+      internalID: 6218815839902433637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_52
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0d6dd619d1cbfc0800000000000000
+      internalID: -3477872301786607380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterdefense2_53
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd416cfb371203540800000000000000
+      internalID: 4985521568521524447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
