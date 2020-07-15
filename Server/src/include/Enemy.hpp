@@ -22,10 +22,10 @@ private:
     listDirections normalPath;
     listDirections breadcrumbs;
     listDirections chasePath;
-    void setEnemyType(std::string type);
+    void setEnemyType(std::string& type);
 
 public:
-    Enemy(int id, int px, int py, std::string type);
+    Enemy(int id, int px, int py, std::string& type);
     void updateData(int px, int py, int damage, bool range);
     void setRouteVelocity(float routeVel);
     void setChaseVelocity(float chaseVel);

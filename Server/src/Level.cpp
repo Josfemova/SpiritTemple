@@ -7,12 +7,15 @@ lengthx{lengthx}, lengthy{lengthy}
 {
     this->playerInfo = playerInfo;
     this->obstacles = obstacles;
+    std::string type;
     for(auto x:items){
-        Item y{Item::getItemType(x["type"]),x["ID"],x["gridx"],x["gridy"]};
+        type = x["type"];
+        Item y{Item::getItemType(type),x["ID"],x["gridx"],x["gridy"]};
         this->items.push_back(y);
     }
     for(auto x:enemies){
-        Enemy y{x["ID"],x["gridx"],x["gridy"],x["type"]};
+        type = x["type"];
+        Enemy y{x["ID"],x["gridx"],x["gridy"],type};
         this->enemies.push_back(y);
     }
 

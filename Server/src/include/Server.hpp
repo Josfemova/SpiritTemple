@@ -7,7 +7,6 @@ class Server
 {
 private:
     Game *game = nullptr;
-    int port = 3000; //default port
     int serverSocket;
     bool on = false;
     void sendMsg(std::string);
