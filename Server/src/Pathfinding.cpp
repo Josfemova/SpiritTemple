@@ -92,7 +92,7 @@ Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
     else if(srcX+1 == destX && srcY+1 == destY){
         return Direction::SOUTHEAST;
     }
-    else{
+    else if(srcX+1 == destX && srcY-1 == destY){
         return Direction::SOUTHWEST;
     }
 }
