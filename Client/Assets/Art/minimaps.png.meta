@@ -1,0 +1,4827 @@
+fileFormatVersion: 2
+guid: 15334fa279a3c210bade3779037fff66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4196392553137421271
+    second: minimaps_0
+  - first:
+      213: -4251263018649447090
+    second: minimaps_1
+  - first:
+      213: 4393058810258982340
+    second: minimaps_2
+  - first:
+      213: -3284054145124932650
+    second: minimaps_3
+  - first:
+      213: -4424960108438968263
+    second: minimaps_4
+  - first:
+      213: 7527584539979239896
+    second: minimaps_5
+  - first:
+      213: 357439954822770142
+    second: minimaps_6
+  - first:
+      213: -8505850328865420851
+    second: minimaps_7
+  - first:
+      213: -3243807539754696010
+    second: minimaps_8
+  - first:
+      213: 8384050372867645361
+    second: minimaps_9
+  - first:
+      213: -3973728994455683148
+    second: minimaps_10
+  - first:
+      213: -2216392647312260556
+    second: minimaps_11
+  - first:
+      213: 7296876017972449628
+    second: minimaps_12
+  - first:
+      213: 8556379195495551599
+    second: minimaps_13
+  - first:
+      213: 7733494091344536645
+    second: minimaps_14
+  - first:
+      213: 2688415202294983017
+    second: minimaps_15
+  - first:
+      213: -3804083396043261709
+    second: minimaps_16
+  - first:
+      213: 7141359287202643274
+    second: minimaps_17
+  - first:
+      213: 4084443412564953350
+    second: minimaps_18
+  - first:
+      213: 1995392870766889826
+    second: minimaps_19
+  - first:
+      213: -4346252057627677993
+    second: minimaps_20
+  - first:
+      213: -3942213769371735375
+    second: minimaps_21
+  - first:
+      213: 2371432211755777831
+    second: minimaps_22
+  - first:
+      213: -1662190636091008620
+    second: minimaps_23
+  - first:
+      213: -5288639575057836034
+    second: minimaps_24
+  - first:
+      213: -7623406351089735887
+    second: minimaps_25
+  - first:
+      213: -161466692366590055
+    second: minimaps_26
+  - first:
+      213: -3169933325377011167
+    second: minimaps_27
+  - first:
+      213: 5222924628405162068
+    second: minimaps_28
+  - first:
+      213: 9058837036842043738
+    second: minimaps_29
+  - first:
+      213: -4450285248862127283
+    second: minimaps_30
+  - first:
+      213: 5499077832322604928
+    second: minimaps_31
+  - first:
+      213: 473725859654413528
+    second: minimaps_32
+  - first:
+      213: 5370501570420089031
+    second: minimaps_33
+  - first:
+      213: 619397235865776425
+    second: minimaps_34
+  - first:
+      213: -2281733431664074741
+    second: minimaps_35
+  - first:
+      213: 3781912862550020567
+    second: minimaps_36
+  - first:
+      213: -3979266840124859976
+    second: minimaps_37
+  - first:
+      213: 38664036735663974
+    second: minimaps_38
+  - first:
+      213: -4228651445927190221
+    second: minimaps_39
+  - first:
+      213: 3264392593347033845
+    second: minimaps_40
+  - first:
+      213: 3899016857678578782
+    second: minimaps_41
+  - first:
+      213: -8058890890877153077
+    second: minimaps_42
+  - first:
+      213: -1173336318186375633
+    second: minimaps_43
+  - first:
+      213: 6378020472317784664
+    second: minimaps_44
+  - first:
+      213: -1193171053170098331
+    second: minimaps_45
+  - first:
+      213: 6674271697853144674
+    second: minimaps_46
+  - first:
+      213: 2681819576861819787
+    second: minimaps_47
+  - first:
+      213: 8441909221874322042
+    second: minimaps_48
+  - first:
+      213: -3462911594863293306
+    second: minimaps_49
+  - first:
+      213: 7611231171196091815
+    second: minimaps_50
+  - first:
+      213: 8676588934512840987
+    second: minimaps_51
+  - first:
+      213: 1912115759313205620
+    second: minimaps_52
+  - first:
+      213: -22196648741186589
+    second: minimaps_53
+  - first:
+      213: 6321411446890746075
+    second: minimaps_54
+  - first:
+      213: -3470592798092856845
+    second: minimaps_55
+  - first:
+      213: 4657667062210963350
+    second: minimaps_56
+  - first:
+      213: 1923168093786673166
+    second: minimaps_57
+  - first:
+      213: -7135390098699029194
+    second: minimaps_58
+  - first:
+      213: -4620096333950838966
+    second: minimaps_59
+  - first:
+      213: -1003450216342573995
+    second: minimaps_60
+  - first:
+      213: -2961962875076342677
+    second: minimaps_61
+  - first:
+      213: -191602007299788342
+    second: minimaps_62
+  - first:
+      213: 4305774325282933717
+    second: minimaps_63
+  - first:
+      213: 4222918608405356698
+    second: minimaps_64
+  - first:
+      213: -948580052246563772
+    second: minimaps_65
+  - first:
+      213: 5927366412443781196
+    second: minimaps_66
+  - first:
+      213: 5540294207477835873
+    second: minimaps_67
+  - first:
+      213: -5182701769047486893
+    second: minimaps_68
+  - first:
+      213: -6655722186561723833
+    second: minimaps_69
+  - first:
+      213: 7704368905148291779
+    second: minimaps_70
+  - first:
+      213: -2899191022039199665
+    second: minimaps_71
+  - first:
+      213: 1320640167385285064
+    second: minimaps_72
+  - first:
+      213: -250093454317762822
+    second: minimaps_73
+  - first:
+      213: -8811387006772392837
+    second: minimaps_74
+  - first:
+      213: 2517601025079639687
+    second: minimaps_75
+  - first:
+      213: 6946608544505632588
+    second: minimaps_76
+  - first:
+      213: -948697432876908257
+    second: minimaps_77
+  - first:
+      213: -8748906607308020489
+    second: minimaps_78
+  - first:
+      213: 2332559799734576597
+    second: minimaps_79
+  - first:
+      213: -8136232384142751352
+    second: minimaps_80
+  - first:
+      213: -5317612648331846292
+    second: minimaps_81
+  - first:
+      213: -3562338020033631044
+    second: minimaps_82
+  - first:
+      213: -4423668098467161306
+    second: minimaps_83
+  - first:
+      213: -6393392435624664036
+    second: minimaps_84
+  - first:
+      213: -3931385835177505599
+    second: minimaps_85
+  - first:
+      213: 8124876856408725754
+    second: minimaps_86
+  - first:
+      213: 6790207245423587065
+    second: minimaps_87
+  - first:
+      213: 5443839105919366992
+    second: minimaps_88
+  - first:
+      213: 3581103008039525418
+    second: minimaps_89
+  - first:
+      213: -5413322877021833486
+    second: minimaps_90
+  - first:
+      213: -3996924341163061384
+    second: minimaps_91
+  - first:
+      213: -8538348744759698732
+    second: minimaps_92
+  - first:
+      213: 811224704284442898
+    second: minimaps_93
+  - first:
+      213: -8423907394592734185
+    second: minimaps_94
+  - first:
+      213: -795131718442195188
+    second: minimaps_95
+  - first:
+      213: 2430694609521819951
+    second: minimaps_96
+  - first:
+      213: 5573377112636377432
+    second: minimaps_97
+  - first:
+      213: -909350431381553808
+    second: minimaps_98
+  - first:
+      213: 8397825216602044799
+    second: minimaps_99
+  - first:
+      213: 2896728577929718004
+    second: minimaps_100
+  - first:
+      213: -4481378851083398593
+    second: minimaps_101
+  - first:
+      213: 4045516169282726336
+    second: minimaps_102
+  - first:
+      213: -6780776905649571302
+    second: minimaps_103
+  - first:
+      213: -4010545555144245781
+    second: minimaps_104
+  - first:
+      213: 3422171729289530906
+    second: minimaps_105
+  - first:
+      213: 8216832392890604257
+    second: minimaps_106
+  - first:
+      213: 327993310824586770
+    second: minimaps_107
+  - first:
+      213: 8194163299444074385
+    second: minimaps_108
+  - first:
+      213: 7824424383014010956
+    second: minimaps_109
+  - first:
+      213: -9051237787942441744
+    second: minimaps_110
+  - first:
+      213: -949910106128254868
+    second: minimaps_111
+  - first:
+      213: -7684080055494332989
+    second: minimaps_112
+  - first:
+      213: 7102508457589713065
+    second: minimaps_113
+  - first:
+      213: 5808544676175690729
+    second: minimaps_114
+  - first:
+      213: -3797970694736290149
+    second: minimaps_115
+  - first:
+      213: -572537336594137901
+    second: minimaps_116
+  - first:
+      213: -7787048612638460730
+    second: minimaps_117
+  - first:
+      213: 1483447569284966762
+    second: minimaps_118
+  - first:
+      213: 7391223662519017877
+    second: minimaps_119
+  - first:
+      213: -822423971262253147
+    second: minimaps_120
+  - first:
+      213: 4662769712385889938
+    second: minimaps_121
+  - first:
+      213: 6928114638480628236
+    second: minimaps_122
+  - first:
+      213: -8225468790851362893
+    second: minimaps_123
+  - first:
+      213: 5094634143812420579
+    second: minimaps_124
+  - first:
+      213: 4108888825351733035
+    second: minimaps_125
+  - first:
+      213: -612284468726132503
+    second: minimaps_126
+  - first:
+      213: 7086913286228252875
+    second: minimaps_127
+  - first:
+      213: -5589507116188821256
+    second: minimaps_128
+  - first:
+      213: 1261210940137577243
+    second: minimaps_129
+  - first:
+      213: 8772750205804485370
+    second: minimaps_130
+  - first:
+      213: 117765288458543932
+    second: minimaps_131
+  - first:
+      213: 6289344036460760742
+    second: minimaps_132
+  - first:
+      213: -3615946209767235514
+    second: minimaps_133
+  - first:
+      213: 6470109017467941384
+    second: minimaps_134
+  - first:
+      213: 3341653561814039925
+    second: minimaps_135
+  - first:
+      213: -8318280739827957952
+    second: minimaps_136
+  - first:
+      213: 654120981554487555
+    second: minimaps_137
+  - first:
+      213: -3120530651032178439
+    second: minimaps_138
+  - first:
+      213: 7035372724642023317
+    second: minimaps_139
+  - first:
+      213: -8909292124940205882
+    second: minimaps_140
+  - first:
+      213: 151978070639089746
+    second: minimaps_141
+  - first:
+      213: 7261816917038992549
+    second: minimaps_142
+  - first:
+      213: 8508047157909857451
+    second: minimaps_143
+  - first:
+      213: 8472552167446514782
+    second: minimaps_144
+  - first:
+      213: 2695909870444842003
+    second: minimaps_145
+  - first:
+      213: -1008096000965175659
+    second: minimaps_146
+  - first:
+      213: 819243584933091147
+    second: minimaps_147
+  - first:
+      213: -4605190725101636403
+    second: minimaps_148
+  - first:
+      213: 5277764238362610467
+    second: minimaps_149
+  - first:
+      213: 6600487570839831864
+    second: minimaps_0
+  - first:
+      213: -5314333799528769411
+    second: minimaps_1
+  - first:
+      213: 8853739369377991767
+    second: minimaps_2
+  - first:
+      213: -8918731362373794688
+    second: minimaps_3
+  - first:
+      213: 8894623207518390590
+    second: minimaps_4
+  - first:
+      213: 6364645607124541708
+    second: minimaps_5
+  - first:
+      213: 1022595846123623636
+    second: minimaps_6
+  - first:
+      213: -4735551741732448217
+    second: minimaps_7
+  - first:
+      213: -4973090572184068974
+    second: minimaps_8
+  - first:
+      213: -7489036619913958384
+    second: minimaps_9
+  - first:
+      213: 2559586221913154226
+    second: minimaps_10
+  - first:
+      213: -6394840441472120016
+    second: minimaps_11
+  - first:
+      213: 986706692920970386
+    second: minimaps_12
+  - first:
+      213: 7987360040927326070
+    second: minimaps_13
+  - first:
+      213: -3272870826837086851
+    second: minimaps_14
+  - first:
+      213: 1146350702141262089
+    second: minimaps_15
+  - first:
+      213: -2885543871506086025
+    second: minimaps_16
+  - first:
+      213: -1527668983352218972
+    second: minimaps_17
+  - first:
+      213: -3665159668786921831
+    second: minimaps_18
+  - first:
+      213: 1653796893058953183
+    second: minimaps_19
+  - first:
+      213: 5730257704156720998
+    second: minimaps_20
+  - first:
+      213: -4463992557228902709
+    second: minimaps_21
+  - first:
+      213: 3404128147004012449
+    second: minimaps_22
+  - first:
+      213: 3235145522810706352
+    second: minimaps_23
+  - first:
+      213: -7573107635290055038
+    second: minimaps_24
+  - first:
+      213: 3273516720235791210
+    second: minimaps_25
+  - first:
+      213: -4001547779853652782
+    second: minimaps_26
+  - first:
+      213: 7039175002729955676
+    second: minimaps_27
+  - first:
+      213: 7957014428445293758
+    second: minimaps_28
+  - first:
+      213: -4509347571741926176
+    second: minimaps_29
+  - first:
+      213: 8026774707094491000
+    second: minimaps_30
+  - first:
+      213: 5854366904107876399
+    second: minimaps_31
+  - first:
+      213: 6846843225048775806
+    second: minimaps_32
+  - first:
+      213: 9168304558388955429
+    second: minimaps_33
+  - first:
+      213: -1630143577435879487
+    second: minimaps_34
+  - first:
+      213: 2290309233872039040
+    second: minimaps_35
+  - first:
+      213: -8569125176055298302
+    second: minimaps_36
+  - first:
+      213: -3551901362322045767
+    second: minimaps_37
+  - first:
+      213: -8414976546840289401
+    second: minimaps_38
+  - first:
+      213: -5796019058344076192
+    second: minimaps_39
+  - first:
+      213: 3125227974462094030
+    second: minimaps_40
+  - first:
+      213: -2284049814520271944
+    second: minimaps_41
+  - first:
+      213: 2583119177446689673
+    second: minimaps_42
+  - first:
+      213: -4759050893181969834
+    second: minimaps_43
+  - first:
+      213: -4267664460514463106
+    second: minimaps_44
+  - first:
+      213: 9133296224334954086
+    second: minimaps_45
+  - first:
+      213: -4557421245553029850
+    second: minimaps_46
+  - first:
+      213: 7597785618925799368
+    second: minimaps_47
+  - first:
+      213: 2047675888739734177
+    second: minimaps_48
+  - first:
+      213: -1602568079505276651
+    second: minimaps_49
+  - first:
+      213: 5733503677006626561
+    second: minimaps_50
+  - first:
+      213: -6131282173738976300
+    second: minimaps_51
+  - first:
+      213: -4797247158271004
+    second: minimaps_52
+  - first:
+      213: 6894992420990235284
+    second: minimaps_53
+  - first:
+      213: -2883272155003488550
+    second: minimaps_54
+  - first:
+      213: 3125789371678305126
+    second: minimaps_55
+  - first:
+      213: 158548650312821600
+    second: minimaps_56
+  - first:
+      213: -3427976952966010516
+    second: minimaps_57
+  - first:
+      213: -5562722598205446080
+    second: minimaps_58
+  - first:
+      213: -3777860067924987765
+    second: minimaps_59
+  - first:
+      213: 3055371394689544786
+    second: minimaps_60
+  - first:
+      213: 7306511042034784553
+    second: minimaps_61
+  - first:
+      213: -458581862241148969
+    second: minimaps_62
+  - first:
+      213: 1912290801165076565
+    second: minimaps_63
+  - first:
+      213: -4104812399892172365
+    second: minimaps_64
+  - first:
+      213: -2544324630738727986
+    second: minimaps_65
+  - first:
+      213: -7026706189257325439
+    second: minimaps_66
+  - first:
+      213: -7027429717005769073
+    second: minimaps_67
+  - first:
+      213: -3433877154620685515
+    second: minimaps_68
+  - first:
+      213: -4423077288038919286
+    second: minimaps_69
+  - first:
+      213: 3795908300721074589
+    second: minimaps_70
+  - first:
+      213: 1263578523460338074
+    second: minimaps_71
+  - first:
+      213: 3728112325972838580
+    second: minimaps_72
+  - first:
+      213: -304633425561044139
+    second: minimaps_73
+  - first:
+      213: -7221562148024923336
+    second: minimaps_74
+  - first:
+      213: 601479466171318197
+    second: minimaps_75
+  - first:
+      213: 4807693230294784541
+    second: minimaps_76
+  - first:
+      213: -8296932639456543353
+    second: minimaps_77
+  - first:
+      213: 7232819397961941431
+    second: minimaps_78
+  - first:
+      213: -8180435521893039352
+    second: minimaps_79
+  - first:
+      213: 2156732780960316143
+    second: minimaps_80
+  - first:
+      213: -2675626528278730356
+    second: minimaps_81
+  - first:
+      213: 4685415838454324522
+    second: minimaps_82
+  - first:
+      213: 5456496425912163235
+    second: minimaps_83
+  - first:
+      213: 1503449685136376006
+    second: minimaps_84
+  - first:
+      213: 7554987325974483162
+    second: minimaps_85
+  - first:
+      213: 143424861320378785
+    second: minimaps_86
+  - first:
+      213: -5825123782100670532
+    second: minimaps_87
+  - first:
+      213: -1590458987268849707
+    second: minimaps_88
+  - first:
+      213: 6519402345054848714
+    second: minimaps_89
+  - first:
+      213: -2079638484211245471
+    second: minimaps_90
+  - first:
+      213: -799037671737797396
+    second: minimaps_91
+  - first:
+      213: -7066243238561226561
+    second: minimaps_92
+  - first:
+      213: 4269255320078387333
+    second: minimaps_93
+  - first:
+      213: 3608742296605751261
+    second: minimaps_94
+  - first:
+      213: 7462202183552689330
+    second: minimaps_95
+  - first:
+      213: -7791606852047352948
+    second: minimaps_96
+  - first:
+      213: 373304927916726750
+    second: minimaps_97
+  - first:
+      213: -3463730691891872614
+    second: minimaps_98
+  - first:
+      213: 7423128632102146005
+    second: minimaps_99
+  - first:
+      213: -5955330902008416915
+    second: minimaps_100
+  - first:
+      213: 3991646560891078135
+    second: minimaps_101
+  - first:
+      213: -8098825453962470552
+    second: minimaps_102
+  - first:
+      213: 4482194870119324064
+    second: minimaps_103
+  - first:
+      213: -5082023008994944268
+    second: minimaps_104
+  - first:
+      213: 2477087712882882016
+    second: minimaps_105
+  - first:
+      213: 3912048902308082154
+    second: minimaps_106
+  - first:
+      213: -7014134400138183792
+    second: minimaps_107
+  - first:
+      213: -7725927542391549434
+    second: minimaps_108
+  - first:
+      213: -4045335402125940139
+    second: minimaps_109
+  - first:
+      213: 5314600055052778408
+    second: minimaps_110
+  - first:
+      213: -2363690202664703160
+    second: minimaps_111
+  - first:
+      213: 16284607211672898
+    second: minimaps_112
+  - first:
+      213: 3450570153143802475
+    second: minimaps_113
+  - first:
+      213: -2507421035047929339
+    second: minimaps_114
+  - first:
+      213: -1174342793966714805
+    second: minimaps_115
+  - first:
+      213: 3504290312828077369
+    second: minimaps_116
+  - first:
+      213: 841014963558881471
+    second: minimaps_117
+  - first:
+      213: -3505514744519472617
+    second: minimaps_118
+  - first:
+      213: 5005587242823819201
+    second: minimaps_119
+  - first:
+      213: -656608607917466567
+    second: minimaps_120
+  - first:
+      213: 6046752678457902110
+    second: minimaps_121
+  - first:
+      213: -549401117585682526
+    second: minimaps_122
+  - first:
+      213: -7024528651798392644
+    second: minimaps_123
+  - first:
+      213: -4146082705256713811
+    second: minimaps_124
+  - first:
+      213: 5446330350979831259
+    second: minimaps_125
+  - first:
+      213: -8751603958967965587
+    second: minimaps_126
+  - first:
+      213: -8771610341821674698
+    second: minimaps_127
+  - first:
+      213: 941758767407160970
+    second: minimaps_128
+  - first:
+      213: -1182331220476544758
+    second: minimaps_129
+  - first:
+      213: 6597073476165052820
+    second: minimaps_130
+  - first:
+      213: 9079145116728796010
+    second: minimaps_131
+  - first:
+      213: -563423129577518122
+    second: minimaps_132
+  - first:
+      213: -4937843525871621549
+    second: minimaps_133
+  - first:
+      213: -1152251957804412489
+    second: minimaps_134
+  - first:
+      213: -6070673092202379075
+    second: minimaps_135
+  - first:
+      213: -4164427328630125705
+    second: minimaps_136
+  - first:
+      213: -4390265010187126209
+    second: minimaps_137
+  - first:
+      213: -5545179759121522476
+    second: minimaps_138
+  - first:
+      213: 1564726662342824058
+    second: minimaps_139
+  - first:
+      213: 8380648846880891589
+    second: minimaps_140
+  - first:
+      213: 1117689217431175000
+    second: minimaps_141
+  - first:
+      213: 6868329924704384816
+    second: minimaps_142
+  - first:
+      213: 186269215488637333
+    second: minimaps_143
+  - first:
+      213: -6097049361272006462
+    second: minimaps_144
+  - first:
+      213: 5720663753012915733
+    second: minimaps_145
+  - first:
+      213: 4738028304931270847
+    second: minimaps_146
+  - first:
+      213: -7372251914205130074
+    second: minimaps_147
+  - first:
+      213: 2532598921528045807
+    second: minimaps_148
+  - first:
+      213: 260588960905187153
+    second: minimaps_149
+  - first:
+      213: 610584886522580539
+    second: minimaps_150
+  - first:
+      213: -8553506793076358157
+    second: minimaps_151
+  - first:
+      213: 685712470582896347
+    second: minimaps_152
+  - first:
+      213: -3710956328862541541
+    second: minimaps_153
+  - first:
+      213: -970032808715093279
+    second: minimaps_154
+  - first:
+      213: 2194111325206090281
+    second: minimaps_155
+  - first:
+      213: 7002000459664766522
+    second: minimaps_156
+  - first:
+      213: 1954975990214740237
+    second: minimaps_157
+  - first:
+      213: 2170033243433993545
+    second: minimaps_158
+  - first:
+      213: -7231806864257612511
+    second: minimaps_159
+  - first:
+      213: -1226180241519201439
+    second: minimaps_160
+  - first:
+      213: -7921064034950107845
+    second: minimaps_161
+  - first:
+      213: 8645178736384266969
+    second: minimaps_162
+  - first:
+      213: 2205211520154063844
+    second: minimaps_163
+  - first:
+      213: 3571656829119079514
+    second: minimaps_164
+  - first:
+      213: 8399092718268846401
+    second: minimaps_165
+  - first:
+      213: -1914898482684620549
+    second: minimaps_166
+  - first:
+      213: 5597215487377845545
+    second: minimaps_167
+  - first:
+      213: 8259932551835906177
+    second: minimaps_168
+  - first:
+      213: 4918712421191823432
+    second: minimaps_169
+  - first:
+      213: 1780271187361739474
+    second: minimaps_170
+  - first:
+      213: -1587074601784732358
+    second: minimaps_171
+  - first:
+      213: -4477473803149511138
+    second: minimaps_172
+  - first:
+      213: 5970203616992327129
+    second: minimaps_173
+  - first:
+      213: -6728150484114592297
+    second: minimaps_174
+  - first:
+      213: -8272143127189392883
+    second: minimaps_175
+  - first:
+      213: 4889359241332936731
+    second: minimaps_176
+  - first:
+      213: -3937929603900076310
+    second: minimaps_177
+  - first:
+      213: -4318761043139141496
+    second: minimaps_178
+  - first:
+      213: -2056527275571586763
+    second: minimaps_179
+  - first:
+      213: -2166882311984455185
+    second: minimaps_180
+  - first:
+      213: 1988510510517314309
+    second: minimaps_181
+  - first:
+      213: -322864427505178736
+    second: minimaps_182
+  - first:
+      213: -5875737633516706723
+    second: minimaps_183
+  - first:
+      213: 4872640854651918945
+    second: minimaps_184
+  - first:
+      213: 1221936855778410864
+    second: minimaps_185
+  - first:
+      213: -6002262899692827054
+    second: minimaps_186
+  - first:
+      213: 7083791978552061600
+    second: minimaps_187
+  - first:
+      213: -4722465840310106517
+    second: minimaps_188
+  - first:
+      213: -3361427510968305203
+    second: minimaps_189
+  - first:
+      213: 3945037155587505390
+    second: minimaps_190
+  - first:
+      213: -3371166600636776714
+    second: minimaps_191
+  - first:
+      213: -1681076859263020772
+    second: minimaps_192
+  - first:
+      213: 1997060363213682845
+    second: minimaps_193
+  - first:
+      213: 5132345556572062487
+    second: minimaps_194
+  - first:
+      213: -6663146255042564370
+    second: minimaps_195
+  - first:
+      213: -2130218052029810811
+    second: minimaps_196
+  - first:
+      213: 2734997225304070483
+    second: minimaps_197
+  - first:
+      213: 1573159364879455682
+    second: minimaps_198
+  - first:
+      213: -7595816930189171145
+    second: minimaps_199
+  - first:
+      213: -4865551692693913990
+    second: minimaps_200
+  - first:
+      213: -4975806597356797289
+    second: minimaps_201
+  - first:
+      213: -3297823866619077616
+    second: minimaps_202
+  - first:
+      213: 4614294324996919570
+    second: minimaps_203
+  - first:
+      213: -2441065351507197820
+    second: minimaps_204
+  - first:
+      213: 3246358155189499882
+    second: minimaps_205
+  - first:
+      213: 321220856778783992
+    second: minimaps_206
+  - first:
+      213: -3836740091012350019
+    second: minimaps_207
+  - first:
+      213: 6806867486746513942
+    second: minimaps_208
+  - first:
+      213: -8311942372930102621
+    second: minimaps_209
+  - first:
+      213: -1468761046215503422
+    second: minimaps_210
+  - first:
+      213: -4478688360588798877
+    second: minimaps_211
+  - first:
+      213: -5987051293528004469
+    second: minimaps_212
+  - first:
+      213: -6413593011409955124
+    second: minimaps_213
+  - first:
+      213: 4160941620652564658
+    second: minimaps_214
+  - first:
+      213: -1109806910283198421
+    second: minimaps_215
+  - first:
+      213: 1231045808068491572
+    second: minimaps_216
+  - first:
+      213: -6505618855302230292
+    second: minimaps_217
+  - first:
+      213: -5520234431084369401
+    second: minimaps_218
+  - first:
+      213: -5565516663454091892
+    second: minimaps_219
+  - first:
+      213: -2830630095039117603
+    second: minimaps_220
+  - first:
+      213: -4254860721320882200
+    second: minimaps_221
+  - first:
+      213: 4358200283006656264
+    second: minimaps_222
+  - first:
+      213: 6310685243711489249
+    second: minimaps_223
+  - first:
+      213: 3604255918063256229
+    second: minimaps_224
+  - first:
+      213: 896748021877805353
+    second: minimaps_225
+  - first:
+      213: 4007599023304794805
+    second: minimaps_226
+  - first:
+      213: 2358270773710090626
+    second: minimaps_227
+  - first:
+      213: -469309034171670385
+    second: minimaps_228
+  - first:
+      213: 8702400018368136727
+    second: minimaps_229
+  - first:
+      213: 5690969955632565797
+    second: minimaps_230
+  - first:
+      213: 7695623276418953930
+    second: minimaps_231
+  - first:
+      213: -2591958326977061058
+    second: minimaps_232
+  - first:
+      213: 5340068608172349328
+    second: minimaps_233
+  - first:
+      213: 6641151635407048435
+    second: minimaps_234
+  - first:
+      213: -2263603079584036585
+    second: minimaps_235
+  - first:
+      213: -1093424486738537638
+    second: minimaps_236
+  - first:
+      213: 3142883484258209861
+    second: minimaps_237
+  - first:
+      213: -7977229455265620437
+    second: minimaps_238
+  - first:
+      213: -5855994930532337999
+    second: minimaps_239
+  - first:
+      213: -3375645572900474052
+    second: minimaps_240
+  - first:
+      213: 424052848160914941
+    second: minimaps_241
+  - first:
+      213: -4839100615791525433
+    second: minimaps_242
+  - first:
+      213: -3076902918290763942
+    second: minimaps_243
+  - first:
+      213: -4868137535045851511
+    second: minimaps_244
+  - first:
+      213: -5455175274313939274
+    second: minimaps_245
+  - first:
+      213: -7788090266940627681
+    second: minimaps_246
+  - first:
+      213: -1409246561954582974
+    second: minimaps_247
+  - first:
+      213: -8710237144666420219
+    second: minimaps_248
+  - first:
+      213: 3563002544788239826
+    second: minimaps_249
+  - first:
+      213: -7231795717481597517
+    second: minimaps_250
+  - first:
+      213: -8877714823236071284
+    second: minimaps_251
+  - first:
+      213: 2137423323302098738
+    second: minimaps_252
+  - first:
+      213: -7088444046636093576
+    second: minimaps_253
+  - first:
+      213: -8019373945951286106
+    second: minimaps_254
+  - first:
+      213: 1966779370830970629
+    second: minimaps_255
+  - first:
+      213: -2859640875121558596
+    second: minimaps_256
+  - first:
+      213: 7966641693808268765
+    second: minimaps_257
+  - first:
+      213: 2192252958919390552
+    second: minimaps_258
+  - first:
+      213: -5087233519521991763
+    second: minimaps_259
+  - first:
+      213: 8141726230435204950
+    second: minimaps_260
+  - first:
+      213: 1044232800498553070
+    second: minimaps_261
+  - first:
+      213: 421129523068874269
+    second: minimaps_262
+  - first:
+      213: -610106847578620892
+    second: minimaps_263
+  - first:
+      213: 7661741970427664181
+    second: minimaps_264
+  - first:
+      213: 3154553518206004466
+    second: minimaps_265
+  - first:
+      213: -5528051439330477249
+    second: minimaps_266
+  - first:
+      213: -3705146797255560828
+    second: minimaps_267
+  - first:
+      213: -7081181882031078908
+    second: minimaps_268
+  - first:
+      213: -9145941367470731861
+    second: minimaps_269
+  - first:
+      213: 4378114108222995619
+    second: minimaps_270
+  - first:
+      213: 4868875291661687657
+    second: minimaps_271
+  - first:
+      213: -7183821669489096656
+    second: minimaps_272
+  - first:
+      213: 7302380396046302512
+    second: minimaps_273
+  - first:
+      213: 4074245702505920556
+    second: minimaps_274
+  - first:
+      213: -11829674947565302
+    second: minimaps_275
+  - first:
+      213: -341661163351708761
+    second: minimaps_276
+  - first:
+      213: -5408763693324024151
+    second: minimaps_277
+  - first:
+      213: 8852014685566193788
+    second: minimaps_278
+  - first:
+      213: 3992171106366664617
+    second: minimaps_279
+  - first:
+      213: 6840107658053885767
+    second: minimaps_280
+  - first:
+      213: -5324118260674646596
+    second: minimaps_281
+  - first:
+      213: -1596126220399546055
+    second: minimaps_282
+  - first:
+      213: -3092891269176910458
+    second: minimaps_283
+  - first:
+      213: -6861447190421795241
+    second: minimaps_284
+  - first:
+      213: -3330354483206001505
+    second: minimaps_285
+  - first:
+      213: -7513824960512972193
+    second: minimaps_286
+  - first:
+      213: -2609470912047722377
+    second: minimaps_287
+  - first:
+      213: 5228203442135685193
+    second: minimaps_288
+  - first:
+      213: 1673596458690047507
+    second: minimaps_289
+  - first:
+      213: 4404428738287643434
+    second: minimaps_290
+  - first:
+      213: 762397201656473300
+    second: minimaps_291
+  - first:
+      213: 3366794166024430495
+    second: minimaps_292
+  - first:
+      213: 6234280543380091791
+    second: minimaps_293
+  - first:
+      213: -7313603818894062521
+    second: minimaps_294
+  - first:
+      213: 8782234311741356998
+    second: minimaps_295
+  - first:
+      213: 2547908266371866617
+    second: minimaps_296
+  - first:
+      213: -1807885069754061899
+    second: minimaps_297
+  - first:
+      213: -3714632630950889515
+    second: minimaps_298
+  - first:
+      213: 7804166362755913231
+    second: minimaps_299
+  - first:
+      213: 8994938830531656585
+    second: minimaps_300
+  - first:
+      213: 3099429966373960976
+    second: minimaps_301
+  - first:
+      213: -8869775352698681416
+    second: minimaps_302
+  - first:
+      213: 2844649386301504702
+    second: minimaps_303
+  - first:
+      213: 6839666598787692702
+    second: minimaps_304
+  - first:
+      213: 719995782459020207
+    second: minimaps_305
+  - first:
+      213: 3255323987142922112
+    second: minimaps_306
+  - first:
+      213: -2607409886514806678
+    second: minimaps_307
+  - first:
+      213: -7357191398033019254
+    second: minimaps_308
+  - first:
+      213: 8667962156965313975
+    second: minimaps_309
+  - first:
+      213: -2423296022495744325
+    second: minimaps_310
+  - first:
+      213: 7289392599972742963
+    second: minimaps_311
+  - first:
+      213: 3942727684590636686
+    second: minimaps_312
+  - first:
+      213: -7586392305554566524
+    second: minimaps_313
+  - first:
+      213: 6040562902922570347
+    second: minimaps_314
+  - first:
+      213: 1219702941891381077
+    second: minimaps_315
+  - first:
+      213: -1866026847966462562
+    second: minimaps_316
+  - first:
+      213: -2641102834880385713
+    second: minimaps_317
+  - first:
+      213: 1517958911152471349
+    second: minimaps_318
+  - first:
+      213: 3208282767019468669
+    second: minimaps_319
+  - first:
+      213: -6637754868322921545
+    second: minimaps_320
+  - first:
+      213: 7676673480361136756
+    second: minimaps_321
+  - first:
+      213: -8158677637373198502
+    second: minimaps_322
+  - first:
+      213: -5422054832962134551
+    second: minimaps_323
+  - first:
+      213: -2514452698592212340
+    second: minimaps_324
+  - first:
+      213: -5190056268213608850
+    second: minimaps_325
+  - first:
+      213: 2522275859347259598
+    second: minimaps_326
+  - first:
+      213: -7316074025073651102
+    second: minimaps_327
+  - first:
+      213: 341081215388042143
+    second: minimaps_328
+  - first:
+      213: 1978418592203313670
+    second: minimaps_329
+  - first:
+      213: 241326405950454846
+    second: minimaps_330
+  - first:
+      213: 375467753722987504
+    second: minimaps_331
+  - first:
+      213: 24823770263762640
+    second: minimaps_332
+  - first:
+      213: 8020622240313797760
+    second: minimaps_333
+  - first:
+      213: -8873428352517013154
+    second: minimaps_334
+  - first:
+      213: -2491388586996685790
+    second: minimaps_335
+  - first:
+      213: 1695148102647222260
+    second: minimaps_336
+  - first:
+      213: 6192889784554107613
+    second: minimaps_337
+  - first:
+      213: -7464009247171868527
+    second: minimaps_338
+  - first:
+      213: 6726252707469763305
+    second: minimaps_339
+  - first:
+      213: -2704672766636862950
+    second: minimaps_340
+  - first:
+      213: 7924415456582424705
+    second: minimaps_341
+  - first:
+      213: -1186862925190964669
+    second: minimaps_342
+  - first:
+      213: 1673889210635695056
+    second: minimaps_343
+  - first:
+      213: -2262226425781633222
+    second: minimaps_344
+  - first:
+      213: -7765149557388734944
+    second: minimaps_345
+  - first:
+      213: -7897531911452738221
+    second: minimaps_346
+  - first:
+      213: -2695666256754794801
+    second: minimaps_347
+  - first:
+      213: -7555160390056803143
+    second: minimaps_348
+  - first:
+      213: -7026984651591764086
+    second: minimaps_349
+  - first:
+      213: 7360673260564977007
+    second: minimaps_350
+  - first:
+      213: -3714806379554972608
+    second: minimaps_351
+  - first:
+      213: 5482215656779490394
+    second: minimaps_352
+  - first:
+      213: 272720226356786664
+    second: minimaps_353
+  - first:
+      213: 7887952104604835112
+    second: minimaps_354
+  - first:
+      213: -4491249211891915632
+    second: minimaps_355
+  - first:
+      213: -7989976366248707306
+    second: minimaps_356
+  - first:
+      213: 8375696709006738895
+    second: minimaps_357
+  - first:
+      213: -3661566919778908111
+    second: minimaps_358
+  - first:
+      213: 4875140399678671844
+    second: minimaps_359
+  - first:
+      213: -5925030059355636333
+    second: minimaps_360
+  - first:
+      213: 6421087841775650360
+    second: minimaps_361
+  - first:
+      213: 6322414988310106185
+    second: minimaps_362
+  - first:
+      213: 8728348760650903626
+    second: minimaps_363
+  - first:
+      213: -4799430779776546024
+    second: minimaps_364
+  - first:
+      213: 5101117569004011905
+    second: minimaps_365
+  - first:
+      213: 1059646668897127273
+    second: minimaps_366
+  - first:
+      213: -8911952143372516883
+    second: minimaps_367
+  - first:
+      213: 4772667831434764938
+    second: minimaps_368
+  - first:
+      213: 7797837624429447154
+    second: minimaps_369
+  - first:
+      213: -301420920053780532
+    second: minimaps_370
+  - first:
+      213: -8276523548963844656
+    second: minimaps_371
+  - first:
+      213: -6728958257889483652
+    second: minimaps_372
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: minimaps_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8350a4c8974a99b50800000000000000
+      internalID: 6600487570839831864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 304
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d785c3dd091bf36b0800000000000000
+      internalID: -5314333799528769411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 305
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c8aad1c0dceda70800000000000000
+      internalID: 8853739369377991767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 305
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0840392541d4a3480800000000000000
+      internalID: -8918731362373794688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 305
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3944177eac007b70800000000000000
+      internalID: 8894623207518390590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 305
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01a8e55573c35850800000000000000
+      internalID: 6364645607124541708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 305
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d41dfc018df03e00800000000000000
+      internalID: 1022595846123623636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 305
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7281e8ae7c0f74eb0800000000000000
+      internalID: -4735551741732448217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 304
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cdf1129780cfab0800000000000000
+      internalID: -4973090572184068974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 304
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ce2207fd8911890800000000000000
+      internalID: -7489036619913958384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_10
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 304
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b22e198b1a758320800000000000000
+      internalID: 2559586221913154226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 305
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b80c2ff76f047a0800000000000000
+      internalID: -6394840441472120016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_12
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 306
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c0e09628c71bd00800000000000000
+      internalID: 986706692920970386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_13
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 306
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f6f9c63adc8de60800000000000000
+      internalID: 7987360040927326070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_14
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 306
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7de2aac25d6492d0800000000000000
+      internalID: -3272870826837086851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_15
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 306
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9094625d3e7a8ef00800000000000000
+      internalID: 1146350702141262089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_16
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 306
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777031b132d74f7d0800000000000000
+      internalID: -2885543871506086025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 96
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aaa8e05721accae0800000000000000
+      internalID: -1527668983352218972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_18
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 292
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99efdd833bcb22dc0800000000000000
+      internalID: -3665159668786921831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_19
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 279
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf6c65138773f610800000000000000
+      internalID: 1653796893058953183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 279
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fe4bf8507f58f40800000000000000
+      internalID: 5730257704156720998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_21
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 284
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc63262ab66bc02c0800000000000000
+      internalID: -4463992557228902709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_22
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 279
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7351c8384ed3f20800000000000000
+      internalID: 3404128147004012449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_23
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 279
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9d3d366bb85ec20800000000000000
+      internalID: 3235145522810706352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_24
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 292
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28edcb0dabae6e690800000000000000
+      internalID: -7573107635290055038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_25
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 293
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63c4fbfc1edd6d20800000000000000
+      internalID: 3273516720235791210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_26
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 294
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dce11ece75a778c0800000000000000
+      internalID: -4001547779853652782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_27
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 294
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51478dae5c20b160800000000000000
+      internalID: 7039175002729955676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 280
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebcb320f67efc6e60800000000000000
+      internalID: 7957014428445293758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_29
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 287
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec5d8966449b61c0800000000000000
+      internalID: -4509347571741926176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_30
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 284
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f05748115d46f60800000000000000
+      internalID: 8026774707094491000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_31
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 281
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2047287ea3ee3150800000000000000
+      internalID: 5854366904107876399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_32
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 279
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c72d513afd40f50800000000000000
+      internalID: 6846843225048775806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_33
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 282
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5294e5b8b6c5c3f70800000000000000
+      internalID: 9168304558388955429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_34
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 277
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7cc0e9d019069e0800000000000000
+      internalID: -1630143577435879487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_35
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 274
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c6db61d10d8cf10800000000000000
+      internalID: 2290309233872039040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 273
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2070e55bd0a541980800000000000000
+      internalID: -8569125176055298302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_37
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 262
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4819d978c15bec0800000000000000
+      internalID: -3551901362322045767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_38
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 262
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f57544a6ff73b80800000000000000
+      internalID: -8414976546840289401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_39
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 262
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cd1040067609fa0800000000000000
+      internalID: -5796019058344076192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_40
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 262
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca3debd84a0f5b20800000000000000
+      internalID: 3125227974462094030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_41
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 258
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbe83c8bcc6d40e0800000000000000
+      internalID: -2284049814520271944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_42
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 258
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b8538b43519d320800000000000000
+      internalID: 2583119177446689673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_43
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 243
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a12eb5d6474fdb0800000000000000
+      internalID: -4759050893181969834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_44
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 258
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72f972c8c536c4c0800000000000000
+      internalID: -4267664460514463106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_45
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 256
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eb6e7968cffbe70800000000000000
+      internalID: 9133296224334954086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_46
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 256
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d4efef589c0c0c0800000000000000
+      internalID: -4557421245553029850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_47
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 256
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7c4aff3c1c07960800000000000000
+      internalID: 7597785618925799368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_48
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 256
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2d67b2f5eca6c10800000000000000
+      internalID: 2047675888739734177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51145bc82d882c9e0800000000000000
+      internalID: -1602568079505276651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_50
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 256
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f3062873f719f40800000000000000
+      internalID: 5733503677006626561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_51
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 256
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db7a90195f49eaa0800000000000000
+      internalID: -6131282173738976300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_52
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 260
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e34b3bdde4feeff0800000000000000
+      internalID: -4797247158271004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_53
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 260
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492322e531fefaf50800000000000000
+      internalID: 6894992420990235284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_54
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 261
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6fd32504f8cf7d0800000000000000
+      internalID: -2883272155003488550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_55
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 218
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ba3955fd8016b20800000000000000
+      internalID: 3125789371678305126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_56
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 262
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b638d4827433200800000000000000
+      internalID: 158548650312821600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_57
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 262
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c692c3c9f116d60d0800000000000000
+      internalID: -3427976952966010516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_58
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 262
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0482dedf44d3dc2b0800000000000000
+      internalID: -5562722598205446080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_59
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 243
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b230c848529bc0800000000000000
+      internalID: -3777860067924987765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_60
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 243
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2523c5d681cd66a20800000000000000
+      internalID: 3055371394689544786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_61
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 243
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929d3f7c411f56560800000000000000
+      internalID: 7306511042034784553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_62
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 231
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfdda8d93ac2a9f0800000000000000
+      internalID: -458581862241148969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_63
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 229
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55801b61a52d98a10800000000000000
+      internalID: 1912290801165076565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_64
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 232
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1fecaded6c807c0800000000000000
+      internalID: -4104812399892172365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_65
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 244
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb8a8f8a3eb0bcd0800000000000000
+      internalID: -2544324630738727986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_66
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 245
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184474033ff1c7e90800000000000000
+      internalID: -7026706189257325439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_67
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 238
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86e8d1c7ed897e90800000000000000
+      internalID: -7027429717005769073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_68
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 244
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533418cdbea6850d0800000000000000
+      internalID: -3433877154620685515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_69
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 181
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83975814a21e92c0800000000000000
+      internalID: -4423077288038919286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_70
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 236
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91bf68ec76cda430800000000000000
+      internalID: 3795908300721074589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_71
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 226
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a918aace8f1298110800000000000000
+      internalID: 1263578523460338074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_72
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 236
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8cd58786aecb330800000000000000
+      internalID: 3728112325972838580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_73
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 236
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b39b27389b5cbf0800000000000000
+      internalID: -304633425561044139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_74
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 193
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b4193ec7bd7cb90800000000000000
+      internalID: -7221562148024923336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_75
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 233
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf35d04362e85800800000000000000
+      internalID: 601479466171318197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_76
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 236
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a55cc458b58b240800000000000000
+      internalID: 4807693230294784541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_77
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 226
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d39d339bf5bdc80800000000000000
+      internalID: -8296932639456543353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_78
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 226
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1831cdbe2206460800000000000000
+      internalID: 7232819397961941431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_79
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 229
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80304911c31497e80800000000000000
+      internalID: -8180435521893039352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_80
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 194
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea749499014eed10800000000000000
+      internalID: 2156732780960316143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_81
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 210
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89a55e39d34edad0800000000000000
+      internalID: -2675626528278730356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_82
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 210
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d1f0471e0f50140800000000000000
+      internalID: 4685415838454324522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_83
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 201
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abdea0f69e59bb40800000000000000
+      internalID: 5456496425912163235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_84
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 210
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c00a34e5835dd410800000000000000
+      internalID: 1503449685136376006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_85
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 209
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad09947e1f4b8d860800000000000000
+      internalID: 7554987325974483162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_86
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 208
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9f5f6c62c8df100800000000000000
+      internalID: 143424861320378785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_87
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 204
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7a53378c0092fa0800000000000000
+      internalID: -5825123782100670532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_88
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 212
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df330a4afd8de9e0800000000000000
+      internalID: -1590458987268849707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_89
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 200
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6c7dc34e1997a50800000000000000
+      internalID: 6519402345054848714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_90
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 194
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e5b5721d3a323e0800000000000000
+      internalID: -2079638484211245471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_91
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 194
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4d9e5987f39e4f0800000000000000
+      internalID: -799037671737797396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_92
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 197
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb06d0d8639afed90800000000000000
+      internalID: -7066243238561226561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_93
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 202
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58808b818117f3b30800000000000000
+      internalID: 4269255320078387333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_94
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7fc13bff3d41230800000000000000
+      internalID: 3608742296605751261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_95
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 205
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b46dc879511f8760800000000000000
+      internalID: 7462202183552689330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_96
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 193
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bc73a89d6aed390800000000000000
+      internalID: -7791606852047352948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_97
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 191
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed91165aade3e2500800000000000000
+      internalID: 373304927916726750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_98
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 196
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cba20994b5eefc0800000000000000
+      internalID: -3463730691891872614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_99
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 193
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfca765920440760800000000000000
+      internalID: 7423128632102146005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65b1e9e81a6a5da0800000000000000
+      internalID: -5955330902008416915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_101
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f582d2066d256730800000000000000
+      internalID: 3991646560891078135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_102
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 178
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bdca6b8213b9f80800000000000000
+      internalID: -8098825453962470552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_103
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 178
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a95a879c74f33e30800000000000000
+      internalID: 4482194870119324064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_104
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 177
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa9e70cff60979b0800000000000000
+      internalID: -5082023008994944268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_105
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 177
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e57ed39622606220800000000000000
+      internalID: 2477087712882882016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_106
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 177
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1b70eefb36a4630800000000000000
+      internalID: 3912048902308082154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_107
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 177
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b7ae0fce9c8ae90800000000000000
+      internalID: -7014134400138183792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_108
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 158
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602585b75ddf7c490800000000000000
+      internalID: -7725927542391549434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_109
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55aa8f682e41cd7c0800000000000000
+      internalID: -4045335402125940139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_110
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 160
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab31b4979041c940800000000000000
+      internalID: 5314600055052778408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_111
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 143
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b6917b84c723fd0800000000000000
+      internalID: -2363690202664703160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_112
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245982493cad93000800000000000000
+      internalID: 16284607211672898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_113
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a93bab543e2ef20800000000000000
+      internalID: 3450570153143802475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_114
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a30af7ad9d33dd0800000000000000
+      internalID: -2507421035047929339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_115
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 127
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4003196375e3bfe0800000000000000
+      internalID: -1174342793966714805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_116
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935c5f5197db1a030800000000000000
+      internalID: 3504290312828077369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_117
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb817b947a2ebab00800000000000000
+      internalID: 841014963558881471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_118
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ac502b9e8e95fc0800000000000000
+      internalID: -3505514744519472617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_119
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 129
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf9dbc931b677540800000000000000
+      internalID: 5005587242823819201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_120
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c9d9033f143e6f0800000000000000
+      internalID: -656608607917466567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_121
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 97
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14002426816ae350800000000000000
+      internalID: 6046752678457902110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_122
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 97
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af4a1b28922068f0800000000000000
+      internalID: -549401117585682526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_123
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0d003a86cd38e90800000000000000
+      internalID: -7024528651798392644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_124
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 97
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da178c71fb72676c0800000000000000
+      internalID: -4146082705256713811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_125
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 97
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5d49b2990459b40800000000000000
+      internalID: 5446330350979831259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_126
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 97
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68efca319e0c8680800000000000000
+      internalID: -8751603958967965587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_127
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 97
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b839b3edaf44680800000000000000
+      internalID: -8771610341821674698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_128
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 112
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ed96bfb9cc11d00800000000000000
+      internalID: 941758767407160970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_129
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 72
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0934ace404879fe0800000000000000
+      internalID: -1182331220476544758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_130
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 94
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49928ffaf538d8b50800000000000000
+      internalID: 6597073476165052820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_131
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 78
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63a7da516a9ffd70800000000000000
+      internalID: 9079145116728796010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_132
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 82
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db0b4716a15e28f0800000000000000
+      internalID: -563423129577518122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_133
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 82
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35aa5fb9971497bb0800000000000000
+      internalID: -4937843525871621549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_134
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 82
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1d15303f06200f0800000000000000
+      internalID: -1152251957804412489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_135
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 82
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db841c78cf2a0cba0800000000000000
+      internalID: -6070673092202379075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_136
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 52
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b8210a86bf436c0800000000000000
+      internalID: -4164427328630125705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_137
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 50
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a38fddb35a213c0800000000000000
+      internalID: -4390265010187126209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_138
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 76
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d020e183609b03b0800000000000000
+      internalID: -5545179759121522476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_139
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 66
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70d68feb9607b510800000000000000
+      internalID: 1564726662342824058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_140
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 66
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c26f9149bb0e4470800000000000000
+      internalID: 8380648846880891589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_141
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 66
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ff446eb64d28f00800000000000000
+      internalID: 1117689217431175000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_142
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 66
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037b0323da5315f50800000000000000
+      internalID: 6868329924704384816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_143
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 60
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5997ac55dd2c59200800000000000000
+      internalID: 186269215488637333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_144
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 50
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c81c53d8ede26ba0800000000000000
+      internalID: -6097049361272006462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_145
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 50
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ea9cdbf51e36f40800000000000000
+      internalID: 5720663753012915733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_146
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 42
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0bc23e3abd0c140800000000000000
+      internalID: 4738028304931270847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_147
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 43
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a21c13a1ff70b990800000000000000
+      internalID: -7372251914205130074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_148
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 120
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe077340d49952320800000000000000
+      internalID: 2532598921528045807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimaps_149
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f442f774ccd9300800000000000000
+      internalID: 260588960905187153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
