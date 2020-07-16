@@ -22,10 +22,10 @@ public class Player : MonoBehaviour
 //Using configured keyword "attack" on Space doesn't work
 //Using preconfugured keyword Space, doesn't work
 
-        if(Input.GetKeyDown("return")){
+        if(Input.GetKeyDown("j")){
             StartCoroutine(attackAnimation());
 
-        }else if(Input.GetKeyDown("enter")){
+        }else if(Input.GetKeyDown("k")){
             //Debug.Log("defending");
             StartCoroutine(defendingAnimation());
 
