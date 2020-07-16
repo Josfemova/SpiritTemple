@@ -12,6 +12,10 @@ int serverStart()
     return 0;
 }
 
+//ENEMY HAS THIS METHODS SO NO PROBLEM
+std::string getNextMovement(Direction direction);
+std::string getPreviousMovement(Direction direction);
+
 int main()
 {
     //serverStart();
@@ -22,6 +26,7 @@ int main()
     //
     std::string response(a.startLevel(buffer.str()));
     ce::debuglog(response);*/
+
 
     // Simple level matrix
     ce::list<int> a{1, 0, 1, 1, 1, 1, 0, 1, 1, 1};
@@ -34,45 +39,71 @@ int main()
     ce::list<int> h{1, 0, 1, 1, 1, 1, 0, 1, 1, 1};
     ce::list<int> i{1, 1, 1, 0, 0, 0, 1, 0, 0, 1};
     gmatrix matrix{a,b,c,d,e,f,g,h,i};
-    Pathfinding pathfinding(matrix);
-    Pair enemyPos = std::make_pair(0, 0);
-    Pair playePos = std::make_pair(7, 0);
-    listDirections path = pathfinding.RandomPath(enemyPos, playePos, 3);
 
-    std::cout << "Size: " << path.size() << std::endl;
-
-    for (int i = 0; i < path.size(); i++)
-    {
-        Direction direction = path[i];
-        switch (direction)
-        {
-        case Direction::NORTH:
-            std::cout << "NORTH -> ";
-            break;
-        case Direction::SOUTH:
-            std::cout << "SOUTH -> ";
-            break;
-        case Direction::EAST:
-            std::cout << "EAST -> ";
-            break;
-        case Direction::WEST:
-            std::cout << "WEST -> ";
-            break;
-        case Direction::NORTHEAST:
-            std::cout << "NORTHEAST -> ";
-            break;
-        case Direction::NORTHWEST:
-            std::cout << "NORTHWEST -> ";
-            break;
-        case Direction::SOUTHEAST:
-            std::cout << "SOUTHEAST -> ";
-            break;
-        case Direction::SOUTHWEST:
-            std::cout << "SOUTHWEST -> ";
-            break;
-        default:
-            break;
-        }
+    ce::list<ce::list<int>> inverted;
+    for(auto fila: matrix){
+        inverted.push_front(fila);
     }
+
+    for(auto fila : inverted){
+        ce::debuglog(fila.toString());
+    }
+
+    Pathfinding pathfinding(matrix);
+
+    Pair src = std::make_pair(0,0); // Enemy position
+    Pair dest = std::make_pair(0, 4); // Player position
+    //std::cout<<"("<<std::to_string(src.first)<<","<<std::to_string(src.second)<<")"<<std::endl;
+
     return 0;
+}
+
+std::string getNextMovement(Direction direction)
+{
+    switch (direction)
+    {
+        case Direction::NORTH:
+            return "NORTH";
+        case Direction::SOUTH:
+            return "SOUTH";
+        case Direction::EAST:
+            return "EAST";
+        case Direction::WEST:
+            return "WEST";
+        case Direction::NORTHEAST:
+            return "NORTHEAST";
+        case Direction::NORTHWEST:
+            return "NORTHWEST";
+        case Direction::SOUTHEAST:
+            return "SOUTHEAST";
+        case Direction::SOUTHWEST:
+            return "SOUTHWEST";
+        default:
+            return "";
+    }
+}
+
+std::string getPreviousMovement(Direction direction)
+{
+    switch (direction)
+    {
+        case Direction::NORTH:
+            return "SOUTH";
+        case Direction::SOUTH:
+            return "NORTH";
+        case Direction::EAST:
+            return "WEST";
+        case Direction::WEST:
+            return "EAST";
+        case Direction::NORTHEAST:
+            return "SOUTHWEST";
+        case Direction::NORTHWEST:
+            return "SOUTHEAST";
+        case Direction::SOUTHEAST:
+            return "NORTHWEST";
+        case Direction::SOUTHWEST:
+            return "NORTHEAST";
+        default:
+            return "";
+    }
 }

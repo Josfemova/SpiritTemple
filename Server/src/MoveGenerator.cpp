@@ -24,7 +24,7 @@ listDirections MoveGenerator::randomPath(gmatrix matrix, Pair enemyPos, Pair pla
 }
 
 listDirections MoveGenerator::Astar(Pair enemyPos, Pair playerPos) {
-    return MoveGenerator::pathfinding->AstarSearch(enemyPos, playerPos);
+    return MoveGenerator::pathfinding->AStarSearch(enemyPos, playerPos);
 }
 
 listDirections MoveGenerator::BreadCrumbing(Pair enemyPos, Pair playerPos) {
