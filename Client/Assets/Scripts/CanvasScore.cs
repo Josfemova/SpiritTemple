@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CanvasScore : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string cScore;
     public Text scoreText;
     public int score = 750;
     void Start()

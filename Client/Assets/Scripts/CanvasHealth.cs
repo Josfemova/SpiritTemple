@@ -8,6 +8,7 @@ public class CanvasHealth : MonoBehaviour
 {
     
     // Start is called before the first frame update
+    public string cHearts;
     public int health;
     public int numOfHearts;
     public Image[] hearts;

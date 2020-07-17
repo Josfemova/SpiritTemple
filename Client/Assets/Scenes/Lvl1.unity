@@ -633,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -125}
+  m_AnchoredPosition: {x: -53, y: -129}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279217429
@@ -648,6 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1506012cb2dcafa585b6e1d44700bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cHearts: hearts
   health: 0
   numOfHearts: 0
   hearts:
@@ -760,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e90ba6d9c98bbd99c9f0dce82fb1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 
+  itemType: jar
   animator: {fileID: 886205960}
   itemSprite: {fileID: 0}
 --- !u!1 &310854043
@@ -1492,9 +1493,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527785145}
-  - component: {fileID: 527785146}
   - component: {fileID: 527785148}
   - component: {fileID: 527785147}
+  - component: {fileID: 527785146}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1519,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143, y: -117}
+  m_AnchoredPosition: {x: -196, y: -119}
   m_SizeDelta: {x: 170.63031, y: 52.46057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527785146
@@ -1534,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7ab98b0d395bb34a24a381413b523e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cScore: score
   scoreText: {fileID: 1919623993}
   score: 750
 --- !u!114 &527785147
@@ -1756,7 +1758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556893239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.54, y: 9.55, z: 0}
+  m_LocalPosition: {x: 9.48, y: 17.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1895,7 +1897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e90ba6d9c98bbd99c9f0dce82fb1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 
+  itemType: chest
   animator: {fileID: 200884274}
   itemSprite: {fileID: 0}
 --- !u!1 &677927008
@@ -7838,6 +7840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1287006087}
   smoothing: 0.6
+  maxPosition: {x: 13.93, y: 16.25}
+  minPosition: {x: 6.13, y: 3.81}
 --- !u!81 &1157262134
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7897,7 +7901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157262132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 10, z: -10}
+  m_LocalPosition: {x: 6.13, y: 3.81, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1041175133}
@@ -7949,7 +7953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e474700cc4ca3ba9c35e8049f06309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 
+  enemyType: eFinal
   animator: {fileID: 1772011263}
   enemySprite: {fileID: 0}
 --- !u!1 &1226712567
