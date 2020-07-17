@@ -53,8 +53,9 @@ public:
     } // se llama al princio
 
     //utilities
-    std::string getPreviousMovement(Direction direction);
     std::string getNextMovement(Direction direction);
+    std::string getPreviousMovement(Direction direction);
+
 
 };
 

@@ -41,7 +41,7 @@ public:
      * @param i
      * @param j
      */
-    void setPxy(int i, int j);
+    void setPyx(int i, int j);
 
     /**
      *
@@ -75,8 +75,8 @@ public:
 class Pathfinding {
 private:
     gmatrix matrix;
-    listDirections line;
-    adjacentNodes nodes;
+    listDirections BresenhamLine;
+    adjacentNodes BresenhamNodes;
 
 public:
     /**
@@ -143,6 +143,7 @@ public:
      * @return Direction
      */
     static Direction setMovement(int srcX, int srcY, int destX, int destY);
+
     /**
      * @brief move the enemy to a position close to the player
      * @param newMatrix
@@ -151,35 +152,11 @@ public:
      * @param playerX
      * @param playerY
      */
-    void teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY);
-
-    /**
-     * @brief get all the adjacent nodes to a particular node
-     * @param pathfinding
-     * @param nodes
-     * @param px
-     * @param py
-     * @param dest
-     */
-    void checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest);
-
-    /**
-     * @brief add a node to the list of nodes near the player
-     * @param cells
-     * @param pair
-     * @param dest
-     */
-    static void addNode(adjacentNodes &cells, Pair &pair, Pair &dest);
-    /**
-     * @brief add a node to the list of node for bresenham line
-     * @param nodes
-     * @param line
-     */
-    static void setLineSight(adjacentNodes &nodes, listDirections &line);
+    Pair teleportEnemy(Pair src, Pair dest);
 
     listDirections RandomPath(Pair src, Pair dest, int size);
-    adjacentNodes adjNodes(Pair src, Pair tempSrc, Pair dest);
-    static void addingNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest);
+    void adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair &dest);
+    static void addNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest);
     static Pair randomNode(adjacentNodes &adjNodes);
 
     /**
@@ -188,33 +165,44 @@ public:
      * @param src
      * @param dest
      */
-     listDirections AstarSearch(Pair src, Pair dest);
+    listDirections AStarSearch(Pair src, Pair dest);
+    bool AStarMovement(ce::list<ce::list<Node>> &nodesDetails, ce::list<ce::list<bool>> &closedList,
+            std::set<pPair> &openList, Pair &dest, int row, int col, int pi, int pj, float g);
+    void setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &dest, listDirections &path);
 
-     /**
+
+    /**
       * @brief find the line between a given source node to a destination
       * @param src
       * @param dest
       * @return
       */
-     listDirections LineSight(Pair src, Pair dest);
+    listDirections LineSight(Pair src, Pair dest);
 
-     /**
+    /**
       * @brief find the best adjacent node
       * @param px
       * @param py
       * @param dest
       * @return the best adjacent node
       */
-     Pair bestAdjacentNode(int &px, int &py, Pair &dest);
+    Pair bestAdjacentNode(int &py, int &px, Pair &dest);
 
-     /**
+    /**
       *
       * @param px
       * @param py
       * @param dest
       * @return the manhattan heuristic cost
       */
-     static int ManhattanDistance(int px, int py, Pair dest);
+    static int ManhattanDistance(int py, int px, Pair dest);
+
+    /**
+    * @brief add a node to the list of node for bresenham line
+    * @param nodes
+    * @param line
+    */
+    static void setLineSight(adjacentNodes &BresenhamNodes, listDirections &BresenhamLine);
 };
 
 #endif //SPIRITTEMPLE_PATHFINDING_HPP

@@ -9,7 +9,7 @@ void Node::update(double FNew, double GNew, double HNew, int i, int j)
     parent_j = j;
 }
 
-void Node::setPxy(int i, int j)
+void Node::setPyx(int i, int j)
 {
     parent_i = i;
     parent_j = j;
@@ -17,12 +17,12 @@ void Node::setPxy(int i, int j)
 
 int Node::getPx() const
 {
-    return parent_i;
+    return parent_j;
 }
 
 int Node::getPy() const
 {
-    return parent_j;
+    return parent_i;
 }
 
 double Node::getF() const
@@ -40,6 +40,7 @@ Pathfinding::Pathfinding(gmatrix matrix)
     this->matrix = matrix;
 }
 
+//Nice
 bool Pathfinding::isValid(int row, int col)
 {
     int ROWS = matrix.size();
@@ -47,51 +48,55 @@ bool Pathfinding::isValid(int row, int col)
     return (row >= 0) && (row < ROWS) && (col >= 0) && (col < COLS);
 }
 
+//Nice
 bool Pathfinding::isUnBlocked(int row, int col)
 {
     return matrix[row][col] == 1;
 }
 
+//Nice
 bool Pathfinding::isDestination(int row, int col, Pair dest)
 {
-    return (row == dest.second && col == dest.first);
+    return (row == dest.first && col == dest.second);
 }
 
+//Nice
 bool Pathfinding::nodeValidations(int row, int col, Pair dest)
 {
     return isValid(row, col) && isUnBlocked(row, col) && !isDestination(row, col, dest);
 }
 
+//Nice
 bool Pathfinding::initialValidations(Pair src, Pair dest)
 {
-    bool result = true;
-
     // If the source is out of range
-    if(!isValid(src.second, src.first)){
+    if(!isValid(src.first, src.second)){
         ce::log("\nSource is invalid");
-        result = false;
+        return false;
     }
 
     //If the destination is out of range
-    if(!isValid(dest.second, dest.first)){
+    if(!isValid(dest.first, dest.second)){
         ce::log("\nDestination is invalid");
-        result = false;
+        return false;
     }
 
     // Either the source or the destination is blocked
-    if(!isUnBlocked(src.second, src.first) || !isUnBlocked(dest.second, dest.first)){
+    if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
         ce::log("\nSource or the destination is blocked");
-        result = false;
+        return false;
     }
-    return result;
+    return true;
 }
 
+//Nice
 double Pathfinding::getHeuristicCost(int row, int col, Pair dest)
 {
     return (sqrt((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
 }
 
-Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
+//Nice
+Direction Pathfinding::setMovement(int srcY, int srcX, int destY, int destX)
 {
     if(srcX == destX && srcY+1 == destY){
         return Direction::NORTH;
@@ -117,25 +122,27 @@ Direction Pathfinding::setMovement(int srcX, int srcY, int destX, int destY)
     else if(srcX-1 == destX && srcY-1 == destY){
         return Direction::SOUTHWEST;
     }
+    else{
+        return Direction();
+    }
 }
 
-void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &playerY)
+//Nice
+Pair Pathfinding::teleportEnemy(Pair src, Pair dest)
 {
-    int tempPlayerX = playerX;
-    int tempPlayerY = playerY;
-    Pair dest = std::make_pair(playerX, playerY);
+    int tempPlayerY = dest.first;
+    int tempPlayerX = dest.second;
+    Pair tempSrc = std::make_pair(tempPlayerY, tempPlayerX);
 
-    // Calculate all valid adjacent nodes near the player
-    adjacentNodes nearNodes;
-    checkAdjacentNodes(nearNodes, tempPlayerX, tempPlayerY, dest);
+    adjacentNodes nodes;
+    adjNodes(nodes, src, tempSrc, dest);
 
     adjacentNodes closestNodes;
-    for(int i=0; i<nearNodes.size(); i++)
-    {
-        Pair currentNode = nearNodes[i];
-        tempPlayerX = currentNode.first;
-        tempPlayerY = currentNode.second;
-        checkAdjacentNodes(closestNodes, tempPlayerX, tempPlayerY, dest);
+    for(auto currentNode : nodes){
+        tempPlayerY = currentNode.first;
+        tempPlayerX = currentNode.second;
+        tempSrc = std::make_pair(tempPlayerY, tempPlayerX);
+        adjNodes(closestNodes, src, tempSrc, dest);
     }
 
     // Initialize random generator
@@ -144,69 +151,15 @@ void Pathfinding::teleportEnemy(int &enemyX, int &enemyY, int &playerX, int &pla
     std::uniform_int_distribution<std::mt19937::result_type> dist(0, closestNodes.size()-1);
 
     // Teleport enemy
-    Pair teleport = closestNodes[dist(rng)];
-    enemyX = teleport.first;
-    enemyY = teleport.second;
-}
-
-void Pathfinding::checkAdjacentNodes(adjacentNodes &cells, int px, int py, Pair dest)
-{
-    // NORTH NODE
-    if(nodeValidations(px-1, py, dest)){
-        Pair pair = std::make_pair(px-1, py);
-        addNode(cells, pair, dest);
-    }
-
-    // SOUTH NODE
-    if(nodeValidations(px+1, py, dest)){
-        Pair pair = std::make_pair(px+1, py);
-        addNode(cells, pair, dest);
-    }
-
-    // EAST NODE
-    if(nodeValidations(px, py+1, dest)){
-        Pair pair = std::make_pair(px, py+1);
-        addNode(cells, pair, dest);
-    }
-
-    // WEST NODE
-    if(nodeValidations(px, py-1, dest)){
-        Pair pair = std::make_pair(px, py-1);
-        addNode(cells, pair, dest);
-    }
-
-    // NORTHEAST NODE
-    if(nodeValidations(px-1, py+1, dest)){
-        Pair pair = std::make_pair(px-1, py+1);
-        addNode(cells, pair, dest);
-    }
-
-    // NORTHWEST NODE
-    if(nodeValidations(px-1, py-1, dest)){
-        Pair pair = std::make_pair(px-1, py-1);
-        addNode(cells, pair, dest);
-    }
-
-    // SOUTHEAST NODE
-    if(nodeValidations(px+1, py+1, dest)){
-        Pair pair = std::make_pair(px+1, py+1);
-        addNode(cells, pair, dest);
-    }
-
-    // SOUTHWEST NODE
-    if(nodeValidations(px+1, py-1, dest)){
-        Pair pair = std::make_pair(px+1, py-1);
-        addNode(cells, pair, dest);
+    while(true){
+        Pair teleport = closestNodes[dist(rng)];
+        if(nodeValidations(teleport.first, teleport.second, dest)){
+            return teleport;
+        }
     }
 }
 
-void Pathfinding::addNode(adjacentNodes &cells, Pair &pair, Pair &dest)
-{
-    if(!cells.contains(pair) && pair!=dest){
-        cells.push_back(pair);
-    }
-}
-
+//Nice
 listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
 {
     listDirections path;
@@ -215,93 +168,103 @@ listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
         pathNodes.push_back(src);
         while(path.size() != size)
         {
-            adjacentNodes closestNodes = adjNodes(src, pathNodes.front(), dest);
-            pathNodes.push_back(randomNode(closestNodes));
-            Pair tempSrc = pathNodes.front();
-            Pair tempDest = pathNodes.back();
-            path.push_back(setMovement(tempSrc.second, tempSrc.first, tempDest.second, tempDest.first));
-            pathNodes.pop_front();
+            adjacentNodes closestNodes;
+            adjNodes(closestNodes, src, pathNodes.front(), dest);
+            Pair node = randomNode(closestNodes);
+            if(nodeValidations(node.first, node.second, dest)){
+                pathNodes.push_back(node);
+                Pair tempSrc = pathNodes.front();
+                Pair tempDest = pathNodes.back();
+                path.push_back(setMovement(tempSrc.first, tempSrc.second, tempDest.first, tempDest.second));
+                pathNodes.pop_front();
+            }
         }
     }
     return path;
 }
 
-adjacentNodes Pathfinding::adjNodes(Pair src, Pair tempSrc, Pair dest) {
-    adjacentNodes adjNodes;
-
-    // NORTH
+//Nice
+void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair &dest)
+{
+    // NORTH NODE
     if(nodeValidations(tempSrc.first+1, tempSrc.second, dest)){
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // SOUTH
+    // SOUTH NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // EAST
+    // EAST NODE
     if(nodeValidations(tempSrc.first, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first, tempSrc.second+1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // WEST
+    // WEST NODE
     if(nodeValidations(tempSrc.first, tempSrc.second-1, dest)){
         Pair pair = std::make_pair(src.first, src.second-1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // NORTHEAST
+    // NORTHEAST NODE
     if(nodeValidations(tempSrc.first+1, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second+1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // NORTHWEST
+    // NORTHWEST NODE
     if(nodeValidations(tempSrc.first+1, tempSrc.second-1, dest)){
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second-1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // SOUTHEAST
+    // SOUTHEAST NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second+1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
 
-    // SOUTHWEST
+    // SOUTHWEST NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second-1, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second-1);
-        addingNode(adjNodes, src, pair, dest);
+        addNode(nodes, src, pair, dest);
     }
-
-    return adjNodes;
 }
 
-void Pathfinding::addingNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest)
+//Nice
+void Pathfinding::addNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest)
 {
     if(!adjNodes.contains(pair) && pair!=src && pair!=dest){
         adjNodes.push_back(pair);
     }
 }
 
+//Nice
 Pair Pathfinding::randomNode(adjacentNodes &adjNodes)
 {
-    // Initialize random generator
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> dist(0, adjNodes.size()-1);
-
-    // Teleport enemy
-    Pair node = adjNodes[dist(rng)];
-    return node;
+    if(adjNodes.size() > 1){
+        // Initialize random generator
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist(0, adjNodes.size()-1);
+        Pair node = adjNodes[dist(rng)];
+        return node;
+    }
+    else if(adjNodes.size() == 1){
+        Pair node = adjNodes.pop_front();
+        return node;
+    }
+    else{
+        return std::make_pair(-1, -1);
+    }
 }
 
-
-
-listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
+//Nice
+listDirections Pathfinding::AStarSearch(Pair src, Pair dest)
 {
     // List of directions to follow between the enemy's position and the
     // player's position
@@ -314,31 +277,40 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
 
     // If the destination node is the same as source node
     if(isDestination(src.first, src.second, dest)){
-        ce::log("\nWe already at the destination");
+        ce::log("We already at the destination");
         return shortestPath;
     }
 
-    // Closed list and initialized false cause the node has not been included yet
-    // The closed list is implemented as a boolean 2D array
     int ROWS = matrix.size();
     int COLS = matrix[0].size();
-    bool closedList[ROWS][COLS];
-    memset(closedList, false, sizeof(closedList));
 
-    // 2D array to hold the details of nodes
-    Node nodeDetails[ROWS][COLS];
+    // Closed list and initialized false cause the node has not been included yet
+    // The closed list is implemented as a boolean matrix
+    ce::list<ce::list<bool>> closedList;
+
+    // Matrix to hold the details of nodes
+    // Node nodeDetails[ROWS][COLS];
+    ce::list<ce::list<Node>> nodesDetails;
 
     int i, j;
 
+    // Initialize both matrix
+    for(i=0; i<ROWS; i++){
+        ce::list<bool> r(false, COLS);
+        ce::list<Node> y(Node(), COLS);
+        closedList.push_back(r);
+        nodesDetails.push_back(y);
+    }
+
     for(i=0; i<ROWS; i++){
         for(j=0; j<COLS; j++){
-            nodeDetails[i][j].update(FLT_MAX, FLT_MAX, FLT_MAX, -1, -1);
+            nodesDetails[i][j].update(FLT_MAX, FLT_MAX, FLT_MAX, -1, -1);
         }
     }
 
     // Initialising the parameters of the starting node
     i = src.first, j = src.second;
-    nodeDetails[i][j].update(0.0, 0.0, 0.0, i, j);
+    nodesDetails[i][j].update(0.0, 0.0, 0.0, i, j);
 
     /*
     * Open list that contain information as <F, <i,j>> where F = G + H and
@@ -364,194 +336,65 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
         j = p.second.second;
         closedList[i][j] = true;
 
-        // To store the 'G', 'H' and F' ot the 8 successors
-        double GNew, HNew, FNew;
 
         //----------- 1st Successor (North) ------------//
-
-        // Only process this node if this is a valid one
-        if (isValid(i-1, j)){
-            // If the destination node is the same as the current successor
-            if (isDestination(i-1, j, dest)){
-                // Set the Parent of the destination node
-                nodeDetails[i-1][j].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-                // If the successor is already on the closed list or if it is blocked
-                // then ignore it. Else do the following
-            else if (!closedList[i-1][j] && isUnBlocked(i-1, j)){
-                GNew = nodeDetails[i][j].getG() + 1.0;
-                HNew = getHeuristicCost(i-1, j, dest);
-                FNew = GNew + HNew;
-
-                // If it isn’t on the open list, add it to the open list. Make the current square
-                // the parent of this square. Record the f, g, and h costs of the square cell
-                //                            OR
-                // If it is on the open list already, check to see if this path to that square is
-                // better, using 'f' cost as the measure.
-                if (nodeDetails[i-1][j].getF() == FLT_MAX || nodeDetails[i-1][j].getF() > FNew){
-                    openList.insert(std::make_pair(FNew,std::make_pair(i-1, j)));
-                    // Update the details of this node
-                    nodeDetails[i-1][j].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i+1, j, i, j, 1.0)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 2nd Successor (South) ------------//
-
-        if (isValid(i+1, j)){
-            if (isDestination(i+1, j, dest)){
-                nodeDetails[i+1][j].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-            else if (!closedList[i + 1][j] && isUnBlocked(i+1, j)){
-                GNew = nodeDetails[i][j].getG() + 1.0;
-                HNew = getHeuristicCost(i+1, j, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i+1][j].getF() == FLT_MAX || nodeDetails[i+1][j].getF() > FNew){
-                    openList.insert( std::make_pair (FNew, std::make_pair (i+1, j)));
-                    // Update the details of this node
-                    nodeDetails[i+1][j].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i-1, j, i, j, 1.0)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 3rd Successor (East) ------------//
-
-        if (isValid(i, j + 1)){
-            if (isDestination(i, j+1, dest)){
-                nodeDetails[i][j+1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-            else if (!closedList[i][j+1] && isUnBlocked(i, j+1)){
-                GNew = nodeDetails[i][j].getG() + 1.0;
-                HNew = getHeuristicCost(i, j+1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i][j+1].getF() == FLT_MAX || nodeDetails[i][j+1].getF() > FNew){
-                    openList.insert( std::make_pair(FNew,std::make_pair (i, j+1)));
-                    // Update the details of this node
-                    nodeDetails[i][j+1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i, j+1, i, j, 1.0)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 4th Successor (West) ------------//
-
-        if (isValid(i, j - 1)){
-            if (isDestination(i, j-1, dest)){
-                nodeDetails[i][j-1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-
-            else if (!closedList[i][j-1] && isUnBlocked(i, j-1)){
-                GNew = nodeDetails[i][j].getG() + 1.0;
-                HNew = getHeuristicCost(i, j-1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i][j-1].getF() == FLT_MAX || nodeDetails[i][j-1].getF() > FNew){
-                    openList.insert( std::make_pair (FNew,std::make_pair (i, j-1)));
-                    // Update the details of this node
-                    nodeDetails[i][j-1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i, j-1, i, j, 1.0)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 5th Successor (North-East) ------------//
-
-        if (isValid(i - 1, j + 1)){
-            if (isDestination(i-1, j+1, dest)){
-                nodeDetails[i-1][j+1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-            else if (!closedList[i - 1][j + 1] && isUnBlocked(i-1, j+1)){
-                GNew = nodeDetails[i][j].getG() + 1.414;
-                HNew = getHeuristicCost(i-1, j+1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i-1][j+1].getF() == FLT_MAX || nodeDetails[i-1][j+1].getF() > FNew){
-                    openList.insert( std::make_pair (FNew, std::make_pair(i-1, j+1)));
-                    // Update the details of this node
-                    nodeDetails[i-1][j+1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i+1, j+1, i, j, 1.414)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 6th Successor (North-West) ------------//
-        if (isValid (i-1, j-1)){
-            if (isDestination (i-1, j-1, dest)){
-                nodeDetails[i-1][j-1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-            else if (!closedList[i-1][j-1] && isUnBlocked(i-1,j-1)){
-                GNew = nodeDetails[i][j].getG() + 1.414;
-                HNew = getHeuristicCost(i-1, j-1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i-1][j-1].getF() == FLT_MAX || nodeDetails[i-1][j-1].getF() > FNew){
-                    openList.insert( std::make_pair (FNew, std::make_pair (i-1, j-1)));
-                    // Update the details of this node
-                    nodeDetails[i-1][j-1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i+1, j-1, i, j, 1.414)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 7th Successor (South-East) ------------//
-
-        if (isValid(i+1, j+1)){
-            if (isDestination(i+1, j+1, dest)){
-                nodeDetails[i+1][j+1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-
-            else if (!closedList[i + 1][j + 1] && isUnBlocked(i+1, j+1)){
-                GNew = nodeDetails[i][j].getG() + 1.414;
-                HNew = getHeuristicCost(i+1, j+1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i+1][j+1].getF() == FLT_MAX || nodeDetails[i+1][j+1].getF() > FNew){
-                    openList.insert(std::make_pair(FNew,std::make_pair (i+1, j+1)));
-                    // Update the details of this node
-                    nodeDetails[i+1][j+1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i-1, j+1, i, j, 1.414)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
 
         //----------- 8th Successor (South-West) ------------//
-
-        if (isValid (i+1, j-1)){
-            if (isDestination(i+1, j-1, dest)){
-                nodeDetails[i+1][j-1].setPxy(i, j);
-                foundDest = true;
-                break;
-            }
-
-            else if (!closedList[i+1][j-1] && isUnBlocked(i+1, j-1)){
-                GNew = nodeDetails[i][j].getG() + 1.414;
-                HNew = getHeuristicCost(i+1, j-1, dest);
-                FNew = GNew + HNew;
-
-                if (nodeDetails[i+1][j-1].getF() == FLT_MAX || nodeDetails[i+1][j-1].getF() > FNew){
-                    openList.insert(std::make_pair(FNew, std::make_pair(i+1, j-1)));
-                    // Update the details of this node
-                    nodeDetails[i+1][j-1].update(FNew, GNew, HNew, i, j);
-                }
-            }
+        if(AStarMovement(nodesDetails,closedList, openList, dest, i-1, j-1, i, j, 1.414)){
+            foundDest = true;
+            setAStarPath(nodesDetails, dest, shortestPath);
+            break;
         }
     }
 
     // If the destination node is not found and the open
-    // list is empty, then we conclude that we failed to
-    // reach the destination node. This may happen when the
-    // there is no way to destination node (due to blockages)
     if (!foundDest){
         ce::log("Failed to find the destination node");
     }
@@ -559,135 +402,186 @@ listDirections Pathfinding::AstarSearch(Pair src, Pair dest)
     return shortestPath;
 }
 
+//Nice
+bool Pathfinding::AStarMovement(ce::list<ce::list<Node>> &nodesDetails, ce::list<ce::list<bool>> &closedList,
+        std::set<pPair> &openList, Pair &dest, int row, int col, int pi, int pj, float g)
+{
+    // To store the 'G', 'H' and F'
+    double GNew, HNew, FNew;
+
+    // Only process this node if this is a valid one
+    if (isValid(row, col)){
+        // If the destination node is the same as the current successor
+        if (isDestination(row, col, dest)){
+            // Set the Parent of the destination node
+            nodesDetails[row][col].setPyx(pi, pj);
+            return true;
+        }
+        // If the successor is already on the closed list or if it is blocked
+        // then ignore it. Else do the following
+        else if (!closedList[row][col] && isUnBlocked(row, col)){
+            GNew = nodesDetails[pi][pj].getG() + g;
+            HNew = getHeuristicCost(row, col, dest);
+            FNew = GNew + HNew;
+
+            // If it isn’t on the open list, add it to the open list. Make the current square
+            // the parent of this square. Record the f, g, and h costs of the square cell
+            //                            OR
+            // If it is on the open list already, check to see if this path to that square is
+            // better, using 'f' cost as the measure.
+            if (nodesDetails[row][col].getF() == FLT_MAX || nodesDetails[row][col].getF() > FNew){
+                openList.insert(std::make_pair(FNew,std::make_pair(row, col)));
+                // Update the details of this node
+                nodesDetails[row][col].update(FNew, GNew, HNew, pi, pj);
+            }
+        }
+    }
+    return false;
+}
+
+//Nice
+void Pathfinding::setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &dest, listDirections &path)
+{
+    int row = dest.first;
+    int col = dest.second;
+
+    std::stack<Pair> stackPath;
+
+    while(!(nodesDetails[row][col].getPy() == row && nodesDetails[row][col].getPx() == col))
+    {
+        stackPath.push(std::make_pair(row, col));
+        int temp_row = nodesDetails[row][col].getPy();
+        int temp_col = nodesDetails[row][col].getPx();
+        path.push_front(setMovement(temp_row, temp_col, row, col));
+        row = temp_row;
+        col = temp_col;
+    }
+}
+
+//Nice
 listDirections Pathfinding::LineSight(Pair src, Pair dest)
 {
     // Initial validations
     if(!initialValidations(src, dest)){
-        return line;
+        return BresenhamLine;
     }
 
     // If the destination node is the same as source node
     if(isDestination(src.first, src.second, dest)){
-        ce::log("\nWe already at the destination");
-        return line;
+        ce::log("We already at the destination");
+        return BresenhamLine;
     }
 
-    int dx = abs(dest.first - src.first);
-    int dy = abs(dest.second - src.second);
+    int dy = abs(dest.first - src.first);
+    int dx = abs(dest.second - src.second);
 
-    int sx = src.first < dest.first ? 1 : -1;
-    int sy = src.second < dest.second ? 1 : -1;
+    int sy = src.first < dest.first ? 1 : -1;
+    int sx = src.second < dest.second ? 1 : -1;
 
-    int err = dx - dy;
+    int err = dy - dx;
     int e2;
-    int currentX = src.first;
-    int currentY = src.second;
-    int previousX = currentX;
+    int currentY = src.first;
+    int currentX = src.second;
     int previousY = currentY;
+    int previousX = currentX;
 
     while(true)
     {
-        if(!isUnBlocked(currentX, currentY)){
-            Pair newSrc = bestAdjacentNode(previousX, previousY, dest);
-            currentX = newSrc.first;
-            currentY = newSrc.second;
-            LineSight(newSrc, dest);
-            break;
+        if(!isUnBlocked(currentY, currentX)){
+            Pair newSrc = bestAdjacentNode(previousY, previousX, dest);
+            if(newSrc != src){
+                currentY = newSrc.first;
+                currentX = newSrc.second;
+                LineSight(newSrc, dest);
+                break;
+            }
+            else{
+                BresenhamLine = AStarSearch(BresenhamNodes[0], dest);
+                return BresenhamLine;
+            }
         }
 
-        if(currentX == dest.first && currentY == dest.second){
-            nodes.push_back(std::make_pair(currentX, currentY));
-            setLineSight(nodes, line);
-            return line;
+        if(currentY == dest.first && currentX == dest.second){
+            BresenhamNodes.push_back(std::make_pair(currentY, currentX));
+            setLineSight(BresenhamNodes, BresenhamLine);
+            return BresenhamLine;
         }
 
-        nodes.push_back(std::make_pair(currentX, currentY));
+        BresenhamNodes.push_back(std::make_pair(currentY, currentX));
 
-        previousX = currentX;
         previousY = currentY;
+        previousX = currentX;
 
         e2 = 2 * err;
-        if(e2 > -1 * dy){
-            err = err - dy;
-            currentX = currentX + sx;
-        }
-
-        if(e2 < dx){
-            err = err + dx;
+        if(e2 > -1 * dx){
+            err = err - dx;
             currentY = currentY + sy;
         }
-    }
 
-    return line;
-}
-
-void Pathfinding::setLineSight(adjacentNodes &nodes, listDirections &line)
-{
-    line.clear();
-    for(int i=0; i<nodes.size(); i++)
-    {
-        if(i+1 != nodes.size()){
-            Pair src = nodes[i];
-            Pair dest = nodes[i+1];
-            line.push_back(setMovement(src.first, src.second, dest.first, dest.second));
+        if(e2 < dy){
+            err = err + dy;
+            currentX = currentX + sx;
         }
     }
+
+    return BresenhamLine;
 }
 
-Pair Pathfinding::bestAdjacentNode(int &px, int &py, Pair &dest)
+//Nice
+Pair Pathfinding::bestAdjacentNode(int &py, int &px, Pair &dest)
 {
     std::set<pPair> adjNodes;
 
     // NORTH NODE
-    if(isValid(px-1, py) && isUnBlocked(px-1, py)){
-        int H = ManhattanDistance(px-1, py, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py)));
+    if(isValid(py+1, px) && isUnBlocked(py+1, px)){
+        int H = ManhattanDistance(py+1, px, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py+1, px)));
     }
 
     // SOUTH NODE
-    if(isValid(px+1, py) && isUnBlocked(px+1, py)){
-        int H = ManhattanDistance(px+1, py, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py)));
+    if(isValid(py-1, px) && isUnBlocked(py-1, px)){
+        int H = ManhattanDistance(py-1, px, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py-1, px)));
     }
 
     // EAST NODE
-    if(isValid(px, py+1) && isUnBlocked(px, py+1)){
-        int H = ManhattanDistance(px, py+1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px, py + 1)));
+    if(isValid(py, px+1) && isUnBlocked(py, px+1)){
+        int H = ManhattanDistance(py, px+1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py, px+1)));
     }
 
     // WEST NODE
-    if(isValid(px, py-1) && isUnBlocked(px, py-1)){
-        int H = ManhattanDistance(px, py-1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px, py - 1)));
+    if(isValid(py, px-1) && isUnBlocked(py, px-1)){
+        int H = ManhattanDistance(py, px-1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py, px-1)));
     }
 
     // NORTHEAST NODE
-    if(isValid(px-1, py+1) && isUnBlocked(px-1, py+1)){
-        int H = ManhattanDistance(px-1, py+1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py + 1)));
+    if(isValid(py+1, px+1) && isUnBlocked(py+1, px+1)){
+        int H = ManhattanDistance(py+1, px+1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py+1, px+1)));
     }
 
     // NORTHWEST NODE
-    if(isValid(px-1, py-1) && isUnBlocked(px-1, py-1)){
-        int H = ManhattanDistance(px-1, py-1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px - 1, py - 1)));
+    if(isValid(py+1, px-1) && isUnBlocked(py+1, px-1)){
+        int H = ManhattanDistance(py+1, px-1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py+1, px-1)));
     }
 
     // SOUTHEAST NODE
-    if(isValid(px+1, py+1) && isUnBlocked(px+1, py+1)){
-        int H = ManhattanDistance(px+1, py+1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py + 1)));
+    if(isValid(py-1, px+1) && isUnBlocked(py-1, px+1)){
+        int H = ManhattanDistance(py-1, px+1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py-1, px+1)));
     }
 
     // SOUTHWEST NODE
-    if(isValid(px+1, py-1) && isUnBlocked(px+1, py-1)){
-        int H = ManhattanDistance(px+1, py-1, dest);
-        adjNodes.insert(std::make_pair(H, std::make_pair(px + 1, py - 1)));
+    if(isValid(py-1, px-1) && isUnBlocked(py-1, px-1)){
+        int H = ManhattanDistance(py-1, px-1, dest);
+        adjNodes.insert(std::make_pair(H, std::make_pair(py-1, px-1)));
     }
 
     pPair temp = std::make_pair(INT_MAX, std::make_pair(0,0));
-    for(int i=0; i < adjNodes.size(); i++){
+    for(int i=0; i<adjNodes.size(); i++){
         pPair p = *adjNodes.begin();
 
         if(p.first < temp.first){
@@ -700,14 +594,22 @@ Pair Pathfinding::bestAdjacentNode(int &px, int &py, Pair &dest)
     return src;
 }
 
-int Pathfinding::ManhattanDistance(int px, int py, Pair dest)
+//Nice
+int Pathfinding::ManhattanDistance(int py, int px, Pair dest)
 {
-    return abs(px - dest.first) + abs(py - dest.second);
+    return abs(py - dest.first) + abs(px - dest.second);
 }
 
-
-
-
-
-
-
+//Nice
+void Pathfinding::setLineSight(adjacentNodes &BresenhamNodes, listDirections &BresenhamLine)
+{
+    BresenhamLine.clear();
+    for(int i=0; i<BresenhamNodes.size(); i++)
+    {
+        if(i+1 != BresenhamNodes.size()){
+            Pair src = BresenhamNodes[i];
+            Pair dest = BresenhamNodes[i+1];
+            BresenhamLine.push_back(setMovement(src.first, src.second, dest.first, dest.second));
+        }
+    }
+}
