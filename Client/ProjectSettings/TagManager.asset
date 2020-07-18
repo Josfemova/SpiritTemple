@@ -9,6 +9,10 @@ TagManager:
   - ObstacleTile
   - SafeSpaces
   - Item
+  - hearts
+  - score
+  - jar
+  - chest
   layers:
   - Default
   - TransparentFX
