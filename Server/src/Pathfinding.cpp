@@ -40,7 +40,6 @@ Pathfinding::Pathfinding(gmatrix matrix)
     this->matrix = matrix;
 }
 
-//Nice
 bool Pathfinding::isValid(int row, int col)
 {
     int ROWS = matrix.size();
@@ -48,25 +47,21 @@ bool Pathfinding::isValid(int row, int col)
     return (row >= 0) && (row < ROWS) && (col >= 0) && (col < COLS);
 }
 
-//Nice
 bool Pathfinding::isUnBlocked(int row, int col)
 {
     return matrix[row][col] == 1;
 }
 
-//Nice
 bool Pathfinding::isDestination(int row, int col, Pair dest)
 {
     return (row == dest.first && col == dest.second);
 }
 
-//Nice
 bool Pathfinding::nodeValidations(int row, int col, Pair dest)
 {
     return isValid(row, col) && isUnBlocked(row, col) && !isDestination(row, col, dest);
 }
 
-//Nice
 bool Pathfinding::initialValidations(Pair src, Pair dest)
 {
     // If the source is out of range
@@ -89,13 +84,11 @@ bool Pathfinding::initialValidations(Pair src, Pair dest)
     return true;
 }
 
-//Nice
 double Pathfinding::getHeuristicCost(int row, int col, Pair dest)
 {
     return (sqrt((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
 }
 
-//Nice
 Direction Pathfinding::setMovement(int srcY, int srcX, int destY, int destX)
 {
     if(srcX == destX && srcY+1 == destY){
@@ -127,7 +120,6 @@ Direction Pathfinding::setMovement(int srcY, int srcX, int destY, int destX)
     }
 }
 
-//Nice
 Pair Pathfinding::teleportEnemy(Pair src, Pair dest)
 {
     int tempPlayerY = dest.first;
@@ -159,7 +151,6 @@ Pair Pathfinding::teleportEnemy(Pair src, Pair dest)
     }
 }
 
-//Nice
 listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
 {
     listDirections path;
@@ -183,7 +174,6 @@ listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
     return path;
 }
 
-//Nice
 void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair &dest)
 {
     // NORTH NODE
@@ -235,7 +225,6 @@ void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair 
     }
 }
 
-//Nice
 void Pathfinding::addNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest)
 {
     if(!adjNodes.contains(pair) && pair!=src && pair!=dest){
@@ -263,7 +252,6 @@ Pair Pathfinding::randomNode(adjacentNodes &adjNodes)
     }
 }
 
-//Nice
 listDirections Pathfinding::AStarSearch(Pair src, Pair dest)
 {
     // List of directions to follow between the enemy's position and the
@@ -402,7 +390,6 @@ listDirections Pathfinding::AStarSearch(Pair src, Pair dest)
     return shortestPath;
 }
 
-//Nice
 bool Pathfinding::AStarMovement(ce::list<ce::list<Node>> &nodesDetails, ce::list<ce::list<bool>> &closedList,
         std::set<pPair> &openList, Pair &dest, int row, int col, int pi, int pj, float g)
 {
@@ -439,7 +426,6 @@ bool Pathfinding::AStarMovement(ce::list<ce::list<Node>> &nodesDetails, ce::list
     return false;
 }
 
-//Nice
 void Pathfinding::setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &dest, listDirections &path)
 {
     int row = dest.first;
@@ -458,7 +444,6 @@ void Pathfinding::setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &des
     }
 }
 
-//Nice
 listDirections Pathfinding::LineSight(Pair src, Pair dest)
 {
     // Initial validations
@@ -527,7 +512,6 @@ listDirections Pathfinding::LineSight(Pair src, Pair dest)
     return BresenhamLine;
 }
 
-//Nice
 Pair Pathfinding::bestAdjacentNode(int &py, int &px, Pair &dest)
 {
     std::set<pPair> adjNodes;
@@ -594,13 +578,11 @@ Pair Pathfinding::bestAdjacentNode(int &py, int &px, Pair &dest)
     return src;
 }
 
-//Nice
 int Pathfinding::ManhattanDistance(int py, int px, Pair dest)
 {
     return abs(py - dest.first) + abs(px - dest.second);
 }
 
-//Nice
 void Pathfinding::setLineSight(adjacentNodes &BresenhamNodes, listDirections &BresenhamLine)
 {
     BresenhamLine.clear();

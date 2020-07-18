@@ -15,6 +15,7 @@ int serverStart()
 //ENEMY HAS THIS METHODS SO NO PROBLEM
 std::string getNextMovement(Direction direction);
 std::string getPreviousMovement(Direction direction);
+void printBreadcrumbs(listDirections &directions);
 
 int main()
 {
@@ -105,5 +106,46 @@ std::string getPreviousMovement(Direction direction)
             return "NORTHEAST";
         default:
             return "";
+    }
+}
+
+void printBreadcrumbs(listDirections &breadcrumbs)
+{
+    std::string result = "Breadcrumbs: ";
+    if(!breadcrumbs.empty()){
+        for(int i=0; i<breadcrumbs.size(); i++)
+        {
+            if(breadcrumbs[i] == Direction::NORTH){
+                result += "NORTH <- ";
+            }
+            else if(breadcrumbs[i] == Direction::SOUTH){
+                result += "SOUTH <- ";
+            }
+            else if(breadcrumbs[i] == Direction::EAST){
+                result += "EAST <- ";
+            }
+            else if(breadcrumbs[i] == Direction::WEST){
+                result += "WEST <- ";
+            }
+            else if(breadcrumbs[i] == Direction::NORTHEAST){
+                result += "NORTHEAST <- ";
+            }
+            else if(breadcrumbs[i] == Direction::NORTHWEST){
+                result += "NORTHWEST <- ";
+            }
+            else if(breadcrumbs[i] == Direction::SOUTHEAST){
+                result += "SOUTHEAST <- ";
+            }
+            else if(breadcrumbs[i] == Direction::SOUTHWEST){
+                result += "SOUTHWEST <- ";
+            }
+        }
+        std::string stringForm = result.substr(0,result.size()-3);
+        ce::log(stringForm);
+        ce::log("\n");
+    }
+    else{
+        result += "[]";
+        ce::log(result);
     }
 }

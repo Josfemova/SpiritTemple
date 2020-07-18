@@ -7,6 +7,10 @@ lengthx{lengthx}, lengthy{lengthy}
 {
     this->playerInfo = playerInfo;
     this->obstacles = obstacles;
+    int player[3] = {playerInfo["player"]["ID"], playerInfo["player"]["gridx"], playerInfo["player"]["gridy"]};
+    id = player[0];
+    playerx = player[1];
+    playery = player[2];
     std::string type;
     for(auto x:items){
         type = x["type"];
@@ -18,7 +22,16 @@ lengthx{lengthx}, lengthy{lengthy}
         Enemy y{x["ID"],x["gridx"],x["gridy"],type};
         this->enemies.push_back(y);
     }
+}
 
+void Level::start()
+{
+    //Do something
+}
+
+void Level::finish()
+{
+    //Do something
 }
 
 /* TODO */
@@ -61,9 +74,19 @@ void Level::triggerGroupCall(int id){
     {
         for (auto enemy : enemies){
             if(enemy.getID()!=id){
+                enemy.setChasing(true);
                 enemy.groupCall();
             }
         }
     }
+}
+
+json Level::getInstructions() {
+    return json();
+}
+
+Pair Level::playerPos() const
+{
+    return std::make_pair(playery, playerx);
 }
 

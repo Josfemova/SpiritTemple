@@ -3,7 +3,7 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
-Enemy::Enemy(int id, int px, int py, std::string& type) : GameObject{GOType::enemy, id, px, py}
+Enemy::Enemy(int id, int py, int px, std::string& type) : GameObject{GOType::enemy, id, py, px}
 {
     setEnemyType(type);
 }
@@ -24,12 +24,19 @@ void Enemy::setEnemyType(std::string& type)
         enemyType = EnemyType::Chuchu;
 }
 
-void Enemy::updateData(int px, int py, int damage, bool range)
+void Enemy::updateData(int py, int px, int damage, bool range)
 {
-    setX(px);
     setY(py);
+    setX(px);
     damageDone = damage;
     inRange = range;
+}
+
+void Enemy::generateRandomPath(int size)
+{
+    if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu){
+        normalPath = MoveGenerator::randomPath(parent->getSimpleMatrix(), enemyPos(), parent->playerPos(), size);
+    }
 }
 
 void Enemy::setRouteVelocity(float routeVel)
@@ -57,10 +64,11 @@ void Enemy::setInRange(bool range)
     inRange = range;
 }
 
-std::string Enemy::toString()
+void Enemy::setChasing(bool chase)
 {
-    return "";
+    isChasing = chase;
 }
+
 Pair Enemy::enemyPos() const
 {
     return std::make_pair(getX(), getY());
@@ -91,6 +99,12 @@ bool Enemy::isInRange() const
     return inRange;
 }
 
+bool Enemy::playerIsSafe() const
+{
+    // Check if the player is inside the safe zone
+    return true;
+}
+
 EnemyType Enemy::getEnemyType()
 {
     return enemyType;
@@ -100,52 +114,87 @@ std::string Enemy::getTypeS()
 {
     switch (enemyType)
     {
-    case EnemyType::SpGray:
-        return "SpGray";
-    case EnemyType::SpRed:
-        return "SpRed";
-    case EnemyType::SpBlue:
-        return "SpBlue";
-    case EnemyType::SpEye:
-        return "SpEye";
-    case EnemyType::Mouse:
-        return "Mouse";
-    case EnemyType::Chuchu:
-        return "Chuchu";
-    default:
-        return "";
+        case EnemyType::SpGray:
+            return "SpGray";
+        case EnemyType::SpRed:
+            return "SpRed";
+        case EnemyType::SpBlue:
+            return "SpBlue";
+        case EnemyType::SpEye:
+            return "SpEye";
+        case EnemyType::Mouse:
+            return "Mouse";
+        case EnemyType::Chuchu:
+            return "Chuchu";
+        default:
+            return "";
     }
 }
-void Enemy::refreshState(){
-    bool playerIsSafe = false;
-    //check rango vision
-    bool inRange = false;
 
-    if(playerIsSafe){
-        chasePath.clear();
+void Enemy::refreshState()
+{
+    Pathfinding pathfinding(parent->getSimpleMatrix());
 
+    // Check vision range and player position...
+
+    // Chuchu always chase the player even is inside the safe zone, this enemy is harmless
+    if(enemyType == EnemyType::Chuchu){
+        isChasing = true;
+        chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
     }
-    else if(inRange){
+
+    // SpEye doesn't move but calls the other specters
+    if(isInRange() && enemyType == EnemyType::SpEye){
         parent->triggerGroupCall(getID());
-        //consigue su lista de migas
     }
-    //movedSafeSpace
 
+    if(isInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu){
+        isChasing = true;
+        chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+        parent->triggerGroupCall(getID());
+    }
 
-    //calcula los nuevos paths
+    if(playerIsSafe() && !breadcrumbs.empty()){
+        isChasing = false;
+        isBacktracking = true;
+        chasePath.clear();
+    }
+
+    if(!isInRange() && !playerIsSafe() && breadcrumbs.empty()){
+        isChasing = false;
+        isBacktracking = false;
+    }
 }
+
 void Enemy::groupCall(){
-    //reemplaza lista actual por lista de Astar
+    Pathfinding pathfinding(parent->getSimpleMatrix());
+
+    // Teleport SpBlue
+    if(enemyType == EnemyType::SpBlue && !isTeleported){
+        teleportation = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
+        isTeleported = true;
+    }
+
+    // Replace chasePath
+    if(enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed){
+        chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+    }
+
+    if(enemyType == EnemyType::SpBlue && isTeleported){
+        chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+    }
 }
+
 std::string Enemy::update()
 {
     if(isChasing){
+        breadcrumbs.push_back(chasePath.front());
         return getNextMovement(chasePath.pop_front());
-    }else if(isBacktracking){
-        return getNextMovement(breadcrumbs.pop_back());
-    }else{
-        //OBVIAMENTE SE CAMBIA
-        //movimiento normal 
+    }
+    else if(isBacktracking){
+        return getPreviousMovement(breadcrumbs.pop_back());
+    }
+    else{
         return getNextMovement(normalPath[0]);
     }
 }
@@ -199,3 +248,5 @@ std::string Enemy::getPreviousMovement(Direction direction)
             return "";
     }
 }
+
+

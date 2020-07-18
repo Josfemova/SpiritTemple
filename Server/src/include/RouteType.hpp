@@ -3,9 +3,9 @@
 
 enum class RouteType {
     Astar,
-    BreadCrumbing,
+    LineSight,
     Backtracking,
-    LineSight
+    BreadCrumbing
 };
 
 #endif //SPIRITTEMPLE_ROUTETYPE_HPP

@@ -6,6 +6,7 @@
 #include "Direction.hpp"
 #include "Level.hpp"
 #include <memory>
+
 class Level;
 class Enemy : public GameObject{
 private:
@@ -15,48 +16,47 @@ private:
     float chase_velocity;
     float visibility_radius;
     int damageDone;
-    bool inRange;
-    bool isChasing=false;
+    bool inRange = false;
+    bool isChasing = false;
     bool isBacktracking = false;
-    int notChasingIndex;
+    bool isTeleported = false;
+    Pair teleportation;
     listDirections normalPath;
     listDirections breadcrumbs;
     listDirections chasePath;
     void setEnemyType(std::string& type);
 
 public:
-    Enemy(int id, int px, int py, std::string& type);
-    void updateData(int px, int py, int damage, bool range);
+    Enemy(int id, int py, int px, std::string& type);
+    void updateData(int py, int px, int damage, bool range);
+    void generateRandomPath(int size); //To normalPath, save the index...
+
     void setRouteVelocity(float routeVel);
     void setChaseVelocity(float chaseVel);
     void setVisibilityRadius(float radius);
+
     void setDamage(int damage);
     void setInRange(bool range);
-    std::string toString();
+    void setChasing(bool chase);
+
     Pair enemyPos() const;
     float getRouteVelocity() const;
     float getChaseVelocity() const;
     float getVisibilityRadius() const;
+
     int getDamage() const;
     bool isInRange() const;
+    bool playerIsSafe() const;
 
     EnemyType getEnemyType();
     std::string getTypeS();
 
-    std::string update();
-    void refreshState(); //el mae calcula los paths
+    void refreshState();
     void groupCall();
-    // Initial methods
-    void generatRandomPath(){
-        //guardar index
+    std::string update();
 
-    } // se llama al princio
-
-    //utilities
     std::string getNextMovement(Direction direction);
     std::string getPreviousMovement(Direction direction);
-
-
 };
 
 #endif //GAMESERVER_ENEMY_HPP
