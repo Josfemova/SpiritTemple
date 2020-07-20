@@ -41,7 +41,7 @@ public class EventAdmin : MonoBehaviour
             {
                 player.transform.position = newPosition;
             }
-            JsonReq req = new JsonReq("movePlayer", newPosition.x, newPosition.y);
+            JsonReq req = new JsonReq("move-player", newPosition.x, newPosition.y);
             Client.Instance.updateServer("event",JsonUtility.ToJson(req));
             Debug.Log(JsonUtility.ToJson(req));
         }

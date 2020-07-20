@@ -96,14 +96,14 @@ void Level::manageEvent(json event)
 
     if (cmd == "move-player")
     {
-        playerx = event["valA"];
-        playery = event["vaklB"];
+        playerx += event["valA"];
+        playery += event["vaklB"];
         
     }
     else if (cmd == "attack-enemy")
     {
         int enemyID = event[1];
-        
+
     }
     else if (cmd == "movePlayer")
     {
