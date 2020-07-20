@@ -74,7 +74,6 @@ public class CEList<T>
         for (int i = 0; i < lenght; i++)
         {
             T x = pop();
-            Debug.Log(x);
             array[i] = x;
         }
         return array;

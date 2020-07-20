@@ -20,8 +20,10 @@ public sealed class Client
     ~Client()
     {
         Debug.Log("releasing socket");
+        updateServer("kill","kill");
         serverConnection.Shutdown(SocketShutdown.Both);
         serverConnection.Close();
+
     }
     public static Client Instance
     {
@@ -63,10 +65,11 @@ public sealed class Client
             int response = serverConnection.Receive(bytes);
             string srvcmd = Encoding.ASCII.GetString(bytes, 0, response);
             serverInstructions(srvcmd);
+            
         }
     }
     private void serverInstructions(string cmd){
-
+        Debug.Log(cmd);
     }
 
 }

@@ -64,23 +64,23 @@ void Server::listenClient()
     ce::log("connection started");
     while (on)
     {
+        ce::log("tick");
         std::string message(readMsg());
         if (message == "loadLevel")
         {
             std::string levelJson(readMsg(true));
-            //
-            std::ifstream t("/home/jose/Desktop/githubU/SpiritTemple/Extra/initialData.json");
-            std::stringstream buffer;
-            buffer << t.rdbuf();
-            std::string data = buffer.str();
-            std::string response(game->startLevel(data));
-            sendMsg("loading level");
+            std::string response(game->startLevel(levelJson));
+            sendMsg(response);
         }
         else if (message == "event")
         {
             std::string event(readMsg());
             std::string response(game->getResponse(message));
             sendMsg(response);
+            
+        }else if (message == "kill"){
+            sendMsg("game end");
+            on=false;
         }
     }
 }
