@@ -23,6 +23,7 @@ struct JsonReq
         this.cmd = cmd;
         this.valA = valA;
         this.valB = valB;
+        this.valC = valC;
     }
 }
 
