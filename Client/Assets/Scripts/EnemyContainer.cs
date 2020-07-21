@@ -9,12 +9,12 @@ public class EnemyContainer : MonoBehaviour
     private int orientationX = 0; //1 right, -1, left
     private int orientationY = -1; //1 up, -1 down
 
-    public GameObject enemySprite;
+    //public GameObject enemySprite;
    
 
     void Start()
     {
-        animator = enemySprite.GetComponent<Animator>();
+        //animator = enemySprite.GetComponent<Animator>();
     }
 
     // Update is called once per frame

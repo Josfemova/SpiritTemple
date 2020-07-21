@@ -34,8 +34,9 @@ void Enemy::updateData(int py, int px, int damage, bool range)
 
 void Enemy::generateRandomPath(int size)
 {
+    Pathfinding pathfinding(parent->getSimpleMatrix());
     if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu){
-        normalPath = MoveGenerator::randomPath(parent->getSimpleMatrix(), enemyPos(), parent->playerPos(), size);
+        normalPath = pathfinding.RandomPath(enemyPos(), parent->playerPos(), size);
     }
 }
 
@@ -195,7 +196,10 @@ std::string Enemy::update()
         return getPreviousMovement(breadcrumbs.pop_back());
     }
     else{
-        return getNextMovement(normalPath[0]);
+        if(n > normalPath.size()-1){
+            n = 0;
+        }
+        return getNextMovement(normalPath[++n]);
     }
 }
 

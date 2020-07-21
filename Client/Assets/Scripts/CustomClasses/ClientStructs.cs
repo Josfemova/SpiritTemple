@@ -14,14 +14,16 @@ struct ServerCmd
 [Serializable]
 struct JsonReq
 {
-    public string reqType;
-    public int valx;
-    public int valy;
-    public JsonReq(string reqType, int valx, int valy)
+    public string cmd;
+    public int valA;
+    public int valB;
+    public int valC;
+    public JsonReq(string cmd, int valA = 0, int valB = 0, int valC = 0)
     {
-        this.reqType = reqType;
-        this.valx = valx;
-        this.valy = valy;
+        this.cmd = cmd;
+        this.valA = valA;
+        this.valB = valB;
+        this.valC = valC;
     }
 }
 
@@ -88,19 +90,21 @@ struct EspecialTile
 struct InitialData
 {
 
-    public int lenghtx;
-    public int lenghty;
+    public int lengthx;
+    public int lengthy;
     public PlayerInfo player;
     public Enemy[] enemies;
     public Item[] items;
     public EspecialTile[] otherObj;
-    public InitialData(int lenghtx, int lenghty, PlayerInfo player, Enemy[] enemies, Item[] items, EspecialTile[] otherObj)
+    public string end;
+    public InitialData(int lengthx, int lengthy, PlayerInfo player, Enemy[] enemies, Item[] items, EspecialTile[] otherObj)
     {
-        this.lenghtx = lenghtx;
-        this.lenghty = lenghty;
+        this.lengthx = lengthx;
+        this.lengthy = lengthy;
         this.player = player;
         this.enemies = enemies;
         this.items = items;
         this.otherObj = otherObj;
+        this.end = "end of message";
     }
 }

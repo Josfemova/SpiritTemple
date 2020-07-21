@@ -15,6 +15,7 @@ private:
     float route_velocity;
     float chase_velocity;
     float visibility_radius;
+    int n = -1;
     int damageDone;
     bool inRange = false;
     bool isChasing = false;

@@ -41,8 +41,8 @@ public class EventAdmin : MonoBehaviour
             {
                 player.transform.position = newPosition;
             }
-            JsonReq req = new JsonReq("movePlayer", newPosition.x, newPosition.y);
-            //Client.Instance.updateServer("event",JsonUtility.ToJson(req));
+            JsonReq req = new JsonReq("move-player", newPosition.x, newPosition.y);
+            Client.Instance.updateServer("event",JsonUtility.ToJson(req));
             Debug.Log(JsonUtility.ToJson(req));
         }
     }
@@ -63,8 +63,8 @@ public class EventAdmin : MonoBehaviour
     }
     private void loadInServer()
     {
-        int lenghtx = groundMap.size.x;
-        int lenghty = groundMap.size.y;
+        int lengthx = groundMap.size.x;
+        int lengthy = groundMap.size.y;
         CEList<Enemy> enemylist = new CEList<Enemy>();
         CEList<Item> itemlist = new CEList<Item>();
         CEList<EspecialTile> objlist = new CEList<EspecialTile>();
@@ -83,9 +83,9 @@ public class EventAdmin : MonoBehaviour
             Item newItem = new Item(x.GetInstanceID(), itemScript.itemType, coord.x, coord.y);
             itemlist.push(newItem);
         }
-        for (int i = 0; i < lenghtx; i++)
+        for (int i = 0; i < lengthx; i++)
         {
-            for (int j = 0; j < lenghty; j++)
+            for (int j = 0; j < lengthy; j++)
             {
                 Vector3Int testLocation = new Vector3Int(i, j, 0);
                 if (obstacleMap.HasTile(testLocation))
@@ -101,12 +101,10 @@ public class EventAdmin : MonoBehaviour
         Vector3Int coordp = groundMap.WorldToCell(player.transform.position);
         PlayerInfo playerinfo = new PlayerInfo(player.GetInstanceID(), coordp.x, coordp.y);
         InitialData gameState = new InitialData(
-            lenghtx, lenghty,playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
+            lengthx, lengthy,playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
         );
         string message =  JsonUtility.ToJson(gameState,true);
-        Debug.Log(message);
         Client.Instance.updateServer("loadLevel", message);
-
     }
 }
 

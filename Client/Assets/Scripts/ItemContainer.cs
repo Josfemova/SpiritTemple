@@ -6,10 +6,9 @@ public class ItemContainer : MonoBehaviour
 {
     public string itemType;
     public Animator animator;
-    public GameObject itemSprite;
     void Start()
     {
-        animator = itemSprite.GetComponent<Animator>();
+        //animator = itemSprite.GetComponent<Animator>();
     }
 
         void Update()

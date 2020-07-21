@@ -1,21 +1,17 @@
 [
 {
-    "reqType":"movePlayer",
-    "x":true,
-    "y":false
+    "cmd":"move-player",
+    "valA":1,
+    "valB":-1
 },
 {
-    "reqType":"hitEnemy",
-    "ID":123
+    "cmd":"player-attack",
+    "valA":123
+
 },
 {
-    "reqType":"wakeEnemy",
-    "ID":123
-},
-{
-    "reqType":"hitPlayer",
-    "ID":123,
-    "EnemyID":123
+    "cmd":"wake-enemy",
+    "valB":123
 }
 ]
 

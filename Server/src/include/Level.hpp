@@ -28,30 +28,10 @@ public:
     Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy);
     void finish();
     void start();
-
-    // Returns a level matrix with "0" representing obstacles and safe areas
-    // (where the enemy can't walk) and "1" which is where the enemy can walk
     ce::list<ce::list<int>> getSimpleMatrix();
-
-    // Manage the events, for each event add an instruction
-    void manageEvent(json event){
-        //muevo jugador
-        if(event["reqType"] == "movePlayer"){
-            //muevo al jugador   
-        }
-
-        //le digo a cada enemigo que haga refresh
-                //for violento
-
-
-        //enemigo.update()
-    }
-
+    void manageEvent(json event);
     void triggerGroupCall(int id);
-
-    // Return all instructions added by manageEvent
     json getInstructions();
-
     Pair playerPos() const;
 };
 
