@@ -8,8 +8,9 @@ Enemy::Enemy(int id, int py, int px, std::string& type) :
 {
     setEnemyType(type);    
 }
-void Enemy::setParent(std::shared_ptr<Level> parent){
+void Enemy::activate(std::shared_ptr<Level> parent){
     this->parent = parent;
+    this->normalPath = MoveGenerator::randomPathGenerator(3, getX(), getY(), parent->getSimpleMatrix());
 }
 void Enemy::setEnemyType(std::string& type)
 {
@@ -26,7 +27,6 @@ void Enemy::setEnemyType(std::string& type)
     else if (type == "Chuchu")
         enemyType = EnemyType::Chuchu;
 }
-
 void Enemy::updateData(int py, int px, int damage, bool range)
 {
     setY(py);
@@ -44,17 +44,17 @@ void Enemy::generateRandomPath(int size)
     }
 }
 
-void Enemy::setRouteVelocity(float routeVel)
+void Enemy::setRouteVelocity(double routeVel)
 {
     route_velocity = routeVel;
 }
 
-void Enemy::setChaseVelocity(float chaseVel)
+void Enemy::setChaseVelocity(double chaseVel)
 {
     chase_velocity = chaseVel;
 }
 
-void Enemy::setVisibilityRadius(float radius)
+void Enemy::setVisibilityRadius(double radius)
 {
     visibility_radius = radius;
 }
@@ -79,17 +79,17 @@ Pair Enemy::enemyPos() const
     return std::make_pair(getX(), getY());
 }
 
-float Enemy::getRouteVelocity() const
+double Enemy::getRouteVelocity() const
 {
     return route_velocity;
 }
 
-float Enemy::getChaseVelocity() const
+double Enemy::getChaseVelocity() const
 {
     return chase_velocity;
 }
 
-float Enemy::getVisibilityRadius() const
+double Enemy::getVisibilityRadius() const
 {
     return visibility_radius;
 }
@@ -256,5 +256,3 @@ std::string Enemy::getPreviousMovement(Direction direction)
             return "";
     }
 }
-
-

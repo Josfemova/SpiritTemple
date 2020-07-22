@@ -25,18 +25,17 @@ Level::Level(json playerInfo, json obstacles, json items, json enemies, int leng
 }
 
 void Level::start(std::shared_ptr<Level> level)
-{   
+{
     for (auto enemy : enemies)
     {
-        enemy.setParent(level);
-        enemy.generateRandomPath(3);
-        /*for (auto x : enemy.normalPath)
+        enemy.activate(level);
+        for (auto x : enemy.normalPath)
         {
             auto y = enemy.getNextMovement(x);
             std::cout << y << " == ";
         }
         std::cout << std::endl;
-        ce::debuglog(enemy.getID());*/
+        ce::debuglog(enemy.getID());
     }
 }
 void Level::finish()
@@ -44,8 +43,7 @@ void Level::finish()
     //Do something
 }
 
-/* TODO */
-ce::list<ce::list<int>> Level::getSimpleMatrix()
+ce::list<ce::list<int>> Level::getSimpleMatrix(bool printMatrix)
 {
     ce::list<ce::list<int>> simpleMatrix;
     for (int i = 0; i < lengthy; i++)
@@ -80,19 +78,19 @@ ce::list<ce::list<int>> Level::getSimpleMatrix()
         }
     }
 
-
-    //------------------
-    ce::list<ce::list<int>> inverted;
-    for (auto fila : simpleMatrix)
+    if (printMatrix)
     {
-        inverted.push_front(fila);
+        ce::list<ce::list<int>> inverted;
+        for (auto fila : simpleMatrix)
+        {
+            inverted.push_front(fila);
+        }
+        inverted[lengthy - playery - 1][playerx] = 2;
+        for (auto fila : inverted)
+        {
+            ce::debuglog(fila.toString());
+        }
     }
-    inverted[lengthy-playery-1][playerx] = 2;
-    for (auto fila : inverted)
-    {
-        ce::debuglog(fila.toString());
-    }
-    //-----------------
     return simpleMatrix;
 }
 void Level::manageEvent(json event)

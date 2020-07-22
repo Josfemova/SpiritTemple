@@ -13,9 +13,9 @@ private:
     friend class Level;
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
-    float route_velocity;
-    float chase_velocity;
-    float visibility_radius;
+    double route_velocity;
+    double chase_velocity;
+    double visibility_radius;
     int n = -1;
     int damageDone;
     bool inRange = false;
@@ -30,22 +30,22 @@ private:
 
 public:
     Enemy(int id, int py, int px, std::string& type);
-    void setParent(std::shared_ptr<Level> parent);
+    void activate(std::shared_ptr<Level> parent);
     void updateData(int py, int px, int damage, bool range);
     void generateRandomPath(int size); //To normalPath, save the index...
 
-    void setRouteVelocity(float routeVel);
-    void setChaseVelocity(float chaseVel);
-    void setVisibilityRadius(float radius);
+    void setRouteVelocity(double routeVel);
+    void setChaseVelocity(double chaseVel);
+    void setVisibilityRadius(double radius);
 
     void setDamage(int damage);
     void setInRange(bool range);
     void setChasing(bool chase);
 
     Pair enemyPos() const;
-    float getRouteVelocity() const;
-    float getChaseVelocity() const;
-    float getVisibilityRadius() const;
+    double getRouteVelocity() const;
+    double getChaseVelocity() const;
+    double getVisibilityRadius() const;
 
     int getDamage() const;
     bool isInRange() const;

@@ -27,7 +27,7 @@ public:
     Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy);
     void finish();
     void start(std::shared_ptr<Level> level);
-    ce::list<ce::list<int>> getSimpleMatrix();
+    ce::list<ce::list<int>> getSimpleMatrix(bool printMatrix = false);
     void manageEvent(json event);
     void triggerGroupCall(int id);
     json getInstructions();
