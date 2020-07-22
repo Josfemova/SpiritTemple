@@ -10,7 +10,8 @@ Enemy::Enemy(int id, int py, int px, std::string& type) :
 }
 void Enemy::activate(std::shared_ptr<Level> parent){
     this->parent = parent;
-    this->normalPath = MoveGenerator::randomPathGenerator(3, getX(), getY(), parent->getSimpleMatrix());
+    if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu)
+        this->normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
 }
 void Enemy::setEnemyType(std::string& type)
 {
@@ -33,15 +34,6 @@ void Enemy::updateData(int py, int px, int damage, bool range)
     setX(px);
     damageDone = damage;
     inRange = range;
-}
-
-void Enemy::generateRandomPath(int size)
-{
-    Pathfinding pathfinding(parent->getSimpleMatrix());
-    ce::debuglog("after matrix");
-    if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu){
-        normalPath = pathfinding.RandomPath(enemyPos(), parent->playerPos(), size);
-    }
 }
 
 void Enemy::setRouteVelocity(double routeVel)
@@ -200,10 +192,11 @@ std::string Enemy::update()
         return getPreviousMovement(breadcrumbs.pop_back());
     }
     else{
-        if(n > normalPath.size()-1){
-            n = 0;
-        }
-        return getNextMovement(normalPath[++n]);
+       if(defaultPathInverse){
+
+       }else{
+
+       }
     }
 }
 

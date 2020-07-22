@@ -74,6 +74,7 @@ public class EventAdmin : MonoBehaviour
             Vector3Int coord = groundMap.WorldToCell(x.transform.position);
             EnemyContainer enemyScript = x.GetComponent(typeof(EnemyContainer)) as EnemyContainer;
             Enemy newEnemy = new Enemy(x.GetInstanceID(), enemyScript.enemyType, coord.x, coord.y);
+            Debug.Log(x.name + x.GetInstanceID().ToString());
             enemylist.push(newEnemy);
         }
         foreach (GameObject x in items)

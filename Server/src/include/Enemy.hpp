@@ -16,7 +16,8 @@ private:
     double route_velocity;
     double chase_velocity;
     double visibility_radius;
-    int n = -1;
+    int defaultPathPosition = -1; //starts before first movement in list 
+    bool defaultPathInverse = false;
     int damageDone;
     bool inRange = false;
     bool isChasing = false;
@@ -58,8 +59,8 @@ public:
     void groupCall();
     std::string update();
 
-    std::string getNextMovement(Direction direction);
-    std::string getPreviousMovement(Direction direction);
+    static std::string getNextMovement(Direction direction);
+    static std::string getPreviousMovement(Direction direction);
 };
 
 #endif //GAMESERVER_ENEMY_HPP

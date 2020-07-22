@@ -17,6 +17,9 @@ private:
     static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
     static listDirections Backtracking(Pair enemyPos, Pair playerPos);
     static Direction getDirectionValue(int deltaX, int deltaY);
+    static Direction getInverseDirection(Direction dir);
+    static std::string directionToString(Direction direction);
+    static std::string inverseDirectionToString(Direction direction);
 };
 
 #endif //GAMESERVER_MOVEGENERATOR_HPP

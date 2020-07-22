@@ -181,25 +181,21 @@ void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair 
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second);
         addNode(nodes, src, pair, dest);
     }
-
     // SOUTH NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second);
         addNode(nodes, src, pair, dest);
     }
-
     // EAST NODE
     if(nodeValidations(tempSrc.first, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first, tempSrc.second+1);
         addNode(nodes, src, pair, dest);
     }
-
     // WEST NODE
     if(nodeValidations(tempSrc.first, tempSrc.second-1, dest)){
         Pair pair = std::make_pair(src.first, src.second-1);
         addNode(nodes, src, pair, dest);
     }
-
     // NORTHEAST NODE
     if(nodeValidations(tempSrc.first+1, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second+1);
@@ -211,13 +207,11 @@ void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair 
         Pair pair = std::make_pair(tempSrc.first+1, tempSrc.second-1);
         addNode(nodes, src, pair, dest);
     }
-
     // SOUTHEAST NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second+1, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second+1);
         addNode(nodes, src, pair, dest);
     }
-
     // SOUTHWEST NODE
     if(nodeValidations(tempSrc.first-1, tempSrc.second-1, dest)){
         Pair pair = std::make_pair(tempSrc.first-1, tempSrc.second-1);
