@@ -26,12 +26,17 @@ Level::Level(json playerInfo, json obstacles, json items, json enemies, int leng
 
 void Level::start(std::shared_ptr<Level> level)
 {
+    //
+    // Genetic Lab Tasks to set initial values
+    // set velocities
+    // set other values
+    //
     for (auto enemy : enemies)
     {
         enemy.activate(level);
         for (auto x : enemy.normalPath)
         {
-            auto y = enemy.getNextMovement(x);
+            auto y = MoveGenerator::directionToString(x);
             std::cout << y << " == ";
         }
         std::cout << std::endl;
@@ -101,7 +106,6 @@ void Level::manageEvent(json event)
         playerx = event["valA"].get<int>();
         playery = event["valB"].get<int>();
     }
-
     else if (cmd == "attack-enemy")
     {
         int enemyID = event[1];
@@ -121,10 +125,10 @@ void Level::manageEvent(json event)
     else if (cmd == "movePlayer")
     {
     }
-    /*for (auto x : enemies)
+    for (auto x : enemies)
     {
         x.update();
-    }*/
+    }
 }
 void Level::triggerGroupCall(int id)
 {

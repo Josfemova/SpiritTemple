@@ -41,6 +41,7 @@ namespace ce{
         std::cout<<message<<message2<<message3<<std::endl;
         exit(EXIT_FAILURE);
     }
+    
 };
 
 #endif

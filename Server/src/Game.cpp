@@ -32,3 +32,9 @@ std::string Game::getResponse(std::string &action)
     json instructions = currentLevel->getInstructions();
     return instructions.dump();
 }
+int Game::randomInt(int lowerLimit, int upperLimit)
+{
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<int> randomGen(lowerLimit, upperLimit);
+}

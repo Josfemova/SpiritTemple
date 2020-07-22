@@ -1,5 +1,5 @@
 #include "include/MoveGenerator.hpp"
-
+#include "include/Game.hpp"
 #include <utility>
 
 Pair MoveGenerator::teleport(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos)
@@ -57,9 +57,7 @@ listDirections MoveGenerator::randomPathGenerator(int size, int x, int y, gmatri
 {
     listDirections route;
     bool posCheck;
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<int> randomDelta(-1, 1);
+    auto randomDelta = [](){return Game::randomInt(-1, 1);};
     for (int i = 0; i < size; i++)
     {
         int deltaX;
@@ -67,8 +65,8 @@ listDirections MoveGenerator::randomPathGenerator(int size, int x, int y, gmatri
         posCheck = false;
         while (!posCheck)
         {
-            deltaX = randomDelta(rng);
-            deltaY = randomDelta(rng);
+            deltaX = randomDelta();
+            deltaY = randomDelta();
             if (deltaX != 0 || deltaY != 0)
                 posCheck = (level[y + deltaY][x + deltaX] == 0) ? false : true;
         }
@@ -78,9 +76,6 @@ listDirections MoveGenerator::randomPathGenerator(int size, int x, int y, gmatri
     }
     return route;
 }
-
-
-
 Direction MoveGenerator::getDirectionValue(int deltaX, int deltaY)
 {
     if (deltaX == 0)

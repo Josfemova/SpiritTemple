@@ -15,6 +15,7 @@ private:
     int playerLives=3;
 
 public:
+    static int randomInt(int lowerLimit, int upperLimit);
     std::string startLevel(std::string&);
     std::string getResponse(std::string&);
 };

@@ -10,16 +10,18 @@ public:
     static listDirections getRoute(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, RouteType type);
     static listDirections randomPath(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, int size);
     static listDirections randomPathGenerator(int size, int x, int y, gmatrix level);
-private:
-    static Pathfinding* pathfinding;
-    static listDirections Astar(Pair enemyPos, Pair playerPos);
-    static listDirections LineSight(Pair enemyPos, Pair playerPos);
-    static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
-    static listDirections Backtracking(Pair enemyPos, Pair playerPos);
     static Direction getDirectionValue(int deltaX, int deltaY);
     static Direction getInverseDirection(Direction dir);
     static std::string directionToString(Direction direction);
     static std::string inverseDirectionToString(Direction direction);
+private:
+    static Pathfinding* pathfinding;
+    static int randomInt(int lowerLimit, int upperLimit);
+    static listDirections Astar(Pair enemyPos, Pair playerPos);
+    static listDirections LineSight(Pair enemyPos, Pair playerPos);
+    static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
+    static listDirections Backtracking(Pair enemyPos, Pair playerPos);
+    
 };
 
 #endif //GAMESERVER_MOVEGENERATOR_HPP

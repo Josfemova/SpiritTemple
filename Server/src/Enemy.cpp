@@ -186,66 +186,16 @@ std::string Enemy::update()
 {
     if(isChasing){
         breadcrumbs.push_back(chasePath.front());
-        return getNextMovement(chasePath.pop_front());
+        return MoveGenerator::directionToString(chasePath.pop_front());
     }
     else if(isBacktracking){
-        return getPreviousMovement(breadcrumbs.pop_back());
+        return MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
     }
     else{
-       if(defaultPathInverse){
+       if(isBackTrackDefault){
 
        }else{
 
        }
-    }
-}
-
-std::string Enemy::getNextMovement(Direction direction)
-{
-    switch (direction)
-    {
-        case Direction::NORTH:
-            return "NORTH";
-        case Direction::SOUTH:
-            return "SOUTH";
-        case Direction::EAST:
-            return "EAST";
-        case Direction::WEST:
-            return "WEST";
-        case Direction::NORTHEAST:
-            return "NORTHEAST";
-        case Direction::NORTHWEST:
-            return "NORTHWEST";
-        case Direction::SOUTHEAST:
-            return "SOUTHEAST";
-        case Direction::SOUTHWEST:
-            return "SOUTHWEST";
-        default:
-            return "";
-    }
-}
-
-std::string Enemy::getPreviousMovement(Direction direction)
-{
-    switch (direction)
-    {
-        case Direction::NORTH:
-            return "SOUTH";
-        case Direction::SOUTH:
-            return "NORTH";
-        case Direction::EAST:
-            return "WEST";
-        case Direction::WEST:
-            return "EAST";
-        case Direction::NORTHEAST:
-            return "SOUTHWEST";
-        case Direction::NORTHWEST:
-            return "SOUTHEAST";
-        case Direction::SOUTHEAST:
-            return "NORTHWEST";
-        case Direction::SOUTHWEST:
-            return "NORTHEAST";
-        default:
-            return "";
     }
 }

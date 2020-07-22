@@ -16,8 +16,8 @@ private:
     double route_velocity;
     double chase_velocity;
     double visibility_radius;
-    int defaultPathPosition = -1; //starts before first movement in list 
-    bool defaultPathInverse = false;
+    int lastDefaultPos = -1; //starts before first movement in list 
+    bool isBackTrackDefault = false;
     int damageDone;
     bool inRange = false;
     bool isChasing = false;
@@ -33,7 +33,6 @@ public:
     Enemy(int id, int py, int px, std::string& type);
     void activate(std::shared_ptr<Level> parent);
     void updateData(int py, int px, int damage, bool range);
-    void generateRandomPath(int size); //To normalPath, save the index...
 
     void setRouteVelocity(double routeVel);
     void setChaseVelocity(double chaseVel);
@@ -59,8 +58,7 @@ public:
     void groupCall();
     std::string update();
 
-    static std::string getNextMovement(Direction direction);
-    static std::string getPreviousMovement(Direction direction);
+    //Movement functions are owned by Movement Generator
 };
 
 #endif //GAMESERVER_ENEMY_HPP
