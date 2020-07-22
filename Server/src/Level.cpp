@@ -4,32 +4,41 @@
 
 Level::Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy) : lengthx{lengthx}, lengthy{lengthy}
 {
-    this->playerInfo = playerInfo;
     this->obstacles = obstacles;
-    id = playerInfo["ID"];
-    playerx = playerInfo["gridx"];
-    playery = playerInfo["gridy"];
+    id = playerInfo["ID"].get<int>();
+    playerx = playerInfo["gridx"].get<int>();
+    playery = playerInfo["gridy"].get<int>();
 
     std::string type;
     for (auto x : items)
     {
         type = x["type"];
-        Item y{Item::getItemType(type), x["ID"], x["gridx"], x["gridy"]};
+        Item y{Item::getItemType(type), x["ID"], x["gridy"], x["gridx"]};
         this->items.push_back(y);
     }
     for (auto x : enemies)
     {
         type = x["type"];
-        Enemy y{x["ID"], x["gridx"], x["gridy"], type};
+        Enemy y{x["ID"], x["gridy"], x["gridx"], type};
         this->enemies.push_back(y);
     }
 }
 
-void Level::start()
-{
-    //Do something
+void Level::start(std::shared_ptr<Level> level)
+{   
+    for (auto enemy : enemies)
+    {
+        enemy.setParent(level);
+        enemy.generateRandomPath(3);
+        /*for (auto x : enemy.normalPath)
+        {
+            auto y = enemy.getNextMovement(x);
+            std::cout << y << " == ";
+        }
+        std::cout << std::endl;
+        ce::debuglog(enemy.getID());*/
+    }
 }
-
 void Level::finish()
 {
     //Do something
@@ -46,7 +55,6 @@ ce::list<ce::list<int>> Level::getSimpleMatrix()
     }
     int x;
     int y;
-    ce::debuglog("obs");
     for (auto obs : obstacles)
     {
         x = obs["gridx"];
@@ -71,39 +79,34 @@ ce::list<ce::list<int>> Level::getSimpleMatrix()
             simpleMatrix[y][x] = 0;
         }
     }
-    //
-    //
-    //
-    //
-    simpleMatrix[playery][playerx] = 2;
-    //
-    //
-    //
+
+
+    //------------------
     ce::list<ce::list<int>> inverted;
     for (auto fila : simpleMatrix)
     {
         inverted.push_front(fila);
     }
+    inverted[lengthy-playery-1][playerx] = 2;
     for (auto fila : inverted)
     {
         ce::debuglog(fila.toString());
     }
+    //-----------------
     return simpleMatrix;
 }
 void Level::manageEvent(json event)
 {
     std::string cmd(event["cmd"]);
-
     if (cmd == "move-player")
     {
-        playerx = event["valA"];
-        playery = event["valB"];
-        
+        playerx = event["valA"].get<int>();
+        playery = event["valB"].get<int>();
     }
+
     else if (cmd == "attack-enemy")
     {
         int enemyID = event[1];
-
     }
     else if (cmd == "movePlayer")
     {
@@ -120,7 +123,8 @@ void Level::manageEvent(json event)
     else if (cmd == "movePlayer")
     {
     }
-    /*for(auto x : enemies){
+    /*for (auto x : enemies)
+    {
         x.update();
     }*/
 }

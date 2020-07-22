@@ -3,11 +3,14 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
-Enemy::Enemy(int id, int py, int px, std::string& type) : GameObject{GOType::enemy, id, py, px}
+Enemy::Enemy(int id, int py, int px, std::string& type) :
+ GameObject{GOType::enemy, id, py, px}
 {
-    setEnemyType(type);
+    setEnemyType(type);    
 }
-
+void Enemy::setParent(std::shared_ptr<Level> parent){
+    this->parent = parent;
+}
 void Enemy::setEnemyType(std::string& type)
 {
     if (type == "SpGray")
@@ -35,6 +38,7 @@ void Enemy::updateData(int py, int px, int damage, bool range)
 void Enemy::generateRandomPath(int size)
 {
     Pathfinding pathfinding(parent->getSimpleMatrix());
+    ce::debuglog("after matrix");
     if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu){
         normalPath = pathfinding.RandomPath(enemyPos(), parent->playerPos(), size);
     }

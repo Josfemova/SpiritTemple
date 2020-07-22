@@ -10,6 +10,7 @@
 class Level;
 class Enemy : public GameObject{
 private:
+    friend class Level;
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
     float route_velocity;
@@ -29,6 +30,7 @@ private:
 
 public:
     Enemy(int id, int py, int px, std::string& type);
+    void setParent(std::shared_ptr<Level> parent);
     void updateData(int py, int px, int damage, bool range);
     void generateRandomPath(int size); //To normalPath, save the index...
 

@@ -64,7 +64,6 @@ void Server::listenClient()
     ce::log("connection started");
     while (on)
     {
-        ce::log("tick");
         std::string message(readMsg());
         if (message == "loadLevel")
         {
@@ -75,7 +74,7 @@ void Server::listenClient()
         else if (message == "event")
         {
             std::string event(readMsg());
-            std::string response(game->getResponse(message));
+            std::string response(game->getResponse(event));
             sendMsg(response);
             
         }else if (message == "kill"){
@@ -84,10 +83,6 @@ void Server::listenClient()
         }
     }
 }
-void Server::loadLevel()
-{
-}
-
 //
 // Public methods
 //

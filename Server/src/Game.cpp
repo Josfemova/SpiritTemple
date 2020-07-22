@@ -9,8 +9,8 @@ std::string Game::startLevel(std::string &levelData)
 {
     ce::log("loading level");
     json initialData = json::parse(levelData);
-    int lengthx = initialData["lengthx"];
-    int lengthy = initialData["lengthy"];
+    int lengthx = initialData["lengthx"].get<int>();
+    int lengthy = initialData["lengthy"].get<int>();
     json playerInfo = initialData["player"];
     json enemies = initialData["enemies"];
     json items = initialData["items"];
@@ -18,7 +18,7 @@ std::string Game::startLevel(std::string &levelData)
 
     std::shared_ptr<Level> newLevel(new Level(playerInfo, otherObj, items, enemies, lengthx, lengthy));
     currentLevel = newLevel;
-    currentLevel->getSimpleMatrix();
+    currentLevel->start(currentLevel);
     json loadLevelResponse = {
         {"playerLives", playerLives}};
     return loadLevelResponse.dump(); //returns the amount of initial health
@@ -27,7 +27,6 @@ std::string Game::startLevel(std::string &levelData)
 std::string Game::getResponse(std::string &action)
 {
     json clientAction = json::parse(action);
-    ce::debuglog(clientAction);
     currentLevel->manageEvent(clientAction);
     currentLevel->getSimpleMatrix();
     json instructions = currentLevel->getInstructions();
