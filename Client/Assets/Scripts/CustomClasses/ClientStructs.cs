@@ -20,7 +20,7 @@ struct JsonReq
     public int valx;
     public int valy;
     public int otherval;
-    public JsonReq(string cmd, string args, int target=-1, int valx = 0, int valy = 0, int otherval = 0)
+    public JsonReq(string cmd, string args="", int target=-1, int valx = 0, int valy = 0, int otherval = 0)
     {
         this.cmd = cmd;
         this.args = args;
@@ -30,7 +30,13 @@ struct JsonReq
         this.otherval = otherval;
     }
 }
-
+[Serializable]
+struct JsonReqArr{
+    public JsonReq[] commands;
+    JsonReqArr(JsonReq[] commands){
+        this.commands = commands;
+    }
+}
 [Serializable]
 struct PlayerInfo
 {

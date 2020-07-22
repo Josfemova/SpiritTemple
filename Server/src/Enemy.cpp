@@ -3,17 +3,17 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 
-Enemy::Enemy(int id, int py, int px, std::string& type) :
- GameObject{GOType::enemy, id, py, px}
+Enemy::Enemy(int id, int py, int px, std::string &type) : GameObject{GOType::enemy, id, py, px}, frameCount{1}
 {
-    setEnemyType(type);    
+    setEnemyType(type);
 }
-void Enemy::activate(std::shared_ptr<Level> parent){
+void Enemy::activate(std::shared_ptr<Level> parent)
+{
     this->parent = parent;
-    if(enemyType != EnemyType::SpEye  || enemyType != EnemyType::Chuchu)
+    if (enemyType != EnemyType::SpEye || enemyType != EnemyType::Chuchu)
         this->normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
 }
-void Enemy::setEnemyType(std::string& type)
+void Enemy::setEnemyType(std::string &type)
 {
     if (type == "SpGray")
         enemyType = EnemyType::SpGray;
@@ -36,17 +36,17 @@ void Enemy::updateData(int py, int px, int damage, bool range)
     inRange = range;
 }
 
-void Enemy::setRouteVelocity(double routeVel)
+void Enemy::setRouteVelocity(int routeVel)
 {
     route_velocity = routeVel;
 }
 
-void Enemy::setChaseVelocity(double chaseVel)
+void Enemy::setChaseVelocity(int chaseVel)
 {
     chase_velocity = chaseVel;
 }
 
-void Enemy::setVisibilityRadius(double radius)
+void Enemy::setVisibilityRadius(int radius)
 {
     visibility_radius = radius;
 }
@@ -71,17 +71,17 @@ Pair Enemy::enemyPos() const
     return std::make_pair(getX(), getY());
 }
 
-double Enemy::getRouteVelocity() const
+int Enemy::getRouteVelocity() const
 {
     return route_velocity;
 }
 
-double Enemy::getChaseVelocity() const
+int Enemy::getChaseVelocity() const
 {
     return chase_velocity;
 }
 
-double Enemy::getVisibilityRadius() const
+int Enemy::getVisibilityRadius() const
 {
     return visibility_radius;
 }
@@ -111,20 +111,20 @@ std::string Enemy::getTypeS()
 {
     switch (enemyType)
     {
-        case EnemyType::SpGray:
-            return "SpGray";
-        case EnemyType::SpRed:
-            return "SpRed";
-        case EnemyType::SpBlue:
-            return "SpBlue";
-        case EnemyType::SpEye:
-            return "SpEye";
-        case EnemyType::Mouse:
-            return "Mouse";
-        case EnemyType::Chuchu:
-            return "Chuchu";
-        default:
-            return "";
+    case EnemyType::SpGray:
+        return "SpGray";
+    case EnemyType::SpRed:
+        return "SpRed";
+    case EnemyType::SpBlue:
+        return "SpBlue";
+    case EnemyType::SpEye:
+        return "SpEye";
+    case EnemyType::Mouse:
+        return "Mouse";
+    case EnemyType::Chuchu:
+        return "Chuchu";
+    default:
+        return "";
     }
 }
 
@@ -135,87 +135,122 @@ void Enemy::refreshState()
     // Check vision range and player position...
 
     // Chuchu always chase the player even is inside the safe zone, this enemy is harmless
-    if(enemyType == EnemyType::Chuchu){
+    if (enemyType == EnemyType::Chuchu)
+    {
         isChasing = true;
         chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
     }
 
     // SpEye doesn't move but calls the other specters
-    if(isInRange() && enemyType == EnemyType::SpEye){
+    if (isInRange() && enemyType == EnemyType::SpEye)
+    {
         parent->triggerGroupCall(getID());
     }
 
-    if(isInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu){
+    if (isInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
+    {
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
         parent->triggerGroupCall(getID());
     }
 
-    if(playerIsSafe() && !breadcrumbs.empty()){
+    if (playerIsSafe() && !breadcrumbs.empty())
+    {
         isChasing = false;
         isBacktracking = true;
         chasePath.clear();
     }
 
-    if(!isInRange() && !playerIsSafe() && breadcrumbs.empty()){
+    if (!isInRange() && !playerIsSafe() && breadcrumbs.empty())
+    {
         isChasing = false;
         isBacktracking = false;
     }
 }
 
-void Enemy::groupCall(){
+void Enemy::groupCall()
+{
     Pathfinding pathfinding(parent->getSimpleMatrix());
 
     // Teleport SpBlue
-    if(enemyType == EnemyType::SpBlue && !isTeleported){
+    if (enemyType == EnemyType::SpBlue && !isTeleported)
+    {
         teleportation = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
         isTeleported = true;
     }
 
     // Replace chasePath
-    if(enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed){
+    if (enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed)
+    {
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
     }
 
-    if(enemyType == EnemyType::SpBlue && isTeleported){
+    if (enemyType == EnemyType::SpBlue && isTeleported)
+    {
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
     }
 }
 
 void Enemy::update()
 {
-    std::string dir;
-    if(enemyType !=EnemyType::SpEye && enemyType != EnemyType::Chuchu){
+    frameCount = frameCount+1;
+    ce::debuglog(frameCount);
+    /*std::string dir;
+    bool canChase = (frameCount % chase_velocity == 0);
+    bool canMove  = (frameCount % route_velocity == 0);
+    if (enemyType == EnemyType::SpEye || enemyType == EnemyType::Chuchu
+    || (!canChase && !canMove))
+    {
+        ce::debuglog("anta baaaaaaaaaka");
         return;
     }
-    else if(isChasing){
+    else if (isChasing && canChase)
+    {
+        //chasing player
+        //frameCount = 1;
         breadcrumbs.push_back(chasePath.front());
-         dir = MoveGenerator::directionToString(chasePath.pop_front());
+        dir = MoveGenerator::directionToString(chasePath.pop_front());
     }
-    else if(isBacktracking){
+    else if (isBacktracking && canMove)
+    {
+        //backtracking
+        //frameCount = 1;
         dir = MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
-    }else{
-       if(isBackTrackDefault){
-           if(lastDefaultPos == -1){
-               isBackTrackDefault = false;
-               dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
-           }else{
-               dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
-               --lastDefaultPos;
-           }
-       }else{
-           if(lastDefaultPos == (normalPath.size()-1)){
-               isBackTrackDefault = true;
-               dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
-               --lastDefaultPos;
-           } else{
-               dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
-           }
-       }
+    }
+    else if (canMove)
+    {
+        //normal path
+        //frameCount = 1;
+        if (isBackTrackDefault)
+        {
+            if (lastDefaultPos == -1)
+            {
+                isBackTrackDefault = false;
+                dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
+            }
+            else
+            {
+                dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
+                --lastDefaultPos;
+            }
+        }
+        else
+        {
+            if (lastDefaultPos == (normalPath.size() - 1))
+            {
+                isBackTrackDefault = true;
+                dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
+                --lastDefaultPos;
+            }
+            else
+            {
+                dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
+            }
+        }
     }
     json instruction = {
         {"cmd", "move"},
-        {"enemyID", getID()},
-        {"Direction",dir}};
-    parent->addInstruction(instruction);
+        {"target", getID()},
+        {"otherval", dir}};
+    parent->addInstruction(instruction);*/
 }

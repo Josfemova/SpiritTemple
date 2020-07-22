@@ -64,7 +64,6 @@ void Server::listenClient()
     ce::log("connection started");
     while (on == true)
     {
-        ce::debuglog("reading--------------]]]");
         std::string message(readMsg());
         if (message == "loadLevel")
         {
@@ -90,7 +89,7 @@ void Server::listenClient()
         }
         else
         {
-            sendMsg("trashInfo?");
+            sendMsg("{\"commands\":[{\"cmd\":\"trash-info\"}]}");
         }
         ce::debuglog("tick ------------------- ]]]]");
     }

@@ -13,17 +13,18 @@ private:
     friend class Level;
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
-    double route_velocity;
-    double chase_velocity;
-    double visibility_radius;
+    int route_velocity = 5;
+    int chase_velocity = 5;
+    int frameCount;
+    int visibility_radius=2;
     int lastDefaultPos = -1; //starts before first movement in list 
     bool isBackTrackDefault = false;
-    int damageDone;
+    int damageDone=0;
     bool inRange = false;
     bool isChasing = false;
     bool isBacktracking = false;
     bool isTeleported = false;
-    Pair teleportation;
+    Pair teleportation; //position from which enemy teleported
     listDirections normalPath;
     listDirections breadcrumbs;
     listDirections chasePath;
@@ -37,18 +38,18 @@ public:
 
     void updateData(int py, int px, int damage, bool range);
 
-    void setRouteVelocity(double routeVel);
-    void setChaseVelocity(double chaseVel);
-    void setVisibilityRadius(double radius);
+    void setRouteVelocity(int routeVel);
+    void setChaseVelocity(int chaseVel);
+    void setVisibilityRadius(int radius);
 
     void setDamage(int damage);
     void setInRange(bool range);
     void setChasing(bool chase);
 
     Pair enemyPos() const;
-    double getRouteVelocity() const;
-    double getChaseVelocity() const;
-    double getVisibilityRadius() const;
+    int getRouteVelocity() const;
+    int getChaseVelocity() const;
+    int getVisibilityRadius() const;
 
     int getDamage() const;
     bool isInRange() const;

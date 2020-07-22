@@ -56,7 +56,7 @@ public class EventAdmin : MonoBehaviour
             {
                 player.transform.position = newPosition;
             }
-            req = new JsonReq("move-player", newPosition.x, newPosition.y);
+            req = new JsonReq("move-player", valx: newPosition.x, valy: newPosition.y);
 
         }
         else
@@ -126,13 +126,15 @@ public class EventAdmin : MonoBehaviour
     void syncServer(string type, string message)
     {
         String cmd = Client.Instance.updateServer(type, message);
-        executeServerCmd(cmd);
+        JsonReqArr arr= JsonUtility.FromJson<JsonReqArr>(cmd);
+        foreach(JsonReq req in arr.commands){
+            executeServerCmd(req);
+        }
     }
-    private void executeServerCmd(string serverCmd)
+    private void executeServerCmd(JsonReq req)
     {
-        JsonReq req = JsonUtility.FromJson<JsonReq>(serverCmd);
-        if (serverCmd == null) { return; }
-        switch (req.cmd)
+        Debug.Log(JsonUtility.ToJson(req));
+        /*switch (req.cmd)
         {
             case "set-lives":
                 Client.Instance.health = req.otherval;
@@ -143,7 +145,7 @@ public class EventAdmin : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
     }
     private Vector3Int decodeDirection(string dir)
     {
@@ -183,7 +185,7 @@ public class EventAdmin : MonoBehaviour
     }
     private MonoBehaviour getEntityByID(int id, String type)
     {
-        GameObject obj;
+        GameObject obj = null;
         if (type == "enemy")
         {
             foreach (GameObject x in enemies)

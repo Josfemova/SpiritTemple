@@ -19,9 +19,17 @@ std::string Game::startLevel(std::string &levelData)
     std::shared_ptr<Level> newLevel(new Level(playerInfo, otherObj, items, enemies, lengthx, lengthy));
     currentLevel = newLevel;
     currentLevel->start(currentLevel);
-    json loadLevelResponse = {
-        {"cmd", "set-lives"}, {"otherval", playerLives}};
-    return loadLevelResponse.dump(); //returns the amount of initial health
+    json loadLevelResponse;
+    loadLevelResponse.push_back({
+        {"cmd", "set-lives"},
+        {"otherval",playerLives}
+    });
+    json response = {
+        {"commands", loadLevelResponse}
+    };
+    std::string resp =response.dump();
+    ce::debuglog(resp);
+    return resp; //returns the amount of initial health
 }
 
 std::string Game::getResponse(std::string &action)
@@ -31,16 +39,17 @@ std::string Game::getResponse(std::string &action)
     currentLevel->getSimpleMatrix();
 
     json instructions = currentLevel->getInstructions();
-    std::string response;
+    std::string resp;
     if (instructions.empty())
     {
-        response = "{\"cmd\":\"no-action\"}";
+        resp = "{\"commands\":[{\"cmd\":\"no-action\"}]}";
     }
     else
     {
-        response = instructions.dump();
+        json response = {{"commands",instructions}};
+        resp = response.dump();
     }
-    return response;
+    return resp;
 }
 int Game::randomInt(int lowerLimit, int upperLimit)
 {

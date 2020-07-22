@@ -23,7 +23,11 @@ public class EnemyContainer : MonoBehaviour
         move(Vector3.zero);
     }
 
-    void move(Vector3 change){
+    /// <summary>
+    /// Moves associated GameObject based on a given vector representing a delta 
+    /// </summary>
+    /// <param name="change">vector representing a distance delta</param>
+    public void move(Vector3 change){
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 

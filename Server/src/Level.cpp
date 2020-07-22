@@ -103,8 +103,8 @@ void Level::manageEvent(json event)
     std::string cmd(event["cmd"]);
     if (cmd == "move-player")
     {
-        playerx = event["valA"].get<int>();
-        playery = event["valB"].get<int>();
+        playerx = event["valx"].get<int>();
+        playery = event["valy"].get<int>();
         instructions.push_back({
             {"cmd", "hemlo"}
         });
@@ -129,10 +129,10 @@ void Level::manageEvent(json event)
     {
 
     }
-    /*for (auto x : enemies)
+    for (auto &x : enemies)
     {
         x.update();
-    }*/
+    }
 }
 void Level::triggerGroupCall(int id)
 {
