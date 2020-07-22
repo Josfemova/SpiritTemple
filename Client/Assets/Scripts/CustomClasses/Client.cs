@@ -13,7 +13,7 @@ public sealed class Client
     private readonly object updateLock = new object();
     private static readonly Client instance = new Client();
     private Socket serverConnection;
-    private int health = 3; //registers lives across levels
+    public int health = 3; //registers lives across levels
     static Client() { }
     private Client()
     {
@@ -22,7 +22,7 @@ public sealed class Client
     ~Client()
     {
         Debug.Log("releasing socket");
-        updateServer("kill","kill");
+        updateServer("kill", "kill");
         serverConnection.Shutdown(SocketShutdown.Both);
         serverConnection.Close();
 
@@ -47,29 +47,33 @@ public sealed class Client
 
 
     }
-
-    public void updateServer(string type,string message)
+    /// <summary>
+    /// Sends a message to the server and waits for a response
+    /// </summary>
+    /// <param name="type">type of request</param>
+    /// <param name="message">content of the message to be sent</param>
+    /// <returns>commands to be processed by client</returns>
+    public String updateServer(string type, string message)
     {
+        lock (updateLock)
+        {
             int arraySize = 128;
-            if(type == "loadLevel"){
+            if (type == "loadLevel")
+            {
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("loadLevel"));
-                arraySize = 100000;
-            }else if(type == "event"){
+
+            }
+            else if (type == "event")
+            {
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("event"));
             }
-            
             byte[] msg = Encoding.ASCII.GetBytes(message);
-            int request = serverConnection.Send(msg);
-
+            serverConnection.Send(msg);
             byte[] bytes = new byte[arraySize];
             int response = serverConnection.Receive(bytes);
-            string srvcmd = Encoding.ASCII.GetString(bytes, 0, response);
-            serverInstructions(srvcmd);
-    }
-    private void serverInstructions(string cmd){
-        if(cmd!=null){
-            Debug.Log(cmd);
+            return Encoding.ASCII.GetString(bytes, 0, response);
         }
     }
+    
 
 }

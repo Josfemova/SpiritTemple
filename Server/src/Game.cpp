@@ -20,7 +20,7 @@ std::string Game::startLevel(std::string &levelData)
     currentLevel = newLevel;
     currentLevel->start(currentLevel);
     json loadLevelResponse = {
-        {"playerLives", playerLives}};
+        {"cmd", "set-lives"}, {"otherval", playerLives}};
     return loadLevelResponse.dump(); //returns the amount of initial health
 }
 
@@ -29,8 +29,17 @@ std::string Game::getResponse(std::string &action)
     json clientAction = json::parse(action);
     currentLevel->manageEvent(clientAction);
     currentLevel->getSimpleMatrix();
+
     json instructions = currentLevel->getInstructions();
-    std::string response = instructions.dump();
+    std::string response;
+    if (instructions.empty())
+    {
+        response = "{\"cmd\":\"no-action\"}";
+    }
+    else
+    {
+        response = instructions.dump();
+    }
     return response;
 }
 int Game::randomInt(int lowerLimit, int upperLimit)

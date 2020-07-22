@@ -62,8 +62,9 @@ void Server::startAndWait(int port)
 void Server::listenClient()
 {
     ce::log("connection started");
-    while (on)
+    while (on == true)
     {
+        ce::debuglog("reading--------------]]]");
         std::string message(readMsg());
         if (message == "loadLevel")
         {
@@ -74,7 +75,6 @@ void Server::listenClient()
         }
         else if (message == "event")
         {
-
             std::string event(readMsg());
             std::string response(game->getResponse(event));
             if (response != "null")
@@ -88,7 +88,11 @@ void Server::listenClient()
             sendMsg("game end");
             on = false;
         }
-        //ce::debuglog("tick ------------------- ]]]]");
+        else
+        {
+            sendMsg("trashInfo?");
+        }
+        ce::debuglog("tick ------------------- ]]]]");
     }
 }
 //

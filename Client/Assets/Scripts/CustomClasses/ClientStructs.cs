@@ -15,15 +15,19 @@ struct ServerCmd
 struct JsonReq
 {
     public string cmd;
-    public int valA;
-    public int valB;
-    public int valC;
-    public JsonReq(string cmd, int valA = 0, int valB = 0, int valC = 0)
+    public string args;
+    public int target;//-1 means player
+    public int valx;
+    public int valy;
+    public int otherval;
+    public JsonReq(string cmd, string args, int target=-1, int valx = 0, int valy = 0, int otherval = 0)
     {
         this.cmd = cmd;
-        this.valA = valA;
-        this.valB = valB;
-        this.valC = valC;
+        this.args = args;
+        this.target = target;
+        this.valx = valx;
+        this.valy = valy;
+        this.otherval = otherval;
     }
 }
 

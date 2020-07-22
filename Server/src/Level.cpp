@@ -105,6 +105,9 @@ void Level::manageEvent(json event)
     {
         playerx = event["valA"].get<int>();
         playery = event["valB"].get<int>();
+        instructions.push_back({
+            {"cmd", "hemlo"}
+        });
     }
     else if (cmd == "attack-enemy")
     {
@@ -124,7 +127,7 @@ void Level::manageEvent(json event)
     }
     else if (cmd == "no-action")
     {
-        
+
     }
     /*for (auto x : enemies)
     {
@@ -144,9 +147,16 @@ void Level::triggerGroupCall(int id)
         }
     }
 }
+/**
+ * @brief stores instructions in additional variables, clears instructions
+ * 
+ * @return json instructions generated during updates
+ */
 json Level::getInstructions()
-{
-    return json();
+{   
+    json res = instructions;
+    instructions = json::array();
+    return res;
 }
 Pair Level::playerPos() const
 {

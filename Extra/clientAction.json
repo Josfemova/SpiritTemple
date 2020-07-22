@@ -1,17 +1,17 @@
 [
 {
     "cmd":"move-player",
-    "valA":1,
-    "valB":-1
+    "valx":1,
+    "valy":-1
 },
 {
     "cmd":"player-attack",
-    "valA":123
+    "target":123
 
 },
 {
     "cmd":"wake-enemy",
-    "valB":123
+    "target":123
 }
 ]
 

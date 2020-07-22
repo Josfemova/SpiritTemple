@@ -1,6 +1,6 @@
 [
-    {"cmd":"move","enemyID":1231, "x":1, "y":12},
-    {"cmd":"die","enemyID":1211},
-    {"cmd":"heart", "change":-1},
-    {"cmd":"teleport","enemyID":122,"gridx":4, "gridy":2}
+    {"cmd":"move","target":1231, "valx":1, "valy":12},
+    {"cmd":"die","target":1211},
+    {"cmd":"heart","target":1211 ,"otherval":-1},
+    {"cmd":"teleport","target":122,"valx":4, "valy":2}
 ]

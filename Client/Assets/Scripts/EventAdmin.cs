@@ -14,6 +14,11 @@ public class EventAdmin : MonoBehaviour
     private Tilemap safeSpaceMap;
     private GameObject[] enemies;
     private GameObject[] items;
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 30;
+    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -51,12 +56,14 @@ public class EventAdmin : MonoBehaviour
             {
                 player.transform.position = newPosition;
             }
-            req= new JsonReq("move-player", newPosition.x, newPosition.y);
-            
-        }else{
+            req = new JsonReq("move-player", newPosition.x, newPosition.y);
+
+        }
+        else
+        {
             req = new JsonReq("no-action");
         }
-        updateServerTask("event", JsonUtility.ToJson(req));
+        syncServer("event", JsonUtility.ToJson(req));
     }
     private bool overlapsOne(Vector3Int comparePosition, GameObject[] collection)
     {
@@ -69,10 +76,7 @@ public class EventAdmin : MonoBehaviour
         }
         return false;
     }
-    private void executeServerCmd(string cmds)
-    {
 
-    }
     private void loadInServer()
     {
         int lengthx = groundMap.size.x;
@@ -117,11 +121,97 @@ public class EventAdmin : MonoBehaviour
             lengthx, lengthy, playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
         );
         string message = JsonUtility.ToJson(gameState, true);
-        updateServerTask("loadLevel", message);
+        syncServer("loadLevel", message);
     }
-    void updateServerTask(string type, string message){
-        Thread t = new Thread (()=>Client.Instance.updateServer(type, message));
-        t.Start();
+    void syncServer(string type, string message)
+    {
+        String cmd = Client.Instance.updateServer(type, message);
+        executeServerCmd(cmd);
     }
+    private void executeServerCmd(string serverCmd)
+    {
+        JsonReq req = JsonUtility.FromJson<JsonReq>(serverCmd);
+        if (serverCmd == null) { return; }
+        switch (req.cmd)
+        {
+            case "set-lives":
+                Client.Instance.health = req.otherval;
+                break;
+            case "move-enemy":
+                EnemyContainer script = getEntityByID(req.target, "enemy") as EnemyContainer;
+                script.move(decodeDirection(req.args));
+                break;
+            default:
+                break;
+        }
+    }
+    private Vector3Int decodeDirection(string dir)
+    {
+        Vector3Int result = Vector3Int.zero;
+        switch (dir)
+        {
+            case "NORTH":
+                result.y = 1;
+                break;
+            case "SOUTH":
+                result.y = -1;
+                break;
+            case "EAST":
+                result.x = 1;
+                break;
+            case "WEST":
+                result.x = -1;
+                break;
+            case "NORTHEAST":
+                result.y = 1;
+                result.x = 1;
+                break;
+            case "SOUTHEAST":
+                result.y = -1;
+                result.x = 1;
+                break;
+            case "NORTHWEST":
+                result.y = 1;
+                result.x = -1;
+                break;
+            case "SOUTHWEST":
+                result.y = -1;
+                result.x = -1;
+                break;
+        }
+        return result;
+    }
+    private MonoBehaviour getEntityByID(int id, String type)
+    {
+        GameObject obj;
+        if (type == "enemy")
+        {
+            foreach (GameObject x in enemies)
+            {
+                if (x.GetInstanceID() == id)
+                {
+                    obj = x;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject x in items)
+            {
+                if (x.GetInstanceID() == id)
+                {
+                    obj = x;
+                    break;
+                }
+            }
+        }
+        if (obj == null)
+            throw new ArgumentException("Invalid object ID");
+        MonoBehaviour script = obj.GetComponent(typeof(MonoBehaviour)) as MonoBehaviour;
+        return script;
+    }
+
 }
+
 
