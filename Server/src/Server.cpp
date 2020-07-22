@@ -70,17 +70,25 @@ void Server::listenClient()
             std::string levelJson(readMsg(true));
             std::string response(game->startLevel(levelJson));
             sendMsg(response);
+            ce::log("level loaded");
         }
         else if (message == "event")
         {
+
             std::string event(readMsg());
             std::string response(game->getResponse(event));
+            if (response != "null")
+            {
+                ce::debuglog(response);
+            }
             sendMsg(response);
-            
-        }else if (message == "kill"){
-            sendMsg("game end");
-            on=false;
         }
+        else if (message == "kill")
+        {
+            sendMsg("game end");
+            on = false;
+        }
+        //ce::debuglog("tick ------------------- ]]]]");
     }
 }
 //

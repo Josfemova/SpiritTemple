@@ -30,11 +30,13 @@ std::string Game::getResponse(std::string &action)
     currentLevel->manageEvent(clientAction);
     currentLevel->getSimpleMatrix();
     json instructions = currentLevel->getInstructions();
-    return instructions.dump();
+    std::string response = instructions.dump();
+    return response;
 }
 int Game::randomInt(int lowerLimit, int upperLimit)
 {
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<int> randomGen(lowerLimit, upperLimit);
+    return randomGen(rng);
 }

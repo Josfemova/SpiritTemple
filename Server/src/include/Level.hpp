@@ -21,7 +21,11 @@ private:
     json instructions;
     ce::list<Item> items;
     ce::list<Enemy> enemies;
+    
 public:
+    void addInstruction(json instruction){
+        instructions.push_back(instruction);
+    }
     const int lengthx;
     const int lengthy;
     Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy);

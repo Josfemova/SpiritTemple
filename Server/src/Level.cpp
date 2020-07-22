@@ -122,13 +122,14 @@ void Level::manageEvent(json event)
     else if (cmd == "movePlayer")
     {
     }
-    else if (cmd == "movePlayer")
+    else if (cmd == "no-action")
     {
+        
     }
-    for (auto x : enemies)
+    /*for (auto x : enemies)
     {
         x.update();
-    }
+    }*/
 }
 void Level::triggerGroupCall(int id)
 {

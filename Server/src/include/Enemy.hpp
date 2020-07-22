@@ -6,7 +6,7 @@
 #include "Direction.hpp"
 #include "Level.hpp"
 #include <memory>
-
+using json = nlohmann::json;
 class Level;
 class Enemy : public GameObject{
 private:
@@ -28,10 +28,13 @@ private:
     listDirections breadcrumbs;
     listDirections chasePath;
     void setEnemyType(std::string& type);
-
 public:
     Enemy(int id, int py, int px, std::string& type);
     void activate(std::shared_ptr<Level> parent);
+
+
+
+
     void updateData(int py, int px, int damage, bool range);
 
     void setRouteVelocity(double routeVel);
@@ -56,7 +59,7 @@ public:
 
     void refreshState();
     void groupCall();
-    std::string update();
+    void update();
 
     //Movement functions are owned by Movement Generator
 };

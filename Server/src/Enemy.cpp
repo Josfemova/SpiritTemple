@@ -182,20 +182,40 @@ void Enemy::groupCall(){
     }
 }
 
-std::string Enemy::update()
+void Enemy::update()
 {
-    if(isChasing){
+    std::string dir;
+    if(enemyType !=EnemyType::SpEye && enemyType != EnemyType::Chuchu){
+        return;
+    }
+    else if(isChasing){
         breadcrumbs.push_back(chasePath.front());
-        return MoveGenerator::directionToString(chasePath.pop_front());
+         dir = MoveGenerator::directionToString(chasePath.pop_front());
     }
     else if(isBacktracking){
-        return MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
-    }
-    else{
+        dir = MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
+    }else{
        if(isBackTrackDefault){
-
+           if(lastDefaultPos == -1){
+               isBackTrackDefault = false;
+               dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
+           }else{
+               dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
+               --lastDefaultPos;
+           }
        }else{
-
+           if(lastDefaultPos == (normalPath.size()-1)){
+               isBackTrackDefault = true;
+               dir = MoveGenerator::inverseDirectionToString(normalPath[lastDefaultPos]);
+               --lastDefaultPos;
+           } else{
+               dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
+           }
        }
     }
+    json instruction = {
+        {"cmd", "move"},
+        {"enemyID", getID()},
+        {"Direction",dir}};
+    parent->addInstruction(instruction);
 }

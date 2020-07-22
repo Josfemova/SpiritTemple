@@ -5,6 +5,8 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 public sealed class Client
 {
@@ -48,8 +50,6 @@ public sealed class Client
 
     public void updateServer(string type,string message)
     {
-        lock (updateLock)
-        {
             int arraySize = 128;
             if(type == "loadLevel"){
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("loadLevel"));
@@ -65,11 +65,11 @@ public sealed class Client
             int response = serverConnection.Receive(bytes);
             string srvcmd = Encoding.ASCII.GetString(bytes, 0, response);
             serverInstructions(srvcmd);
-            
-        }
     }
     private void serverInstructions(string cmd){
-        Debug.Log(cmd);
+        if(cmd!=null){
+            Debug.Log(cmd);
+        }
     }
 
 }

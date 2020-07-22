@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,12 +28,20 @@ public class EventAdmin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        JsonReq req;
         Vector3 change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown("j"))
         {
-            //attack routine
+            //check if hits enemy, if so, get enemyID
+            //req = new JsonReq("player-attack", enemyID );
+            req = new JsonReq("no-action"); // relleno, se quita cuando este el resto
+        }
+        else if (Input.GetKeyDown("k"))
+        {
+            //req = new JsonReq("move-player", newPosition.x, newPosition.y);
+            req = new JsonReq("no-action"); //relleno, se quita cuando est[e el resto
         }
         else if (change != Vector3.zero)
         {
@@ -41,10 +51,12 @@ public class EventAdmin : MonoBehaviour
             {
                 player.transform.position = newPosition;
             }
-            JsonReq req = new JsonReq("move-player", newPosition.x, newPosition.y);
-            Client.Instance.updateServer("event",JsonUtility.ToJson(req));
-            Debug.Log(JsonUtility.ToJson(req));
+            req= new JsonReq("move-player", newPosition.x, newPosition.y);
+            
+        }else{
+            req = new JsonReq("no-action");
         }
+        updateServerTask("event", JsonUtility.ToJson(req));
     }
     private bool overlapsOne(Vector3Int comparePosition, GameObject[] collection)
     {
@@ -102,10 +114,14 @@ public class EventAdmin : MonoBehaviour
         Vector3Int coordp = groundMap.WorldToCell(player.transform.position);
         PlayerInfo playerinfo = new PlayerInfo(player.GetInstanceID(), coordp.x, coordp.y);
         InitialData gameState = new InitialData(
-            lengthx, lengthy,playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
+            lengthx, lengthy, playerinfo, enemylist.asArray(), itemlist.asArray(), objlist.asArray()
         );
-        string message =  JsonUtility.ToJson(gameState,true);
-        Client.Instance.updateServer("loadLevel", message);
+        string message = JsonUtility.ToJson(gameState, true);
+        updateServerTask("loadLevel", message);
+    }
+    void updateServerTask(string type, string message){
+        Thread t = new Thread (()=>Client.Instance.updateServer(type, message));
+        t.Start();
     }
 }
 
