@@ -53,7 +53,6 @@ gmatrix Level::getSimpleMatrix(){
 
 void Level::updateMatrix(bool printMatrix)
 {
-    ce::debuglog("startUpdate");
     gmatrix simpleMatrix;
     for (int i = 0; i < lengthy; i++)
     {
@@ -101,7 +100,6 @@ void Level::updateMatrix(bool printMatrix)
         }
     }
     state = simpleMatrix;
-    ce::debuglog("finish update");
 }
 void Level::manageEvent(json event)
 {

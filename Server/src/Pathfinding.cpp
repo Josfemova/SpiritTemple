@@ -444,7 +444,7 @@ listDirections Pathfinding::LineSight(Pair src, Pair dest)
     if(!initialValidations(src, dest)){
         return BresenhamLine;
     }
-
+    ce::debuglog("fallando");
     // If the destination node is the same as source node
     if(isDestination(src.first, src.second, dest)){
         ce::log("We already at the destination");
@@ -502,7 +502,7 @@ listDirections Pathfinding::LineSight(Pair src, Pair dest)
             currentX = currentX + sx;
         }
     }
-
+    
     return BresenhamLine;
 }
 

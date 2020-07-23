@@ -104,32 +104,36 @@ void Enemy::refreshState()
     // Check vision range and player position...
 
     // Chuchu always chase the player even is inside the safe zone, this enemy is harmless
+    
     if (enemyType == EnemyType::Chuchu)
     {
         isChasing = true;
         chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
     }
-
+    
     // SpEye doesn't move but calls the other specters
     if (playerInRange() && enemyType == EnemyType::SpEye)
     {
+        ce::debuglog("spEYe");
         parent->triggerGroupCall(getID());
     }
-
+    
     if (playerInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
     {
+        ce::debuglog("Astar");
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
         parent->triggerGroupCall(getID());
     }
-
+    
     if (playerIsSafe() && !breadcrumbs.empty())
     {
+        ce::debuglog("breadcrumbs");
         isChasing = false;
         isBacktracking = true;
         chasePath.clear();
     }
-
+    
     if (!playerInRange() && !playerIsSafe() && breadcrumbs.empty())
     {
         isChasing = false;
@@ -162,6 +166,7 @@ void Enemy::groupCall()
 
 void Enemy::update()
 {
+    refreshState();
     frameCount = frameCount+1;
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
@@ -219,11 +224,9 @@ void Enemy::update()
     Pair delta = MoveGenerator::getDeltaValues(dir);
     setX(getX() + delta.second);
     setY(getY() + delta.first);
-    ce::debuglog(delta.first, delta.second);
     json instruction = {
         {"cmd", "move-enemy"},
         {"target", getID()},
-        {"args", dir},
         {"valx",delta.second},
         {"valy",delta.first}};
     parent->addInstruction(instruction);

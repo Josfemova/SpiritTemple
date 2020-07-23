@@ -36,6 +36,11 @@ public:
     void activate(std::shared_ptr<Level> parent);
     void setDamage(int damage);
     void setChasing(bool chase);
+    /**
+     * @brief returns enemyPosition as a X,Y <int,int> pair
+     * 
+     * @return Pair 
+     */
     Pair enemyPos() const;
     int getDamage() const;
     bool playerInRange() const;
