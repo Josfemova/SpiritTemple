@@ -10,9 +10,12 @@ public:
     static listDirections getRoute(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, RouteType type);
     static listDirections randomPath(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, int size);
     static listDirections randomPathGenerator(int size, int x, int y, gmatrix level);
+    
     static Direction getDirectionValue(int deltaX, int deltaY);
+    static Pair getDeltaValues(std::string direction);
     static Direction getInverseDirection(Direction dir);
     static std::string directionToString(Direction direction);
+    static Direction stringToDirection(std::string direction);
     static std::string inverseDirectionToString(Direction direction);
 private:
     static Pathfinding* pathfinding;

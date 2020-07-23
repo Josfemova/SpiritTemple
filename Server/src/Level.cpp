@@ -31,7 +31,7 @@ void Level::start(std::shared_ptr<Level> level)
     // set velocities
     // set other values
     //
-    for (auto enemy : enemies)
+    for (auto& enemy : enemies)
     {
         enemy.activate(level);
         for (auto x : enemy.normalPath)
@@ -47,10 +47,14 @@ void Level::finish()
 {
     //Do something
 }
+gmatrix Level::getSimpleMatrix(){
+    return state;
+}
 
-ce::list<ce::list<int>> Level::getSimpleMatrix(bool printMatrix)
+void Level::updateMatrix(bool printMatrix)
 {
-    ce::list<ce::list<int>> simpleMatrix;
+    ce::debuglog("startUpdate");
+    gmatrix simpleMatrix;
     for (int i = 0; i < lengthy; i++)
     {
         ce::list<int> y(1, lengthx);
@@ -96,7 +100,8 @@ ce::list<ce::list<int>> Level::getSimpleMatrix(bool printMatrix)
             ce::debuglog(fila.toString());
         }
     }
-    return simpleMatrix;
+    state = simpleMatrix;
+    ce::debuglog("finish update");
 }
 void Level::manageEvent(json event)
 {
@@ -129,6 +134,7 @@ void Level::manageEvent(json event)
     {
 
     }
+    updateMatrix();
     for (auto &x : enemies)
     {
         x.update();
@@ -137,7 +143,7 @@ void Level::manageEvent(json event)
 void Level::triggerGroupCall(int id)
 {
     {
-        for (auto enemy : enemies)
+        for (auto& enemy : enemies)
         {
             if (enemy.getID() != id)
             {
@@ -158,6 +164,11 @@ json Level::getInstructions()
     instructions = json::array();
     return res;
 }
+/**
+ * @brief returns position of the player as a (Y, X) pair
+ * 
+ * @return Pair 
+ */
 Pair Level::playerPos() const
 {
     return std::make_pair(playery, playerx);

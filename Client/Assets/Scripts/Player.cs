@@ -14,23 +14,32 @@ public class Player : MonoBehaviour
     {
         animator = playerSprite.GetComponent<Animator>();
     }
+    public void move(Vector3 newPos)
+    {
+        transform.position = newPos;
+    }
     void Update()
     {
         Vector3 change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-//Using configured keyword "attack" on Space doesn't work
-//Using preconfugured keyword Space, doesn't work
+        //Using configured keyword "attack" on Space doesn't work
+        //Using preconfugured keyword Space, doesn't work
 
-        if(Input.GetKeyDown("j")){
+        if (Input.GetKeyDown("j"))
+        {
             StartCoroutine(attackAnimation());
 
-        }else if(Input.GetKeyDown("k")){
+        }
+        else if (Input.GetKeyDown("k"))
+        {
             //Debug.Log("defending");
             StartCoroutine(defendingAnimation());
 
 
-        }else if(change != Vector3.zero){
+        }
+        else if (change != Vector3.zero)
+        {
 
             orientationX = (int)change.x;
             orientationY = (int)change.y;
@@ -39,18 +48,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator attackAnimation(){  
-        animator.SetBool("attacking",true);
+    public IEnumerator attackAnimation()
+    {
+        animator.SetBool("attacking", true);
         yield return null;
-        animator.SetBool("attacking",false);
+        animator.SetBool("attacking", false);
         yield return new WaitForSeconds(1);
     }
 
-    public IEnumerator defendingAnimation(){
+    public IEnumerator defendingAnimation()
+    {
         Debug.Log("protecting");
-        animator.SetBool("protecting",true);
+        animator.SetBool("protecting", true);
         yield return null;
-        animator.SetBool("protecting",false);
+        animator.SetBool("protecting", false);
         yield return new WaitForSeconds(1);
 
     }

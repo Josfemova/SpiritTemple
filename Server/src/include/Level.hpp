@@ -21,7 +21,7 @@ private:
     json instructions;
     ce::list<Item> items;
     ce::list<Enemy> enemies;
-    
+    gmatrix state;
 public:
     void addInstruction(json instruction){
         instructions.push_back(instruction);
@@ -31,7 +31,8 @@ public:
     Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy);
     void finish();
     void start(std::shared_ptr<Level> level);
-    ce::list<ce::list<int>> getSimpleMatrix(bool printMatrix = false);
+    void updateMatrix(bool printMatrix = false);
+    gmatrix getSimpleMatrix();
     void manageEvent(json event);
     void triggerGroupCall(int id);
     json getInstructions();

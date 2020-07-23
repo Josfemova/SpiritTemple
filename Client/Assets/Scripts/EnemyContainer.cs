@@ -10,34 +10,40 @@ public class EnemyContainer : MonoBehaviour
     private int orientationY = -1; //1 up, -1 down
 
     //public GameObject enemySprite;
-   
-
-    void Start()
-    {
-        //animator = enemySprite.GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
+    private Vector3 movement;
+    private int moveCnt = 0;
+    
     void Update()
-    {   
-        move(Vector3.zero);
+    {
+        if (moveCnt == 3)
+        {
+            movement = Vector3.zero;
+            moveCnt = 0;
+        }
+        else
+        {
+            transform.position = transform.position + movement / 3;
+            moveCnt++;
+        }
     }
 
     /// <summary>
     /// Moves associated GameObject based on a given vector representing a delta 
     /// </summary>
     /// <param name="change">vector representing a distance delta</param>
-    public void move(Vector3 change){
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");
+    public void move(Vector3 change)
+    {
+        //change.x = Input.GetAxisRaw("Horizontal");
+        //change.y = Input.GetAxisRaw("Vertical");
 
         if (change != Vector3.zero)
         {
+            movement = change;
             orientationX = (int)change.x;
             orientationY = (int)change.y;
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
-        }       
+        }
 
     }
 }

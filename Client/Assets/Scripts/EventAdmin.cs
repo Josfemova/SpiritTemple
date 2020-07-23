@@ -33,7 +33,7 @@ public class EventAdmin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        JsonReq req;
+        JsonReq req=new JsonReq("no-action");
         Vector3 change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -41,27 +41,22 @@ public class EventAdmin : MonoBehaviour
         {
             //check if hits enemy, if so, get enemyID
             //req = new JsonReq("player-attack", enemyID );
-            req = new JsonReq("no-action"); // relleno, se quita cuando este el resto
+            // relleno, se quita cuando este el resto
         }
         else if (Input.GetKeyDown("k"))
         {
             //req = new JsonReq("move-player", newPosition.x, newPosition.y);
-            req = new JsonReq("no-action"); //relleno, se quita cuando est[e el resto
+            //relleno, se quita cuando est[e el resto
         }
         else if (change != Vector3.zero)
         {
             Vector3Int newPosition = Vector3Int.FloorToInt(player.transform.position + change);
             if (!obstacleMap.HasTile(newPosition) && !(overlapsOne(newPosition, enemies))
             && !(overlapsOne(newPosition, items)))
-            {
-                player.transform.position = newPosition;
+            {;
+                playerScript.move(newPosition);
+                req = new JsonReq("move-player", valx: newPosition.x, valy: newPosition.y);
             }
-            req = new JsonReq("move-player", valx: newPosition.x, valy: newPosition.y);
-
-        }
-        else
-        {
-            req = new JsonReq("no-action");
         }
         syncServer("event", JsonUtility.ToJson(req));
     }
@@ -134,18 +129,22 @@ public class EventAdmin : MonoBehaviour
     private void executeServerCmd(JsonReq req)
     {
         Debug.Log(JsonUtility.ToJson(req));
-        /*switch (req.cmd)
+        switch (req.cmd)
         {
             case "set-lives":
                 Client.Instance.health = req.otherval;
                 break;
             case "move-enemy":
                 EnemyContainer script = getEntityByID(req.target, "enemy") as EnemyContainer;
-                script.move(decodeDirection(req.args));
+                Vector3Int change =Vector3Int.zero;
+                change.x = req.valx;
+                change.y = req.valy;
+                //script.move(decodeDirection(req.args));
+                script.move(change);
                 break;
             default:
                 break;
-        }*/
+        }
     }
     private Vector3Int decodeDirection(string dir)
     {

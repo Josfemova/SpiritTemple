@@ -18,6 +18,7 @@ std::string Game::startLevel(std::string &levelData)
 
     std::shared_ptr<Level> newLevel(new Level(playerInfo, otherObj, items, enemies, lengthx, lengthy));
     currentLevel = newLevel;
+    currentLevel->updateMatrix();
     currentLevel->start(currentLevel);
     json loadLevelResponse;
     loadLevelResponse.push_back({
@@ -36,7 +37,6 @@ std::string Game::getResponse(std::string &action)
 {
     json clientAction = json::parse(action);
     currentLevel->manageEvent(clientAction);
-    currentLevel->getSimpleMatrix();
 
     json instructions = currentLevel->getInstructions();
     std::string resp;

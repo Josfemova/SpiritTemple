@@ -3,6 +3,7 @@
 
 #include "MoveGenerator.hpp"
 #include "EnemyType.hpp"
+#include "GeneticLab.hpp"
 #include "Direction.hpp"
 #include "Level.hpp"
 #include <memory>
@@ -11,6 +12,7 @@ class Level;
 class Enemy : public GameObject{
 private:
     friend class Level;
+    friend class GeneticLab;
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
     int route_velocity = 5;
@@ -32,32 +34,14 @@ private:
 public:
     Enemy(int id, int py, int px, std::string& type);
     void activate(std::shared_ptr<Level> parent);
-
-
-
-
-    void updateData(int py, int px, int damage, bool range);
-
-    void setRouteVelocity(int routeVel);
-    void setChaseVelocity(int chaseVel);
-    void setVisibilityRadius(int radius);
-
     void setDamage(int damage);
-    void setInRange(bool range);
     void setChasing(bool chase);
-
     Pair enemyPos() const;
-    int getRouteVelocity() const;
-    int getChaseVelocity() const;
-    int getVisibilityRadius() const;
-
     int getDamage() const;
-    bool isInRange() const;
+    bool playerInRange() const;
     bool playerIsSafe() const;
-
     EnemyType getEnemyType();
     std::string getTypeS();
-
     void refreshState();
     void groupCall();
     void update();

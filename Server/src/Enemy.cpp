@@ -2,7 +2,7 @@
 #include "include/Direction.hpp"
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
-
+#include <cstdlib>
 Enemy::Enemy(int id, int py, int px, std::string &type) : GameObject{GOType::enemy, id, py, px}, frameCount{1}
 {
     setEnemyType(type);
@@ -28,37 +28,10 @@ void Enemy::setEnemyType(std::string &type)
     else if (type == "Chuchu")
         enemyType = EnemyType::Chuchu;
 }
-void Enemy::updateData(int py, int px, int damage, bool range)
-{
-    setY(py);
-    setX(px);
-    damageDone = damage;
-    inRange = range;
-}
-
-void Enemy::setRouteVelocity(int routeVel)
-{
-    route_velocity = routeVel;
-}
-
-void Enemy::setChaseVelocity(int chaseVel)
-{
-    chase_velocity = chaseVel;
-}
-
-void Enemy::setVisibilityRadius(int radius)
-{
-    visibility_radius = radius;
-}
 
 void Enemy::setDamage(int damage)
 {
     damageDone = damage;
-}
-
-void Enemy::setInRange(bool range)
-{
-    inRange = range;
 }
 
 void Enemy::setChasing(bool chase)
@@ -71,37 +44,33 @@ Pair Enemy::enemyPos() const
     return std::make_pair(getX(), getY());
 }
 
-int Enemy::getRouteVelocity() const
-{
-    return route_velocity;
-}
-
-int Enemy::getChaseVelocity() const
-{
-    return chase_velocity;
-}
-
-int Enemy::getVisibilityRadius() const
-{
-    return visibility_radius;
-}
-
 int Enemy::getDamage() const
 {
     return damageDone;
 }
 
-bool Enemy::isInRange() const
-{
-    return inRange;
-}
-
 bool Enemy::playerIsSafe() const
 {
-    // Check if the player is inside the safe zone
-    return true;
-}
+    gmatrix state = parent->getSimpleMatrix();
+    Pair pos = parent->playerPos();
+    if(state[pos.second][pos.first]==0){
+        return true;
+    }else{
+        return false;
+    }
 
+}
+bool Enemy::playerInRange() const{
+    Pair player = parent->playerPos();
+    int deltay = abs(player.first - getY());
+    int deltax = abs(player.second - getX());
+    if(deltax<visibility_radius && deltay < visibility_radius){
+        return true;
+    }else{
+        return false;
+    }
+
+}
 EnemyType Enemy::getEnemyType()
 {
     return enemyType;
@@ -142,12 +111,12 @@ void Enemy::refreshState()
     }
 
     // SpEye doesn't move but calls the other specters
-    if (isInRange() && enemyType == EnemyType::SpEye)
+    if (playerInRange() && enemyType == EnemyType::SpEye)
     {
         parent->triggerGroupCall(getID());
     }
 
-    if (isInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
+    if (playerInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
     {
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
@@ -161,7 +130,7 @@ void Enemy::refreshState()
         chasePath.clear();
     }
 
-    if (!isInRange() && !playerIsSafe() && breadcrumbs.empty())
+    if (!playerInRange() && !playerIsSafe() && breadcrumbs.empty())
     {
         isChasing = false;
         isBacktracking = false;
@@ -194,33 +163,32 @@ void Enemy::groupCall()
 void Enemy::update()
 {
     frameCount = frameCount+1;
-    ce::debuglog(frameCount);
-    /*std::string dir;
+    std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
     bool canMove  = (frameCount % route_velocity == 0);
     if (enemyType == EnemyType::SpEye || enemyType == EnemyType::Chuchu
     || (!canChase && !canMove))
     {
-        ce::debuglog("anta baaaaaaaaaka");
         return;
     }
     else if (isChasing && canChase)
     {
         //chasing player
-        //frameCount = 1;
+        frameCount = 1;
         breadcrumbs.push_back(chasePath.front());
         dir = MoveGenerator::directionToString(chasePath.pop_front());
     }
     else if (isBacktracking && canMove)
     {
         //backtracking
-        //frameCount = 1;
+        frameCount = 1;
         dir = MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
     }
     else if (canMove)
     {
         //normal path
-        //frameCount = 1;
+        frameCount = 1;
+
         if (isBackTrackDefault)
         {
             if (lastDefaultPos == -1)
@@ -248,9 +216,15 @@ void Enemy::update()
             }
         }
     }
+    Pair delta = MoveGenerator::getDeltaValues(dir);
+    setX(getX() + delta.second);
+    setY(getY() + delta.first);
+    ce::debuglog(delta.first, delta.second);
     json instruction = {
-        {"cmd", "move"},
+        {"cmd", "move-enemy"},
         {"target", getID()},
-        {"otherval", dir}};
-    parent->addInstruction(instruction);*/
+        {"args", dir},
+        {"valx",delta.second},
+        {"valy",delta.first}};
+    parent->addInstruction(instruction);
 }

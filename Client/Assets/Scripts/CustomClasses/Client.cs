@@ -57,11 +57,10 @@ public sealed class Client
     {
         lock (updateLock)
         {
-            int arraySize = 128;
+            int arraySize = 4096;
             if (type == "loadLevel")
             {
                 serverConnection.Send((byte[])Encoding.ASCII.GetBytes("loadLevel"));
-
             }
             else if (type == "event")
             {

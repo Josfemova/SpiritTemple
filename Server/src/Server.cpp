@@ -76,10 +76,10 @@ void Server::listenClient()
         {
             std::string event(readMsg());
             std::string response(game->getResponse(event));
-            if (response != "null")
+            /*if (response != "null")
             {
                 ce::debuglog(response);
-            }
+            }*/
             sendMsg(response);
         }
         else if (message == "kill")
@@ -91,7 +91,7 @@ void Server::listenClient()
         {
             sendMsg("{\"commands\":[{\"cmd\":\"trash-info\"}]}");
         }
-        ce::debuglog("tick ------------------- ]]]]");
+        ce::debuglog("tick -----------------------------------------------");
     }
 }
 //
