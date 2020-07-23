@@ -115,13 +115,13 @@ Pair MoveGenerator::getDeltaValues(std::string direction)
 Direction MoveGenerator::getDirectionValue(int deltaX, int deltaY)
 {
     if (deltaX == 0)
-        return (deltaY == 1) ? Direction::NORTH : Direction::SOUTH;
+        return (deltaY > 0) ? Direction::NORTH : Direction::SOUTH;
     else if (deltaY == 0)
-        return (deltaX == 1) ? Direction::EAST : Direction::WEST;
+        return (deltaX > 0) ? Direction::EAST : Direction::WEST;
     else if (deltaX == 1)
-        return (deltaY == 1) ? Direction::NORTHEAST : Direction::SOUTHEAST;
+        return (deltaY > 0) ? Direction::NORTHEAST : Direction::SOUTHEAST;
     else // deltax == -1
-        return (deltaY == 1) ? Direction::NORTHWEST : Direction::SOUTHWEST;
+        return (deltaY > 0) ? Direction::NORTHWEST : Direction::SOUTHWEST;
 }
 Direction MoveGenerator::getInverseDirection(Direction direction)
 {

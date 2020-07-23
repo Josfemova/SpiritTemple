@@ -124,6 +124,8 @@ namespace ce
         std::string toString();
         template <class E>
         friend bool operator==(list<E> &x, list<E> &y);
+        //extra
+        static list<T> getInverse(list<T> &toInvert);
     };
 
     template <class T>
@@ -502,6 +504,15 @@ namespace ce
             ity = ity->next;
         }
         return true;
+    }
+    template<class T>
+    list<T> list<T>::getInverse(list<T> &toInvert){
+        list<T> inverted;
+        for (auto x :toInvert)
+        {
+            inverted.push_front(x);
+        }
+        return inverted;
     }
 
 }; // namespace ce

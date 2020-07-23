@@ -1,7 +1,8 @@
 #ifndef SPIRITTEMPLE_PATHFINDING_HPP
 #define SPIRITTEMPLE_PATHFINDING_HPP
 
-#include <bits/stdc++.h>
+#include <utility>
+#include <set>
 #include "Direction.hpp"
 #include "RouteType.hpp"
 #include "utilities.hpp"
