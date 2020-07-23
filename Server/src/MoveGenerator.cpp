@@ -41,18 +41,111 @@ listDirections MoveGenerator::LineSight(Pair enemyPos, Pair playerPos)
 {
     return MoveGenerator::pathfinding->LineSight(enemyPos, playerPos);
 }
+ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY, int destX)
+{
+    ce::list<std::pair<int, int>> coords;
+    bool inverted = false;
+    int dx = destX - originX; //delta X
+    int dy = destY - originY; //delta Y
+    if (dx == 0 && dy == 0)
+    {
+        coords.push_back(std::make_pair(0, 0));
+    }
+    else if (dx == 0)
+    {
+        //simple lambda to reduce amount of if statements
+        auto inc_dec = (dy < 0) ? [](int y) { return y - 1; } : [](int y) { return y + 1; };
+        while (originY != destY)
+        {
+            coords.push_back(std::make_pair(originY, originX));
+            originY = inc_dec(originY);
+        }
+    }
+    else if (dy == 0)
+    {
+        //simple lambda to reduce amount of if statements
+        auto inc_dec = (dx < 0) ? [](int x) { return x - 1; } : [](int x) { return x + 1; };
+        while (originX != destX)
+        {
+            coords.push_back(std::make_pair(originY, originX));
+            originX = inc_dec(originX);
+        }
+    }
+    else
+    {
+        double m = ((double)dy / dx);
 
+        int adjust = (m >= 0) ? 1 : -1;
+        int offset = 0;
+        int delta;
+        //case dx>dy
+        if (m <= 1 && m >= -1)
+        {
+            delta = abs(dy) * 2;
+            int threshold = abs(dx);
+            int thresholdInc = abs(dx) * 2;
+            int y = originY;
+            if (destX < originX)
+            {
+                std::swap(originX, destX);
+                y = destY;
+                inverted = true;
+            }
+            for (int x = originX; x < destX; x++)
+            {
+                coords.push_back(std::make_pair(y, x));
+                offset += delta;
+                if (offset >= threshold)
+                {
+                    y += adjust;
+                    threshold += thresholdInc;
+                }
+            }
+        }
+        //dx>dy
+        else
+        {
+            delta = abs(dx) * 2;
+            int threshold = abs(dy);
+            int thresholdInc = abs(dy) * 2;
+            int x = originX;
+            if (destY < originY)
+            {
+                std::swap(originY, destY);
+                x = destX;
+                inverted = true;
+            }
+            for (int y = originY; y < destY; y++)
+            {
+                coords.push_back(std::make_pair(y, x));
+                offset += delta;
+                if (offset >= threshold)
+                {
+                    x += adjust;
+                    threshold += thresholdInc;
+                }
+            }
+        }
+    }
+
+    if(inverted){
+        coords.pop_front();
+       coords = ce::list<std::pair<int, int>>::getInverse(coords); 
+    }else{
+        coords.pop_front();
+        return coords;
+    }
+    return coords;
+}
 listDirections MoveGenerator::BreadCrumbing(Pair enemyPos, Pair playerPos)
 {
     return listDirections();
 }
-
 listDirections MoveGenerator::Backtracking(Pair enemyPos, Pair playerPos)
 {
     return listDirections();
 }
 Pathfinding *MoveGenerator::pathfinding;
-
 listDirections MoveGenerator::randomPathGenerator(int size, int x, int y, gmatrix level)
 {
     listDirections route;
@@ -242,3 +335,5 @@ std::string MoveGenerator::inverseDirectionToString(Direction direction)
         break;
     }
 }
+
+

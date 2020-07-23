@@ -21,6 +21,7 @@ private:
     static Pathfinding* pathfinding;
     static int randomInt(int lowerLimit, int upperLimit);
     static listDirections Astar(Pair enemyPos, Pair playerPos);
+    static ce::list<Pair> bresenhamLine(int originY, int originX,int destX ,int destY);
     static listDirections LineSight(Pair enemyPos, Pair playerPos);
     static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
     static listDirections Backtracking(Pair enemyPos, Pair playerPos);

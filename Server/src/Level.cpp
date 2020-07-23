@@ -88,11 +88,7 @@ void Level::updateMatrix(bool printMatrix)
 
     if (printMatrix)
     {
-        ce::list<ce::list<int>> inverted;
-        for (auto fila : simpleMatrix)
-        {
-            inverted.push_front(fila);
-        }
+        ce::list<ce::list<int>> inverted = ce::list<ce::list<int>>::getInverse(simpleMatrix);
         inverted[lengthy - playery - 1][playerx] = 2;
         for (auto fila : inverted)
         {
