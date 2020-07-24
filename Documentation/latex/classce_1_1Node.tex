@@ -1,0 +1,90 @@
+\hypertarget{classce_1_1Node}{}\doxysection{ce\+::Node$<$ T $>$ Class Template Reference}
+\label{classce_1_1Node}\index{ce::Node$<$ T $>$@{ce::Node$<$ T $>$}}
+
+
+\mbox{\hyperlink{classce_1_1Node}{Node}} class used to store data in a doubly linked list.  
+
+
+
+
+{\ttfamily \#include $<$list.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classce_1_1Node_acc85e7f0bcb760badd4d62436829452a}{to\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classce_1_1Node_a2e4426bbdb8890e293aef2b72fb630ef}\label{classce_1_1Node_a2e4426bbdb8890e293aef2b72fb630ef}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classce_1_1Node}{Node}}$<$ T $>$ $>$ {\bfseries prev} = nullptr
+\item 
+\mbox{\Hypertarget{classce_1_1Node_ad5ae21d983fc39e0c926280389b867fc}\label{classce_1_1Node_ad5ae21d983fc39e0c926280389b867fc}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classce_1_1Node}{Node}}$<$ T $>$ $>$ {\bfseries next} = nullptr
+\item 
+\mbox{\Hypertarget{classce_1_1Node_a975e931790fc7fb9fe7e0affa438d8ae}\label{classce_1_1Node_a975e931790fc7fb9fe7e0affa438d8ae}} 
+T {\bfseries data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classce_1_1Node_ab6cf03d50c50087700b0fb872accfa7b}\label{classce_1_1Node_ab6cf03d50c50087700b0fb872accfa7b}} 
+class {\bfseries list$<$ T $>$}
+\item 
+{\footnotesize template$<$class E $>$ }\\bool \mbox{\hyperlink{classce_1_1Node_a6bc1eef8d64758e45bba1aef5ca33af0}{operator==}} (const \mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&x, const \mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class ce\+::\+Node$<$ T $>$}
+
+\mbox{\hyperlink{classce_1_1Node}{Node}} class used to store data in a doubly linked list. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classce_1_1Node_acc85e7f0bcb760badd4d62436829452a}\label{classce_1_1Node_acc85e7f0bcb760badd4d62436829452a}} 
+\index{ce::Node$<$ T $>$@{ce::Node$<$ T $>$}!toString@{toString}}
+\index{toString@{toString}!ce::Node$<$ T $>$@{ce::Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::string \mbox{\hyperlink{classce_1_1Node}{ce\+::\+Node}}$<$ T $>$\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classce_1_1Node_a6bc1eef8d64758e45bba1aef5ca33af0}\label{classce_1_1Node_a6bc1eef8d64758e45bba1aef5ca33af0}} 
+\index{ce::Node$<$ T $>$@{ce::Node$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!ce::Node$<$ T $>$@{ce::Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class E $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/list.\+hpp\end{DoxyCompactItemize}

@@ -11,6 +11,12 @@ private:
     ItemType itemType;
 
 public:
+    /**
+     * @brief Get the Item Type
+     * 
+     * @param value string value from which to infer type
+     * @return ItemType 
+     */
     static ItemType getItemType(std::string value);
     explicit Item(ItemType type, int id, int px, int py) : GameObject{GOType::item, id, px, py}, itemType{type}{}
 };

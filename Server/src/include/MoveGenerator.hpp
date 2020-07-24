@@ -29,13 +29,23 @@ private:
     /**
      * @brief calculates a bresenham line, returns coordinates of its points as YX coordinates
      * 
-     * @param originY 
-     * @param originX 
-     * @param destX 
-     * @param destY 
+     * @param originY x coordinate of starting point
+     * @param originX y coordinate of starting point
+     * @param destX x coordinate of objective
+     * @param destY Y coordinate of objective
      * @return ce::list<Pair> YX coordinate pair list
      */
-    static ce::list<yxPair> bresenhamLine(int originY, int originX,int destX ,int destY);
+    static ce::list<yxPair> bresenhamLine(int originY, int originX,int destY ,int destX);
+    /**
+     * @brief Calculates bresenham line, returns portion of the path that is valid
+     * 
+     * @param enemyY 
+     * @param enemyX 
+     * @param playerY 
+     * @param playerX 
+     * @param state 
+     * @return listDirections 
+     */
     static listDirections LineSight(int enemyY,int enemyX, int playerY, int playerX, gmatrix& state);
     static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
     static listDirections Backtracking(Pair enemyPos, Pair playerPos);

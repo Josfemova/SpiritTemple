@@ -1,0 +1,541 @@
+\hypertarget{classce_1_1list}{}\doxysection{ce\+::list$<$ T $>$ Class Template Reference}
+\label{classce_1_1list}\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classce_1_1list_a82c93e3ffc4f311c4cc76c180a01f461}{list}} (std\+::initializer\+\_\+list$<$ T $>$ \mbox{\hyperlink{classce_1_1list}{list}})
+\begin{DoxyCompactList}\small\item\em Construct a new list$<$\+T$>$\+::list object based on an initializer list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classce_1_1list_a1315e1de9b5139a50fd18b241a05cdec}{list}} (int $\ast$\mbox{\hyperlink{classce_1_1list}{list}}, int \mbox{\hyperlink{classce_1_1list_abf023907771dc3b77254aa6577172a28}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a new list$<$\+T$>$\+::list initialize a list based on a number matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classce_1_1list_a4fcc5bc2af954f4f87eea57c3333aa91}{list}} (T default\+Value, int \mbox{\hyperlink{classce_1_1list_abf023907771dc3b77254aa6577172a28}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a new list$<$\+T$>$\+::list with a default value given up to size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structce_1_1listIterator}{list\+Iterator}}$<$ T $>$ \mbox{\hyperlink{classce_1_1list_a4d6c2538f299eccb84ae58062d4f7d16}{begin}} ()
+\begin{DoxyCompactList}\small\item\em gives an iterator pointing to the first element \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structce_1_1listIterator}{list\+Iterator}}$<$ T $>$ \mbox{\hyperlink{classce_1_1list_a0192754a48c98d6d8cd3a3012857e6ca}{end}} ()
+\begin{DoxyCompactList}\small\item\em gives an iterator pointing to the final element of the list \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classce_1_1list_a1bd0ef54fb090b82c04a69ccd7247079}{at}} (int position)
+\begin{DoxyCompactList}\small\item\em gets element at index by reference \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classce_1_1list_a6b8eefb2a107c38e6b9fb50ad26ea471}{operator\mbox{[}$\,$\mbox{]}}} (int position)
+\begin{DoxyCompactList}\small\item\em gets element at index by reference \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classce_1_1list_a4ba45c2dbb0a5d7d6b05be307a1de537}{front}} ()
+\begin{DoxyCompactList}\small\item\em returns first element data \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classce_1_1list_ad5e77fd718c8a50bab31dd3c027cefa2}{back}} ()
+\begin{DoxyCompactList}\small\item\em returns las element data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classce_1_1list_aec3e5f6e754b6aca0ebb019620c35944}{empty}} ()
+\begin{DoxyCompactList}\small\item\em returns is the list has elements or not \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classce_1_1list_a12a47de2a9afcac0a651c3aca76ad21c}{contains}} (T data) const
+\begin{DoxyCompactList}\small\item\em checks if given data is stored in one of the list nodes \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_abf023907771dc3b77254aa6577172a28}{size}} () const
+\begin{DoxyCompactList}\small\item\em gets the size of the list (amount of elements stored) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_a0635e698c2a5f2de7984bf16492caea3}{clear}} ()
+\begin{DoxyCompactList}\small\item\em makes the list an empty list \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_afd6b704461a7d664f5aa031a9c7dab6f}{insert}} (T data, int index)
+\begin{DoxyCompactList}\small\item\em inserts the data at the given position, pushed data to the end if the index overflows \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_a7409734bbbe25ab66cf167c60e4808f0}{erase}} (int index)
+\begin{DoxyCompactList}\small\item\em erases the element and the given index \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_a80cb22d17ef6b02cdf1410b44e1271e3}{push\+\_\+back}} (T data)
+\begin{DoxyCompactList}\small\item\em pushes element to the end of the list \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_af63c0ec504e2086761b8f9657e863a54}{push\+\_\+front}} (T data)
+\begin{DoxyCompactList}\small\item\em pushes element to the beginning of the list \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classce_1_1list_ade7a43402b19bb67a0b9b616a88d5ff9}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em erases last element and returns it\textquotesingle{}s value \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classce_1_1list_a77479b3b10378cb62fd7ae598eeaedd9}{pop\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em erases first element an returns it\textquotesingle{}s value \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classce_1_1list_a5332eb6a1441ce43ecea18a9a6c0f358}{swap}} (int indexA, int indexB)
+\begin{DoxyCompactList}\small\item\em swaps the information betweeen to indexes \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classce_1_1list_a3ea5aea0b14a2b07ead38e4200a54fca}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em gets list as an string value by sugin an stringstream some data types might not be able to be printed this way \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classce_1_1list}{list}}$<$ T $>$ \mbox{\hyperlink{classce_1_1list_a026dcef1491e84c76dda057a5db337f4}{get\+Inverse}} (\mbox{\hyperlink{classce_1_1list}{list}}$<$ T $>$ \&to\+Invert)
+\begin{DoxyCompactList}\small\item\em gets the reversed version of a given list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classce_1_1list_a62e7ce245eb55cff2670fff552649188}\label{classce_1_1list_a62e7ce245eb55cff2670fff552649188}} 
+{\footnotesize template$<$class E $>$ }\\bool {\bfseries operator==} (\mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&x, \mbox{\hyperlink{classce_1_1list}{list}}$<$ E $>$ \&y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classce_1_1list_a82c93e3ffc4f311c4cc76c180a01f461}\label{classce_1_1list_a82c93e3ffc4f311c4cc76c180a01f461}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!list@{list}}
+\index{list@{list}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::\mbox{\hyperlink{classce_1_1list}{list}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new list$<$\+T$>$\+::list object based on an initializer list. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classce_1_1list_a1315e1de9b5139a50fd18b241a05cdec}\label{classce_1_1list_a1315e1de9b5139a50fd18b241a05cdec}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!list@{list}}
+\index{list@{list}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::\mbox{\hyperlink{classce_1_1list}{list}} (\begin{DoxyParamCaption}\item[{int $\ast$}]{list,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new list$<$\+T$>$\+::list initialize a list based on a number matrix. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classce_1_1list_a4fcc5bc2af954f4f87eea57c3333aa91}\label{classce_1_1list_a4fcc5bc2af954f4f87eea57c3333aa91}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!list@{list}}
+\index{list@{list}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::\mbox{\hyperlink{classce_1_1list}{list}} (\begin{DoxyParamCaption}\item[{T}]{default\+Val,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new list$<$\+T$>$\+::list with a default value given up to size. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Val} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classce_1_1list_a1bd0ef54fb090b82c04a69ccd7247079}\label{classce_1_1list_a1bd0ef54fb090b82c04a69ccd7247079}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!at@{at}}
+\index{at@{at}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+gets element at index by reference 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_ad5e77fd718c8a50bab31dd3c027cefa2}\label{classce_1_1list_ad5e77fd718c8a50bab31dd3c027cefa2}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!back@{back}}
+\index{back@{back}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::back}
+
+
+
+returns las element data 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a4d6c2538f299eccb84ae58062d4f7d16}\label{classce_1_1list_a4d6c2538f299eccb84ae58062d4f7d16}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structce_1_1listIterator}{list\+Iterator}}$<$T$>$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+gives an iterator pointing to the first element 
+
+\begin{DoxyReturn}{Returns}
+list\+Iterator$<$\+T$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a0635e698c2a5f2de7984bf16492caea3}\label{classce_1_1list_a0635e698c2a5f2de7984bf16492caea3}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::clear}
+
+
+
+makes the list an empty list 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+int error value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a12a47de2a9afcac0a651c3aca76ad21c}\label{classce_1_1list_a12a47de2a9afcac0a651c3aca76ad21c}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption}) const}
+
+
+
+checks if given data is stored in one of the list nodes 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data to look for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true list contains data 
+
+false list does not contain the data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_aec3e5f6e754b6aca0ebb019620c35944}\label{classce_1_1list_aec3e5f6e754b6aca0ebb019620c35944}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::empty}
+
+
+
+returns is the list has elements or not 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+true list has no elements 
+
+false list has at least one element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a0192754a48c98d6d8cd3a3012857e6ca}\label{classce_1_1list_a0192754a48c98d6d8cd3a3012857e6ca}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!end@{end}}
+\index{end@{end}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structce_1_1listIterator}{list\+Iterator}}$<$T$>$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+gives an iterator pointing to the final element of the list 
+
+\begin{DoxyReturn}{Returns}
+list\+Iterator$<$\+T$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a7409734bbbe25ab66cf167c60e4808f0}\label{classce_1_1list_a7409734bbbe25ab66cf167c60e4808f0}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+erases the element and the given index 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index to erase \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if not error found, -\/1 if an error was found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a4ba45c2dbb0a5d7d6b05be307a1de537}\label{classce_1_1list_a4ba45c2dbb0a5d7d6b05be307a1de537}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!front@{front}}
+\index{front@{front}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::front}
+
+
+
+returns first element data 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a026dcef1491e84c76dda057a5db337f4}\label{classce_1_1list_a026dcef1491e84c76dda057a5db337f4}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!getInverse@{getInverse}}
+\index{getInverse@{getInverse}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getInverse()}{getInverse()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classce_1_1list}{list}}$<$ T $>$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::get\+Inverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classce_1_1list}{list}}$<$ T $>$ \&}]{to\+Invert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+gets the reversed version of a given list 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Invert} & list to reverse ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list$<$\+T$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_afd6b704461a7d664f5aa031a9c7dab6f}\label{classce_1_1list_afd6b704461a7d664f5aa031a9c7dab6f}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{data,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+inserts the data at the given position, pushed data to the end if the index overflows 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data that is to be inserted \\
+\hline
+{\em index} & prefered insertion index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int error checking 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a6b8eefb2a107c38e6b9fb50ad26ea471}\label{classce_1_1list_a6b8eefb2a107c38e6b9fb50ad26ea471}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+gets element at index by reference 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_ade7a43402b19bb67a0b9b616a88d5ff9}\label{classce_1_1list_ade7a43402b19bb67a0b9b616a88d5ff9}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::pop\+\_\+back}
+
+
+
+erases last element and returns it\textquotesingle{}s value 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T value stored in the erased node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a77479b3b10378cb62fd7ae598eeaedd9}\label{classce_1_1list_a77479b3b10378cb62fd7ae598eeaedd9}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!pop\_front@{pop\_front}}
+\index{pop\_front@{pop\_front}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_front()}{pop\_front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::pop\+\_\+front}
+
+
+
+erases first element an returns it\textquotesingle{}s value 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T value of erased node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a80cb22d17ef6b02cdf1410b44e1271e3}\label{classce_1_1list_a80cb22d17ef6b02cdf1410b44e1271e3}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})}
+
+
+
+pushes element to the end of the list 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_af63c0ec504e2086761b8f9657e863a54}\label{classce_1_1list_af63c0ec504e2086761b8f9657e863a54}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})}
+
+
+
+pushes element to the beginning of the list 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & o be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_abf023907771dc3b77254aa6577172a28}\label{classce_1_1list_abf023907771dc3b77254aa6577172a28}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!size@{size}}
+\index{size@{size}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::size}
+
+
+
+gets the size of the list (amount of elements stored) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+int size of list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a5332eb6a1441ce43ecea18a9a6c0f358}\label{classce_1_1list_a5332eb6a1441ce43ecea18a9a6c0f358}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{int}]{indexA,  }\item[{int}]{indexB }\end{DoxyParamCaption})}
+
+
+
+swaps the information betweeen to indexes 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em indexA} & index to be swapped for index B \\
+\hline
+{\em indexB} & index to be swapped with indexA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classce_1_1list_a3ea5aea0b14a2b07ead38e4200a54fca}\label{classce_1_1list_a3ea5aea0b14a2b07ead38e4200a54fca}} 
+\index{ce::list$<$ T $>$@{ce::list$<$ T $>$}!toString@{toString}}
+\index{toString@{toString}!ce::list$<$ T $>$@{ce::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::string \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ T $>$\+::to\+String}
+
+
+
+gets list as an string value by sugin an stringstream some data types might not be able to be printed this way 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::string list as a string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/list.\+hpp\end{DoxyCompactItemize}

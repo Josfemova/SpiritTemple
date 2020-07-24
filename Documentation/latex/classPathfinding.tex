@@ -1,0 +1,339 @@
+\hypertarget{classPathfinding}{}\doxysection{Pathfinding Class Reference}
+\label{classPathfinding}\index{Pathfinding@{Pathfinding}}
+
+
+Manage everything related with path finding, A$\ast$, bread crumbing, backtracking and line sight.  
+
+
+
+
+{\ttfamily \#include $<$Pathfinding.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPathfinding_a8f9a9cf8806f0b70cea8b33f8c563f9f}{Pathfinding}} (\mbox{\hyperlink{classce_1_1list}{gmatrix}} matrix)
+\begin{DoxyCompactList}\small\item\em update the matrix \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPathfinding_a0a7f112bc85eb26f86d2639a6b571bc2}{is\+Valid}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em check whether given node (row, col) is a valid node or not \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPathfinding_a84a0afe20ec20bf81d9ffd6f944c09ab}{is\+Un\+Blocked}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em returns true if the node isn\textquotesingle{}t blocked, else false \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPathfinding_a569501a80941a864409104ac1c3e5374}{node\+Validations}} (int row, int col, Pair dest)
+\begin{DoxyCompactList}\small\item\em checks everything related to a node in the matrix \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPathfinding_acb32c8ba584514f584bcff65a896df7c}{initial\+Validations}} (Pair src, Pair dest)
+\item 
+Pair \mbox{\hyperlink{classPathfinding_ada1f4231606374117e394b4cbe86c596}{teleport\+Enemy}} (Pair src, Pair dest)
+\begin{DoxyCompactList}\small\item\em move the enemy to a position close to the player \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPathfinding_a669b75ac98b83f1000929c3a92695747}\label{classPathfinding_a669b75ac98b83f1000929c3a92695747}} 
+void {\bfseries adj\+Nodes} (\mbox{\hyperlink{classce_1_1list}{adjacent\+Nodes}} \&nodes, Pair \&src, Pair \&temp\+Src, Pair \&dest)
+\item 
+\mbox{\hyperlink{classce_1_1list}{list\+Directions}} \mbox{\hyperlink{classPathfinding_a4cabfcf0809df6d784c046c844bb85fe}{A\+Star\+Search}} (Pair src, Pair dest)
+\begin{DoxyCompactList}\small\item\em find the shortest path between a given source node to a destination node according to A$\ast$ Search Algorithm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPathfinding_aedee1d4357187d113f33012fe5fcd86d}\label{classPathfinding_aedee1d4357187d113f33012fe5fcd86d}} 
+bool {\bfseries A\+Star\+Movement} (\mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ \mbox{\hyperlink{classNode}{Node}} $>$$>$ \&nodes\+Details, \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ bool $>$$>$ \&closed\+List, std\+::set$<$ p\+Pair $>$ \&open\+List, Pair \&dest, int row, int col, int pi, int pj, float g)
+\item 
+\mbox{\Hypertarget{classPathfinding_af502e0134a16cd92cd0ba84b32af7365}\label{classPathfinding_af502e0134a16cd92cd0ba84b32af7365}} 
+void {\bfseries set\+A\+Star\+Path} (\mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ \mbox{\hyperlink{classce_1_1list}{ce\+::list}}$<$ \mbox{\hyperlink{classNode}{Node}} $>$$>$ \&nodes\+Details, Pair \&dest, \mbox{\hyperlink{classce_1_1list}{list\+Directions}} \&path)
+\item 
+Pair \mbox{\hyperlink{classPathfinding_ab2b58f8c4a6d0239b69c148127ca28ac}{best\+Adjacent\+Node}} (int \&py, int \&px, Pair \&dest)
+\begin{DoxyCompactList}\small\item\em find the line between a given source node to a destination \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classPathfinding_a9f55293dbe084c8d044aa730c0e6663b}{is\+Destination}} (int row, int col, Pair dest)
+\begin{DoxyCompactList}\small\item\em check whether destination node has been reached or not \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classPathfinding_a19b58198b93171e34bf5324beec712f1}{get\+Heuristic\+Cost}} (int row, int col, Pair dest)
+\begin{DoxyCompactList}\small\item\em calculate the \char`\"{}\+H\char`\"{} Heuristic \end{DoxyCompactList}\item 
+static Direction \mbox{\hyperlink{classPathfinding_a05de77fd705907be56061e3085bb7870}{set\+Movement}} (int srcX, int srcY, int destX, int destY)
+\begin{DoxyCompactList}\small\item\em it set and return the specific movement from a node and its adjacent nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPathfinding_a72baceb890c92b57287f3bc27dc3cc3b}\label{classPathfinding_a72baceb890c92b57287f3bc27dc3cc3b}} 
+static void {\bfseries add\+Node} (\mbox{\hyperlink{classce_1_1list}{adjacent\+Nodes}} \&adj\+Nodes, Pair \&src, Pair \&pair, Pair \&dest)
+\item 
+\mbox{\Hypertarget{classPathfinding_a697732129647885c4c48be0e1b090b4f}\label{classPathfinding_a697732129647885c4c48be0e1b090b4f}} 
+static Pair {\bfseries random\+Node} (\mbox{\hyperlink{classce_1_1list}{adjacent\+Nodes}} \&adj\+Nodes)
+\item 
+static int \mbox{\hyperlink{classPathfinding_a2cda755559babc0f1ac4b3b8c7f0cacd}{Manhattan\+Distance}} (int py, int px, Pair dest)
+\item 
+static void \mbox{\hyperlink{classPathfinding_a589009370945284bcbb74bde2e50c335}{set\+Line\+Sight}} (\mbox{\hyperlink{classce_1_1list}{adjacent\+Nodes}} \&Bresenham\+Nodes, \mbox{\hyperlink{classce_1_1list}{list\+Directions}} \&Bresenham\+Line)
+\begin{DoxyCompactList}\small\item\em add a node to the list of node for bresenham line \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manage everything related with path finding, A$\ast$, bread crumbing, backtracking and line sight. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPathfinding_a8f9a9cf8806f0b70cea8b33f8c563f9f}\label{classPathfinding_a8f9a9cf8806f0b70cea8b33f8c563f9f}} 
+\index{Pathfinding@{Pathfinding}!Pathfinding@{Pathfinding}}
+\index{Pathfinding@{Pathfinding}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{Pathfinding()}{Pathfinding()}}
+{\footnotesize\ttfamily Pathfinding\+::\+Pathfinding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classce_1_1list}{gmatrix}}}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+update the matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Matrix} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPathfinding_a4cabfcf0809df6d784c046c844bb85fe}\label{classPathfinding_a4cabfcf0809df6d784c046c844bb85fe}} 
+\index{Pathfinding@{Pathfinding}!AStarSearch@{AStarSearch}}
+\index{AStarSearch@{AStarSearch}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{AStarSearch()}{AStarSearch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classce_1_1list}{list\+Directions}} Pathfinding\+::\+A\+Star\+Search (\begin{DoxyParamCaption}\item[{Pair}]{src,  }\item[{Pair}]{dest }\end{DoxyParamCaption})}
+
+
+
+find the shortest path between a given source node to a destination node according to A$\ast$ Search Algorithm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathfinding_ab2b58f8c4a6d0239b69c148127ca28ac}\label{classPathfinding_ab2b58f8c4a6d0239b69c148127ca28ac}} 
+\index{Pathfinding@{Pathfinding}!bestAdjacentNode@{bestAdjacentNode}}
+\index{bestAdjacentNode@{bestAdjacentNode}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{bestAdjacentNode()}{bestAdjacentNode()}}
+{\footnotesize\ttfamily Pair Pathfinding\+::best\+Adjacent\+Node (\begin{DoxyParamCaption}\item[{int \&}]{py,  }\item[{int \&}]{px,  }\item[{Pair \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+find the line between a given source node to a destination 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+find the best adjacent node 
+\begin{DoxyParams}{Parameters}
+{\em px} & \\
+\hline
+{\em py} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the best adjacent node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a19b58198b93171e34bf5324beec712f1}\label{classPathfinding_a19b58198b93171e34bf5324beec712f1}} 
+\index{Pathfinding@{Pathfinding}!getHeuristicCost@{getHeuristicCost}}
+\index{getHeuristicCost@{getHeuristicCost}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{getHeuristicCost()}{getHeuristicCost()}}
+{\footnotesize\ttfamily double Pathfinding\+::get\+Heuristic\+Cost (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{Pair}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+calculate the \char`\"{}\+H\char`\"{} Heuristic 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the diagonal cost of the movement 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_acb32c8ba584514f584bcff65a896df7c}\label{classPathfinding_acb32c8ba584514f584bcff65a896df7c}} 
+\index{Pathfinding@{Pathfinding}!initialValidations@{initialValidations}}
+\index{initialValidations@{initialValidations}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{initialValidations()}{initialValidations()}}
+{\footnotesize\ttfamily bool Pathfinding\+::initial\+Validations (\begin{DoxyParamCaption}\item[{Pair}]{src,  }\item[{Pair}]{dest }\end{DoxyParamCaption})}
+
+is\+Un\+Blocked(src.\+first, src.\+second) $\vert$$\vert$\mbox{\Hypertarget{classPathfinding_a9f55293dbe084c8d044aa730c0e6663b}\label{classPathfinding_a9f55293dbe084c8d044aa730c0e6663b}} 
+\index{Pathfinding@{Pathfinding}!isDestination@{isDestination}}
+\index{isDestination@{isDestination}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{isDestination()}{isDestination()}}
+{\footnotesize\ttfamily bool Pathfinding\+::is\+Destination (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{Pair}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+check whether destination node has been reached or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a84a0afe20ec20bf81d9ffd6f944c09ab}\label{classPathfinding_a84a0afe20ec20bf81d9ffd6f944c09ab}} 
+\index{Pathfinding@{Pathfinding}!isUnBlocked@{isUnBlocked}}
+\index{isUnBlocked@{isUnBlocked}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{isUnBlocked()}{isUnBlocked()}}
+{\footnotesize\ttfamily bool Pathfinding\+::is\+Un\+Blocked (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+returns true if the node isn\textquotesingle{}t blocked, else false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a0a7f112bc85eb26f86d2639a6b571bc2}\label{classPathfinding_a0a7f112bc85eb26f86d2639a6b571bc2}} 
+\index{Pathfinding@{Pathfinding}!isValid@{isValid}}
+\index{isValid@{isValid}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Pathfinding\+::is\+Valid (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+check whether given node (row, col) is a valid node or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a2cda755559babc0f1ac4b3b8c7f0cacd}\label{classPathfinding_a2cda755559babc0f1ac4b3b8c7f0cacd}} 
+\index{Pathfinding@{Pathfinding}!ManhattanDistance@{ManhattanDistance}}
+\index{ManhattanDistance@{ManhattanDistance}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{ManhattanDistance()}{ManhattanDistance()}}
+{\footnotesize\ttfamily int Pathfinding\+::\+Manhattan\+Distance (\begin{DoxyParamCaption}\item[{int}]{py,  }\item[{int}]{px,  }\item[{Pair}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & \\
+\hline
+{\em py} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the manhattan heuristic cost 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a569501a80941a864409104ac1c3e5374}\label{classPathfinding_a569501a80941a864409104ac1c3e5374}} 
+\index{Pathfinding@{Pathfinding}!nodeValidations@{nodeValidations}}
+\index{nodeValidations@{nodeValidations}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{nodeValidations()}{nodeValidations()}}
+{\footnotesize\ttfamily bool Pathfinding\+::node\+Validations (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{Pair}]{dest }\end{DoxyParamCaption})}
+
+
+
+checks everything related to a node in the matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+{\em dest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_a589009370945284bcbb74bde2e50c335}\label{classPathfinding_a589009370945284bcbb74bde2e50c335}} 
+\index{Pathfinding@{Pathfinding}!setLineSight@{setLineSight}}
+\index{setLineSight@{setLineSight}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{setLineSight()}{setLineSight()}}
+{\footnotesize\ttfamily void Pathfinding\+::set\+Line\+Sight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classce_1_1list}{adjacent\+Nodes}} \&}]{Bresenham\+Nodes,  }\item[{\mbox{\hyperlink{classce_1_1list}{list\+Directions}} \&}]{Bresenham\+Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+add a node to the list of node for bresenham line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & \\
+\hline
+{\em line} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathfinding_a05de77fd705907be56061e3085bb7870}\label{classPathfinding_a05de77fd705907be56061e3085bb7870}} 
+\index{Pathfinding@{Pathfinding}!setMovement@{setMovement}}
+\index{setMovement@{setMovement}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{setMovement()}{setMovement()}}
+{\footnotesize\ttfamily Direction Pathfinding\+::set\+Movement (\begin{DoxyParamCaption}\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{int}]{destX,  }\item[{int}]{destY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+it set and return the specific movement from a node and its adjacent nodes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em srcX} & \\
+\hline
+{\em srcY} & \\
+\hline
+{\em destX} & \\
+\hline
+{\em destY} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathfinding_ada1f4231606374117e394b4cbe86c596}\label{classPathfinding_ada1f4231606374117e394b4cbe86c596}} 
+\index{Pathfinding@{Pathfinding}!teleportEnemy@{teleportEnemy}}
+\index{teleportEnemy@{teleportEnemy}!Pathfinding@{Pathfinding}}
+\doxysubsubsection{\texorpdfstring{teleportEnemy()}{teleportEnemy()}}
+{\footnotesize\ttfamily Pair Pathfinding\+::teleport\+Enemy (\begin{DoxyParamCaption}\item[{Pair}]{src,  }\item[{Pair}]{dest }\end{DoxyParamCaption})}
+
+
+
+move the enemy to a position close to the player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Matrix} & \\
+\hline
+{\em enemyX} & \\
+\hline
+{\em enemyY} & \\
+\hline
+{\em playerX} & \\
+\hline
+{\em playerY} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/Pathfinding.\+hpp\item 
+Server/src/Pathfinding.\+cpp\end{DoxyCompactItemize}

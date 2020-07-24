@@ -1,0 +1,195 @@
+\hypertarget{classLevel}{}\doxysection{Level Class Reference}
+\label{classLevel}\index{Level@{Level}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLevel_a876da492860edeb2e0554f51e157fce1}{add\+Instruction}} (json instruction)
+\begin{DoxyCompactList}\small\item\em adds a json request to the payload to be sent to the client \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLevel_ad2ad35f8119a901d342b1eeea07d69a0}{Level}} (json player\+Info, json obstacles, json items, json enemies, int lengthx, int lengthy)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classLevel}{Level}} based on the Json information from the client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLevel_a478de3faacd5a2e1b7524303cb9e5bd6}{finish}} ()
+\begin{DoxyCompactList}\small\item\em ends the level \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLevel_a8a8ecda88a954b2710ee6a4b3ab22757}{start}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLevel}{Level}} $>$ level)
+\begin{DoxyCompactList}\small\item\em Performs initial tasks related to the level start. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLevel_a6b3b652f742ef990f59ca489407fd83e}{update\+Matrix}} (bool print\+Matrix=false)
+\begin{DoxyCompactList}\small\item\em refreshes the game matrix \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classce_1_1list}{gmatrix}} \& \mbox{\hyperlink{classLevel_a298b0af7cab904268a5f1f823a19816f}{get\+Simple\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em returns the game matrix representing the current state \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLevel_a96442506b76f25af2c3a371954fea2db}{manage\+Event}} (json event)
+\begin{DoxyCompactList}\small\item\em handles events communicated by the client \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLevel_a0df62c3db6d36b037e7d9bf1f89bfe64}{trigger\+Group\+Call}} (int id)
+\begin{DoxyCompactList}\small\item\em and enemy can call this method to trigger the group\+Call method of all it\textquotesingle{}s pears \end{DoxyCompactList}\item 
+json \mbox{\hyperlink{classLevel_a2cbdc0852a869596780739939d933c36}{get\+Instructions}} ()
+\begin{DoxyCompactList}\small\item\em Get the Instructions objectreturn json array with all the stores instructions so far. \end{DoxyCompactList}\item 
+Pair \mbox{\hyperlink{classLevel_ad18e25b6c73c09420c636814e52572cf}{player\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em returns player position as an YX coordinate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLevel_a89444f1d45152a18d51cc93b080a4237}\label{classLevel_a89444f1d45152a18d51cc93b080a4237}} 
+const int {\bfseries lengthx}
+\item 
+\mbox{\Hypertarget{classLevel_ab634012ba9b65dccd1d6a2ee5ecdb778}\label{classLevel_ab634012ba9b65dccd1d6a2ee5ecdb778}} 
+const int {\bfseries lengthy}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLevel_ad2ad35f8119a901d342b1eeea07d69a0}\label{classLevel_ad2ad35f8119a901d342b1eeea07d69a0}} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{json}]{player\+Info,  }\item[{json}]{obstacles,  }\item[{json}]{items,  }\item[{json}]{enemies,  }\item[{int}]{lengthx,  }\item[{int}]{lengthy }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classLevel}{Level}} based on the Json information from the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Info} & json with player information \\
+\hline
+{\em obstacles} & json array with obstacle positions \\
+\hline
+{\em items} & json with item information \\
+\hline
+{\em enemies} & json array with enemy information \\
+\hline
+{\em lengthx} & horizontal size of the level \\
+\hline
+{\em lengthy} & vertical size of the level \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLevel_a876da492860edeb2e0554f51e157fce1}\label{classLevel_a876da492860edeb2e0554f51e157fce1}} 
+\index{Level@{Level}!addInstruction@{addInstruction}}
+\index{addInstruction@{addInstruction}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{addInstruction()}{addInstruction()}}
+{\footnotesize\ttfamily void Level\+::add\+Instruction (\begin{DoxyParamCaption}\item[{json}]{instruction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds a json request to the payload to be sent to the client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instruction} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLevel_a478de3faacd5a2e1b7524303cb9e5bd6}\label{classLevel_a478de3faacd5a2e1b7524303cb9e5bd6}} 
+\index{Level@{Level}!finish@{finish}}
+\index{finish@{finish}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Level\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ends the level 
+
+\mbox{\Hypertarget{classLevel_a2cbdc0852a869596780739939d933c36}\label{classLevel_a2cbdc0852a869596780739939d933c36}} 
+\index{Level@{Level}!getInstructions@{getInstructions}}
+\index{getInstructions@{getInstructions}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{getInstructions()}{getInstructions()}}
+{\footnotesize\ttfamily json Level\+::get\+Instructions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Instructions objectreturn json array with all the stores instructions so far. 
+
+\begin{DoxyReturn}{Returns}
+json 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a298b0af7cab904268a5f1f823a19816f}\label{classLevel_a298b0af7cab904268a5f1f823a19816f}} 
+\index{Level@{Level}!getSimpleMatrix@{getSimpleMatrix}}
+\index{getSimpleMatrix@{getSimpleMatrix}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{getSimpleMatrix()}{getSimpleMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classce_1_1list}{gmatrix}} \& Level\+::get\+Simple\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the game matrix representing the current state 
+
+\begin{DoxyReturn}{Returns}
+gmatrix\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a96442506b76f25af2c3a371954fea2db}\label{classLevel_a96442506b76f25af2c3a371954fea2db}} 
+\index{Level@{Level}!manageEvent@{manageEvent}}
+\index{manageEvent@{manageEvent}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{manageEvent()}{manageEvent()}}
+{\footnotesize\ttfamily void Level\+::manage\+Event (\begin{DoxyParamCaption}\item[{json}]{event }\end{DoxyParamCaption})}
+
+
+
+handles events communicated by the client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & json information about the event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLevel_ad18e25b6c73c09420c636814e52572cf}\label{classLevel_ad18e25b6c73c09420c636814e52572cf}} 
+\index{Level@{Level}!playerPos@{playerPos}}
+\index{playerPos@{playerPos}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{playerPos()}{playerPos()}}
+{\footnotesize\ttfamily Pair Level\+::player\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns player position as an YX coordinate 
+
+\begin{DoxyReturn}{Returns}
+Pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a8a8ecda88a954b2710ee6a4b3ab22757}\label{classLevel_a8a8ecda88a954b2710ee6a4b3ab22757}} 
+\index{Level@{Level}!start@{start}}
+\index{start@{start}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Level\+::start (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLevel}{Level}} $>$}]{level }\end{DoxyParamCaption})}
+
+
+
+Performs initial tasks related to the level start. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLevel_a0df62c3db6d36b037e7d9bf1f89bfe64}\label{classLevel_a0df62c3db6d36b037e7d9bf1f89bfe64}} 
+\index{Level@{Level}!triggerGroupCall@{triggerGroupCall}}
+\index{triggerGroupCall@{triggerGroupCall}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{triggerGroupCall()}{triggerGroupCall()}}
+{\footnotesize\ttfamily void Level\+::trigger\+Group\+Call (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+and enemy can call this method to trigger the group\+Call method of all it\textquotesingle{}s pears 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLevel_a6b3b652f742ef990f59ca489407fd83e}\label{classLevel_a6b3b652f742ef990f59ca489407fd83e}} 
+\index{Level@{Level}!updateMatrix@{updateMatrix}}
+\index{updateMatrix@{updateMatrix}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{updateMatrix()}{updateMatrix()}}
+{\footnotesize\ttfamily void Level\+::update\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{print\+Matrix = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+refreshes the game matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em print\+Matrix} & print the matrix to the console \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/Level.\+hpp\item 
+Server/src/Level.\+cpp\end{DoxyCompactItemize}

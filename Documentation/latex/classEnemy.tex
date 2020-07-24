@@ -1,0 +1,224 @@
+\hypertarget{classEnemy}{}\doxysection{Enemy Class Reference}
+\label{classEnemy}\index{Enemy@{Enemy}}
+
+
+Representation of enemy game objects.  
+
+
+
+
+{\ttfamily \#include $<$Enemy.\+hpp$>$}
+
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEnemy}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnemy_a9a5f469da18091f89127342b72be515d}{Enemy}} (int id, int py, int px, std\+::string \&type)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classEnemy}{Enemy}} object based on the YX coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEnemy_ad91aa63daffbdac9ef087c501b83fafb}{activate}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLevel}{Level}} $>$ parent)
+\begin{DoxyCompactList}\small\item\em Generates initial normal path pathfinding in most enemies, sets initial state for all enemies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEnemy_a7de212ee3b9a29ae04b7cf67614d62a4}\label{classEnemy_a7de212ee3b9a29ae04b7cf67614d62a4}} 
+void {\bfseries set\+Damage} (int damage)
+\item 
+void \mbox{\hyperlink{classEnemy_aad73749fc21871acb6dd6da69e9bfc11}{set\+Chasing}} (bool chase)
+\begin{DoxyCompactList}\small\item\em Flags enemy in chasing state, increased speed. \end{DoxyCompactList}\item 
+Pair \mbox{\hyperlink{classEnemy_a4e03dc09be2856e71278abcdd5ca5289}{enemy\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em returns enemy\+Position as a X,Y $<$int,int$>$ pair \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEnemy_abb68708af5f493bee8516d1dce35797e}{get\+Damage}} () const
+\begin{DoxyCompactList}\small\item\em Get the Damage objectgets how many times an spectrum was able to hit the player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEnemy_a8d68264e2eddf8b575b3c10470a46058}{player\+In\+Range}} () const
+\begin{DoxyCompactList}\small\item\em checks if the player is in the visibility range of the enemy \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEnemy_ac6dde0489edaf11814f9c0b119ca3356}{player\+Is\+Safe}} () const
+\begin{DoxyCompactList}\small\item\em check if player is in a bolcked location \end{DoxyCompactList}\item 
+Enemy\+Type \mbox{\hyperlink{classEnemy_ae5b7462bd7f641dee354c3c1188c97ca}{get\+Enemy\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classEnemy}{Enemy}} Type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEnemy_aa4296b930dc82938986d713d68eb5e49}\label{classEnemy_aa4296b930dc82938986d713d68eb5e49}} 
+std\+::string {\bfseries get\+TypeS} ()
+\item 
+void \mbox{\hyperlink{classEnemy_a15f1b668ae0f2c4b44686064ff86c5e5}{refresh\+State}} ()
+\begin{DoxyCompactList}\small\item\em enemy will check again if the current conditions remain the same, or they need to be adjusted \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEnemy_a9c9e30284ccc422a168449919c26764b}{group\+Call}} ()
+\begin{DoxyCompactList}\small\item\em Defines what an enemy does in case one enemy triggers an alert. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEnemy_ad55ee71b5a8c23fbd00b3c368b90cc64}{update}} ()
+\begin{DoxyCompactList}\small\item\em pops the next movement from the movement queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEnemy_a564b27969f812d1f057f58288257c783}\label{classEnemy_a564b27969f812d1f057f58288257c783}} 
+class {\bfseries Level}
+\item 
+\mbox{\Hypertarget{classEnemy_a1a3cbad03f96f450882d6e23c79483f1}\label{classEnemy_a1a3cbad03f96f450882d6e23c79483f1}} 
+class {\bfseries Genetic\+Lab}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representation of enemy game objects. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnemy_a9a5f469da18091f89127342b72be515d}\label{classEnemy_a9a5f469da18091f89127342b72be515d}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{py,  }\item[{int}]{px,  }\item[{std\+::string \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classEnemy}{Enemy}} object based on the YX coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of the game object in the game engine \\
+\hline
+{\em py} & y coordinate of enemy \\
+\hline
+{\em px} & x coordinate of enemy \\
+\hline
+{\em type} & string containing an Enemy\+Type value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_ad91aa63daffbdac9ef087c501b83fafb}\label{classEnemy_ad91aa63daffbdac9ef087c501b83fafb}} 
+\index{Enemy@{Enemy}!activate@{activate}}
+\index{activate@{activate}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily void Enemy\+::activate (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLevel}{Level}} $>$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Generates initial normal path pathfinding in most enemies, sets initial state for all enemies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEnemy_a4e03dc09be2856e71278abcdd5ca5289}\label{classEnemy_a4e03dc09be2856e71278abcdd5ca5289}} 
+\index{Enemy@{Enemy}!enemyPos@{enemyPos}}
+\index{enemyPos@{enemyPos}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{enemyPos()}{enemyPos()}}
+{\footnotesize\ttfamily Pair Enemy\+::enemy\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns enemy\+Position as a X,Y $<$int,int$>$ pair 
+
+\begin{DoxyReturn}{Returns}
+Pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_abb68708af5f493bee8516d1dce35797e}\label{classEnemy_abb68708af5f493bee8516d1dce35797e}} 
+\index{Enemy@{Enemy}!getDamage@{getDamage}}
+\index{getDamage@{getDamage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getDamage()}{getDamage()}}
+{\footnotesize\ttfamily int Enemy\+::get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Damage objectgets how many times an spectrum was able to hit the player. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_ae5b7462bd7f641dee354c3c1188c97ca}\label{classEnemy_ae5b7462bd7f641dee354c3c1188c97ca}} 
+\index{Enemy@{Enemy}!getEnemyType@{getEnemyType}}
+\index{getEnemyType@{getEnemyType}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getEnemyType()}{getEnemyType()}}
+{\footnotesize\ttfamily Enemy\+Type Enemy\+::get\+Enemy\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \mbox{\hyperlink{classEnemy}{Enemy}} Type. 
+
+\begin{DoxyReturn}{Returns}
+Enemy\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_a9c9e30284ccc422a168449919c26764b}\label{classEnemy_a9c9e30284ccc422a168449919c26764b}} 
+\index{Enemy@{Enemy}!groupCall@{groupCall}}
+\index{groupCall@{groupCall}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{groupCall()}{groupCall()}}
+{\footnotesize\ttfamily void Enemy\+::group\+Call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Defines what an enemy does in case one enemy triggers an alert. 
+
+\mbox{\Hypertarget{classEnemy_a8d68264e2eddf8b575b3c10470a46058}\label{classEnemy_a8d68264e2eddf8b575b3c10470a46058}} 
+\index{Enemy@{Enemy}!playerInRange@{playerInRange}}
+\index{playerInRange@{playerInRange}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{playerInRange()}{playerInRange()}}
+{\footnotesize\ttfamily bool Enemy\+::player\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+checks if the player is in the visibility range of the enemy 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_ac6dde0489edaf11814f9c0b119ca3356}\label{classEnemy_ac6dde0489edaf11814f9c0b119ca3356}} 
+\index{Enemy@{Enemy}!playerIsSafe@{playerIsSafe}}
+\index{playerIsSafe@{playerIsSafe}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{playerIsSafe()}{playerIsSafe()}}
+{\footnotesize\ttfamily bool Enemy\+::player\+Is\+Safe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+check if player is in a bolcked location 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_a15f1b668ae0f2c4b44686064ff86c5e5}\label{classEnemy_a15f1b668ae0f2c4b44686064ff86c5e5}} 
+\index{Enemy@{Enemy}!refreshState@{refreshState}}
+\index{refreshState@{refreshState}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{refreshState()}{refreshState()}}
+{\footnotesize\ttfamily void Enemy\+::refresh\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+enemy will check again if the current conditions remain the same, or they need to be adjusted 
+
+\mbox{\Hypertarget{classEnemy_aad73749fc21871acb6dd6da69e9bfc11}\label{classEnemy_aad73749fc21871acb6dd6da69e9bfc11}} 
+\index{Enemy@{Enemy}!setChasing@{setChasing}}
+\index{setChasing@{setChasing}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setChasing()}{setChasing()}}
+{\footnotesize\ttfamily void Enemy\+::set\+Chasing (\begin{DoxyParamCaption}\item[{bool}]{chase }\end{DoxyParamCaption})}
+
+
+
+Flags enemy in chasing state, increased speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chase} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEnemy_ad55ee71b5a8c23fbd00b3c368b90cc64}\label{classEnemy_ad55ee71b5a8c23fbd00b3c368b90cc64}} 
+\index{Enemy@{Enemy}!update@{update}}
+\index{update@{update}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Enemy\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pops the next movement from the movement queue 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/Enemy.\+hpp\item 
+Server/src/Enemy.\+cpp\end{DoxyCompactItemize}

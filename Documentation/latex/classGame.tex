@@ -1,0 +1,69 @@
+\hypertarget{classGame}{}\doxysection{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGame_ab3b9b2714b8a0edc0392b3997509a73b}{start\+Level}} (std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Loads level information based on what-\/s send by the client. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGame_aa4161ce75ba29e64ec4af7e97499a4fe}{get\+Response}} (std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Get the json instructions as a stringified json. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classGame_a17748fee3fd4237f837c29294da93ad0}{random\+Int}} (int lower\+Limit, int upper\+Limit)
+\begin{DoxyCompactList}\small\item\em generates a random Integer between the given limits \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_aa4161ce75ba29e64ec4af7e97499a4fe}\label{classGame_aa4161ce75ba29e64ec4af7e97499a4fe}} 
+\index{Game@{Game}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getResponse()}{getResponse()}}
+{\footnotesize\ttfamily std\+::string Game\+::get\+Response (\begin{DoxyParamCaption}\item[{std\+::string \&}]{action }\end{DoxyParamCaption})}
+
+
+
+Get the json instructions as a stringified json. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string request to be handled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_a17748fee3fd4237f837c29294da93ad0}\label{classGame_a17748fee3fd4237f837c29294da93ad0}} 
+\index{Game@{Game}!randomInt@{randomInt}}
+\index{randomInt@{randomInt}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{randomInt()}{randomInt()}}
+{\footnotesize\ttfamily int Game\+::random\+Int (\begin{DoxyParamCaption}\item[{int}]{lower\+Limit,  }\item[{int}]{upper\+Limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+generates a random Integer between the given limits 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower\+Limit} & minimal value \\
+\hline
+{\em upper\+Limit} & maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int random value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_ab3b9b2714b8a0edc0392b3997509a73b}\label{classGame_ab3b9b2714b8a0edc0392b3997509a73b}} 
+\index{Game@{Game}!startLevel@{startLevel}}
+\index{startLevel@{startLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{startLevel()}{startLevel()}}
+{\footnotesize\ttfamily std\+::string Game\+::start\+Level (\begin{DoxyParamCaption}\item[{std\+::string \&}]{level\+Data }\end{DoxyParamCaption})}
+
+
+
+Loads level information based on what-\/s send by the client. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/Game.\+hpp\item 
+Server/src/Game.\+cpp\end{DoxyCompactItemize}

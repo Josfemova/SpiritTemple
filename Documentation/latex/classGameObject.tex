@@ -1,0 +1,154 @@
+\hypertarget{classGameObject}{}\doxysection{Game\+Object Class Reference}
+\label{classGameObject}\index{GameObject@{GameObject}}
+
+
+general class to represent game objects  
+
+
+
+
+{\ttfamily \#include $<$Game\+Object.\+hpp$>$}
+
+Inheritance diagram for Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameObject}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameObject_a49f0fc91c3048ec583044e7a1b9c2518}{Game\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classGame}{Game}} Object object. \end{DoxyCompactList}\item 
+G\+O\+Type \mbox{\hyperlink{classGameObject_a4ca48319b74435942017ace670cfcb44}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classGameObject}{Game\+Object}} type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject_aa7b0678bdbbbe1e9e4c83768fb5109d2}{Game\+Object}} (G\+O\+Type type, int id, int py, int px)
+\begin{DoxyCompactList}\small\item\em Initialize a new \mbox{\hyperlink{classGameObject}{Game\+Object}} with the given parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_a87383d4bc7d63107d8d3507249c8a4ec}\label{classGameObject_a87383d4bc7d63107d8d3507249c8a4ec}} 
+int {\bfseries getY} () const
+\item 
+void \mbox{\hyperlink{classGameObject_a6bef069784d0c14919ea8a47fab2841f}{setY}} (int value)
+\begin{DoxyCompactList}\small\item\em get the Y coordinate position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGameObject_a642a2dddae915a8155ee76d8ac7770f7}{getX}} () const
+\begin{DoxyCompactList}\small\item\em set the Y coordinate position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_a127f17f12beb49abe6c6ed2c50f5a495}{setX}} (int value)
+\begin{DoxyCompactList}\small\item\em get the X coordinate position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGameObject_accbb0d11a44cdd83c78e0ff50a82300e}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em get the ID of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+general class to represent game objects 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameObject_a49f0fc91c3048ec583044e7a1b9c2518}\label{classGameObject_a49f0fc91c3048ec583044e7a1b9c2518}} 
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classGame}{Game}} Object object. 
+
+\mbox{\Hypertarget{classGameObject_aa7b0678bdbbbe1e9e4c83768fb5109d2}\label{classGameObject_aa7b0678bdbbbe1e9e4c83768fb5109d2}} 
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{G\+O\+Type}]{type,  }\item[{int}]{id,  }\item[{int}]{py,  }\item[{int}]{px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Initialize a new \mbox{\hyperlink{classGameObject}{Game\+Object}} with the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \mbox{\hyperlink{classGame}{Game}} object type \\
+\hline
+{\em id} & if in the game engine \\
+\hline
+{\em py} & y coordinates of enemy \\
+\hline
+{\em px} & x coordinates of enemy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameObject_accbb0d11a44cdd83c78e0ff50a82300e}\label{classGameObject_accbb0d11a44cdd83c78e0ff50a82300e}} 
+\index{GameObject@{GameObject}!getID@{getID}}
+\index{getID@{getID}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Game\+Object\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the ID of the object 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a4ca48319b74435942017ace670cfcb44}\label{classGameObject_a4ca48319b74435942017ace670cfcb44}} 
+\index{GameObject@{GameObject}!getType@{getType}}
+\index{getType@{getType}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily G\+O\+Type Game\+Object\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \mbox{\hyperlink{classGameObject}{Game\+Object}} type. 
+
+\begin{DoxyReturn}{Returns}
+G\+O\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a642a2dddae915a8155ee76d8ac7770f7}\label{classGameObject_a642a2dddae915a8155ee76d8ac7770f7}} 
+\index{GameObject@{GameObject}!getX@{getX}}
+\index{getX@{getX}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Game\+Object\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+set the Y coordinate position 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a127f17f12beb49abe6c6ed2c50f5a495}\label{classGameObject_a127f17f12beb49abe6c6ed2c50f5a495}} 
+\index{GameObject@{GameObject}!setX@{setX}}
+\index{setX@{setX}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Game\+Object\+::setX (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+get the X coordinate position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_a6bef069784d0c14919ea8a47fab2841f}\label{classGameObject_a6bef069784d0c14919ea8a47fab2841f}} 
+\index{GameObject@{GameObject}!setY@{setY}}
+\index{setY@{setY}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Game\+Object\+::setY (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+get the Y coordinate position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/include/Game\+Object.\+hpp\item 
+Server/src/Game\+Object.\+cpp\end{DoxyCompactItemize}
