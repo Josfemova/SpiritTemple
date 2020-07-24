@@ -1,6 +1,10 @@
 #ifndef GAMESERVER_DIRECTION_HPP
 #define GAMESERVER_DIRECTION_HPP
 
+/**
+ * @brief Representation of the possible directional steps an entity can take
+ * 
+ */
 enum class Direction
 {
     NORTH,

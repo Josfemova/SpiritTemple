@@ -47,7 +47,7 @@ void Level::start(std::shared_ptr<Level> level)
         ce::debuglog("---------------------------");
 
     }
-    //ce::errorlog("pauser");
+    ce::errorlog("pauser");
 }
 void Level::finish()
 {
