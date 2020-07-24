@@ -152,22 +152,12 @@ void Level::triggerGroupCall(int id)
         }
     }
 }
-/**
- * @brief stores instructions in additional variables, clears instructions
- * 
- * @return json instructions generated during updates
- */
 json Level::getInstructions()
 {   
     json res = instructions;
     instructions = json::array();
     return res;
 }
-/**
- * @brief returns position of the player as a (Y, X) pair
- * 
- * @return Pair 
- */
 Pair Level::playerPos() const
 {
     return std::make_pair(playery, playerx);

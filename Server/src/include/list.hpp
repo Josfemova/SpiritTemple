@@ -131,9 +131,9 @@ namespace ce
     template <class T>
     list<T>::list(){};
     /**
-     * @brief Construct a new list<T>::list object
+     * @brief Construct a new list<T>::list object based on an initializer list
      * 
-     * @tparam T 
+     * @tparam T type
      * @param list 
      */
     template <class T>
@@ -144,6 +144,13 @@ namespace ce
             push_back(element);
         }
     }
+    /**
+     * @brief Construct a new list<T>::list initialize a list based on a number matrix
+     * 
+     * @tparam T 
+     * @param list 
+     * @param size 
+     */
     template <class T>
     list<T>::list(int *list, int size)
     {
@@ -152,6 +159,13 @@ namespace ce
             push_back(list[i]);
         }
     }
+    /**
+     * @brief Construct a new list<T>::list with a default value given up to size
+     * 
+     * @tparam T 
+     * @param defaultVal 
+     * @param size 
+     */
     template <class T>
     list<T>::list(T defaultVal, int size)
     {
@@ -161,7 +175,7 @@ namespace ce
         }
     }
     /**
-     * @brief 
+     * @brief gets element at index by reference
      * 
      * @tparam T 
      * @param index 
@@ -184,7 +198,7 @@ namespace ce
         return it->data;
     }
     /**
-     * @brief 
+     * @brief gets element at index by reference
      * 
      * @tparam T 
      * @param index 
@@ -196,7 +210,7 @@ namespace ce
         return at(index);
     }
     /**
-     * @brief 
+     * @brief returns first element data
      * 
      * @tparam T 
      * @return T& 
@@ -207,7 +221,7 @@ namespace ce
         return first->data;
     }
     /**
-     * @brief 
+     * @brief returns las element data
      * 
      * @tparam T 
      * @return T& 
@@ -218,11 +232,11 @@ namespace ce
         return last->data;
     }
     /**
-     * @brief 
+     * @brief returns is the list has elements or not
      * 
      * @tparam T 
-     * @return true 
-     * @return false 
+     * @return true list has no elements
+     * @return false list has at least one element
      */
     template <class T>
     bool list<T>::empty()
@@ -230,12 +244,12 @@ namespace ce
         return (first == nullptr);
     }
     /**
-     * @brief 
+     * @brief checks if given data is stored in one of the list nodes
      * 
-     * @tparam T 
-     * @param data 
-     * @return true 
-     * @return false 
+     * @tparam T type
+     * @param data data to look for
+     * @return true list contains data
+     * @return false list does not contain the data
      */
     template <class T>
     bool list<T>::contains(T data) const
@@ -252,10 +266,10 @@ namespace ce
         return false;
     }
     /**
-     * @brief 
+     * @brief gets the size of the list (amount of elements stored)
      * 
-     * @tparam T 
-     * @return int 
+     * @tparam T type
+     * @return int size of list
      */
     template <class T>
     int list<T>::size() const
@@ -270,6 +284,13 @@ namespace ce
         return x;
     }
     //modifiers
+
+    /**
+     * @brief makes the list an empty list
+     * 
+     * @tparam T 
+     * @return int error value
+     */
     template <class T>
     int list<T>::clear()
     {
@@ -278,12 +299,12 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief inserts the data at the given position, pushed data to the end if the index overflows
      * 
-     * @tparam T 
-     * @param data 
-     * @param index 
-     * @return int 
+     * @tparam T type
+     * @param data data that is to be inserted
+     * @param index prefered insertion index
+     * @return int error checking
      */
     template <class T>
     int list<T>::insert(T data, int index)
@@ -316,11 +337,11 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief erases the element and the given index
      * 
-     * @tparam T 
-     * @param index 
-     * @return int 
+     * @tparam T type
+     * @param index index to erase
+     * @return int 0 if not error found, -1 if an error was found
      */
     template <class T>
     int list<T>::erase(int index)
@@ -350,11 +371,11 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief pushes element to the end of the list
      * 
-     * @tparam T 
-     * @param data 
-     * @return int 
+     * @tparam T type
+     * @param data to be inserted
+     * @return int error code
      */
     template <class T>
     int list<T>::push_back(T data)
@@ -374,11 +395,11 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief pushes element to the beginning of the list
      * 
-     * @tparam T 
-     * @param data 
-     * @return int 
+     * @tparam T type
+     * @param data o be added
+     * @return int error code
      */
     template <class T>
     int list<T>::push_front(T data)
@@ -398,10 +419,10 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief erases last element and returns it's value
      * 
-     * @tparam T 
-     * @return T 
+     * @tparam T type
+     * @return T value stored in the erased node
      */
     template <class T>
     T list<T>::pop_back()
@@ -421,10 +442,10 @@ namespace ce
         return value;
     }
     /**
-     * @brief 
+     * @brief erases first element an returns it's value
      * 
-     * @tparam T 
-     * @return T 
+     * @tparam T type
+     * @return T value of erased node
      */
     template <class T>
     T list<T>::pop_front()
@@ -443,11 +464,11 @@ namespace ce
         return value;
     }
     /**
-     * @brief 
+     * @brief swaps the information betweeen to indexes
      * 
-     * @tparam T 
-     * @param indexA 
-     * @param indexB 
+     * @tparam T type
+     * @param indexA index to be swapped for index B
+     * @param indexB index to be swapped with indexA
      * @return int 
      */
     template <class T>
@@ -461,10 +482,11 @@ namespace ce
         return 0;
     }
     /**
-     * @brief 
+     * @brief gets list as an string value by sugin an stringstream
+     * some data types might not be able to be printed this way
      * 
-     * @tparam T 
-     * @return std::string 
+     * @tparam T type
+     * @return std::string list as a string 
      */
     template <class T>
     std::string list<T>::toString()
@@ -485,6 +507,15 @@ namespace ce
         stringForm += ']';
         return stringForm;
     }
+    /** 
+     * @brief overload comparison operator to be able to check if two lists contain the same values
+     * 
+     * @tparam T type
+     * @param x list at the left
+     * @param y list at the right
+     * @return true both contain the same values
+     * @return false both contain different values
+     */
     template <class T>
     bool operator==(list<T> &x, list<T> &y)
     {
@@ -505,6 +536,13 @@ namespace ce
         }
         return true;
     }
+    /**
+     * @brief gets the reversed version of a given list
+     * 
+     * @tparam T type
+     * @param toInvert list to reverse  
+     * @return list<T> 
+     */
     template<class T>
     list<T> list<T>::getInverse(list<T> &toInvert){
         list<T> inverted;
