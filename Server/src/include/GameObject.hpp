@@ -4,6 +4,11 @@
 #include <string>
 #include "GOType.hpp"
 
+
+/**
+ * @brief general class to represent game objects
+ * 
+ */
 class GameObject {
 private:
     GOType type;

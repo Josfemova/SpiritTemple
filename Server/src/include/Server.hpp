@@ -3,6 +3,10 @@
 #include "Game.hpp"
 #include <string>
 
+/**
+ * @brief in charge of giving the game engine the needed information to operate
+ * 
+ */
 class Server
 {
 private:
@@ -15,9 +19,26 @@ private:
     void listenClient();
     void loadLevel();
 public:
+    /**
+     * @brief Construct a new Server
+     * 
+     */
     Server();
+    /**
+     * @brief Construct a new Server with a given port
+     * 
+     * @param port 
+     */
     explicit Server(int port);
+    /**
+     * @brief stop request handling
+     * 
+     */
     void sleep();
+    /**
+     * @brief restart request handling
+     * 
+     */
     void wake();
 };
 
