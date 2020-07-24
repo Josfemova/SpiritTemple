@@ -31,8 +31,3 @@ int GameObject::getID() const
 {
     return id;
 }
-
-void GameObject::setID(int value)
-{
-    id = value;
-}
