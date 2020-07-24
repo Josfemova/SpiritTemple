@@ -39,11 +39,15 @@ public class EnemyContainer : MonoBehaviour
         if (change != Vector3.zero)
         {
             movement = change;
+            //transform.position = transform.position + change;
             orientationX = (int)change.x;
             orientationY = (int)change.y;
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
         }
 
+    }
+    public void teleport(int x, int y){
+        transform.position = new Vector3(x,y);
     }
 }

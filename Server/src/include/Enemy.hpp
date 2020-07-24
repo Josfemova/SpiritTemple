@@ -26,7 +26,8 @@ private:
     bool isChasing = false;
     bool isBacktracking = false;
     bool isTeleported = false;
-    Pair teleportation; //position from which enemy teleported
+    Pair teleportDest;
+    Pair teleportSrc; //position from which enemy teleported
     listDirections normalPath;
     listDirections breadcrumbs;
     listDirections chasePath;

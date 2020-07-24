@@ -80,7 +80,7 @@ bool Pathfinding::initialValidations(Pair src, Pair dest)
     }
 
     // Either the source or the destination is blocked
-    if(!isUnBlocked(src.first, src.second) || !isUnBlocked(dest.first, dest.second)){
+    if(!isUnBlocked(dest.first, dest.second)){ //!isUnBlocked(src.first, src.second) || 
         ce::log("\nSource or the destination is blocked");
         return false;
     }

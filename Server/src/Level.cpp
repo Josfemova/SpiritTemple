@@ -34,14 +34,20 @@ void Level::start(std::shared_ptr<Level> level)
     for (auto& enemy : enemies)
     {
         enemy.activate(level);
+        
+        ce::debuglog("---------------------------");
         for (auto x : enemy.normalPath)
         {
             auto y = MoveGenerator::directionToString(x);
             std::cout << y << " == ";
         }
-        std::cout << std::endl;
-        ce::debuglog(enemy.getID());
+        ce::debuglog("\n",enemy.getID());
+        Pathfinding astar(getSimpleMatrix());
+        auto demo = astar.AStarSearch(enemy.enemyPos(), playerPos()); 
+        ce::debuglog("---------------------------");
+
     }
+    //ce::errorlog("pauser");
 }
 void Level::finish()
 {
@@ -141,7 +147,6 @@ void Level::triggerGroupCall(int id)
         {
             if (enemy.getID() != id)
             {
-                enemy.setChasing(true);
                 enemy.groupCall();
             }
         }

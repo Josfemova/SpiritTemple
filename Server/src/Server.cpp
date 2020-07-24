@@ -91,7 +91,7 @@ void Server::listenClient()
         {
             sendMsg("{\"commands\":[{\"cmd\":\"trash-info\"}]}");
         }
-        ce::debuglog("tick -----------------------------------------------");
+        //ce::debuglog("tick -----------------------------------------------");
     }
 }
 //

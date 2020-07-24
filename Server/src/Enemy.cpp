@@ -53,23 +53,28 @@ bool Enemy::playerIsSafe() const
 {
     gmatrix state = parent->getSimpleMatrix();
     Pair pos = parent->playerPos();
-    if(state[pos.second][pos.first]==0){
+    if (state[pos.first][pos.second] == 0)
+    {
         return true;
-    }else{
+    }
+    else
+    {
         return false;
     }
-
 }
-bool Enemy::playerInRange() const{
+bool Enemy::playerInRange() const
+{
     Pair player = parent->playerPos();
     int deltay = abs(player.first - getY());
     int deltax = abs(player.second - getX());
-    if(deltax<visibility_radius && deltay < visibility_radius){
+    if (deltax < visibility_radius && deltay < visibility_radius)
+    {
         return true;
-    }else{
+    }
+    else
+    {
         return false;
     }
-
 }
 EnemyType Enemy::getEnemyType()
 {
@@ -104,22 +109,22 @@ void Enemy::refreshState()
     // Check vision range and player position...
 
     // Chuchu always chase the player even is inside the safe zone, this enemy is harmless
-    
+
     if (enemyType == EnemyType::Chuchu)
     {
         isChasing = true;
         //chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
-        gmatrix& test = parent->getSimpleMatrix();
+        gmatrix &test = parent->getSimpleMatrix();
         chasePath = MoveGenerator::getRoute(test, getY(), getX(), parent->playerPos(), RouteType::LineSight);
     }
-    /*
+
     // SpEye doesn't move but calls the other specters
-    if (playerInRange() && enemyType == EnemyType::SpEye)
+    /*if (playerInRange() && enemyType == EnemyType::SpEye)
     {
         ce::debuglog("spEYe");
         parent->triggerGroupCall(getID());
     }
-    
+    /*
     if (playerInRange() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
     {
         ce::debuglog("Astar");
@@ -127,16 +132,34 @@ void Enemy::refreshState()
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
         parent->triggerGroupCall(getID());
     }
-    
-    if (playerIsSafe() && !breadcrumbs.empty())
+
+    if (playerIsSafe())
     {
-        ce::debuglog("breadcrumbs");
-        isChasing = false;
-        isBacktracking = true;
-        chasePath.clear();
+        if (isTeleported)
+        {
+            setX(teleportSrc.second);
+            setY(teleportSrc.first);
+            json instruction = {
+                {"cmd", "teleport-enemy"},
+                {"target", getID()},
+                {"valx", teleportSrc.second},
+                {"valy", teleportSrc.first}};
+            parent->addInstruction(instruction);
+            isTeleported = false;
+            breadcrumbs.clear();
+            isChasing = false;
+            isBacktracking = false;
+        }
+        else if (!breadcrumbs.empty())
+        {
+            ce::debuglog("breadcrumbs");
+            isChasing = false;
+            isBacktracking = true;
+            chasePath.clear();
+        }
     }
     
-    if (!playerInRange() && !playerIsSafe() && breadcrumbs.empty())
+    if (!playerInRange() && breadcrumbs.empty())
     {
         isChasing = false;
         isBacktracking = false;
@@ -145,12 +168,23 @@ void Enemy::refreshState()
 
 void Enemy::groupCall()
 {
-    Pathfinding pathfinding(parent->getSimpleMatrix());
+    /*Pathfinding pathfinding(parent->getSimpleMatrix());
 
     // Teleport SpBlue
+
     if (enemyType == EnemyType::SpBlue && !isTeleported)
     {
-        teleportation = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
+        setChasing(true);
+        teleportSrc = std::make_pair(getY(), getX());
+        teleportDest = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
+        setX(teleportDest.second);
+        setY(teleportDest.first);
+        json instruction = {
+            {"cmd", "teleport-enemy"},
+            {"target", getID()},
+            {"valx", teleportDest.second},
+            {"valy", teleportDest.first}};
+        parent->addInstruction(instruction);
         isTeleported = true;
     }
 
@@ -163,16 +197,17 @@ void Enemy::groupCall()
     if (enemyType == EnemyType::SpBlue && isTeleported)
     {
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
-    }
+    }*/
 }
 
 void Enemy::update()
 {
     refreshState();
-    frameCount = frameCount+1;
+
+    frameCount = frameCount + 1;
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
-    bool canMove  = (frameCount % route_velocity == 0);
+    bool canMove = (frameCount % route_velocity == 0);
     if (enemyType == EnemyType::SpEye || (!canChase && !canMove))
     {
         return;
@@ -181,7 +216,8 @@ void Enemy::update()
     {
         //chasing player
         frameCount = 1;
-        if(!chasePath.empty()){
+        if (!chasePath.empty())
+        {
             breadcrumbs.push_back(chasePath.front());
             dir = MoveGenerator::directionToString(chasePath.pop_front());
         }
@@ -230,7 +266,7 @@ void Enemy::update()
     json instruction = {
         {"cmd", "move-enemy"},
         {"target", getID()},
-        {"valx",delta.second},
-        {"valy",delta.first}};
+        {"valx", delta.second},
+        {"valy", delta.first}};
     parent->addInstruction(instruction);
 }

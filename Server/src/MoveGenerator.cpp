@@ -2,6 +2,11 @@
 #include "include/Game.hpp"
 #include <utility>
 
+std::string yxPair::tostring()
+{
+    return "(" + std::to_string(y) + "," + std::to_string(x) + "}";
+}
+
 Pair MoveGenerator::teleport(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos)
 {
     MoveGenerator::pathfinding = new Pathfinding(std::move(matrix));
@@ -33,9 +38,7 @@ listDirections MoveGenerator::Astar(Pair enemyPos, Pair playerPos)
 
 listDirections MoveGenerator::LineSight(int enemyY, int enemyX, int playerY, int playerX, gmatrix &state)
 {
-
-    ce::debuglog("calc bresenham");
-    ce::list<Pair> toValidate = bresenhamLine(enemyY, enemyX, playerY, playerX);
+    ce::list<yxPair> toValidate = bresenhamLine(enemyY, enemyX, playerY, playerX);
 
     int size = toValidate.size();
     int validSize = 0;
@@ -44,19 +47,17 @@ listDirections MoveGenerator::LineSight(int enemyY, int enemyX, int playerY, int
     //cleaning invalid nodes
     while (valid && validSize != (size))
     {
-        Pair p = toValidate[validSize];
-        if (state[p.first][p.second] == 0)
+        yxPair p = toValidate[validSize];
+        if (state[p.y][p.x] == 0)
         {
             valid = false;
-        }else{
+        }
+        else
+        {
             validSize += 1;
-            ce::debuglog("valid size is =", validSize);
         }
     }
-
-    ce::debuglog("post validation");
     listDirections result;
-
     if (toValidate.empty() || validSize == 0)
         return listDirections{Direction::STALL};
     //return listDirections{Direction::STALL};
@@ -66,40 +67,37 @@ listDirections MoveGenerator::LineSight(int enemyY, int enemyX, int playerY, int
     }
     //cleaning finished
 
-    ce::debuglog("before the pushback");
     int currentPosY = enemyY;
     int currentPosX = enemyX;
 
     for (auto &coord : toValidate)
     {
-        result.push_back(getDirectionValue(coord.second - currentPosX, coord.first - currentPosY));
-        currentPosX = coord.second;
-        currentPosY = coord.first;
+        result.push_back(getDirectionValue(coord.x - currentPosX, coord.y - currentPosY));
+        currentPosX = coord.x;
+        currentPosY = coord.y;
     }
     return result;
     //return MoveGenerator::pathfinding->LineSight(enemyPos, playerPos);
 }
-ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY, int destX)
+ce::list<yxPair> MoveGenerator::bresenhamLine(int originY, int originX, int destY, int destX)
 {
-    ce::list<std::pair<int, int>> coords;
+    ce::list<yxPair> coords;
     bool inverted = false;
     int dx = destX - originX; //delta X
     int dy = destY - originY; //delta Y
 
     if (dx == 0 && dy == 0)
     {
-        ce::debuglog("calc bresenham: pair 0,0");
-        coords.push_back(std::make_pair(0, 0));
+        coords.push_back({0,0});
     }
 
     else if (dx == 0)
     {
-        ce::debuglog("calc bresenham: inc dec");
         //simple lambda to reduce amount of if statements
         auto inc_dec = (dy < 0) ? [](int y) { return y - 1; } : [](int y) { return y + 1; };
         while (originY != destY)
         {
-            coords.push_back(std::make_pair(originY, originX));
+            coords.push_back({originY, originX});
             originY = inc_dec(originY);
         }
     }
@@ -109,7 +107,7 @@ ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY,
         auto inc_dec = (dx < 0) ? [](int x) { return x - 1; } : [](int x) { return x + 1; };
         while (originX != destX)
         {
-            coords.push_back(std::make_pair(originY, originX));
+            coords.push_back({originY, originX});
             originX = inc_dec(originX);
         }
     }
@@ -135,7 +133,7 @@ ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY,
             }
             for (int x = originX; x < destX; x++)
             {
-                coords.push_back(std::make_pair(y, x));
+                coords.push_back({y, x});
                 offset += delta;
                 if (offset >= threshold)
                 {
@@ -159,7 +157,7 @@ ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY,
             }
             for (int y = originY; y < destY; y++)
             {
-                coords.push_back(std::make_pair(y, x));
+                coords.push_back({y, x});
                 offset += delta;
                 if (offset >= threshold)
                 {
@@ -169,22 +167,19 @@ ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY,
             }
         }
     }
-    ce::debuglog("calc bresenham: empty check");
     if (coords.size() <= 1)
     {
-        return ce::list<Pair>{std::make_pair(0, 0)};
+        return ce::list<yxPair>{{0,0}};
     }
     if (inverted)
     {
         coords.pop_front();
-        ce::debuglog("coords getting inverted");
-        coords = ce::list<Pair>::getInverse(coords);
+        coords = ce::list<yxPair>::getInverse(coords);
     }
     else
     {
         coords.pop_front();
     }
-    ce::debuglog(coords[0].first);
     return coords;
 }
 listDirections MoveGenerator::BreadCrumbing(Pair enemyPos, Pair playerPos)
@@ -219,6 +214,7 @@ listDirections MoveGenerator::randomPathGenerator(int size, int x, int y, gmatri
     }
     return route;
 }
+
 //delta values are XY Pairs
 Pair MoveGenerator::getDeltaValues(std::string direction)
 {

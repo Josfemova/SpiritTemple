@@ -32,7 +32,7 @@ health = number that change the number of hearts,
  increase or decrease hearts
 
 */
-    void heartsPlayer(int numOfHearts, int health){
+    public void heartsPlayer(int numOfHearts, int health){
 
         for(int i = 0; i < hearts.Length; i++){
             if(i < health){

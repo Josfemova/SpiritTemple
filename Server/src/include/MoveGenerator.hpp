@@ -4,6 +4,12 @@
 #include "Pathfinding.hpp"
 #include "list.hpp"
 #include "Direction.hpp"
+struct yxPair
+{
+    int y;
+    int x;
+    std::string tostring();
+};
 class MoveGenerator{
 public:
     static Pair teleport(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos);
@@ -29,7 +35,7 @@ private:
      * @param destY 
      * @return ce::list<Pair> YX coordinate pair list
      */
-    static ce::list<Pair> bresenhamLine(int originY, int originX,int destX ,int destY);
+    static ce::list<yxPair> bresenhamLine(int originY, int originX,int destX ,int destY);
     static listDirections LineSight(int enemyY,int enemyX, int playerY, int playerX, gmatrix& state);
     static listDirections BreadCrumbing(Pair enemyPos, Pair playerPos);
     static listDirections Backtracking(Pair enemyPos, Pair playerPos);
