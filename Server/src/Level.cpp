@@ -47,7 +47,7 @@ void Level::finish()
 {
     //Do something
 }
-gmatrix Level::getSimpleMatrix(){
+gmatrix& Level::getSimpleMatrix(){
     return state;
 }
 

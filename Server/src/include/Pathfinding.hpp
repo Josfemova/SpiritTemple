@@ -1,12 +1,11 @@
 #ifndef SPIRITTEMPLE_PATHFINDING_HPP
 #define SPIRITTEMPLE_PATHFINDING_HPP
 
-#include <bits/stdc++.h>
+#include <set>
 #include "Direction.hpp"
 #include "RouteType.hpp"
 #include "utilities.hpp"
 #include "list.hpp"
-#include <random>
 
 typedef std::pair<int, int> Pair;
 typedef std::pair<double, std::pair<int, int>> pPair;
@@ -154,7 +153,6 @@ public:
      */
     Pair teleportEnemy(Pair src, Pair dest);
 
-    listDirections RandomPath(Pair src, Pair dest, int size);
     void adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair &dest);
     static void addNode(adjacentNodes &adjNodes, Pair &src, Pair &pair, Pair &dest);
     static Pair randomNode(adjacentNodes &adjNodes);
@@ -177,7 +175,7 @@ public:
       * @param dest
       * @return
       */
-    listDirections LineSight(Pair src, Pair dest);
+    //listDirections LineSight(Pair src, Pair dest);
 
     /**
       * @brief find the best adjacent node

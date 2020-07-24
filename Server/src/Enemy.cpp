@@ -108,9 +108,12 @@ void Enemy::refreshState()
     if (enemyType == EnemyType::Chuchu)
     {
         isChasing = true;
-        chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
+        //chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
+        gmatrix& test = parent->getSimpleMatrix();
+        ce::debuglog("matrix is empty=",test.empty());
+        chasePath = MoveGenerator::getRoute(test, getY(), getX(), parent->playerPos(), RouteType::LineSight);
     }
-    
+    /*
     // SpEye doesn't move but calls the other specters
     if (playerInRange() && enemyType == EnemyType::SpEye)
     {
@@ -138,7 +141,7 @@ void Enemy::refreshState()
     {
         isChasing = false;
         isBacktracking = false;
-    }
+    }*/
 }
 
 void Enemy::groupCall()
@@ -180,8 +183,10 @@ void Enemy::update()
     {
         //chasing player
         frameCount = 1;
-        breadcrumbs.push_back(chasePath.front());
-        dir = MoveGenerator::directionToString(chasePath.pop_front());
+        if(!chasePath.empty()){
+            breadcrumbs.push_back(chasePath.front());
+            dir = MoveGenerator::directionToString(chasePath.pop_front());
+        }
     }
     else if (isBacktracking && canMove)
     {

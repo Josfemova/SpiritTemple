@@ -8,38 +8,71 @@ Pair MoveGenerator::teleport(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair
     return pathfinding->teleportEnemy(enemyPos, playerPos);
 }
 
-listDirections MoveGenerator::getRoute(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, RouteType type)
+listDirections MoveGenerator::getRoute(gmatrix& matrix,int enemyY, int enemyX, Pair playerPos, RouteType type)
 {
-    MoveGenerator::pathfinding = new Pathfinding(std::move(matrix));
+    ce::debuglog("before change =", matrix.empty());
+    MoveGenerator::pathfinding = new Pathfinding(matrix);
+    ce::debuglog("change worked =", matrix.empty());
+    std::make_pair(enemyY, enemyX);
     switch (type)
     {
     case RouteType::Astar:
-        return MoveGenerator::Astar(enemyPos, playerPos);
+        return MoveGenerator::Astar(std::make_pair(enemyY, enemyX), playerPos);
     case RouteType::BreadCrumbing:
-        return MoveGenerator::BreadCrumbing(enemyPos, playerPos);
+        return MoveGenerator::BreadCrumbing(std::make_pair(enemyY, enemyX), playerPos);
     case RouteType::Backtracking:
-        return MoveGenerator::Backtracking(enemyPos, playerPos);
+        return MoveGenerator::Backtracking(std::make_pair(enemyY, enemyX), playerPos);
     case RouteType::LineSight:
-        return MoveGenerator::LineSight(enemyPos, playerPos);
+        return MoveGenerator::LineSight(enemyY,enemyX,playerPos.first, playerPos.second,matrix);
     default:
         return listDirections();
     }
 }
-
-listDirections MoveGenerator::randomPath(ce::list<ce::list<int>> matrix, Pair enemyPos, Pair playerPos, int size)
-{
-    MoveGenerator::pathfinding = new Pathfinding(std::move(matrix));
-    return MoveGenerator::pathfinding->RandomPath(enemyPos, playerPos, size);
-}
-
 listDirections MoveGenerator::Astar(Pair enemyPos, Pair playerPos)
 {
     return MoveGenerator::pathfinding->AStarSearch(enemyPos, playerPos);
 }
 
-listDirections MoveGenerator::LineSight(Pair enemyPos, Pair playerPos)
+listDirections MoveGenerator::LineSight(int enemyY,int enemyX, int playerY, int playerX, gmatrix& state)
 {
-    return MoveGenerator::pathfinding->LineSight(enemyPos, playerPos);
+
+    
+    ce::list<Pair> toValidate = bresenhamLine(enemyY, enemyX, playerY, playerX);
+    ce::debuglog("antes de validar");
+    int size = toValidate.size();
+    int validSize = 0;
+    bool valid = true;
+    //cleaning invalid nodes
+    for(auto x : toValidate){
+        std::cout << ("(" + std::to_string(x.first) + "," + std::to_string(x.second) + ")");
+    }
+    ce::debuglog("");
+    while(valid && validSize!=(size-1)){
+        Pair p = toValidate[validSize];
+        ce::debuglog(state.size(),"==",state.empty());
+        if(state[p.first][p.second] == 0){
+            valid = false;
+        }
+        validSize+=1;
+    }
+
+    ce::debuglog("al reventar nodos"); 
+    while(toValidate.size() != validSize){
+        toValidate.pop_back();
+    }
+    
+    //cleaning finished
+
+    listDirections result;
+    int currentPosY = enemyY;
+    int currentPosX = enemyX;
+    for(auto coord : toValidate){
+        result.push_back(getDirectionValue(coord.second-currentPosX,coord.first-currentPosY));
+        currentPosX = coord.second;
+        currentPosY = coord.first;
+    }
+    return result;
+    //return MoveGenerator::pathfinding->LineSight(enemyPos, playerPos);
 }
 ce::list<Pair> MoveGenerator::bresenhamLine(int originY, int originX, int destY, int destX)
 {

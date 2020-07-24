@@ -1,5 +1,8 @@
 #include "include/Pathfinding.hpp"
-
+#include <climits>
+#include <cfloat>
+#include <random>
+#include <stack>
 void Node::update(double FNew, double GNew, double HNew, int i, int j)
 {
     F = FNew;
@@ -151,28 +154,6 @@ Pair Pathfinding::teleportEnemy(Pair src, Pair dest)
     }
 }
 
-listDirections Pathfinding::RandomPath(Pair src, Pair dest, int size)
-{
-    listDirections path;
-    adjacentNodes pathNodes;
-    if(initialValidations(src, dest)){
-        pathNodes.push_back(src);
-        while(path.size() != size)
-        {
-            adjacentNodes closestNodes;
-            adjNodes(closestNodes, src, pathNodes.front(), dest);
-            Pair node = randomNode(closestNodes);
-            if(nodeValidations(node.first, node.second, dest)){
-                pathNodes.push_back(node);
-                Pair tempSrc = pathNodes.front();
-                Pair tempDest = pathNodes.back();
-                path.push_back(setMovement(tempSrc.first, tempSrc.second, tempDest.first, tempDest.second));
-                pathNodes.pop_front();
-            }
-        }
-    }
-    return path;
-}
 
 void Pathfinding::adjNodes(adjacentNodes &nodes, Pair &src, Pair &tempSrc, Pair &dest)
 {
@@ -438,7 +419,7 @@ void Pathfinding::setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &des
     }
 }
 
-listDirections Pathfinding::LineSight(Pair src, Pair dest)
+/*listDirections Pathfinding::LineSight(Pair src, Pair dest)
 {
     // Initial validations
     if(!initialValidations(src, dest)){
@@ -505,7 +486,7 @@ listDirections Pathfinding::LineSight(Pair src, Pair dest)
     
     return BresenhamLine;
 }
-
+*/
 Pair Pathfinding::bestAdjacentNode(int &py, int &px, Pair &dest)
 {
     std::set<pPair> adjNodes;

@@ -32,7 +32,7 @@ public:
     void finish();
     void start(std::shared_ptr<Level> level);
     void updateMatrix(bool printMatrix = false);
-    gmatrix getSimpleMatrix();
+    gmatrix& getSimpleMatrix();
     void manageEvent(json event);
     void triggerGroupCall(int id);
     json getInstructions();
