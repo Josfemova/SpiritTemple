@@ -18,7 +18,7 @@ public class CanvasContainer : MonoBehaviour
     public Sprite emptyHeart;
     void Start()
     {   //exaple
-        numOfHearts = 4;
+        numOfHearts = 5;
         health = 1;
         
 

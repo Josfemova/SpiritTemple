@@ -14,11 +14,20 @@ public sealed class Client
     private static readonly Client instance = new Client();
     private Socket serverConnection;
     public int health = 3; //registers lives across levels
+    /// <summary>
+    /// "public" constructor. returns nothing
+    /// </summary>
     static Client() { }
+    /// <summary>
+    /// private constructor of singleton
+    /// </summary>
     private Client()
     {
         tcpConnectionStart();
     }
+    /// <summary>
+    /// destructor releases socket connection
+    /// </summary>
     ~Client()
     {
         Debug.Log("releasing socket");
@@ -27,11 +36,17 @@ public sealed class Client
         serverConnection.Close();
 
     }
+    /// <summary>
+    /// Get instance of singleton client
+    /// </summary>
+    /// <value></value>
     public static Client Instance
     {
         get { return instance; }
     }
-
+    /// <summary>
+    /// operations to initilize a connection
+    /// </summary>
     private void tcpConnectionStart()
     {
 

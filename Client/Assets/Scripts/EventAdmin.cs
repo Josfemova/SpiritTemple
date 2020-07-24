@@ -19,6 +19,9 @@ public class EventAdmin : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 15;
     }
+    /// <summary>
+    /// gets initial data
+    /// </summary>
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,7 +33,9 @@ public class EventAdmin : MonoBehaviour
         items = GameObject.FindGameObjectsWithTag("Item");
         loadInServer();
     }
-    // Update is called once per frame
+    /// <summary>
+    /// checks if any event needs to be reported to the server
+    /// </summary>
     void Update()
     {
         JsonReq req = new JsonReq("no-action");
@@ -61,6 +66,12 @@ public class EventAdmin : MonoBehaviour
         }
         syncServer("event", JsonUtility.ToJson(req));
     }
+    /// <summary>
+    /// Checks if the given position collides with one of the positions of the GameOBject collection given
+    /// </summary>
+    /// <param name="comparePosition">current position</param>
+    /// <param name="collection">collection to compare against</param>
+    /// <returns>true if there is a collision, false otherwise</returns>
     private bool overlapsOne(Vector3Int comparePosition, GameObject[] collection)
     {
         Vector3Int objPos;
@@ -73,6 +84,9 @@ public class EventAdmin : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// gets called once per instantiation, loads client information in the server
+    /// </summary>
     private void loadInServer()
     {
         int lengthx = groundMap.size.x;
@@ -119,6 +133,11 @@ public class EventAdmin : MonoBehaviour
         string message = JsonUtility.ToJson(gameState, true);
         syncServer("loadLevel", message);
     }
+    /// <summary>
+    /// reports what happened in this frame to the server
+    /// </summary>
+    /// <param name="type">type of request</param>
+    /// <param name="message">json payload</param>
     void syncServer(string type, string message)
     {
         try
@@ -135,6 +154,10 @@ public class EventAdmin : MonoBehaviour
             Debug.Break();
         }
     }
+    /// <summary>
+    /// decodes json response given by the server
+    /// </summary>
+    /// <param name="req">json request sent by the server</param>
     private void executeServerCmd(JsonReq req)
     {
         Debug.Log(JsonUtility.ToJson(req));
@@ -161,7 +184,11 @@ public class EventAdmin : MonoBehaviour
                 break;
         }
     }
-
+    /// <summary>
+    /// Decodes a string direction into an usable Vector3Int
+    /// </summary>
+    /// <param name="dir"></param>
+    /// <returns></returns>
     private Vector3Int decodeDirection(string dir)
     {
         Vector3Int result = Vector3Int.zero;
@@ -198,6 +225,12 @@ public class EventAdmin : MonoBehaviour
         }
         return result;
     }
+    /// <summary>
+    /// Returns reference to script of a game object based on its instance ID
+    /// </summary>
+    /// <param name="id">instance id</param>
+    /// <param name="type">tag of the game object</param>
+    /// <returns></returns>
     private MonoBehaviour getEntityByID(int id, String type)
     {
         GameObject obj = null;

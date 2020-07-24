@@ -19,7 +19,9 @@ public class minimap : MonoBehaviour
             setPosition();  
         }
     }
-
+    /// <summary>
+    /// control minimap position
+    /// </summary>
     private void setPosition(){
         var newPos = target.position;
         newPos.y = transform.position.y;

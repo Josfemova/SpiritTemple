@@ -5,6 +5,9 @@ using System;
 
 public class CEList<T>
 {
+    /// <summary>
+    /// class to represent a list node
+    /// </summary>
     private class CENode
     {
         public CENode prev;
@@ -17,13 +20,16 @@ public class CEList<T>
             next = null;
         }
     }
-
     CENode first = null;
     CENode last = null;
     public CEList()
     {
 
     }
+    /// <summary>
+    /// Basic push operation
+    /// </summary>
+    /// <param name="data"></param>
     public void push(T data)
     {
         if (first == null)
@@ -38,6 +44,10 @@ public class CEList<T>
             last = x;
         }
     }
+    /// <summary>
+    /// Basic pop operation
+    /// </summary>
+    /// <returns></returns>
     public T pop()
     {
         T data = last.data;
@@ -52,10 +62,17 @@ public class CEList<T>
         }
         return data;
     }
+    /// <summary>
+    /// Clear the list
+    /// </summary>
     public void clear()
     {
         first = last = null;
     }
+    /// <summary>
+    /// Get list size
+    /// </summary>
+    /// <returns>size of list</returns>
     public int size()
     {
         CENode x = first;
@@ -67,6 +84,10 @@ public class CEList<T>
         }
         return cnt;
     }
+    /// <summary>
+    /// Get list represented as array
+    /// </summary>
+    /// <returns></returns>
     public T[] asArray()
     {
         int lenght = size();

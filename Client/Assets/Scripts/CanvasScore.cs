@@ -24,7 +24,10 @@ public class CanvasScore : MonoBehaviour
 //1 found hearts, 1 more live
    
     
-
+    /// <summary>
+    /// keeps track of player score
+    /// </summary>
+    /// <param name="score"></param>
     public void sumScore(int score){
         scoreText.text = "score"+ score;
     }

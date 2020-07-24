@@ -13,8 +13,9 @@ public class CameraMovement : MonoBehaviour
         
     }
 
-    // Update pasa cada frame
-    // Late Update pasa de forma tardía
+    /// <summary>
+    /// in charge of keeping camera looking for the player
+    /// </summary>
     void LateUpdate()
     {
     	if(transform.position != target.position)

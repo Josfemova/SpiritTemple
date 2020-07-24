@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// STruct to store representation of server commands
+/// </summary>
 [Serializable]
 struct ServerCmd
 {
@@ -11,6 +14,9 @@ struct ServerCmd
         instruction = cmd;
     }
 }
+/// <summary>
+/// struct to represent json client requests
+/// </summary>
 [Serializable]
 struct JsonReq
 {
@@ -30,6 +36,9 @@ struct JsonReq
         this.otherval = otherval;
     }
 }
+/// <summary>
+/// Struct to facilitate serialization from the server information
+/// </summary>
 [Serializable]
 struct JsonReqArr{
     public JsonReq[] commands;
@@ -37,6 +46,9 @@ struct JsonReqArr{
         this.commands = commands;
     }
 }
+/// <summary>
+/// struct to store player info to be sent to the server as json
+/// </summary>
 [Serializable]
 struct PlayerInfo
 {
@@ -50,6 +62,9 @@ struct PlayerInfo
         this.gridy = gridy;
     }
 }
+/// <summary>
+/// Struct for Item information serializtion
+/// </summary>
 [Serializable]
 struct Item
 {
@@ -66,6 +81,9 @@ struct Item
 
     }
 }
+/// <summary>
+/// Struct for enemy data json serialization
+/// </summary>
 [Serializable]
 struct Enemy
 {
@@ -82,6 +100,9 @@ struct Enemy
 
     }
 }
+/// <summary>
+/// simple struct to indicate which tiles are especial tiles
+/// </summary>
 [Serializable]
 struct EspecialTile
 {
@@ -96,6 +117,9 @@ struct EspecialTile
 
     }
 }
+/// <summary>
+/// struct that represents initial payload to be delivered to the server on level start
+/// </summary>
 [Serializable]
 struct InitialData
 {

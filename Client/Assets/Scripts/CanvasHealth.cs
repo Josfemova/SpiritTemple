@@ -16,7 +16,7 @@ public class CanvasHealth : MonoBehaviour
     public Sprite emptyHeart;
     void Start()
     {   //exaple
-        numOfHearts = 4;
+        numOfHearts = 5;
         health = 1;
 
     }
@@ -32,6 +32,11 @@ health = number that change the number of hearts,
  increase or decrease hearts
 
 */
+    /// <summary>
+    /// Displays health information on the screen
+    /// </summary>
+    /// <param name="numOfHearts">number of heart sprites</param>
+    /// <param name="health">amount of filled up hearts</param>
     public void heartsPlayer(int numOfHearts, int health){
 
         for(int i = 0; i < hearts.Length; i++){

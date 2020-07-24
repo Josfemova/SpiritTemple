@@ -13,6 +13,9 @@ public class EnemyContainer : MonoBehaviour
     private Vector3 movement;
     private int moveCnt = 0;
     
+    /// <summary>
+    /// In charge of smoothly moving the enemy
+    /// </summary>
     void Update()
     {
         if (moveCnt == 3)
@@ -47,6 +50,11 @@ public class EnemyContainer : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// teleports enemy to given position
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
     public void teleport(int x, int y){
         transform.position = new Vector3(x,y);
     }

@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     {
         transform.position = newPos;
     }
+    /// <summary>
+    /// handles player animations
+    /// </summary>
     void Update()
     {
         Vector3 change = Vector3.zero;
@@ -47,7 +50,10 @@ public class Player : MonoBehaviour
             animator.SetFloat("MoveY", change.y);
         }
     }
-
+    /// <summary>
+    /// utility timer for attack animations
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator attackAnimation()
     {
         animator.SetBool("attacking", true);
@@ -55,7 +61,10 @@ public class Player : MonoBehaviour
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(1);
     }
-
+    /// <summary>
+    /// utility timer for defense aimations
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator defendingAnimation()
     {
         Debug.Log("protecting");

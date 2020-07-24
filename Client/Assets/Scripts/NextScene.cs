@@ -14,8 +14,10 @@ public class NextScene : MonoBehaviour
         NextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
     }
-
-    // Update is called once per frame
+    /// <summary>
+    /// loads new scene on collision
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene(NextSceneLoad);
