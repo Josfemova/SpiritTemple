@@ -110,7 +110,6 @@ void Enemy::refreshState()
         isChasing = true;
         //chasePath = pathfinding.LineSight(enemyPos(), parent->playerPos());
         gmatrix& test = parent->getSimpleMatrix();
-        ce::debuglog("matrix is empty=",test.empty());
         chasePath = MoveGenerator::getRoute(test, getY(), getX(), parent->playerPos(), RouteType::LineSight);
     }
     /*
@@ -174,8 +173,7 @@ void Enemy::update()
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
     bool canMove  = (frameCount % route_velocity == 0);
-    if (enemyType == EnemyType::SpEye || enemyType == EnemyType::Chuchu
-    || (!canChase && !canMove))
+    if (enemyType == EnemyType::SpEye || (!canChase && !canMove))
     {
         return;
     }
