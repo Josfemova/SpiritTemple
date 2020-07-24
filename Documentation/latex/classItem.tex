@@ -1,5 +1,10 @@
-\hypertarget{classItem}{}\doxysection{Item Class Reference}
+\hypertarget{classItem}{}\doxysection{Item Struct Reference}
 \label{classItem}\index{Item@{Item}}
+
+
+Struct for \mbox{\hyperlink{classItem}{Item}} information serializtion  
+
+
 Inheritance diagram for Item\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,12 +16,35 @@ Inheritance diagram for Item\+:\begin{figure}[H]
 \item 
 \mbox{\Hypertarget{classItem_a6d1cd79b7969d32bb667a76ff4898dca}\label{classItem_a6d1cd79b7969d32bb667a76ff4898dca}} 
 {\bfseries Item} (Item\+Type type, int id, int px, int py)
+\item 
+\mbox{\Hypertarget{classItem_a0a9a12a760c9ed5708d5c5b3e54de4bd}\label{classItem_a0a9a12a760c9ed5708d5c5b3e54de4bd}} 
+{\bfseries Item} (int id, string type, int gridx, int gridy)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static Item\+Type \mbox{\hyperlink{classItem_a58a7c5ea052b60fcb8dec260757c72d8}{get\+Item\+Type}} (std\+::string value)
 \begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classItem}{Item}} Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classItem_a7367d5e88343ea58f022468bdc30b033}\label{classItem_a7367d5e88343ea58f022468bdc30b033}} 
+int {\bfseries ID}
+\item 
+\mbox{\Hypertarget{classItem_a5fddc3cf5f552ab8f5cceacaba430474}\label{classItem_a5fddc3cf5f552ab8f5cceacaba430474}} 
+string {\bfseries type}
+\item 
+\mbox{\Hypertarget{classItem_a5ea3814cb6f4c761203421ab174a3663}\label{classItem_a5ea3814cb6f4c761203421ab174a3663}} 
+int {\bfseries gridx}
+\item 
+\mbox{\Hypertarget{classItem_aa8e4d3956d84742e12462bdffa0abdc3}\label{classItem_aa8e4d3956d84742e12462bdffa0abdc3}} 
+int {\bfseries gridy}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct for \mbox{\hyperlink{classItem}{Item}} information serializtion 
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -40,7 +68,8 @@ Item\+Type
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 Server/src/include/Item.\+hpp\item 
+Client/\+Assets/\+Scripts/\+Custom\+Classes/Client\+Structs.\+cs\item 
 Server/src/Item.\+cpp\end{DoxyCompactItemize}

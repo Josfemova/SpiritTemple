@@ -1,4 +1,4 @@
-\hypertarget{classEnemy}{}\doxysection{Enemy Class Reference}
+\hypertarget{classEnemy}{}\doxysection{Enemy Struct Reference}
 \label{classEnemy}\index{Enemy@{Enemy}}
 
 
@@ -45,7 +45,25 @@ void \mbox{\hyperlink{classEnemy_a15f1b668ae0f2c4b44686064ff86c5e5}{refresh\+Sta
 void \mbox{\hyperlink{classEnemy_a9c9e30284ccc422a168449919c26764b}{group\+Call}} ()
 \begin{DoxyCompactList}\small\item\em Defines what an enemy does in case one enemy triggers an alert. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classEnemy_ad55ee71b5a8c23fbd00b3c368b90cc64}{update}} ()
-\begin{DoxyCompactList}\small\item\em pops the next movement from the movement queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em pops the next movement from the movement queue \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEnemy_a158307f9a82dd29d9be12694adb685f4}\label{classEnemy_a158307f9a82dd29d9be12694adb685f4}} 
+{\bfseries Enemy} (int id, string type, int gridx, int gridy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEnemy_a6513d3fceb282727e5b03fafa464285f}\label{classEnemy_a6513d3fceb282727e5b03fafa464285f}} 
+int {\bfseries ID}
+\item 
+\mbox{\Hypertarget{classEnemy_a8bf679a24769758249675b92ae50a6d3}\label{classEnemy_a8bf679a24769758249675b92ae50a6d3}} 
+string {\bfseries type}
+\item 
+\mbox{\Hypertarget{classEnemy_a418e1926bbc7cbf7e4ce232948940029}\label{classEnemy_a418e1926bbc7cbf7e4ce232948940029}} 
+int {\bfseries gridx}
+\item 
+\mbox{\Hypertarget{classEnemy_af0d833fea5557d5cc497e546234417d6}\label{classEnemy_af0d833fea5557d5cc497e546234417d6}} 
+int {\bfseries gridy}
+\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,7 +78,7 @@ class {\bfseries Genetic\+Lab}
 \doxysubsection{Detailed Description}
 Representation of enemy game objects. 
 
-
+Struct for enemy data json serialization
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classEnemy_a9a5f469da18091f89127342b72be515d}\label{classEnemy_a9a5f469da18091f89127342b72be515d}} 
@@ -218,7 +236,8 @@ pops the next movement from the movement queue
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 Server/src/include/Enemy.\+hpp\item 
+Client/\+Assets/\+Scripts/\+Custom\+Classes/Client\+Structs.\+cs\item 
 Server/src/Enemy.\+cpp\end{DoxyCompactItemize}

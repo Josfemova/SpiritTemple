@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Item Class Reference</title>
+<title>My Project: Item Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,11 +64,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classItem-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Item Class Reference</div>  </div>
+<div class="title">Item Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Struct for <a class="el" href="classItem.html" title="Struct for Item information serializtion">Item</a> information serializtion  
+ <a href="classItem.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Item:</div>
 <div class="dyncontent">
@@ -84,6 +88,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d1cd79b7969d32bb667a76ff4898dca"><td class="memItemLeft" align="right" valign="top"><a id="a6d1cd79b7969d32bb667a76ff4898dca"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Item</b> (ItemType type, int id, int px, int py)</td></tr>
 <tr class="separator:a6d1cd79b7969d32bb667a76ff4898dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9a12a760c9ed5708d5c5b3e54de4bd"><td class="memItemLeft" align="right" valign="top"><a id="a0a9a12a760c9ed5708d5c5b3e54de4bd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Item</b> (int id, string type, int gridx, int gridy)</td></tr>
+<tr class="separator:a0a9a12a760c9ed5708d5c5b3e54de4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGameObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGameObject.html">GameObject</a></td></tr>
 <tr class="memitem:a49f0fc91c3048ec583044e7a1b9c2518 inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a49f0fc91c3048ec583044e7a1b9c2518">GameObject</a> ()=default</td></tr>
 <tr class="memdesc:a49f0fc91c3048ec583044e7a1b9c2518 inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classGame.html">Game</a> Object object.  <a href="classGameObject.html#a49f0fc91c3048ec583044e7a1b9c2518">More...</a><br /></td></tr>
@@ -113,10 +120,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> () const</td>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a58a7c5ea052b60fcb8dec260757c72d8"><td class="memItemLeft" align="right" valign="top">static ItemType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a58a7c5ea052b60fcb8dec260757c72d8">getItemType</a> (std::string value)</td></tr>
-<tr class="memdesc:a58a7c5ea052b60fcb8dec260757c72d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classItem.html">Item</a> Type.  <a href="classItem.html#a58a7c5ea052b60fcb8dec260757c72d8">More...</a><br /></td></tr>
+<tr class="memdesc:a58a7c5ea052b60fcb8dec260757c72d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classItem.html" title="Struct for Item information serializtion">Item</a> Type.  <a href="classItem.html#a58a7c5ea052b60fcb8dec260757c72d8">More...</a><br /></td></tr>
 <tr class="separator:a58a7c5ea052b60fcb8dec260757c72d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a7367d5e88343ea58f022468bdc30b033"><td class="memItemLeft" align="right" valign="top"><a id="a7367d5e88343ea58f022468bdc30b033"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ID</b></td></tr>
+<tr class="separator:a7367d5e88343ea58f022468bdc30b033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fddc3cf5f552ab8f5cceacaba430474"><td class="memItemLeft" align="right" valign="top"><a id="a5fddc3cf5f552ab8f5cceacaba430474"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a5fddc3cf5f552ab8f5cceacaba430474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea3814cb6f4c761203421ab174a3663"><td class="memItemLeft" align="right" valign="top"><a id="a5ea3814cb6f4c761203421ab174a3663"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>gridx</b></td></tr>
+<tr class="separator:a5ea3814cb6f4c761203421ab174a3663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e4d3956d84742e12462bdffa0abdc3"><td class="memItemLeft" align="right" valign="top"><a id="aa8e4d3956d84742e12462bdffa0abdc3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>gridy</b></td></tr>
+<tr class="separator:aa8e4d3956d84742e12462bdffa0abdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Struct for <a class="el" href="classItem.html" title="Struct for Item information serializtion">Item</a> information serializtion </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a58a7c5ea052b60fcb8dec260757c72d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58a7c5ea052b60fcb8dec260757c72d8">&#9670;&nbsp;</a></span>getItemType()</h2>
 
@@ -141,7 +165,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classItem.html">Item</a> Type. </p>
+<p>Get the <a class="el" href="classItem.html" title="Struct for Item information serializtion">Item</a> Type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>string value from which to infer type </td></tr>
@@ -152,8 +176,9 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>Server/src/include/<a class="el" href="Item_8hpp_source.html">Item.hpp</a></li>
+<li>Client/Assets/Scripts/CustomClasses/ClientStructs.cs</li>
 <li>Server/src/Item.cpp</li>
 </ul>
 </div><!-- contents -->

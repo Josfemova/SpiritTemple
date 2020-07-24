@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['movegenerator_98',['MoveGenerator',['../classMoveGenerator.html',1,'']]]
+  ['jsonreq_131',['JsonReq',['../structJsonReq.html',1,'']]],
+  ['jsonreqarr_132',['JsonReqArr',['../structJsonReqArr.html',1,'']]]
 ];

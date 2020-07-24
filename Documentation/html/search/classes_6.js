@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pathfinding_100',['Pathfinding',['../classPathfinding.html',1,'']]]
+  ['minimap_141',['minimap',['../classminimap.html',1,'']]],
+  ['movegenerator_142',['MoveGenerator',['../classMoveGenerator.html',1,'']]]
 ];
