@@ -7,6 +7,3 @@ Client/Temp/
 Client/Logs/
 Client/Library/
 .idea
-.vscode/**
-.vscode
-tasks

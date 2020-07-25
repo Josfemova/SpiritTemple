@@ -9,6 +9,7 @@
 #include <memory>
 using json = nlohmann::json;
 class Level;
+
 /**
  * @brief Representation of enemy game objects
  * 

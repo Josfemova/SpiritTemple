@@ -203,7 +203,7 @@ void Enemy::groupCall()
 void Enemy::update()
 {
     refreshState();
-
+    
     frameCount = frameCount + 1;
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
