@@ -7,3 +7,5 @@ Client/Temp/
 Client/Logs/
 Client/Library/
 .idea
+Client/*.csproj
+Client/*.sln

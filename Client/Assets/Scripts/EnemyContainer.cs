@@ -18,7 +18,7 @@ public class EnemyContainer : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (moveCnt == 3)
+        /**if (moveCnt == 3)
         {
             movement = Vector3.zero;
             moveCnt = 0;
@@ -27,7 +27,7 @@ public class EnemyContainer : MonoBehaviour
         {
             transform.position = transform.position + movement / 3;
             moveCnt++;
-        }
+        }**/
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ public class EnemyContainer : MonoBehaviour
 
         if (change != Vector3.zero)
         {
-            movement = change;
-            //transform.position = transform.position + change;
+            //movement = change;
+            transform.position = transform.position + change;
             orientationX = (int)change.x;
             orientationY = (int)change.y;
             animator.SetFloat("MoveX", change.x);

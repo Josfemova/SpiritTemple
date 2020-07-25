@@ -52,7 +52,7 @@ ce::list<ce::list<int>> GeneticLab::randomValues(int size)
     std::random_device dev;
     std::mt19937 mt(dev());
     auto rng = [&mt]() {
-        std::uniform_int_distribution<int> randomGen(3, 10);
+        std::uniform_int_distribution<int> randomGen(5, 10);
         return randomGen(mt);
     };
 
@@ -84,7 +84,7 @@ list<list<int>> GeneticLab::geneticAlgorithm(list<list<int>> population)
         return fit;
     };
     auto mutate = [&, this](list<int> chromosome) { //only 0,1,2 are mutable characteristics
-        chromosome[randomInt(0, 2)] = randomInt(3, 11);
+        chromosome[randomInt(0, 2)] = randomInt(5, 10);
         return chromosome;
     };
     //returns 1 children;
