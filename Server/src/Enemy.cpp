@@ -72,7 +72,6 @@ bool Enemy::playerInRange() const
     int deltax = abs(player.second - getX());
     if (deltax < visibility_radius && deltay < visibility_radius)
     {
-        ce::debuglog("Player in range");
         return true;
     }
     else
@@ -131,7 +130,7 @@ void Enemy::refreshState()
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
         chase_count += 1;
-        //parent->triggerGroupCall(getID());
+        parent->triggerGroupCall(getID());
     }
 
     if (playerIsSafe())
@@ -160,24 +159,12 @@ void Enemy::refreshState()
             isBacktracking = true;
             chasePath.clear();
         }
-        /*else if (!breadcrumbs.empty() && enemyType == EnemyType::SpBlue && isTeleported)
-        {
-            ce::debuglog("Astar for ", getTypeS());
-            isChasing = true;
-            isBacktracking = false;
-            //chasePath.clear();
-        }*/
     }
 
     if (breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
     {
         isBacktracking = false;
-    }
-
-    /*if(!breadcrumbs.empty() && enemyType == EnemyType::SpBlue && isTeleported)
-    {
-        isBacktracking = false;
-    }*/
+    }chan
 }
 
 void Enemy::groupCall()
@@ -226,8 +213,8 @@ void Enemy::update()
     {
         return;
     }
+
     refreshState();
-    ce::debuglog(isChasing);
 
     frameCount = frameCount + 1;
     std::string dir;
@@ -239,7 +226,6 @@ void Enemy::update()
     }
     else if (isChasing && canChase)
     {
-        ce::debuglog("Si entró ", chasePath.empty());
         //chasing player
         frameCount = 1;
         if (!chasePath.empty())
