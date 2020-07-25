@@ -103,6 +103,7 @@ public:
     Pair playerPos() const;
     void setParent(std::shared_ptr<Game> parent);
     void resolveEnemyAttack();
+    ce::list<Enemy>& getEnemies();
 };
 
 #endif //GAMESERVER_LEVEL_HPP

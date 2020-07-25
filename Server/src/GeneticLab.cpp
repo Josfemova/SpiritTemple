@@ -7,13 +7,15 @@ void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
     list<Enemy &> newSpectrums;
     for (Enemy &enemy : level.enemies)
     {
-        if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu)
+        if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu 
+        && enemy.enemyType != EnemyType::SpEye)
             newSpectrums.push_back(enemy);
     }
     list<Enemy &> spectrums;
     for (Enemy &enemy : lastLevel.enemies)
     {
-        if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu)
+        if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu
+        && enemy.enemyType != EnemyType::SpEye)
             spectrums.push_back(enemy);
     }
     int spectrumCnt = spectrums.size();
@@ -26,7 +28,7 @@ void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
     else
         newValues = geneticAlgorithm(spectrumListToArray(spectrums));
     cicle+=1;
-
+    ce::debuglog(newValues.size(), "era el tamaño de los vlaires", newSpectrumCnt);
     for (int i = 0; i < newSpectrumCnt; i++)
     {
         Enemy &spec = newSpectrums[i];

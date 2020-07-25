@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 public class EventAdmin : MonoBehaviour
 {
     private GameObject player;
@@ -50,28 +51,38 @@ public class EventAdmin : MonoBehaviour
         {
             //attacks an enemy??
             GameObject targ = playerScript.whoWasAttacked(enemies);
-            if(targ != null){
+            if (targ != null)
+            {
                 EnemyContainer enemyScript = targ.GetComponent(typeof(EnemyContainer)) as EnemyContainer;
-                if(enemyScript.sameOrientation(playerScript.OrientationX, playerScript.OrientationY)){
+                if (enemyScript.sameOrientation(playerScript.OrientationX, playerScript.OrientationY))
+                {
                     //kill enemy
-                    req = new JsonReq("kill-enemy",target:targ.GetInstanceID());
+                    req = new JsonReq("kill-enemy", target: targ.GetInstanceID());
                     targ.SetActive(false);
-                }else{
-                    req = new JsonReq("hit-enemy",target:targ.GetInstanceID());
+                    enemyScript.teleport(-2,-2);
+                }
+                else
+                {
+                    req = new JsonReq("hit-enemy", target: targ.GetInstanceID());
                 }
             }
             targ = playerScript.whoWasAttacked(items);
-            if(targ != null){
+            if (targ != null)
+            {
                 ItemContainer itemScript = targ.GetComponent(typeof(ItemContainer)) as ItemContainer;
-                if(itemScript.itemType == "jar"){
-                    req = new JsonReq("open-jar",target:targ.GetInstanceID());
+                if (itemScript.itemType == "jar")
+                {
+                    req = new JsonReq("open-jar", target: targ.GetInstanceID());
                     itemScript.openJar();
-                    
-                }else{
-                    req = new JsonReq("open-chest",target:targ.GetInstanceID());
-                    itemScript.openChest();
-                    
+
                 }
+                else
+                {
+                    req = new JsonReq("open-chest", target: targ.GetInstanceID());
+                    itemScript.openChest();
+
+                }
+
             }
 
         }
@@ -85,7 +96,7 @@ public class EventAdmin : MonoBehaviour
             if (!obstacleMap.HasTile(newPosition) && !(overlapsOne(newPosition, enemies))
             && !(overlapsOne(newPosition, items)))
             {
-                
+
                 playerScript.move(newPosition);
                 req = new JsonReq("move-player", valx: newPosition.x, valy: newPosition.y);
             }
@@ -188,12 +199,12 @@ public class EventAdmin : MonoBehaviour
     {
         //Debug.Log(JsonUtility.ToJson(req));
         EnemyContainer script;
-        CanvasHealth health= GameObject.FindGameObjectWithTag("hearts").GetComponent(typeof(CanvasHealth)) as CanvasHealth;
+        CanvasHealth health = GameObject.FindGameObjectWithTag("hearts").GetComponent(typeof(CanvasHealth)) as CanvasHealth;
         CanvasScore score = GameObject.FindGameObjectWithTag("score").GetComponent(typeof(CanvasScore)) as CanvasScore;
         switch (req.cmd)
         {
             case "set-lives":
-                Debug.Log("changed lifes");
+                //Debug.Log("changed lifes");
                 Client.Instance.health = req.otherval;
                 health.health = req.otherval;
                 break;
@@ -214,13 +225,11 @@ public class EventAdmin : MonoBehaviour
                 /// trigger animation?
                 break;
             case "set-score":
-                Debug.Log("changed score");
+                //Debug.Log("changed score");
                 Client.Instance.score = req.otherval;
                 break;
             case "kill-player":
-                /// <summary>
-                /// ///////
-                /// </summary>
+                SceneManager.LoadScene(0); // starts from level 1
                 break;
             default:
                 break;
@@ -263,7 +272,6 @@ public class EventAdmin : MonoBehaviour
         MonoBehaviour script = obj.GetComponent(typeof(MonoBehaviour)) as MonoBehaviour;
         return script;
     }
-
 }
 
 

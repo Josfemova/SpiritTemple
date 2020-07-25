@@ -23,6 +23,10 @@ std::string Server::readMsg(bool isLarge)
 }
 void Server::sendMsg(std::string m)
 {
+    std::size_t found=m.find("kill-player");
+    if (found!=std::string::npos){
+        game = new Game();
+    }
     const char *msg = m.c_str();
     send(serverSocket, msg, strlen(msg), 0);
 }

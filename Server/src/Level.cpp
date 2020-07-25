@@ -106,7 +106,7 @@ void Level::updateMatrix(bool printMatrix)
 }
 void Level::manageEvent(json event)
 {
-    if (shieldReset == 3)
+    if (shieldReset == 5)
     {
         shieldReset == 0;
         playerShieldRaised = false;
@@ -172,6 +172,15 @@ void Level::manageEvent(json event)
     {
         int loot = parent->randomInt(1, 100);
         parent->addToScore(loot);
+        int itemID = event["target"].get<int>();
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items[i].getID() == itemID)
+            {
+                items.erase(i);
+                break;
+            }
+        }
         json instruction = {
             {"cmd", "set-score"},
             {"otherval", parent->getScore()}};
@@ -224,17 +233,25 @@ void Level::resolveEnemyAttack()
     {
         if (parent->takeLife())
         {
+            ce::log("player loosed one life");
             json instruction = {
-                     {"cmd", "set-score"},
-                     {"otherval", parent->getScore()}},
-                 addInstruction(instruction);
+                {"cmd", "set-lives"},
+                {"otherval", parent->getLifes()}};
+            addInstruction(instruction);
         }
         else
         {
+            ce::log("player is now dead, restarting game");
             json instruction = {
-                     {"cmd", "kill-player"},
-                     {"otherval", parent->getScore()}},
-                 addInstruction(instruction);
+                {"cmd", "kill-player"},
+                {"otherval", parent->getScore()}};
+            addInstruction(instruction);
         }
+        shieldReset = 0;
+        playerShieldRaised = true;
     }
+}
+ce::list<Enemy> &Level::getEnemies()
+{
+    return enemies;
 }

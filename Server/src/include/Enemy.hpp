@@ -121,6 +121,8 @@ public:
 
     std::string toString();
     void die();
+    bool mouseInRange();
+    bool playerIsInAttackRange();
 };
 
 #endif //GAMESERVER_ENEMY_HPP

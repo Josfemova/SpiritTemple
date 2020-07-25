@@ -23,6 +23,7 @@ std::string Game::startLevel(std::string &levelData)
     currentLevel->updateMatrix();
     currentLevel->start(currentLevel);
     if(lastLevel==nullptr){
+        ce::debuglog("arriba");
         lab.assignProperties(*currentLevel, *currentLevel);
     }else{
         lab.assignProperties(*currentLevel, *lastLevel);

@@ -11,8 +11,10 @@ public class ItemContainer : MonoBehaviour
     void Update()
     {  
         if(dissapear){
-            if(cnt==3)
+            if(cnt==3){
+                transform.position = new Vector3(-4,-4);
                 this.gameObject.SetActive(false);
+            }
             else
                 cnt+=1;
         }

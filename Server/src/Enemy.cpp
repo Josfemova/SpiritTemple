@@ -213,15 +213,22 @@ void Enemy::update()
     {
         return;
     }
-
+    if( enemyType != EnemyType::Mouse && mouseInRange()){
+        return;
+    }
+    
     refreshState();
-
     frameCount = frameCount + 1;
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
     bool canMove = (frameCount % route_velocity == 0);
     if (enemyType == EnemyType::SpEye || (!canChase && !canMove))
     {
+        return;
+    }
+    if(playerIsInAttackRange()){
+        ce::log("oh no!!! the player got to close to the enemy!!!");
+        parent->resolveEnemyAttack();
         return;
     }
     else if (isChasing && canChase)
@@ -295,6 +302,32 @@ void Enemy::die()
     isDead = true;
     json instruction = {
         {"cmd", "kill-enemy"},
-        {"target", getID()  }};
+        {"target", getID()}};
     parent->addInstruction(instruction);
+}
+
+bool Enemy::mouseInRange()
+{
+    ce::list<Enemy> &enemies = parent->getEnemies();
+    bool result = false;
+    if (enemies.empty())
+        return result;
+    for (auto enemy : enemies)
+    {
+        if (enemy.enemyType == EnemyType::Mouse)
+        {
+            int deltay = abs(enemy.getY() - getY());
+            int deltax = abs(enemy.getX() - getX());
+            result = (deltax < visibility_radius && deltay < visibility_radius) ? true : false;
+        }
+    }
+    return result;
+}
+bool Enemy::playerIsInAttackRange()
+{
+    Pair player = parent->playerPos();
+    if (abs(getX() - player.second) == 1 && abs(getY() - player.first) == 1)
+        return true;
+    else
+        return false;
 }
