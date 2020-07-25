@@ -36,7 +36,7 @@ private:
     bool isChasing = false;
     bool isBacktracking = false;
     bool isTeleported = false;
-    bool isDead=false;
+    bool isDead = false;
     Pair teleportDest;
     Pair teleportSrc; //position from which enemy teleported
     listDirections normalPath;
