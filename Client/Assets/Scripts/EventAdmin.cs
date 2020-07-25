@@ -65,9 +65,10 @@ public class EventAdmin : MonoBehaviour
                 ItemContainer itemScript = targ.GetComponent(typeof(ItemContainer)) as ItemContainer;
                 if(itemScript.itemType == "jar"){
                     itemScript.openJar();
-
+                    req = new JsonReq("open-jar",target:targ.GetInstanceID());
                 }else{
                     itemScript.openChest();
+                    req = new JsonReq("open-chest",target:targ.GetInstanceID());
                 }
             }
             //attacks item??
@@ -184,14 +185,16 @@ public class EventAdmin : MonoBehaviour
     /// <param name="req">json request sent by the server</param>
     private void executeServerCmd(JsonReq req)
     {
-        Debug.Log(JsonUtility.ToJson(req));
+        //Debug.Log(JsonUtility.ToJson(req));
         EnemyContainer script;
+        CanvasHealth health= GameObject.FindGameObjectWithTag("hearts").GetComponent(typeof(CanvasHealth)) as CanvasHealth;
+        CanvasScore score = GameObject.FindGameObjectWithTag("score").GetComponent(typeof(CanvasScore)) as CanvasScore;
         switch (req.cmd)
         {
             case "set-lives":
                 Client.Instance.health = req.otherval;
-                CanvasHealth health = GameObject.FindGameObjectWithTag("hearts").GetComponent(typeof(CanvasHealth)) as CanvasHealth;
                 health.health = req.otherval;
+                Debug.Break();
                 break;
             case "move-enemy":
                 script = getEntityByID(req.target, "enemy") as EnemyContainer;
@@ -205,7 +208,12 @@ public class EventAdmin : MonoBehaviour
                 script.teleport(req.valx, req.valy);
                 break;
             case "attack-player":
-
+                Client.Instance.health = req.otherval;
+                health.health = req.otherval;
+                /// trigger animation?
+                break;
+            case "set-points":
+                score.score = req.otherval;
                 break;
 
             default:

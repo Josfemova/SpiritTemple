@@ -14,6 +14,7 @@ public sealed class Client
     private static readonly Client instance = new Client();
     private Socket serverConnection;
     public int health = 3; //registers lives across levels
+    public int score =0;
     /// <summary>
     /// "public" constructor. returns nothing
     /// </summary>

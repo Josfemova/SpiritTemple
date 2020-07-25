@@ -17,14 +17,14 @@ public class CanvasHealth : MonoBehaviour
     void Start()
     {   //exaple
         numOfHearts = 5;
-        health = 1;
+        health = Client.Instance.health;
 
     }
 
     // Update is called once per frame
     void Update(){
 
-        heartsPlayer(numOfHearts, health);
+        heartsPlayer(numOfHearts, Client.Instance.health);
     }
 /*
 numOfHearts = number of hearts, bc I don't remember
