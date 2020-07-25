@@ -6,23 +6,24 @@ public class ItemContainer : MonoBehaviour
 {
     public string itemType;
     public Animator animator;
-    void Start()
-    {
-        //animator = itemSprite.GetComponent<Animator>();
-    }
-
-        void Update()
+    int cnt = 0;
+    bool dissapear = false;
+    void Update()
     {  
-        //constains teasure
-        openChest();
-        //constains hearts
-        openJar();
+        if(dissapear){
+            if(cnt==3)
+                this.gameObject.SetActive(false);
+            else
+                cnt+=1;
+        }
     }
 
-    void openChest(){
+    public void openChest(){
+        dissapear = true;
         animator.SetBool("Open", true);
     }
-    void openJar(){
+    public void openJar(){
+        dissapear  = true;
         animator.SetBool("Open", true);
     }
 }

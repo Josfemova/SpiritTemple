@@ -10,9 +10,24 @@ public class Player : MonoBehaviour
     public GameObject playerSprite;
     private int orientationX = 0; //1 right, -1, left
     private int orientationY = -1; //1 up, -1 down
+
     void Start()
     {
         animator = playerSprite.GetComponent<Animator>();
+    }
+    public int OrientationX
+    {
+        get
+        {
+            return orientationX;
+        }
+    }
+    public int OrientationY
+    {
+        get
+        {
+            return orientationY;
+        }
     }
     public void move(Vector3 newPos)
     {
@@ -23,6 +38,7 @@ public class Player : MonoBehaviour
     /// </summary>
     void Update()
     {
+
         Vector3 change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -73,5 +89,20 @@ public class Player : MonoBehaviour
         animator.SetBool("protecting", false);
         yield return new WaitForSeconds(1);
 
+    }
+    public GameObject whoWasAttacked(GameObject[] entities)
+    {
+        GameObject result = null;
+        Vector3Int attackCoords = Vector3Int.FloorToInt(transform.position);
+        attackCoords.x += orientationX;
+        attackCoords.y += orientationY;
+        foreach (GameObject x in entities)
+        {
+            if (Vector3Int.FloorToInt(x.transform.position) == attackCoords)
+            {
+                result = x;
+            }
+        }
+        return result;
     }
 }

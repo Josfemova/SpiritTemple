@@ -10,16 +10,21 @@ public class EnemyContainer : MonoBehaviour
     private int orientationY = -1; //1 up, -1 down
 
     //public GameObject enemySprite;
+    private bool changePos;
     private Vector3 movement;
+    private Vector3 finalPosition;
     private int moveCnt = 0;
-    
+
     /// <summary>
     /// In charge of smoothly moving the enemy
     /// </summary>
     void Update()
     {
-        /**if (moveCnt == 3)
+        if(changePos){
+        if (moveCnt == 3)
         {
+            changePos = false;
+            transform.position = finalPosition;
             movement = Vector3.zero;
             moveCnt = 0;
         }
@@ -27,7 +32,8 @@ public class EnemyContainer : MonoBehaviour
         {
             transform.position = transform.position + movement / 3;
             moveCnt++;
-        }**/
+        }
+        }
     }
 
     /// <summary>
@@ -38,11 +44,15 @@ public class EnemyContainer : MonoBehaviour
     {
         //change.x = Input.GetAxisRaw("Horizontal");
         //change.y = Input.GetAxisRaw("Vertical");
-
+        if(changePos){
+            transform.position = finalPosition;
+        }   
         if (change != Vector3.zero)
         {
-            //movement = change;
-            transform.position = transform.position + change;
+            changePos = true;
+            movement = change;
+            finalPosition = transform.position+change;
+            //transform.position = transform.position + change;
             orientationX = (int)change.x;
             orientationY = (int)change.y;
             animator.SetFloat("MoveX", change.x);
@@ -55,7 +65,19 @@ public class EnemyContainer : MonoBehaviour
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
-    public void teleport(int x, int y){
-        transform.position = new Vector3(x,y);
+    public void teleport(int x, int y)
+    {
+        transform.position = new Vector3(x, y);
+    }
+    public bool sameOrientation(int oX, int oY)
+    {
+        if (oX == orientationX && oY == orientationY)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

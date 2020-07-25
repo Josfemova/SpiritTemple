@@ -38,20 +38,44 @@ public class EventAdmin : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
         JsonReq req = new JsonReq("no-action");
         Vector3 change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown("j"))
         {
-            //check if hits enemy, if so, get enemyID
-            //req = new JsonReq("player-attack", enemyID );
-            // relleno, se quita cuando este el resto
+            //attacks an enemy??
+            GameObject targ = playerScript.whoWasAttacked(enemies);
+            if(targ != null){
+                EnemyContainer enemyScript = targ.GetComponent(typeof(EnemyContainer)) as EnemyContainer;
+                if(enemyScript.sameOrientation(playerScript.OrientationX, playerScript.OrientationY)){
+                    //kill enemy
+                    req = new JsonReq("kill-enemy",target:targ.GetInstanceID());
+                    targ.SetActive(false);
+                }else{
+                    req = new JsonReq("hit-enemy",target:targ.GetInstanceID());
+                }
+            }
+            targ = playerScript.whoWasAttacked(items);
+            if(targ != null){
+                ItemContainer itemScript = targ.GetComponent(typeof(ItemContainer)) as ItemContainer;
+                if(itemScript.itemType == "jar"){
+                    itemScript.openJar();
+
+                }else{
+                    itemScript.openChest();
+                }
+            }
+            //attacks item??
+
         }
         else if (Input.GetKeyDown("k"))
         {
-            //req = new JsonReq("move-player", newPosition.x, newPosition.y);
-            //relleno, se quita cuando est[e el resto
+            req = new JsonReq("player-shield"); //Server should interpretate this as player being safe
         }
         else if (change != Vector3.zero)
         {
@@ -59,7 +83,7 @@ public class EventAdmin : MonoBehaviour
             if (!obstacleMap.HasTile(newPosition) && !(overlapsOne(newPosition, enemies))
             && !(overlapsOne(newPosition, items)))
             {
-                ;
+                
                 playerScript.move(newPosition);
                 req = new JsonReq("move-player", valx: newPosition.x, valy: newPosition.y);
             }
@@ -180,51 +204,15 @@ public class EventAdmin : MonoBehaviour
                 script = getEntityByID(req.target, "enemy") as EnemyContainer;
                 script.teleport(req.valx, req.valy);
                 break;
+            case "attack-player":
+
+                break;
+
             default:
                 break;
         }
     }
-    /// <summary>
-    /// Decodes a string direction into an usable Vector3Int
-    /// </summary>
-    /// <param name="dir"></param>
-    /// <returns></returns>
-    private Vector3Int decodeDirection(string dir)
-    {
-        Vector3Int result = Vector3Int.zero;
-        switch (dir)
-        {
-            case "NORTH":
-                result.y = 1;
-                break;
-            case "SOUTH":
-                result.y = -1;
-                break;
-            case "EAST":
-                result.x = 1;
-                break;
-            case "WEST":
-                result.x = -1;
-                break;
-            case "NORTHEAST":
-                result.y = 1;
-                result.x = 1;
-                break;
-            case "SOUTHEAST":
-                result.y = -1;
-                result.x = 1;
-                break;
-            case "NORTHWEST":
-                result.y = 1;
-                result.x = -1;
-                break;
-            case "SOUTHWEST":
-                result.y = -1;
-                result.x = -1;
-                break;
-        }
-        return result;
-    }
+
     /// <summary>
     /// Returns reference to script of a game object based on its instance ID
     /// </summary>

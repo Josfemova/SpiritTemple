@@ -11,7 +11,7 @@ public class NextScene : MonoBehaviour
     	//las escenas tienen un numero BuilIndex +1 lo que hace es cambiarlas
     	//basado en el número establecido
 
-        NextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        NextSceneLoad = 0;
 
     }
     /// <summary>
