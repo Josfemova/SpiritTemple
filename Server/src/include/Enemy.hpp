@@ -23,7 +23,7 @@ private:
     int route_velocity = 5;
     int chase_velocity = 5;
     int frameCount;
-    int visibility_radius=2; //how much can the enemy look ahead
+    int visibility_radius = 4; //how much can the enemy look ahead
     int lastDefaultPos = -1; //starts before first movement in list 
     bool isBackTrackDefault = false;
     int damageDone=0;

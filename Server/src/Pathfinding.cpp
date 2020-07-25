@@ -417,6 +417,7 @@ void Pathfinding::setAStarPath(ce::list<ce::list<Node>> &nodesDetails, Pair &des
         row = temp_row;
         col = temp_col;
     }
+    path.pop_back();
 }
 
 /*listDirections Pathfinding::LineSight(Pair src, Pair dest)
