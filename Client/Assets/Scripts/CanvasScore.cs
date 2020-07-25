@@ -8,7 +8,7 @@ public class CanvasScore : MonoBehaviour
     // Start is called before the first frame update
     public string cScore;
     public Text scoreText;
-    public int score = 750;
+    public int score = 0;
     void Start()
     {
        
@@ -17,7 +17,7 @@ public class CanvasScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        sumScore(score);
+        sumScore(Client.Instance.score);
         
     }
 //1 hit, loss 1 live
@@ -29,6 +29,6 @@ public class CanvasScore : MonoBehaviour
     /// </summary>
     /// <param name="score"></param>
     public void sumScore(int score){
-        scoreText.text = "score"+ score;
+        scoreText.text = "score: "+ score;
     }
 }

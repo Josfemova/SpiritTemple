@@ -9,3 +9,4 @@ Client/Library/
 .idea
 Client/*.csproj
 Client/*.sln
+Client/UserSettings
