@@ -10,7 +10,8 @@ class Game
 {
 private:
     std::shared_ptr<Level> currentLevel = nullptr;
-    int playerLives = 3;
+    int health = 3;
+    int score;
     GeneticLab lab{};
 public:
     /**
@@ -34,6 +35,11 @@ public:
      * @return std::string request to be handled
      */
     std::string getResponse(std::string &);
+    void addLife();
+    bool takeLife();
+    void addToScore(int toAdd);
+    int getLifes();
+    int getScore();
 };
 
 #endif //GAMESERVER_GAME_HPP

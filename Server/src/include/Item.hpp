@@ -9,7 +9,6 @@ class Item : public GameObject
 {
 private:
     ItemType itemType;
-
 public:
     /**
      * @brief Get the Item Type

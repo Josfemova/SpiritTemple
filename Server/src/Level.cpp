@@ -1,7 +1,7 @@
 #include "include/Level.hpp"
 #include "include/ItemType.hpp"
 #include "include/GameObject.hpp"
-
+#include "include/Game.hpp"
 Level::Level(json playerInfo, json obstacles, json items, json enemies, int lengthx, int lengthy) : lengthx{lengthx}, lengthy{lengthy}
 {
     this->obstacles = obstacles;
@@ -106,12 +106,22 @@ void Level::updateMatrix(bool printMatrix)
 }
 void Level::manageEvent(json event)
 {
+    if (shieldReset == 3)
+    {
+        shieldReset == 0;
+        playerShieldRaised = false;
+    }
+    else
+    {
+        shieldReset++;
+    }
     std::string cmd(event["cmd"]);
     if (cmd == "move-player")
     {
         playerx = event["valx"].get<int>();
         playery = event["valy"].get<int>();
-        instructions.push_back({{"cmd", "hemlo"}});
+        //instructions.push_back({{"cmd", "hemlo"}});
+        ce::log(playerx, "=x=player moved=y=", playerx);
     }
     else if (cmd == "kill-enemy")
     {
@@ -121,6 +131,12 @@ void Level::manageEvent(json event)
             if (enemyID == enemy.getID())
                 enemy.die();
         }
+        ce::log(enemyID, "= Enemy killed");
+        parent->addToScore(20);
+        json instruction = {
+            {"cmd", "set-score"},
+            {"otherval", parent->getScore()}};
+        addInstruction(instruction);
     }
     else if (cmd == "hit-enemy")
     {
@@ -133,17 +149,40 @@ void Level::manageEvent(json event)
                 triggerGroupCall(enemyID);
             }
         }
+        ce::log("oh no, the player just made the enemy even more mad!");
     }
-    else if (cmd == "movePlayer")
+    else if (cmd == "open-jar")
     {
+        parent->addLife();
+        int itemID = event["target"].get<int>();
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items[i].getID() == itemID)
+            {
+                items.erase(i);
+                break;
+            }
+        }
+        json instruction = {
+            {"cmd", "set-lives"},
+            {"otherval", parent->getLifes()}};
+        addInstruction(instruction);
     }
-    else if (cmd == "movePlayer")
+    else if (cmd == "open-chest")
     {
+        int loot = parent->randomInt(1, 100);
+        parent->addToScore(loot);
+        json instruction = {
+            {"cmd", "set-score"},
+            {"otherval", parent->getScore()}};
+        addInstruction(instruction);
     }
-    else if (cmd == "movePlayer")
+    else if (cmd == "player-shield")
     {
+        playerShieldRaised = false;
+        shieldReset = 0;
     }
-    else if (cmd == "no-action")
+    else if (cmd == "final-level")
     {
     }
     updateMatrix();
@@ -173,4 +212,29 @@ json Level::getInstructions()
 Pair Level::playerPos() const
 {
     return std::make_pair(playery, playerx);
+}
+void Level::setParent(std::shared_ptr<Game> parent)
+{
+    this->parent = parent;
+}
+void Level::resolveEnemyAttack()
+{
+
+    if (!playerShieldRaised)
+    {
+        if (parent->takeLife())
+        {
+            json instruction = {
+                     {"cmd", "set-score"},
+                     {"otherval", parent->getScore()}},
+                 addInstruction(instruction);
+        }
+        else
+        {
+            json instruction = {
+                     {"cmd", "kill-player"},
+                     {"otherval", parent->getScore()}},
+                 addInstruction(instruction);
+        }
+    }
 }

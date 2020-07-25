@@ -120,13 +120,13 @@ void Enemy::refreshState()
     // SpEye doesn't move but calls the other specters
     if (playerInRange() && !playerIsSafe() && enemyType == EnemyType::SpEye)
     {
-        ce::debuglog("SpEye");
+        //ce::debuglog("SpEye");
         parent->triggerGroupCall(getID());
     }
 
     if (playerInRange() && !playerIsSafe() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
     {
-        ce::debuglog("Astar");
+        //ce::debuglog("Astar");
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
         chase_count += 1;
@@ -154,7 +154,7 @@ void Enemy::refreshState()
         }
         else if (!breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
         {
-            ce::debuglog("breadcrumbs for ", getTypeS());
+            //ce::debuglog("breadcrumbs for ", getTypeS());
             isChasing = false;
             isBacktracking = true;
             chasePath.clear();
@@ -164,7 +164,7 @@ void Enemy::refreshState()
     if (breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
     {
         isBacktracking = false;
-    }chan
+    }
 }
 
 void Enemy::groupCall()

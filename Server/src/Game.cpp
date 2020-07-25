@@ -18,19 +18,20 @@ std::string Game::startLevel(std::string &levelData)
 
     std::shared_ptr<Level> newLevel(new Level(playerInfo, otherObj, items, enemies, lengthx, lengthy));
     currentLevel = newLevel;
+    currentLevel->setParent(std::shared_ptr<Game>(this));
     currentLevel->updateMatrix();
     currentLevel->start(currentLevel);
     lab.assignProperties(*currentLevel);
     json loadLevelResponse;
     loadLevelResponse.push_back({
         {"cmd", "set-lives"},
-        {"otherval",playerLives}
+        {"otherval",health}
     });
     json response = {
         {"commands", loadLevelResponse}
     };
     std::string resp =response.dump();
-    ce::debuglog(resp);
+    //ce::debuglog(resp);
     return resp; //returns the amount of initial health
 }
 
@@ -58,4 +59,26 @@ int Game::randomInt(int lowerLimit, int upperLimit)
     std::mt19937 rng(dev());
     std::uniform_int_distribution<int> randomGen(lowerLimit, upperLimit);
     return randomGen(rng);
+}
+void Game::addToScore(int toAdd){
+    score+=toAdd;
+}
+void Game::addLife(){
+    if(health<5){
+        ++health;
+    }
+}
+bool Game::takeLife(){
+    if(health==1){
+        return false;
+    }else{
+        --health;
+        return true;
+    }
+}
+int Game::getScore(){
+    return score;
+}
+int Game::getLifes(){
+    return health;
 }

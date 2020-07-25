@@ -10,7 +10,7 @@
 typedef ce::list<std::string> lvlInstructions;
 typedef std::pair<int, int> Pair;
 using json = nlohmann::json;
-
+class Game;
 class GeneticLab;
 class Enemy;
 class Item;
@@ -26,6 +26,9 @@ private:
     ce::list<Item> items;
     ce::list<Enemy> enemies;
     gmatrix state;
+    std::shared_ptr<Game> parent;
+    bool playerShieldRaised = false;
+    int shieldReset = 0;
 
 public:
     /**
@@ -98,6 +101,8 @@ public:
      * @return Pair 
      */
     Pair playerPos() const;
+    void setParent(std::shared_ptr<Game> parent);
+    void resolveEnemyAttack();
 };
 
 #endif //GAMESERVER_LEVEL_HPP

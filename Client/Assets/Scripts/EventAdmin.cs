@@ -64,14 +64,15 @@ public class EventAdmin : MonoBehaviour
             if(targ != null){
                 ItemContainer itemScript = targ.GetComponent(typeof(ItemContainer)) as ItemContainer;
                 if(itemScript.itemType == "jar"){
-                    itemScript.openJar();
                     req = new JsonReq("open-jar",target:targ.GetInstanceID());
+                    itemScript.openJar();
+                    
                 }else{
-                    itemScript.openChest();
                     req = new JsonReq("open-chest",target:targ.GetInstanceID());
+                    itemScript.openChest();
+                    
                 }
             }
-            //attacks item??
 
         }
         else if (Input.GetKeyDown("k"))
@@ -176,7 +177,7 @@ public class EventAdmin : MonoBehaviour
         }
         catch
         {
-            Debug.Break();
+            //Debug.Break();
         }
     }
     /// <summary>
@@ -192,9 +193,9 @@ public class EventAdmin : MonoBehaviour
         switch (req.cmd)
         {
             case "set-lives":
+                Debug.Log("changed lifes");
                 Client.Instance.health = req.otherval;
                 health.health = req.otherval;
-                Debug.Break();
                 break;
             case "move-enemy":
                 script = getEntityByID(req.target, "enemy") as EnemyContainer;
@@ -212,10 +213,15 @@ public class EventAdmin : MonoBehaviour
                 health.health = req.otherval;
                 /// trigger animation?
                 break;
-            case "set-points":
-                score.score = req.otherval;
+            case "set-score":
+                Debug.Log("changed score");
+                Client.Instance.score = req.otherval;
                 break;
-
+            case "kill-player":
+                /// <summary>
+                /// ///////
+                /// </summary>
+                break;
             default:
                 break;
         }
