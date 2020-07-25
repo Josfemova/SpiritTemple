@@ -41,7 +41,7 @@ void Enemy::setChasing(bool chase)
 
 Pair Enemy::enemyPos() const
 {
-    return std::make_pair(getX(), getY());
+    return std::make_pair(getY(), getX());
 }
 
 int Enemy::getDamage() const
