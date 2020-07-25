@@ -2,25 +2,34 @@
 #include <random>
 #include "include/Level.hpp"
 using namespace ce;
-void GeneticLab::assignProperties(Level &level, bool verify)
+void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
 {
-    list<Enemy &> spectrums;
+    list<Enemy &> newSpectrums;
     for (Enemy &enemy : level.enemies)
+    {
+        if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu)
+            newSpectrums.push_back(enemy);
+    }
+    list<Enemy &> spectrums;
+    for (Enemy &enemy : lastLevel.enemies)
     {
         if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu)
             spectrums.push_back(enemy);
     }
     int spectrumCnt = spectrums.size();
+    int newSpectrumCnt = newSpectrums.size();
+    if(spectrumCnt == 0||newSpectrumCnt==0){return;}
     list<list<int>> newValues;
     int enemyCnt = spectrumCnt;
     if (cicle == 0)
-        newValues = randomValues(spectrumCnt);
+        newValues = randomValues(newSpectrumCnt);
     else
         newValues = geneticAlgorithm(spectrumListToArray(spectrums));
     cicle+=1;
-    for (int i = 0; i < spectrumCnt; i++)
+
+    for (int i = 0; i < newSpectrumCnt; i++)
     {
-        Enemy &spec = spectrums[i];
+        Enemy &spec = newSpectrums[i];
         list<int> values = newValues[i];
         spec.route_velocity = values[normal_v];
         spec.chase_velocity = values[chase_v];

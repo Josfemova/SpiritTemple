@@ -17,11 +17,16 @@ std::string Game::startLevel(std::string &levelData)
     json otherObj = initialData["otherObj"];
 
     std::shared_ptr<Level> newLevel(new Level(playerInfo, otherObj, items, enemies, lengthx, lengthy));
+    std::shared_ptr<Level> lastLevel = currentLevel;
     currentLevel = newLevel;
     currentLevel->setParent(std::shared_ptr<Game>(this));
     currentLevel->updateMatrix();
     currentLevel->start(currentLevel);
-    lab.assignProperties(*currentLevel);
+    if(lastLevel==nullptr){
+        lab.assignProperties(*currentLevel, *currentLevel);
+    }else{
+        lab.assignProperties(*currentLevel, *lastLevel);
+    }
     json loadLevelResponse;
     loadLevelResponse.push_back({
         {"cmd", "set-lives"},

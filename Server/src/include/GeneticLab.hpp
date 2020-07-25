@@ -16,7 +16,7 @@ private:
     const int chase_cnt = 4;
 
 public:
-    void assignProperties(Level &level, bool verify = true);
+    void assignProperties(Level &level, Level& lastLevel, bool verify = true);
     ce::list<ce::list<int>> spectrumListToArray(ce::list<Enemy &> spectrum);
     ce::list<ce::list<int>> randomValues(int size);
     ce::list<ce::list<int>> geneticAlgorithm(ce::list<ce::list<int>> population);
