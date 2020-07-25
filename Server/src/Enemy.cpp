@@ -13,10 +13,10 @@ void Enemy::activate(std::shared_ptr<Level> parent)
 {
     this->parent = parent;
     if (enemyType != EnemyType::SpEye || enemyType != EnemyType::Chuchu)
-    if(enemyType == EnemyType::Mouse)
-        this->normalPath = MoveGenerator::randomPathGenerator(10, getX(), getY(), parent->getSimpleMatrix());
-    else
-        this->normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
+        if (enemyType == EnemyType::Mouse)
+            this->normalPath = MoveGenerator::randomPathGenerator(22, getX(), getY(), parent->getSimpleMatrix());
+        else
+            this->normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
 }
 void Enemy::setEnemyType(std::string &type)
 {
@@ -116,29 +116,33 @@ void Enemy::refreshState()
     bool isSpEye = (enemyType == EnemyType::SpEye);
     bool isMouse = (enemyType == EnemyType::Mouse);
     bool isSpectre = (!isChuchu && !isMouse && !isSpEye);
-
     Pathfinding pathfinding(parent->getSimpleMatrix());
-    if (enemyType == EnemyType::Chuchu)
+    if (isChuchu)
     {
         isChasing = true;
         gmatrix &test = parent->getSimpleMatrix();
         chasePath = MoveGenerator::getRoute(test, getY(), getX(), parent->playerPos(), RouteType::LineSight);
     }
+    if(isChasing && chasePath.empty()){
+        chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+    }
 
     if (playerInRange() && !playerIsSafe())
     {
-        parent->triggerGroupCall(getID());
         if (isSpEye)
         {
+            parent->triggerGroupCall(getID());
             return;
         }
         else if (isSpectre)
         {
+            parent->triggerGroupCall(getID());
             //ce::debuglog("Astar");
             isChasing = true;
             chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
             chase_count += 1;
         }
+        
     }
 
     if (playerIsSafe())
@@ -154,7 +158,7 @@ void Enemy::refreshState()
                 {"valy", teleportSrc.first}};
             parent->addInstruction(instruction);
             isTeleported = false;
-            breadcrumbs.clear();
+            //breadcrumbs.clear();
             isChasing = false;
             isBacktracking = false;
             lastDefaultPos = -1;
@@ -184,11 +188,10 @@ void Enemy::groupCall()
     Pathfinding pathfinding(parent->getSimpleMatrix());
 
     // Teleport SpBlue
-    if (enemyType == EnemyType::SpBlue)
+    if (enemyType == EnemyType::SpBlue && !isTeleported)
     {
         isChasing = true;
-        if (!isTeleported)
-            teleportSrc = std::make_pair(getY(), getX());
+        teleportSrc = std::make_pair(getY(), getX());
         teleportDest = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
         setX(teleportDest.second);
         setY(teleportDest.first);
@@ -211,12 +214,13 @@ void Enemy::groupCall()
 
 void Enemy::update()
 {
+    Pathfinding pathfinding(parent->getSimpleMatrix());
     bool isSpBlue = (enemyType == EnemyType::SpBlue);
     bool isChuchu = (enemyType == EnemyType::Chuchu);
     bool isSpEye = (enemyType == EnemyType::SpEye);
     bool isMouse = (enemyType == EnemyType::Mouse);
     bool isSpectre = (!isChuchu && !isMouse && !isSpEye);
-    
+
     if (isDead)
     {
         return;
@@ -227,7 +231,7 @@ void Enemy::update()
     }
     refreshState();
     frameCount = frameCount + 1;
-    std::string dir="";
+    std::string dir = "";
     bool canChase = (frameCount % chase_velocity == 0);
     bool canMove = (frameCount % route_velocity == 0);
     if (isSpEye || (!canChase && !canMove))
@@ -289,7 +293,15 @@ void Enemy::update()
             }
         }
     }
-    if(dir==""){
+    if (dir == "" && canMove)
+    {
+        if (isSpBlue)
+        {
+            ce::debuglog("//////////////////////");
+            ce::debuglog(chasePath.empty(), breadcrumbs.empty(), isTeleported);
+            ce::debuglog(isChasing, normalPath.empty());
+            ce::debuglog("//////////////////////");
+        }
         return;
     }
     Pair delta = MoveGenerator::getDeltaValues(dir);

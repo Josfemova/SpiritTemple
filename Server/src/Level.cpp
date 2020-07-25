@@ -36,15 +36,6 @@ void Level::start(std::shared_ptr<Level> level)
         enemy.activate(level);
 
         ce::debuglog("---------------------------");
-        ce::debuglog("\n", enemy.getID());
-        ce::debuglog(enemy.getTypeS());
-        Pathfinding astar(getSimpleMatrix());
-        auto demo = astar.AStarSearch(enemy.enemyPos(), playerPos());
-        for (auto x : demo)
-        {
-            auto y = MoveGenerator::directionToString(x);
-            std::cout << y << " == ";
-        }
         ce::debuglog("---------------------------");
     }
     //ce::errorlog("pauser");

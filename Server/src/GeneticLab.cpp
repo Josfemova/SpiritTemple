@@ -39,7 +39,7 @@ void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
 
     if (verify)
     {
-        ce::log("==============initial chromosome values ====================");
+        ce::log("============== chromosome values ====================");
         for (Enemy &enemy : level.enemies)
         {
             if (enemy.enemyType != EnemyType::Mouse && enemy.enemyType != EnemyType::Chuchu){
@@ -47,7 +47,7 @@ void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
             }
                 
         }
-        ce::log("==============initial chromosome values ====================");
+        ce::log("============== chromosome values ====================");
     }
 }
 list<list<int>> GeneticLab::spectrumListToArray(list<Enemy &> spectrums)
