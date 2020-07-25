@@ -34,9 +34,6 @@ void Level::start(std::shared_ptr<Level> level)
     for (auto &enemy : enemies)
     {
         enemy.activate(level);
-
-        ce::debuglog("---------------------------");
-        ce::debuglog("---------------------------");
     }
     //ce::errorlog("pauser");
 }
@@ -99,7 +96,7 @@ void Level::manageEvent(json event)
 {
     if (shieldReset == 5)
     {
-        shieldReset == 0;
+        shieldReset = 0;
         playerShieldRaised = false;
     }
     else
@@ -184,6 +181,11 @@ void Level::manageEvent(json event)
     }
     else if (cmd == "final-level")
     {
+        for(auto&x : enemies){
+            x.chase_velocity = 3;
+            x.route_velocity = 4;
+            x.visibility_radius = 20;
+        }
     }
     updateMatrix();
     for (auto &x : enemies)
