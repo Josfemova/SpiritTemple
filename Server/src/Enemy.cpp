@@ -122,7 +122,6 @@ void Enemy::refreshState()
     if (playerInRange() && !playerIsSafe() && enemyType == EnemyType::SpEye)
     {
         ce::debuglog("SpEye");
-        //ce::debuglog("Haré un triggerGroupCall");
         parent->triggerGroupCall(getID());
     }
 
@@ -161,12 +160,24 @@ void Enemy::refreshState()
             isBacktracking = true;
             chasePath.clear();
         }
+        /*else if (!breadcrumbs.empty() && enemyType == EnemyType::SpBlue && isTeleported)
+        {
+            ce::debuglog("Astar for ", getTypeS());
+            isChasing = true;
+            isBacktracking = false;
+            //chasePath.clear();
+        }*/
     }
 
     if (breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
     {
         isBacktracking = false;
     }
+
+    /*if(!breadcrumbs.empty() && enemyType == EnemyType::SpBlue && isTeleported)
+    {
+        isBacktracking = false;
+    }*/
 }
 
 void Enemy::groupCall()
@@ -183,8 +194,8 @@ void Enemy::groupCall()
         isChasing = true;
         teleportSrc = std::make_pair(getY(), getX());
         teleportDest = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
-        //setX(teleportDest.second);
-        //setY(teleportDest.first);
+        setX(teleportDest.second);
+        setY(teleportDest.first);
         json instruction = {
             {"cmd", "teleport-enemy"},
             {"target", getID()},
@@ -192,6 +203,7 @@ void Enemy::groupCall()
             {"valy", teleportDest.first}};
         parent->addInstruction(instruction);
         isTeleported = true;
+        chasePath.clear();
     }
 
     // Replace chasePath
@@ -227,7 +239,7 @@ void Enemy::update()
     }
     else if (isChasing && canChase)
     {
-        ce::debuglog("Si entró", chasePath.empty());
+        ce::debuglog("Si entró ", chasePath.empty());
         //chasing player
         frameCount = 1;
         if (!chasePath.empty())
@@ -290,6 +302,7 @@ std::string Enemy::toString()
     auto str = [](int x) { return std::to_string(x); };
     return ("(" + str(route_velocity) + "," + str(chase_velocity) + "," + str(visibility_radius) + ")");
 }
+
 void Enemy::die()
 {
     deathOrder = ++lastDeathOrder;
