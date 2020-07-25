@@ -20,6 +20,7 @@ std::string Game::startLevel(std::string &levelData)
     currentLevel = newLevel;
     currentLevel->updateMatrix();
     currentLevel->start(currentLevel);
+    lab.assignProperties(*currentLevel);
     json loadLevelResponse;
     loadLevelResponse.push_back({
         {"cmd", "set-lives"},

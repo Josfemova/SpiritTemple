@@ -15,9 +15,14 @@ class Level;
  * 
  */
 class Enemy : public GameObject{
+protected:
+    static int lastDeathOrder;
 private:
     friend class Level;
     friend class GeneticLab;
+     //added this for genetic algorithm
+    int deathOrder=0;
+    int chase_count=0; 
     std::shared_ptr<Level> parent;
     EnemyType enemyType;
     int route_velocity = 5;
@@ -31,6 +36,7 @@ private:
     bool isChasing = false;
     bool isBacktracking = false;
     bool isTeleported = false;
+    bool isDead=false;
     Pair teleportDest;
     Pair teleportSrc; //position from which enemy teleported
     listDirections normalPath;
@@ -113,7 +119,8 @@ public:
      */
     void update();
 
-    //Movement functions are owned by Movement Generator
+    std::string toString();
+    void die();
 };
 
 #endif //GAMESERVER_ENEMY_HPP

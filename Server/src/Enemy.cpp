@@ -3,6 +3,8 @@
 #include "include/utilities.hpp"
 #include "include/nlohmannJson.hpp"
 #include <cstdlib>
+
+int Enemy::lastDeathOrder = 0;
 Enemy::Enemy(int id, int py, int px, std::string &type) : GameObject{GOType::enemy, id, py, px}, frameCount{1}
 {
     setEnemyType(type);
@@ -123,12 +125,13 @@ void Enemy::refreshState()
         //ce::debuglog("Haré un triggerGroupCall");
         parent->triggerGroupCall(getID());
     }
-    
+
     if (playerInRange() && !playerIsSafe() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
     {
         ce::debuglog("Astar");
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+        chase_count += 1;
         //parent->triggerGroupCall(getID());
     }
 
@@ -159,7 +162,7 @@ void Enemy::refreshState()
             chasePath.clear();
         }
     }
-    
+
     if (breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
     {
         isBacktracking = false;
@@ -168,6 +171,10 @@ void Enemy::refreshState()
 
 void Enemy::groupCall()
 {
+    if (isDead)
+    {
+        return;
+    }
     Pathfinding pathfinding(parent->getSimpleMatrix());
 
     // Teleport SpBlue
@@ -203,9 +210,13 @@ void Enemy::groupCall()
 
 void Enemy::update()
 {
+    if (isDead)
+    {
+        return;
+    }
     refreshState();
     ce::debuglog(isChasing);
-    
+
     frameCount = frameCount + 1;
     std::string dir;
     bool canChase = (frameCount % chase_velocity == 0);
@@ -271,5 +282,20 @@ void Enemy::update()
         {"target", getID()},
         {"valx", delta.second},
         {"valy", delta.first}};
+    parent->addInstruction(instruction);
+}
+
+std::string Enemy::toString()
+{
+    auto str = [](int x) { return std::to_string(x); };
+    return ("(" + str(route_velocity) + "," + str(chase_velocity) + "," + str(visibility_radius) + ")");
+}
+void Enemy::die()
+{
+    deathOrder = ++lastDeathOrder;
+    isDead = true;
+    json instruction = {
+        {"cmd", "kill-enemy"},
+        {"target", getID()  }};
     parent->addInstruction(instruction);
 }

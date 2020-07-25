@@ -1,21 +1,25 @@
 #ifndef GAMESERVER_GENETICLAB_HPP
 #define GAMESERVER_GENETICLAB_HPP
 
+#include "Enemy.hpp"
+#include "list.hpp"
+class Level;
+class Enemy;
 class GeneticLab
 {
+private:
+    int cicle = 0;
+    const int normal_v = 0;
+    const int chase_v = 1;
+    const int v_radius = 2;
+    const int death_order = 3;
+    const int chase_cnt = 4;
+
 public:
-    int spectrumCount;
-    int spectrums[][5];
-    void printMatrix(int spectrums[][5]);
-    void initSpectrums();
-    int geneticAlgorithm();
-    int fitness(int harm, int deathOrder, int chasesAmount);
-    int *generateFitnessArray();
-    void printFitnessArray(int fitnessArr[]);
-    int selectMax(int arr[], int arrSize);
-    int *selection(int fitnessArr[]);
-    void crossover();
-    void mutation(int offspringKey);
+    void assignProperties(Level &level, bool verify = true);
+    ce::list<ce::list<int>> spectrumListToArray(ce::list<Enemy &> spectrum);
+    ce::list<ce::list<int>> randomValues(int size);
+    ce::list<ce::list<int>> geneticAlgorithm(ce::list<ce::list<int>> population);
 };
 
 #endif //GAMESERVER_GENETICLAB_HPP

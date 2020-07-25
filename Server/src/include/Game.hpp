@@ -5,13 +5,13 @@
 #include "nlohmannJson.hpp"
 #include "Level.hpp"
 #include <memory>
-
+#include "GeneticLab.hpp"
 class Game
 {
 private:
     std::shared_ptr<Level> currentLevel = nullptr;
     int playerLives = 3;
-
+    GeneticLab lab{};
 public:
     /**
      * @brief generates a random Integer between the given limits

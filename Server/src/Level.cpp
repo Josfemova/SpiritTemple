@@ -31,15 +31,15 @@ void Level::start(std::shared_ptr<Level> level)
     // set velocities
     // set other values
     //
-    for (auto& enemy : enemies)
+    for (auto &enemy : enemies)
     {
         enemy.activate(level);
-        
+
         ce::debuglog("---------------------------");
-        ce::debuglog("\n",enemy.getID());
+        ce::debuglog("\n", enemy.getID());
         ce::debuglog(enemy.getTypeS());
         Pathfinding astar(getSimpleMatrix());
-        auto demo = astar.AStarSearch(enemy.enemyPos(), playerPos()); 
+        auto demo = astar.AStarSearch(enemy.enemyPos(), playerPos());
         for (auto x : demo)
         {
             auto y = MoveGenerator::directionToString(x);
@@ -53,7 +53,8 @@ void Level::finish()
 {
     //Do something
 }
-gmatrix& Level::getSimpleMatrix(){
+gmatrix &Level::getSimpleMatrix()
+{
     return state;
 }
 
@@ -110,16 +111,28 @@ void Level::manageEvent(json event)
     {
         playerx = event["valx"].get<int>();
         playery = event["valy"].get<int>();
-        instructions.push_back({
-            {"cmd", "hemlo"}
-        });
+        instructions.push_back({{"cmd", "hemlo"}});
     }
-    else if (cmd == "attack-enemy")
+    else if (cmd == "kill-enemy")
     {
-        int enemyID = event[1];
+        int enemyID = event["target"].get<int>();
+        for (auto &enemy : enemies)
+        {
+            if (enemyID == enemy.getID())
+                enemy.die();
+        }
     }
-    else if (cmd == "movePlayer")
+    else if (cmd == "hit-enemy")
     {
+        int enemyID = event["target"].get<int>();
+        for (auto &enemy : enemies)
+        {
+            if (enemyID == enemy.getID())
+            {
+                enemy.chase_count++;
+                triggerGroupCall(enemyID);
+            }
+        }
     }
     else if (cmd == "movePlayer")
     {
@@ -132,7 +145,6 @@ void Level::manageEvent(json event)
     }
     else if (cmd == "no-action")
     {
-
     }
     updateMatrix();
     for (auto &x : enemies)
@@ -143,7 +155,7 @@ void Level::manageEvent(json event)
 void Level::triggerGroupCall(int id)
 {
     {
-        for (auto& enemy : enemies)
+        for (auto &enemy : enemies)
         {
             if (enemy.getID() != id)
             {
@@ -153,7 +165,7 @@ void Level::triggerGroupCall(int id)
     }
 }
 json Level::getInstructions()
-{   
+{
     json res = instructions;
     instructions = json::array();
     return res;

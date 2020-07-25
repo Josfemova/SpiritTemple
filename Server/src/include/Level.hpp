@@ -5,16 +5,19 @@
 #include "nlohmannJson.hpp"
 #include "Item.hpp"
 #include "Enemy.hpp"
+#include "GeneticLab.hpp"
 
 typedef ce::list<std::string> lvlInstructions;
 typedef std::pair<int, int> Pair;
 using json = nlohmann::json;
 
+class GeneticLab;
 class Enemy;
 class Item;
 class Level
 {
 private:
+    friend class GeneticLab;
     int id;
     int playerx;
     int playery;
