@@ -38,7 +38,7 @@ sonar-scanner \
   -Dsonar.organization=josfemova \
   -Dsonar.projectKey=Josfemova_SpiritTemple \
   -Dsonar.sources=. \
-  -Dsonar.exclusions=**/nlohmannJson.hpp, Documentation/**/* \
+  -Dsonar.exclusions=**/nlohmannJson.hpp \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.cfamily.build-wrapper-output=./Server/bw-output \
   -Dsonar.login=$SONARLOGIN

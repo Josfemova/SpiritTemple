@@ -13,6 +13,9 @@ void Enemy::activate(std::shared_ptr<Level> parent)
 {
     this->parent = parent;
     if (enemyType != EnemyType::SpEye || enemyType != EnemyType::Chuchu)
+    if(enemyType == EnemyType::Mouse)
+        this->normalPath = MoveGenerator::randomPathGenerator(10, getX(), getY(), parent->getSimpleMatrix());
+    else
         this->normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
 }
 void Enemy::setEnemyType(std::string &type)
@@ -108,8 +111,13 @@ std::string Enemy::getTypeS()
 
 void Enemy::refreshState()
 {
-    Pathfinding pathfinding(parent->getSimpleMatrix());
+    bool isSpBlue = (enemyType == EnemyType::SpBlue);
+    bool isChuchu = (enemyType == EnemyType::Chuchu);
+    bool isSpEye = (enemyType == EnemyType::SpEye);
+    bool isMouse = (enemyType == EnemyType::Mouse);
+    bool isSpectre = (!isChuchu && !isMouse && !isSpEye);
 
+    Pathfinding pathfinding(parent->getSimpleMatrix());
     if (enemyType == EnemyType::Chuchu)
     {
         isChasing = true;
@@ -117,20 +125,20 @@ void Enemy::refreshState()
         chasePath = MoveGenerator::getRoute(test, getY(), getX(), parent->playerPos(), RouteType::LineSight);
     }
 
-    // SpEye doesn't move but calls the other specters
-    if (playerInRange() && !playerIsSafe() && enemyType == EnemyType::SpEye)
+    if (playerInRange() && !playerIsSafe())
     {
-        //ce::debuglog("SpEye");
         parent->triggerGroupCall(getID());
-    }
-
-    if (playerInRange() && !playerIsSafe() && enemyType != EnemyType::SpEye && enemyType != EnemyType::Mouse && enemyType != EnemyType::Chuchu)
-    {
-        //ce::debuglog("Astar");
-        isChasing = true;
-        chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
-        chase_count += 1;
-        parent->triggerGroupCall(getID());
+        if (isSpEye)
+        {
+            return;
+        }
+        else if (isSpectre)
+        {
+            //ce::debuglog("Astar");
+            isChasing = true;
+            chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
+            chase_count += 1;
+        }
     }
 
     if (playerIsSafe())
@@ -152,7 +160,7 @@ void Enemy::refreshState()
             lastDefaultPos = -1;
             normalPath = MoveGenerator::randomPathGenerator(5, getX(), getY(), parent->getSimpleMatrix());
         }
-        else if (!breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
+        else if (!breadcrumbs.empty() && !isChuchu)
         {
             //ce::debuglog("breadcrumbs for ", getTypeS());
             isChasing = false;
@@ -161,7 +169,7 @@ void Enemy::refreshState()
         }
     }
 
-    if (breadcrumbs.empty() && enemyType != EnemyType::Chuchu)
+    if (breadcrumbs.empty() && isSpectre)
     {
         isBacktracking = false;
     }
@@ -176,10 +184,11 @@ void Enemy::groupCall()
     Pathfinding pathfinding(parent->getSimpleMatrix());
 
     // Teleport SpBlue
-    if (enemyType == EnemyType::SpBlue && !isTeleported)
+    if (enemyType == EnemyType::SpBlue)
     {
         isChasing = true;
-        teleportSrc = std::make_pair(getY(), getX());
+        if (!isTeleported)
+            teleportSrc = std::make_pair(getY(), getX());
         teleportDest = pathfinding.teleportEnemy(enemyPos(), parent->playerPos());
         setX(teleportDest.second);
         setY(teleportDest.first);
@@ -190,17 +199,10 @@ void Enemy::groupCall()
             {"valy", teleportDest.first}};
         parent->addInstruction(instruction);
         isTeleported = true;
-        chasePath.clear();
-    }
-
-    // Replace chasePath
-    if (enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed)
-    {
-        isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
     }
-
-    if (enemyType == EnemyType::SpBlue && isTeleported)
+    // Replace chasePath
+    if (enemyType == EnemyType::SpGray || enemyType == EnemyType::SpRed)
     {
         isChasing = true;
         chasePath = pathfinding.AStarSearch(enemyPos(), parent->playerPos());
@@ -209,24 +211,31 @@ void Enemy::groupCall()
 
 void Enemy::update()
 {
+    bool isSpBlue = (enemyType == EnemyType::SpBlue);
+    bool isChuchu = (enemyType == EnemyType::Chuchu);
+    bool isSpEye = (enemyType == EnemyType::SpEye);
+    bool isMouse = (enemyType == EnemyType::Mouse);
+    bool isSpectre = (!isChuchu && !isMouse && !isSpEye);
+    
     if (isDead)
     {
         return;
     }
-    if( enemyType != EnemyType::Mouse && mouseInRange()){
-        return;
-    }
-    
-    refreshState();
-    frameCount = frameCount + 1;
-    std::string dir;
-    bool canChase = (frameCount % chase_velocity == 0);
-    bool canMove = (frameCount % route_velocity == 0);
-    if (enemyType == EnemyType::SpEye || (!canChase && !canMove))
+    if (!isMouse && mouseInRange())
     {
         return;
     }
-    if(playerIsInAttackRange()){
+    refreshState();
+    frameCount = frameCount + 1;
+    std::string dir="";
+    bool canChase = (frameCount % chase_velocity == 0);
+    bool canMove = (frameCount % route_velocity == 0);
+    if (isSpEye || (!canChase && !canMove))
+    {
+        return;
+    }
+    if (playerIsInAttackRange())
+    {
         ce::log("oh no!!! the player got to close to the enemy!!!");
         parent->resolveEnemyAttack();
         return;
@@ -247,6 +256,7 @@ void Enemy::update()
         frameCount = 1;
         dir = MoveGenerator::inverseDirectionToString(breadcrumbs.pop_back());
     }
+
     else if (canMove)
     {
         //normal path
@@ -278,6 +288,9 @@ void Enemy::update()
                 dir = MoveGenerator::directionToString(normalPath[++lastDefaultPos]);
             }
         }
+    }
+    if(dir==""){
+        return;
     }
     Pair delta = MoveGenerator::getDeltaValues(dir);
     setX(getX() + delta.second);

@@ -28,7 +28,6 @@ void GeneticLab::assignProperties(Level &level, Level&lastLevel, bool verify)
     else
         newValues = geneticAlgorithm(spectrumListToArray(spectrums));
     cicle+=1;
-    ce::debuglog(newValues.size(), "era el tamaño de los vlaires", newSpectrumCnt);
     for (int i = 0; i < newSpectrumCnt; i++)
     {
         Enemy &spec = newSpectrums[i];
@@ -63,16 +62,16 @@ list<list<int>> GeneticLab::spectrumListToArray(list<Enemy &> spectrums)
 ce::list<ce::list<int>> GeneticLab::randomValues(int size)
 {
     std::random_device dev;
-    std::mt19937 mt(dev());
-    auto rng = [&mt]() {
-        std::uniform_int_distribution<int> randomGen(5, 10);
-        return randomGen(mt);
+    std::mt19937 rng(dev());
+    auto randomInt = [&rng](int lowerLimit, int upperLimit) {
+        std::uniform_int_distribution<int> randomGen(lowerLimit, upperLimit);
+        return randomGen(rng);
     };
 
     ce::list<ce::list<int>> result;
     for (int i = 0; i < size; i++)
     {
-        result.push_back(ce::list<int>{rng(), rng(), rng(), 0, 0});
+        result.push_back(ce::list<int>{randomInt(5,10), randomInt(5,10), randomInt(1,5), 0, 0});
     }
 
     return result;
@@ -96,8 +95,12 @@ list<list<int>> GeneticLab::geneticAlgorithm(list<list<int>> population)
         double fit = chromosome[death_order] * 2 + (chromosome[chase_cnt]);
         return fit;
     };
-    auto mutate = [&, this](list<int> chromosome) { //only 0,1,2 are mutable characteristics
-        chromosome[randomInt(0, 2)] = randomInt(5, 10);
+    auto mutate = [&, this](list<int> chromosome) {
+        int i =  randomInt(0, 2);//only 0,1,2 are mutable characteristics
+        chromosome[i] = randomInt(5, 10);
+        if(i==3)
+            chromosome[i] = randomInt(1, 5);
+        
         return chromosome;
     };
     //returns 1 children;
